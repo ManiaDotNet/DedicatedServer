@@ -42,7 +42,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlRpc\XmlRpcConnection.cs" />
     <Compile Include="XmlRpc\XmlRpcConnectionConfig.cs" />
-    <Compile Include="XmlRpc\XmlRpcRequest.cs" />
+    <Compile Include="XmlRpc\XmlRpcMethodCall.cs" />
+    <Compile Include="XmlRpc\XmlRpcMethodResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ManiaNet.DedicatedServer.XmlRpc
 {
-    public class XmlRpcRequest
+    public class XmlRpcMethodCall
     {
     }
 }

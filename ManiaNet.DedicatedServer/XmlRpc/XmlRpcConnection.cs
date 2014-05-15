@@ -11,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     {
         private Protocol protocol;
         private StreamReader reader;
-        private uint requestHandle = 0;
+        private uint requestHandle = 0x80000000;
         private Stream stream;
         private StreamWriter writer;
 
@@ -25,14 +25,14 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         public void Connect()
         {
             stream = new TcpClient(Config.Address, Config.Port).GetStream();
-            reader = new StreamReader(stream, Encoding.UTF8);
-            writer = new StreamWriter(stream, Encoding.UTF8);
+            reader = new StreamReader(stream, Encoding.ASCII);
+            writer = new StreamWriter(stream, Encoding.ASCII);
 
             byte[] protocolNameLengthBytes = new byte[4];
             stream.Read(protocolNameLengthBytes, 0, 4);
             uint protocolNameLength = BitConverter.ToUInt32(protocolNameLengthBytes, 0);
 
-            if (protocolNameLength > 64)
+            if (protocolNameLength != 11)
                 throw new Exception("Wrong Low-Level Protocol Header");
 
             char[] protocolName = new char[protocolNameLength];
@@ -58,7 +58,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             while (true)
             {
                 reader.ReadBlock(chars, 0, 1);
-                Console.WriteLine(chars[0]);
+                Console.Write(chars[0]);
             }
         }
 
@@ -70,22 +70,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             //GBXRemote 1 only takes the length
             if (protocol == Protocol.GbxRemoteTwo)
             {
-                bytes.AddRange(BitConverter.GetBytes((uint)1));
+                bytes.AddRange(BitConverter.GetBytes((uint)requestHandle));
             }
 
-            //stream.Write(bytes.ToArray(), 0, bytes.Count);
-            //writer.Write(request);
-
-            byte[] requestBytes = new byte[request.Length];
-            Encoding.ASCII.GetEncoder().GetBytes(request.ToCharArray(), 0, request.Length, requestBytes, 0, true);
-            bytes.AddRange(requestBytes);
-            foreach (byte b in bytes)
-            {
-                Console.Write(b + "-");
-            }
-            Console.WriteLine();
             stream.Write(bytes.ToArray(), 0, bytes.Count);
             stream.Flush();
+            writer.Write(request);
+            writer.Flush();
         }
 
         private enum Protocol
