@@ -9,7 +9,6 @@ namespace ManiaNet.DedicatedServer.XmlRpc
 {
     public class XmlRpcConnection
     {
-        private Protocol protocol;
         private StreamReader reader;
         private uint requestHandle = 0x80000000;
         private Stream stream;
@@ -37,52 +36,73 @@ namespace ManiaNet.DedicatedServer.XmlRpc
 
             char[] protocolName = new char[protocolNameLength];
             reader.ReadBlock(protocolName, 0, (int)protocolNameLength);
-            switch (new string(protocolName))
-            {
-                case "GBXRemote 1":
-                    protocol = Protocol.GbxRemoteOne;
-                    break;
 
-                case "GBXRemote 2":
-                    protocol = Protocol.GbxRemoteTwo;
-                    break;
-
-                default:
-                    throw new Exception("Wrong Low-Level Protocol Version");
-            }
+            if (new string(protocolName) != "GBXRemote 2")
+                throw new Exception("Wrong Low-Level Protocol Version");
         }
 
         public void Receive()
         {
-            char[] chars = new char[1];
+            byte[] messageHeaderBytes = new byte[8];
+            uint messageLength;
+            uint messageRequestHandle;
+
             while (true)
             {
-                reader.ReadBlock(chars, 0, 1);
-                Console.Write(chars[0]);
+                stream.Read(messageHeaderBytes, 0, 8);
+                messageLength = BitConverter.ToUInt32(messageHeaderBytes, 0);
+                messageRequestHandle = BitConverter.ToUInt32(messageHeaderBytes, 4);
+
+                byte[] messageCharBytes = new byte[messageLength];
+                int offset = 0;
+
+                while (messageLength - offset > 0)
+                    offset += stream.Read(messageCharBytes, offset, ((int)messageLength) - offset);
+
+                char[] messageChars = new char[messageLength];
+                int usedBytes;
+                int usedChars;
+                bool complete;
+                Encoding.ASCII.GetDecoder().Convert(messageCharBytes, 0, (int)messageLength, messageChars, 0, (int)messageLength, true, out usedBytes, out usedChars, out complete);
+
+                if ((messageRequestHandle & 0x80000000) == 0)
+                {
+                    //This is a server callback
+                    Console.WriteLine("Server Callback");
+                }
+                else
+                {
+                    //This is a method response
+                    Console.WriteLine("Method Response for handle: " + messageRequestHandle);
+                }
+
+                Console.WriteLine(new string(messageChars));
             }
         }
 
-        public void Send(string request)
+        public uint Send(string request)
         {
             requestHandle++;
-            List<byte> bytes = new List<byte>(BitConverter.GetBytes((uint)request.Length));
 
-            //GBXRemote 1 only takes the length
-            if (protocol == Protocol.GbxRemoteTwo)
-            {
-                bytes.AddRange(BitConverter.GetBytes((uint)requestHandle));
-            }
+            List<byte> bytes = new List<byte>();
+            bytes.AddRange(BitConverter.GetBytes((uint)request.Length));
+            bytes.AddRange(BitConverter.GetBytes((uint)requestHandle));
 
             stream.Write(bytes.ToArray(), 0, bytes.Count);
             stream.Flush();
+
             writer.Write(request);
             writer.Flush();
+
+            return requestHandle;
         }
 
-        private enum Protocol
-        {
-            GbxRemoteOne = 1,
-            GbxRemoteTwo = 2
-        }
+        public delegate void MethodResponseEventHandler(XmlRpcMethodResponse methodResponse);
+
+        public delegate void ServerCallbackEventHandler(XmlRpcServerCallback serverCallback);
+
+        public event MethodResponseEventHandler MethodResponse;
+
+        public event ServerCallbackEventHandler ServerCallback;
     }
 }
