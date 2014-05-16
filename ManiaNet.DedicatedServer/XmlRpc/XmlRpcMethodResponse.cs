@@ -4,7 +4,10 @@ using System.Linq;
 
 namespace ManiaNet.DedicatedServer.XmlRpc
 {
-    public class XmlRpcMethodResponse
+    public abstract class XmlRpcMethodResponse<TXmlRpc, TValue>
     {
+        public TValue Value { get; protected set; }
+
+        public abstract TXmlRpc ParseXml(string methodResponse);
     }
 }
