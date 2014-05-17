@@ -44,12 +44,22 @@
     <Compile Include="ServerControllerConfig.cs" />
     <Compile Include="XmlRpc\IXmlRpcClient.cs" />
     <Compile Include="XmlRpc\MethodCalls\XmlRpcAuthenticate.cs" />
-    <Compile Include="XmlRpc\MethodResponses\XmlRpcBoolean.cs" />
+    <Compile Include="XmlRpc\Types\Structs\XmlRpcApplicationVersionStruct.cs" />
+    <Compile Include="XmlRpc\Types\Structs\XmlRpcStructBase.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcArray.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcBase64.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcBoolean.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcDateTime.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcDouble.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcI4.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcInt.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcString.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcStruct.cs" />
     <Compile Include="XmlRpc\XmlRpcClient.cs" />
     <Compile Include="XmlRpc\XmlRpcClientConfig.cs" />
     <Compile Include="XmlRpc\XmlRpcConstants.cs" />
     <Compile Include="XmlRpc\XmlRpcMethodCall.cs" />
-    <Compile Include="XmlRpc\XmlRpcMethodResponse.cs" />
+    <Compile Include="XmlRpc\Types\XmlRpcType.cs" />
     <Compile Include="XmlRpc\XmlRpcServerCallback.cs" />
   </ItemGroup>
   <ItemGroup>
