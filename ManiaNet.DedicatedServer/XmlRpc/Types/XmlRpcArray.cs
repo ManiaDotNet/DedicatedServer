@@ -5,12 +5,22 @@ using System.Xml.Linq;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.Types
 {
+    /// <summary>
+    /// Represents an XmlRpcType containing an array of XmlRpcTypes that derive from TBase.
+    /// For example for a string array, TArray would be XmlRpcString and TBase would be string.
+    /// TBase enforces TArray. TArray has to be XmlRpcString because it derives from XmlRpcType&lt;string&gt;
+    /// </summary>
+    /// <typeparam name="TArray">TArray[] is the Type of the Value property.</typeparam>
+    /// <typeparam name="TBase">TBase is the base type that TArray has to derive from.</typeparam>
     public class XmlRpcArray<TArray, TBase> : XmlRpcType<TArray[]> where TArray : XmlRpcType<TBase>, new()
     {
         public const string DataElement = "data";
 
         public const string ValueElement = "value";
 
+        /// <summary>
+        /// The name of Elements of this type.
+        /// </summary>
         public override string ElementName
         {
             get { return "array"; }
@@ -21,6 +31,10 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
             Value = new TArray[0];
         }
 
+        /// <summary>
+        /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.
+        /// </summary>
+        /// <returns>The generated Xml.</returns>
         public override XElement GenerateXml()
         {
             XElement array = new XElement(XName.Get(this.ElementName));
@@ -37,6 +51,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
             return array;
         }
 
+        /// <summary>
+        /// Sets the Value property with the information contained in the XElement. It must have a name fitting with the ElementName property.
+        /// </summary>
+        /// <param name="xElement">The element containing the information.</param>
+        /// <returns>Itself, for convenience.</returns>
         public override XmlRpcType<TArray[]> ParseXml(XElement xElement)
         {
             checkName(xElement);

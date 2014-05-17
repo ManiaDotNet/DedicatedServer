@@ -6,13 +6,23 @@ using System.Xml.Linq;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.Types
 {
+    /// <summary>
+    /// Represents an XmlRpcType containing a DateTime.
+    /// </summary>
     public class XmlRpcDateTime : XmlRpcType<DateTime>
     {
+        /// <summary>
+        /// The name of Elements of this type.
+        /// </summary>
         public override string ElementName
         {
             get { return "dateTime.iso8601"; }
         }
 
+        /// <summary>
+        /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.
+        /// </summary>
+        /// <returns>The generated Xml.</returns>
         public override XElement GenerateXml()
         {
             string date = Value.Year.ToString() + Value.Month.ToString() + Value.Date.ToString() + "T" + Value.Hour.ToString() + ":" + Value.Minute.ToString() + ":" + Value.Second.ToString();
@@ -20,6 +30,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
             return new XElement(XName.Get(ElementName), date);
         }
 
+        /// <summary>
+        /// Sets the Value property with the information contained in the XElement. It must have a name fitting with the ElementName property.
+        /// </summary>
+        /// <param name="xElement">The element containing the information.</param>
+        /// <returns>Itself, for convenience.</returns>
         public override XmlRpcType<DateTime> ParseXml(XElement xElement)
         {
             checkName(xElement);

@@ -17,6 +17,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     /// <param name="serverCallback">The xml formatted content of the method response.</param>
     public delegate void ServerCallbackEventHandler(string serverCallback);
 
+    /// <summary>
+    /// Interface for XmlRpc Clients.
+    /// </summary>
     public interface IXmlRpcClient
     {
         /// <summary>
