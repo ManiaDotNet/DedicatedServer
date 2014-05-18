@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 
 namespace ManiaNet.DedicatedServer.XmlRpc
 {
@@ -12,8 +14,10 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     /// </summary>
     public sealed class XmlRpcClient : IXmlRpcClient
     {
+        private Thread eventDispatcherThread;
+        private ConcurrentQueue<Message> messageQueue = new ConcurrentQueue<Message>();
+        private Thread receiveLoopThread;
         private uint requestHandle = XmlRpcConstants.ServerCallbackHandle;
-
         private Stream stream;
         private StreamWriter writer;
 
@@ -32,58 +36,16 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         }
 
         /// <summary>
-        /// Opens a connection to the Address and Port specified in the Config.
+        /// Stops the Threads for receiving data and dispatching events, and closes the connection.
         /// </summary>
-        public void Connect()
+        public void EndReceive()
         {
-            stream = new TcpClient(Configuration.Address, Configuration.Port).GetStream();
-            writer = new StreamWriter(stream, Encoding.ASCII);
+            receiveLoopThread.Abort();
+            eventDispatcherThread.Abort();
 
-            byte[] protocolNameLengthBytes = new byte[4];
-            stream.Read(protocolNameLengthBytes, 0, 4);
-            uint protocolNameLength = BitConverter.ToUInt32(protocolNameLengthBytes, 0);
-
-            if (protocolNameLength != 11)
-                throw new Exception("Wrong Low-Level Protocol Header");
-
-            string protocolName = decodeBytes(read(11));
-
-            if (protocolName != "GBXRemote 2")
-                throw new Exception("Wrong Low-Level Protocol Version");
-        }
-
-        /// <summary>
-        /// Start reading data from the opened connection.
-        /// </summary>
-        public void Receive()
-        {
-            byte[] messageHeaderBytes = new byte[8];
-            uint messageLength;
-            uint messageHandle;
-
-            while (true)
-            {
-                stream.Read(messageHeaderBytes, 0, 8);
-                messageLength = BitConverter.ToUInt32(messageHeaderBytes, 0);
-                messageHandle = BitConverter.ToUInt32(messageHeaderBytes, 4);
-
-                string message = decodeBytes(read((int)messageLength));
-
-                if ((messageHandle & XmlRpcConstants.ServerCallbackHandle) == 0)
-                {
-                    //This is a server callback
-                    Console.WriteLine("Server Callback");
-                    onServerCallback(message);
-                }
-                else
-                {
-                    //This is a method response
-                    Console.WriteLine("Method Response for handle: " + messageHandle);
-                    onMethodResponse(messageHandle, message);
-                }
-
-                Console.WriteLine(message);
-            }
+            //Writer closes and disposes the stream.
+            writer.Close();
+            writer.Dispose();
         }
 
         /// <summary>
@@ -109,6 +71,44 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         }
 
         /// <summary>
+        /// Connects to the xml rpc server and starts Threads for receiving data from the opened connection and dispatching the appropriate events.
+        /// </summary>
+        public void StartReceive()
+        {
+            connect();
+
+            receiveLoopThread = new Thread(receiveLoop);
+            receiveLoopThread.IsBackground = true;
+
+            eventDispatcherThread = new Thread(eventDispatcher);
+            eventDispatcherThread.IsBackground = true;
+
+            receiveLoopThread.Start();
+            eventDispatcherThread.Start();
+        }
+
+        /// <summary>
+        /// Opens a connection to the Address and Port specified in the Config.
+        /// </summary>
+        private void connect()
+        {
+            stream = new TcpClient(Configuration.Address, Configuration.Port).GetStream();
+            writer = new StreamWriter(stream, Encoding.ASCII);
+
+            byte[] protocolNameLengthBytes = new byte[4];
+            stream.Read(protocolNameLengthBytes, 0, 4);
+            uint protocolNameLength = BitConverter.ToUInt32(protocolNameLengthBytes, 0);
+
+            if (protocolNameLength != 11)
+                throw new Exception("Wrong Low-Level Protocol Header");
+
+            string protocolName = decodeBytes(read(11));
+
+            if (protocolName != "GBXRemote 2")
+                throw new Exception("Wrong Low-Level Protocol Version");
+        }
+
+        /// <summary>
         /// Takes a byte array and decodes it into a string, based on ASCII character values.
         /// </summary>
         /// <param name="bytes">The string as byte array.</param>
@@ -124,6 +124,41 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             return new string(chars);
         }
 
+        private void eventDispatcher()
+        {
+            while (true)
+            {
+                Message message;
+                if (messageQueue.TryDequeue(out message))
+                {
+                    if ((message.Handle & XmlRpcConstants.ServerCallbackHandle) == 0)
+                    {
+                        //Message is a server callback
+                        onServerCallback(message.Content);
+                    }
+                    else
+                    {
+                        //Message is a method response
+                        onMethodResponse(message.Handle, message.Content);
+                    }
+                }
+                else //If it couldn't dequeue a Message, it means there's none waiting.
+                {
+                    Thread.Sleep(100);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fires the ConnectionDroppedUnexpectedly event.
+        /// </summary>
+        /// <param name="cause">The Exception that caused the dropping.</param>
+        private void onConnectionDroppedUnexpectedly(Exception cause)
+        {
+            if (ConnectionDroppedUnexpectedly != null)
+                ConnectionDroppedUnexpectedly(this, cause);
+        }
+
         /// <summary>
         /// Fires the MethodResponse event.
         /// </summary>
@@ -132,7 +167,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         private void onMethodResponse(uint messageHandle, string methodResponse)
         {
             if (MethodResponse != null)
-                MethodResponse(messageHandle, methodResponse);
+                MethodResponse(this, messageHandle, methodResponse);
         }
 
         /// <summary>
@@ -142,7 +177,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         private void onServerCallback(string serverCallback)
         {
             if (ServerCallback != null)
-                ServerCallback(serverCallback);
+                ServerCallback(this, serverCallback);
         }
 
         /// <summary>
@@ -160,6 +195,43 @@ namespace ManiaNet.DedicatedServer.XmlRpc
 
             return result;
         }
+
+        private void receiveLoop()
+        {
+            byte[] messageHeaderBytes = new byte[8];
+            uint messageLength;
+            uint messageHandle;
+
+            while (true)
+            {
+                try
+                {
+                    stream.Read(messageHeaderBytes, 0, 8);
+                    messageLength = BitConverter.ToUInt32(messageHeaderBytes, 0);
+                    messageHandle = BitConverter.ToUInt32(messageHeaderBytes, 4);
+
+                    string messageContent = decodeBytes(read((int)messageLength));
+
+                    messageQueue.Enqueue(new Message(messageHandle, messageContent));
+                }
+                catch (ThreadAbortException)
+                {
+                    //If it's a thread abort exception, the connection didn't drop unexpectedly.
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    //If anything goes wrong with the message reading, it's most likely the connection dropping.
+                    onConnectionDroppedUnexpectedly(ex);
+                    break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fires when the connection is dropped unexpectedly.
+        /// </summary>
+        public event ConnectionDroppedUnexpectedlyEventHandler ConnectionDroppedUnexpectedly;
 
         /// <summary>
         /// Fires when a MethodResponse is received.
@@ -195,6 +267,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             {
                 Address = address;
                 Port = port;
+            }
+        }
+
+        private class Message
+        {
+            public string Content { get; private set; }
+
+            public uint Handle { get; private set; }
+
+            public Message(uint handle, string content)
+            {
+                Handle = handle;
+                Content = content;
             }
         }
     }

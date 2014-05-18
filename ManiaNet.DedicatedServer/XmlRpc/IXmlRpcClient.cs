@@ -5,17 +5,25 @@ using System.Linq;
 namespace ManiaNet.DedicatedServer.XmlRpc
 {
     /// <summary>
+    /// EventHandler for the ConnectionDroppedUnexpectedly event.
+    /// </summary>
+    /// <param name="sender">The xml rpc client of which the connection dropped.</param>
+    public delegate void ConnectionDroppedUnexpectedlyEventHandler(IXmlRpcClient sender, Exception cause);
+
+    /// <summary>
     /// EventHandler for the MethodResponse event.
     /// </summary>
+    /// <param name="sender">The xml rpc client that received the method response.</param>
     /// <param name="requestHandle">The handle of the method call that the response is for.</param>
     /// <param name="methodResponse">The xml formatted content of the method response.</param>
-    public delegate void MethodResponseEventHandler(uint requestHandle, string methodResponse);
+    public delegate void MethodResponseEventHandler(IXmlRpcClient sender, uint requestHandle, string methodResponse);
 
     /// <summary>
     /// EventHandler for the ServerCallback event.
     /// </summary>
+    /// <param name="sender">The xml rpc client that reveived the server callback.</param>
     /// <param name="serverCallback">The xml formatted content of the method response.</param>
-    public delegate void ServerCallbackEventHandler(string serverCallback);
+    public delegate void ServerCallbackEventHandler(IXmlRpcClient sender, string serverCallback);
 
     /// <summary>
     /// Interface for XmlRpc Clients.
@@ -23,14 +31,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     public interface IXmlRpcClient
     {
         /// <summary>
-        /// Open a connection to an XmlRpc interface.
+        /// Stop reading data from the interface connection.
         /// </summary>
-        void Connect();
-
-        /// <summary>
-        /// Start reading data from the interface connection.
-        /// </summary>
-        void Receive();
+        void EndReceive();
 
         /// <summary>
         /// Send a xml formatted request to the XmlRpc interface.
@@ -38,6 +41,16 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         /// <param name="request">The xml formatted request.</param>
         /// <returns>The handle associated with the request.</returns>
         uint SendRequest(string request);
+
+        /// <summary>
+        /// Start reading data from the interface connection.
+        /// </summary>
+        void StartReceive();
+
+        /// <summary>
+        /// Fires when the connection drops unexpectedly.
+        /// </summary>
+        event ConnectionDroppedUnexpectedlyEventHandler ConnectionDroppedUnexpectedly;
 
         /// <summary>
         /// Fires when a MethodResponse is received.

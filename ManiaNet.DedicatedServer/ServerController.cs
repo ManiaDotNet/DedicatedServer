@@ -10,22 +10,45 @@ namespace ManiaNet.DedicatedServer
     {
         private IXmlRpcClient xmlRpcClient;
 
-        public ServerControllerConfig Config { get; private set; }
+        public Config Configuration { get; private set; }
 
-        public ServerController(IXmlRpcClient xmlRpcClient, ServerControllerConfig config)
+        public ServerController(IXmlRpcClient xmlRpcClient, Config config)
         {
             this.xmlRpcClient = xmlRpcClient;
-            Config = config;
+            Configuration = config;
+        }
+
+        public void Start()
+        {
+            xmlRpcClient.StartReceive();
+        }
+
+        public void Stop()
+        {
+            xmlRpcClient.EndReceive();
         }
 
         private bool authenticate()
         {
-            return awaitResponse(xmlRpcClient.SendRequest(new XmlRpcAuthenticate(Config.Login, Config.Password).GetXml()));
+            return awaitResponse(xmlRpcClient.SendRequest(new XmlRpcAuthenticate(Configuration.Login, Configuration.Password).GetXml()));
         }
 
         private bool awaitResponse(uint p)
         {
             throw new NotImplementedException();
+        }
+
+        public class Config
+        {
+            public string Login { get; private set; }
+
+            public string Password { get; private set; }
+
+            public Config(string login, string password)
+            {
+                Login = login;
+                Password = password;
+            }
         }
     }
 }

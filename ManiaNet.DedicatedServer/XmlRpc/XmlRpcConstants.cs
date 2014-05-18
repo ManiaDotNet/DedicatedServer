@@ -32,7 +32,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         public const string ParamsAndMethodCallClosing = "</params></methodCall>";
 
         /// <summary>
-        /// A uint with a 1 at the highest value.
+        /// A uint with a 1 at the highest bit.
         /// If the request handle is 0 after performing a bitwise AND ond this then it's a server callback.
         /// </summary>
         public const uint ServerCallbackHandle = 0x80000000;
