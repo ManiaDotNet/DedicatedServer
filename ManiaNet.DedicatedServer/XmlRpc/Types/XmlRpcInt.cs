@@ -16,6 +16,14 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcInt"/> class with the default int value for the Value property.
+        /// </summary>
+        public XmlRpcInt()
+        {
+            Value = default(int);
+        }
+
+        /// <summary>
         /// Sets the Value property with the information contained in the XElement. It must have a name fitting with the ElementName property.
         /// </summary>
         /// <param name="xElement">The element containing the information.</param>

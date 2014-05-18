@@ -19,6 +19,14 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcBoolean"/> class with the default bool value for the Value property.
+        /// </summary>
+        public XmlRpcBoolean()
+        {
+            Value = default(bool);
+        }
+
+        /// <summary>
         /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.
         /// </summary>
         /// <returns>The generated Xml.</returns>

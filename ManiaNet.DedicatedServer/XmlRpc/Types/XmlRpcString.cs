@@ -19,6 +19,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
             get { return "string"; }
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcString"/> class with an empty string for the Value property.
+        /// </summary>
         public XmlRpcString()
         {
             Value = string.Empty;

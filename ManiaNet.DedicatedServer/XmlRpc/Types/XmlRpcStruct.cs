@@ -20,6 +20,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
             get { return "struct"; }
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcStruct"/> class with the parameterless TXmlRpcStruct constructor.
+        /// </summary>
         public XmlRpcStruct()
         {
             Value = new TXmlRpcStruct();

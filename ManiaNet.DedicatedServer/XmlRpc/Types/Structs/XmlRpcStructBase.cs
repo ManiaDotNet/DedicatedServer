@@ -5,7 +5,11 @@ using System.Xml.Linq;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
 {
-    public abstract class XmlRpcStructBase<TXmlRpcStruct>
+    /// <summary>
+    /// Abstract base class for all xml rpc structs.
+    /// </summary>
+    /// <typeparam name="TXmlRpcStruct">The type of the derivative.</typeparam>
+    public abstract class XmlRpcStructBase<TXmlRpcStruct> where TXmlRpcStruct : XmlRpcStructBase<TXmlRpcStruct>
     {
         public const string ElementName = "struct";
 

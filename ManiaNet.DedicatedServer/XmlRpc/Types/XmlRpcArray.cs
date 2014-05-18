@@ -26,6 +26,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
             get { return "array"; }
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcArray"/> class with a zero-length TArray array for the Value property.
+        /// </summary>
         public XmlRpcArray()
         {
             Value = new TArray[0];

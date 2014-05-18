@@ -20,6 +20,14 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcDateTime"/> class with the default DateTime value for the Value property.
+        /// </summary>
+        public XmlRpcDateTime()
+        {
+            Value = default(DateTime);
+        }
+
+        /// <summary>
         /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.
         /// </summary>
         /// <returns>The generated Xml.</returns>

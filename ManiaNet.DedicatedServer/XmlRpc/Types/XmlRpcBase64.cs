@@ -18,6 +18,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
             get { return "base64"; }
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcBase64"/> class with a zero-length byte array for the Value property.
+        /// </summary>
         public XmlRpcBase64()
         {
             Value = new byte[0];
