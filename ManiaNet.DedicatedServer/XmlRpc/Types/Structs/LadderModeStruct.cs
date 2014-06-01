@@ -10,17 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
     public sealed class LadderModeStruct : I4CurrentAndNextValueStruct<LadderModeStruct>
     {
         /// <summary>
-        /// Value for Forced ladder mode.
-        /// </summary>
-        public const int Forced = 1;
-
-        /// <summary>
-        /// Value for Inactive ladder mode.
-        /// </summary>
-        public const int Inactive = 0;
-
-        /// <summary>
-        /// Gets the current ladder mode. Compare to Forced and Inactive constants.
+        /// Gets the current ladder mode. Compare to <see cref="ManiaNet.DedicatedServer.LadderModes"/> values.
         /// </summary>
         public override int CurrentValue
         {
@@ -28,7 +18,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         }
 
         /// <summary>
-        /// Gets the next ladder mode. Compare to Forced and Inactive constants.
+        /// Gets the next ladder mode.. Compare to <see cref="ManiaNet.DedicatedServer.LadderModes"/> values.
         /// </summary>
         public override int NextValue
         {

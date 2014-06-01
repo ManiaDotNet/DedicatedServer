@@ -84,9 +84,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             connect();
 
             receiveLoopThread = new Thread(receiveLoop);
+            receiveLoopThread.Name = Configuration.Address + " Receive Loop";
             receiveLoopThread.IsBackground = true;
 
             eventDispatcherThread = new Thread(eventDispatcher);
+            eventDispatcherThread.Name = Configuration.Address + " Event Dispatcher";
             eventDispatcherThread.IsBackground = true;
 
             receiveLoopThread.Start();
@@ -132,9 +134,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc
 
         private void eventDispatcher()
         {
+            Message message;
             while (true)
             {
-                Message message;
                 if (messageQueue.TryDequeue(out message))
                 {
                     if ((message.Handle & XmlRpcConstants.ServerCallbackHandle) == 0)

@@ -156,15 +156,15 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         }
 
         /// <summary>
-        /// Gets or sets the next ladder mode. Compare to Forced and Inactive constants in <see cref="ManiaNet.DedicatedServer.XmlRpc.Types.Structs.LadderModeStruct"/>.
+        /// Gets or sets the next ladder mode. Compare to <see cref="ManiaNet.DedicatedServer.LadderModes"/> values.
         /// </summary>
         public int NextLadderMode
         {
             get { return nextLadderMode.Value; }
             set
             {
-                if (value != LadderModeStruct.Forced && value != LadderModeStruct.Inactive)
-                    throw new ArgumentOutOfRangeException("value", "Ladder mode has to be Forced or Inactive");
+                if (value != LadderModes.Inactive && value != LadderModes.Forced)
+                    throw new ArgumentOutOfRangeException("value", "Ladder mode has to one of the values from the LadderModes class.");
 
                 nextLadderMode.Value = value;
             }

@@ -146,7 +146,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         }
 
         /// <summary>
-        /// Gets the current ladder mode. Compare to Forced and Inactive constants in <see cref="ManiaNet.DedicatedServer.XmlRpc.Types.Structs.LadderModeStruct"/>.
+        /// Gets the current ladder mode.. Compare to <see cref="ManiaNet.DedicatedServer.LadderModes"/> values.
         /// </summary>
         public int CurrentLadderMode
         {
