@@ -177,7 +177,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "PublishedIp":
-                        publishedIp.ParseXml(getNormalizedStringValueContent(value, publishedIp.ElementName));
+                        publishedIp.ParseXml(getValueContent(value, publishedIp.ElementName));
                         break;
 
                     case "Port":
@@ -189,11 +189,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "TitleId":
-                        titleId.ParseXml(getNormalizedStringValueContent(value, titleId.ElementName));
+                        titleId.ParseXml(getValueContent(value, titleId.ElementName));
                         break;
 
                     case "ServerLogin":
-                        serverLogin.ParseXml(getNormalizedStringValueContent(value, serverLogin.ElementName));
+                        serverLogin.ParseXml(getValueContent(value, serverLogin.ElementName));
                         break;
 
                     case "ServerPlayerId":

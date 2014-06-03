@@ -85,7 +85,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "StateName":
-                        stateName.ParseXml(getNormalizedStringValueContent(value, stateName.ElementName));
+                        stateName.ParseXml(getValueContent(value, stateName.ElementName));
                         break;
 
                     case "TransactionId":

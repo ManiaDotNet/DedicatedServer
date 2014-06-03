@@ -68,11 +68,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "EnvName":
-                        envName.ParseXml(getNormalizedStringValueContent(value, envName.ElementName));
+                        envName.ParseXml(getValueContent(value, envName.ElementName));
                         break;
 
                     case "Url":
-                        url.ParseXml(getNormalizedStringValueContent(value, url.ElementName));
+                        url.ParseXml(getValueContent(value, url.ElementName));
                         break;
 
                     default:

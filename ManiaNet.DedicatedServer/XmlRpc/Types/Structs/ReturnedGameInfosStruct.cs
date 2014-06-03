@@ -234,55 +234,59 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "GameMode":
-                        gameMode.ParseXml(value);
+                        gameMode.ParseXml(getValueContent(value, gameMode.ElementName));
+                        break;
+
+                    case "ChatTime":
+                        chatTime.ParseXml(getValueContent(value, chatTime.ElementName));
                         break;
 
                     case "NbChallenge":
-                        nbChallenge.ParseXml(value);
+                        nbChallenge.ParseXml(getValueContent(value, nbChallenge.ElementName));
                         break;
 
                     case "RoundsPointsLimit":
-                        roundsPointsLimit.ParseXml(value);
+                        roundsPointsLimit.ParseXml(getValueContent(value, roundsPointsLimit.ElementName));
                         break;
 
                     case "RoundsUseNewRules":
-                        roundsUseNewRules.ParseXml(value);
+                        roundsUseNewRules.ParseXml(getValueContent(value, roundsUseNewRules.ElementName));
                         break;
 
                     case "RoundsForcedLaps":
-                        roundsForcedLaps.ParseXml(value);
+                        roundsForcedLaps.ParseXml(getValueContent(value, roundsForcedLaps.ElementName));
                         break;
 
                     case "TimeAttackLimit":
-                        timeAttackLimit.ParseXml(value);
+                        timeAttackLimit.ParseXml(getValueContent(value, timeAttackLimit.ElementName));
                         break;
 
                     case "TimeAttackSynchStartPeriod":
-                        timeAttackSynchStartPeriod.ParseXml(value);
+                        timeAttackSynchStartPeriod.ParseXml(getValueContent(value, timeAttackSynchStartPeriod.ElementName));
                         break;
 
                     case "TeamPointsLimit":
-                        teamPointsLimit.ParseXml(value);
+                        teamPointsLimit.ParseXml(getValueContent(value, teamPointsLimit.ElementName));
                         break;
 
                     case "TeamMaxPoints":
-                        teamMaxPoints.ParseXml(value);
+                        teamMaxPoints.ParseXml(getValueContent(value, teamMaxPoints.ElementName));
                         break;
 
                     case "TeamUseNewRules":
-                        teamUseNewRules.ParseXml(value);
+                        teamUseNewRules.ParseXml(getValueContent(value, teamUseNewRules.ElementName));
                         break;
 
                     case "LapsNbLaps":
-                        lapsNbLaps.ParseXml(value);
+                        lapsNbLaps.ParseXml(getValueContent(value, lapsNbLaps.ElementName));
                         break;
 
                     case "LapsTimeLimit":
-                        lapsTimeLimit.ParseXml(value);
+                        lapsTimeLimit.ParseXml(getValueContent(value, lapsTimeLimit.ElementName));
                         break;
 
                     case "FinishTimeout":
-                        finishTimeout.ParseXml(value);
+                        finishTimeout.ParseXml(getValueContent(value, finishTimeout.ElementName));
                         break;
 
                     default:

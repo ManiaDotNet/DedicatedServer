@@ -51,7 +51,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "Login":
-                        login.ParseXml(getNormalizedStringValueContent(value, login.ElementName));
+                        login.ParseXml(getValueContent(value, login.ElementName));
                         break;
 
                     default:

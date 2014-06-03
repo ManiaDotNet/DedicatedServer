@@ -144,23 +144,23 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "Name":
-                        name.ParseXml(getNormalizedStringValueContent(value, name.ElementName));
+                        name.ParseXml(getValueContent(value, name.ElementName));
                         break;
 
                     case "ZonePath":
-                        zonePath.ParseXml(getNormalizedStringValueContent(value, zonePath.ElementName));
+                        zonePath.ParseXml(getValueContent(value, zonePath.ElementName));
                         break;
 
                     case "City":
-                        city.ParseXml(getNormalizedStringValueContent(value, city.ElementName));
+                        city.ParseXml(getValueContent(value, city.ElementName));
                         break;
 
                     case "EmblemUrl":
-                        emblemUrl.ParseXml(getNormalizedStringValueContent(value, emblemUrl.ElementName));
+                        emblemUrl.ParseXml(getValueContent(value, emblemUrl.ElementName));
                         break;
 
                     case "ClubLinkUrl":
-                        clubLinkUrl.ParseXml(getNormalizedStringValueContent(value, clubLinkUrl.ElementName));
+                        clubLinkUrl.ParseXml(getValueContent(value, clubLinkUrl.ElementName));
                         break;
 
                     case "HuePrimary":
@@ -172,7 +172,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "RGB":
-                        rgb.ParseXml(getNormalizedStringValueContent(value, rgb.ElementName));
+                        rgb.ParseXml(getValueContent(value, rgb.ElementName));
                         break;
 
                     default:

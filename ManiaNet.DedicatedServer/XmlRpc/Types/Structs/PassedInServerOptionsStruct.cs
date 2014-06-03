@@ -290,19 +290,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "Name":
-                        name.ParseXml(getNormalizedStringValueContent(value, name.ElementName));
+                        name.ParseXml(getValueContent(value, name.ElementName));
                         break;
 
                     case "Comment":
-                        comment.ParseXml(getNormalizedStringValueContent(value, comment.ElementName));
+                        comment.ParseXml(getValueContent(value, comment.ElementName));
                         break;
 
                     case "Password":
-                        password.ParseXml(getNormalizedStringValueContent(value, password.ElementName));
+                        password.ParseXml(getValueContent(value, password.ElementName));
                         break;
 
                     case "PasswordForSpectator":
-                        passwordForSpectator.ParseXml(getNormalizedStringValueContent(value, passwordForSpectator.ElementName));
+                        passwordForSpectator.ParseXml(getValueContent(value, passwordForSpectator.ElementName));
                         break;
 
                     case "NextMaxPlayers":

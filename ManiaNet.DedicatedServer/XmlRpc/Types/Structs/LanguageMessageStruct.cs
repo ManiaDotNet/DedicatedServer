@@ -90,11 +90,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "Lang":
-                        lang.ParseXml(getNormalizedStringValueContent(value, lang.ElementName));
+                        lang.ParseXml(getValueContent(value, lang.ElementName));
                         break;
 
                     case "Text":
-                        text.ParseXml(getNormalizedStringValueContent(value, text.ElementName));
+                        text.ParseXml(getValueContent(value, text.ElementName));
                         break;
 
                     default:

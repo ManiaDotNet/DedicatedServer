@@ -6,35 +6,30 @@ using System.Xml.Linq;
 namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
 {
     /// <summary>
-    /// Represents the struct returned by the GetUseChangingValidationSeed method call.
+    /// Represents the base for the structs returned by various method calls.
     /// </summary>
-    public sealed class UseChangingValidationSeedStruct : BaseStruct<UseChangingValidationSeedStruct>
+    /// <typeparam name="TDerived">The type of the derived class.</typeparam>
+    public abstract class StringCurrentAndNextValueStruct<TDerived> : BaseStruct<TDerived> where TDerived : StringCurrentAndNextValueStruct<TDerived>
     {
         /// <summary>
         /// Backing field for the CurrentValue property.
         /// </summary>
-        private XmlRpcBoolean currentValue = new XmlRpcBoolean();
+        protected XmlRpcString currentValue = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the NextValue property.
         /// </summary>
-        private XmlRpcBoolean nextValue = new XmlRpcBoolean();
+        protected XmlRpcString nextValue = new XmlRpcString();
 
         /// <summary>
         /// Gets the current value.
         /// </summary>
-        public bool CurrentValue
-        {
-            get { return currentValue.Value; }
-        }
+        public abstract string CurrentValue { get; }
 
         /// <summary>
         /// Gets the next value.
         /// </summary>
-        public bool NextValue
-        {
-            get { return nextValue.Value; }
-        }
+        public abstract string NextValue { get; }
 
         /// <summary>
         /// Generates an XElement storing the information in this struct.
@@ -52,7 +47,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         /// </summary>
         /// <param name="xElement">The struct element storing the information.</param>
         /// <returns>Itself, for convenience.</returns>
-        public override UseChangingValidationSeedStruct ParseXml(XElement xElement)
+        public override TDerived ParseXml(XElement xElement)
         {
             checkName(xElement);
 
@@ -77,7 +72,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 }
             }
 
-            return this;
+            return (TDerived)this;
         }
     }
 }

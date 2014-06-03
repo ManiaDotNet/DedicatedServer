@@ -90,17 +90,17 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         /// This is because value tags with only content that is not inside another tag are string by default.
         /// </summary>
         /// <param name="value">The value element to get the content from.</param>
-        /// <param name="stringElement">The name for the string element (string).</param>
+        /// <param name="elementName">The name for the string element (string).</param>
         /// <returns>The content as an element.</returns>
-        protected XElement getNormalizedStringValueContent(XElement value, string stringElement)
+        protected XElement getValueContent(XElement value, string elementName)
         {
             if (!value.Name.LocalName.Equals(ValueElement))
                 throw new FormatException("Value Element has to have the name " + ValueElement);
 
             if (value.HasElements)
-                return value.Element(XName.Get(stringElement));
+                return value.Element(XName.Get(elementName));
 
-            return new XElement(XName.Get(stringElement), value.Value);
+            return new XElement(XName.Get(elementName), value.Value);
         }
 
         /// <summary>

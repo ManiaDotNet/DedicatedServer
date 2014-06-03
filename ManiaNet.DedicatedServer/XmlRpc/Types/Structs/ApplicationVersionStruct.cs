@@ -62,7 +62,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         /// <summary>
         /// Gets the ID of the Title that's currently being played (TMCanyon, TMValley, etc.) on the server application.
         /// </summary>
-        public string TitleI
+        public string TitleId
         {
             get { return titleId.Value; }
         }
@@ -107,23 +107,23 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "Name":
-                        name.ParseXml(getNormalizedStringValueContent(value, name.ElementName));
+                        name.ParseXml(getValueContent(value, name.ElementName));
                         break;
 
                     case "TitleId":
-                        titleId.ParseXml(getNormalizedStringValueContent(value, titleId.ElementName));
+                        titleId.ParseXml(getValueContent(value, titleId.ElementName));
                         break;
 
                     case "Version":
-                        version.ParseXml(getNormalizedStringValueContent(value, version.ElementName));
+                        version.ParseXml(getValueContent(value, version.ElementName));
                         break;
 
                     case "Build":
-                        build.ParseXml(getNormalizedStringValueContent(value, build.ElementName));
+                        build.ParseXml(getValueContent(value, build.ElementName));
                         break;
 
                     case "ApiVersion":
-                        apiVersion.ParseXml(getNormalizedStringValueContent(value, apiVersion.ElementName));
+                        apiVersion.ParseXml(getValueContent(value, apiVersion.ElementName));
                         break;
 
                     default:

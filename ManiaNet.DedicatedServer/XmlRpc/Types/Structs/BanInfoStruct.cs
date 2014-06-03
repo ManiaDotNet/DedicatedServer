@@ -79,15 +79,15 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "Login":
-                        login.ParseXml(getNormalizedStringValueContent(value, login.ElementName));
+                        login.ParseXml(getValueContent(value, login.ElementName));
                         break;
 
                     case "ClientName":
-                        clientName.ParseXml(getNormalizedStringValueContent(value, clientName.ElementName));
+                        clientName.ParseXml(getValueContent(value, clientName.ElementName));
                         break;
 
                     case "IPAddress":
-                        ipAddress.ParseXml(getNormalizedStringValueContent(value, ipAddress.ElementName));
+                        ipAddress.ParseXml(getValueContent(value, ipAddress.ElementName));
                         break;
 
                     default:

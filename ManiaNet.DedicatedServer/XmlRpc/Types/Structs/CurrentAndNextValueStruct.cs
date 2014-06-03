@@ -6,30 +6,36 @@ using System.Xml.Linq;
 namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
 {
     /// <summary>
-    /// Represents the base for the structs returned by the GetCallVoteTimeOut, GetMaxPlayers, GetMaxSpectators, GetLadderMode, and GetVehicleNetQuality method calls.
+    /// Represents the struct returned by various method calls.
     /// </summary>
-    /// <typeparam name="TDerived">The type of the derived class.</typeparam>
-    public abstract class I4CurrentAndNextValueStruct<TDerived> : BaseStruct<TDerived> where TDerived : I4CurrentAndNextValueStruct<TDerived>
+    public sealed class I4CurrentAndNextValueStruct<TXmlRpcType, TBase> : BaseStruct<I4CurrentAndNextValueStruct<TXmlRpcType, TBase>>
+        where TXmlRpcType : XmlRpcType<TBase>, new()
     {
         /// <summary>
         /// Backing field for the CurrentValue property.
         /// </summary>
-        protected XmlRpcI4 currentValue = new XmlRpcI4();
+        private TXmlRpcType currentValue = new TXmlRpcType();
 
         /// <summary>
         /// Backing field for the NextValue property.
         /// </summary>
-        protected XmlRpcI4 nextValue = new XmlRpcI4();
+        private TXmlRpcType nextValue = new TXmlRpcType();
 
         /// <summary>
         /// Gets the current value.
         /// </summary>
-        public abstract int CurrentValue { get; }
+        public TBase CurrentValue
+        {
+            get { return currentValue.Value; }
+        }
 
         /// <summary>
         /// Gets the next value.
         /// </summary>
-        public abstract int NextValue { get; }
+        public TBase NextValue
+        {
+            get { return nextValue.Value; }
+        }
 
         /// <summary>
         /// Generates an XElement storing the information in this struct.
@@ -47,7 +53,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         /// </summary>
         /// <param name="xElement">The struct element storing the information.</param>
         /// <returns>Itself, for convenience.</returns>
-        public override TDerived ParseXml(XElement xElement)
+        public override I4CurrentAndNextValueStruct<TXmlRpcType, TBase> ParseXml(XElement xElement)
         {
             checkName(xElement);
 
@@ -60,11 +66,17 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "CurrentValue":
-                        currentValue.ParseXml(value);
+                        if (typeof(TBase).Equals(typeof(string)))
+                            currentValue.ParseXml(getValueContent(value, currentValue.ElementName));
+                        else
+                            currentValue.ParseXml(value);
                         break;
 
                     case "NextValue":
-                        nextValue.ParseXml(value);
+                        if (typeof(TBase).Equals(typeof(string)))
+                            nextValue.ParseXml(getValueContent(value, nextValue.ElementName));
+                        else
+                            nextValue.ParseXml(value);
                         break;
 
                     default:
@@ -72,7 +84,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 }
             }
 
-            return (TDerived)this;
+            return this;
         }
     }
 }

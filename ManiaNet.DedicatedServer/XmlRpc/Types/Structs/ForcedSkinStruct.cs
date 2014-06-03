@@ -128,19 +128,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "Orig":
-                        orig.ParseXml(getNormalizedStringValueContent(value, orig.ElementName));
+                        orig.ParseXml(getValueContent(value, orig.ElementName));
                         break;
 
                     case "Name":
-                        name.ParseXml(getNormalizedStringValueContent(value, name.ElementName));
+                        name.ParseXml(getValueContent(value, name.ElementName));
                         break;
 
                     case "Checksum":
-                        checksum.ParseXml(getNormalizedStringValueContent(value, checksum.ElementName));
+                        checksum.ParseXml(getValueContent(value, checksum.ElementName));
                         break;
 
                     case "Url":
-                        url.ParseXml(getNormalizedStringValueContent(value, url.ElementName));
+                        url.ParseXml(getValueContent(value, url.ElementName));
                         break;
 
                     default:

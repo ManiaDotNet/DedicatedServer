@@ -65,11 +65,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "ClubLink1":
-                        clubLink1.ParseXml(getNormalizedStringValueContent(value, clubLink1.ElementName));
+                        clubLink1.ParseXml(getValueContent(value, clubLink1.ElementName));
                         break;
 
                     case "ClubLink2":
-                        clubLink2.ParseXml(getNormalizedStringValueContent(value, clubLink2.ElementName));
+                        clubLink2.ParseXml(getValueContent(value, clubLink2.ElementName));
                         break;
 
                     default:

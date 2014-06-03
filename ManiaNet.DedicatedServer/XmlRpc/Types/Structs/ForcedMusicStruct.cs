@@ -83,11 +83,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "Url":
-                        url.ParseXml(getNormalizedStringValueContent(value, url.ElementName));
+                        url.ParseXml(getValueContent(value, url.ElementName));
                         break;
 
                     case "File":
-                        file.ParseXml(getNormalizedStringValueContent(value, file.ElementName));
+                        file.ParseXml(getValueContent(value, file.ElementName));
                         break;
 
                     default:
