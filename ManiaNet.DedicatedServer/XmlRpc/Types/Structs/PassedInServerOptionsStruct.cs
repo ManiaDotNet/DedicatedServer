@@ -306,43 +306,43 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "NextMaxPlayers":
-                        nextMaxPlayers.ParseXml(value);
+                        nextMaxPlayers.ParseXml(getValueContent(value, nextMaxPlayers.ElementName));
                         break;
 
                     case "NextMaxSpectators":
-                        nextMaxSpectators.ParseXml(value);
+                        nextMaxSpectators.ParseXml(getValueContent(value, nextMaxSpectators.ElementName));
                         break;
 
                     case "IsP2PUpload":
-                        isP2PUpload.ParseXml(value);
+                        isP2PUpload.ParseXml(getValueContent(value, isP2PUpload.ElementName));
                         break;
 
                     case "IsP2PDownload":
-                        isP2PDownload.ParseXml(value);
+                        isP2PDownload.ParseXml(getValueContent(value, isP2PDownload.ElementName));
                         break;
 
                     case "NextLadderMode":
-                        nextLadderMode.ParseXml(value);
+                        nextLadderMode.ParseXml(getValueContent(value, nextLadderMode.ElementName));
                         break;
 
                     case "NextVehicleNetQuality":
-                        nextVehicleNetQuality.ParseXml(value);
+                        nextVehicleNetQuality.ParseXml(getValueContent(value, nextVehicleNetQuality.ElementName));
                         break;
 
                     case "NextCallVoteTimeOut":
-                        nextCallVoteTimeOut.ParseXml(value);
+                        nextCallVoteTimeOut.ParseXml(getValueContent(value, nextCallVoteTimeOut.ElementName));
                         break;
 
                     case "CallVoteRatio":
-                        callVoteRatio.ParseXml(value);
+                        callVoteRatio.ParseXml(getValueContent(value, callVoteRatio.ElementName));
                         break;
 
                     case "AllowChallengeDownload":
-                        allowChallengeDownload.ParseXml(value);
+                        allowChallengeDownload.ParseXml(getValueContent(value, allowChallengeDownload.ElementName));
                         break;
 
                     case "AutoSaveReplays":
-                        autoSaveReplays.ParseXml(value);
+                        autoSaveReplays.ParseXml(getValueContent(value, autoSaveReplays.ElementName));
                         break;
 
                     default:

@@ -81,7 +81,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "State":
-                        state.ParseXml(value);
+                        state.ParseXml(getValueContent(value, state.ElementName));
                         break;
 
                     case "StateName":
@@ -89,7 +89,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "TransactionId":
-                        transactionId.ParseXml(value);
+                        transactionId.ParseXml(getValueContent(value, transactionId.ElementName));
                         break;
 
                     default:

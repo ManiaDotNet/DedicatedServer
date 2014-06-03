@@ -66,17 +66,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "CurrentValue":
-                        if (typeof(TBase).Equals(typeof(string)))
-                            currentValue.ParseXml(getValueContent(value, currentValue.ElementName));
-                        else
-                            currentValue.ParseXml(value);
+                        currentValue.ParseXml(getValueContent(value, currentValue.ElementName));
                         break;
 
                     case "NextValue":
-                        if (typeof(TBase).Equals(typeof(string)))
-                            nextValue.ParseXml(getValueContent(value, nextValue.ElementName));
-                        else
-                            nextValue.ParseXml(value);
+                        nextValue.ParseXml(getValueContent(value, nextValue.ElementName));
                         break;
 
                     default:

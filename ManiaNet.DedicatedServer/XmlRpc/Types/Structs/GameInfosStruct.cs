@@ -11,22 +11,29 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
     public sealed class GameInfosStruct : BaseStruct<GameInfosStruct>
     {
         /// <summary>
+        /// Backing field for the CurrentGameInfos property.
+        /// </summary>
+        private XmlRpcStruct<ReturnedGameInfosStruct> currentGameInfos = new XmlRpcStruct<ReturnedGameInfosStruct>();
+
+        /// <summary>
+        /// Backing field for the NextGameInfos property.
+        /// </summary>
+        private XmlRpcStruct<ReturnedGameInfosStruct> nextGameInfos = new XmlRpcStruct<ReturnedGameInfosStruct>();
+
+        /// <summary>
         /// Gets the current game infos.
         /// </summary>
-        public ReturnedGameInfosStruct CurrentGameInfos { get; private set; }
+        public ReturnedGameInfosStruct CurrentGameInfos
+        {
+            get { return currentGameInfos.Value; }
+        }
 
         /// <summary>
         /// Gets the next game infos.
         /// </summary>
-        public ReturnedGameInfosStruct NextGameInfos { get; private set; }
-
-        /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Types.Structs.GameInfosStruct"/> class without content (for parsing from Xml).
-        /// </summary>
-        public GameInfosStruct()
+        public ReturnedGameInfosStruct NextGameInfos
         {
-            CurrentGameInfos = new ReturnedGameInfosStruct();
-            NextGameInfos = new ReturnedGameInfosStruct();
+            get { return nextGameInfos.Value; }
         }
 
         /// <summary>
@@ -58,11 +65,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "CurrentGameInfos":
-                        CurrentGameInfos.ParseXml(value);
+                        CurrentGameInfos.ParseXml(getValueContent(value, currentGameInfos.ElementName));
                         break;
 
                     case "NextGameInfos":
-                        NextGameInfos.ParseXml(value);
+                        NextGameInfos.ParseXml(getValueContent(value, nextGameInfos.ElementName));
                         break;
 
                     default:

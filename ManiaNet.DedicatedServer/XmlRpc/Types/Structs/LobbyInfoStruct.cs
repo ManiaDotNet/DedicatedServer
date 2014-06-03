@@ -93,19 +93,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "IsLobby":
-                        isLobby.ParseXml(value);
+                        isLobby.ParseXml(getValueContent(value, isLobby.ElementName));
                         break;
 
                     case "LobbyPlayers":
-                        lobbyPlayers.ParseXml(value);
+                        lobbyPlayers.ParseXml(getValueContent(value, lobbyPlayers.ElementName));
                         break;
 
                     case "LobbyMaxPlayers":
-                        lobbyMaxPlayers.ParseXml(value);
+                        lobbyMaxPlayers.ParseXml(getValueContent(value, lobbyMaxPlayers.ElementName));
                         break;
 
                     case "LobbyPlayersLevel":
-                        lobbyPlayersLevel.ParseXml(value);
+                        lobbyPlayersLevel.ParseXml(getValueContent(value, lobbyPlayersLevel.ElementName));
                         break;
 
                     default:

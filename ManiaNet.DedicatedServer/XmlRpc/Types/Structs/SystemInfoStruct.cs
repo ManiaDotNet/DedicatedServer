@@ -181,11 +181,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "Port":
-                        port.ParseXml(value);
+                        port.ParseXml(getValueContent(value, port.ElementName));
                         break;
 
                     case "P2PPort":
-                        p2pPort.ParseXml(value);
+                        p2pPort.ParseXml(getValueContent(value, p2pPort.ElementName));
                         break;
 
                     case "TitleId":
@@ -197,23 +197,23 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "ServerPlayerId":
-                        serverPlayerId.ParseXml(value);
+                        serverPlayerId.ParseXml(getValueContent(value, serverPlayerId.ElementName));
                         break;
 
                     case "ConnectionDownloadRate":
-                        connectionDownloadRate.ParseXml(value);
+                        connectionDownloadRate.ParseXml(getValueContent(value, connectionDownloadRate.ElementName));
                         break;
 
                     case "ConnectionUploadRate":
-                        connectionUploadRate.ParseXml(value);
+                        connectionUploadRate.ParseXml(getValueContent(value, connectionUploadRate.ElementName));
                         break;
 
                     case "IsServer":
-                        isServer.ParseXml(value);
+                        isServer.ParseXml(getValueContent(value, isServer.ElementName));
                         break;
 
                     case "IsDedicated":
-                        isDedicated.ParseXml(value);
+                        isDedicated.ParseXml(getValueContent(value, isDedicated.ElementName));
                         break;
 
                     default:

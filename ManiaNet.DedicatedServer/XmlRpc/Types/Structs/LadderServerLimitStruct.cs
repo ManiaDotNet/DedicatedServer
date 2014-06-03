@@ -65,11 +65,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "LadderServerLimitMin":
-                        ladderServerLimitMin.ParseXml(value);
+                        ladderServerLimitMin.ParseXml(getValueContent(value, ladderServerLimitMin.ElementName));
                         break;
 
                     case "LadderServerLimitMax":
-                        ladderServerLimitMax.ParseXml(value);
+                        ladderServerLimitMax.ParseXml(getValueContent(value, ladderServerLimitMax.ElementName));
                         break;
 
                     default:

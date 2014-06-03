@@ -69,7 +69,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "Code":
-                        code.ParseXml(value);
+                        code.ParseXml(getValueContent(value, code.ElementName));
                         break;
 
                     default:

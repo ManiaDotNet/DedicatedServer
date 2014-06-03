@@ -83,11 +83,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "PlayerId":
-                        playerId.ParseXml(value);
+                        playerId.ParseXml(getValueContent(value, playerId.ElementName));
                         break;
 
                     case "Result":
-                        result.ParseXml(value);
+                        result.ParseXml(getValueContent(value, result.ElementName));
                         break;
 
                     default:

@@ -100,7 +100,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "Ratio":
-                        ratio.ParseXml(value);
+                        ratio.ParseXml(getValueContent(value, ratio.ElementName));
                         break;
 
                     default:

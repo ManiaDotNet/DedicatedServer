@@ -65,11 +65,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "TokenCost":
-                        tokenCost.ParseXml(value);
+                        tokenCost.ParseXml(getValueContent(value, tokenCost.ElementName));
                         break;
 
                     case "CanPayToken":
-                        canPayToken.ParseXml(value);
+                        canPayToken.ParseXml(getValueContent(value, canPayToken.ElementName));
                         break;
 
                     default:

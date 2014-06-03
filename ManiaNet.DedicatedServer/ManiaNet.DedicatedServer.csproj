@@ -62,7 +62,6 @@
     <Compile Include="XmlRpc\Types\Structs\ForcedSkinStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\GameInfosStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\MapInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\TimeAttackSynchStartPeriodStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\PassedInGameInfosStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\LadderServerLimitStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\LanguageMessageStruct.cs" />
@@ -73,9 +72,7 @@
     <Compile Include="XmlRpc\Types\Structs\PassedInServerOptionsStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\ReturnedGameInfosStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\ReturnedServerOptionsStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ScriptNameStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\StatusStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\StringCurrentAndNextValueStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\SystemInfoStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\TeamInfoStruct.cs" />
     <Compile Include="XmlRpc\Types\XmlRpcArray.cs" />

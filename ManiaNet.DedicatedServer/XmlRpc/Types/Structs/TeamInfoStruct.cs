@@ -164,11 +164,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                         break;
 
                     case "HuePrimary":
-                        huePrimary.ParseXml(value);
+                        huePrimary.ParseXml(getValueContent(value, huePrimary.ElementName));
                         break;
 
                     case "HueSecondary":
-                        hueSecondary.ParseXml(value);
+                        hueSecondary.ParseXml(getValueContent(value, hueSecondary.ElementName));
                         break;
 
                     case "RGB":

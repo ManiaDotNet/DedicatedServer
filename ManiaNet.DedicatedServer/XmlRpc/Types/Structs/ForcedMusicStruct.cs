@@ -79,7 +79,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
                 switch (getMemberName(member))
                 {
                     case "Override":
-                        @override.ParseXml(value);
+                        @override.ParseXml(getValueContent(value, @override.ElementName));
                         break;
 
                     case "Url":
