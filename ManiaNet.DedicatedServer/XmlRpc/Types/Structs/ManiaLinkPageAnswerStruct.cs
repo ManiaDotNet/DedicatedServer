@@ -8,7 +8,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
     /// <summary>
     /// Represents the structs returned from the GetManialinkPageAnswers method call.
     /// </summary>
-    public sealed class ManialinkPageAnswer : BaseStruct<ManialinkPageAnswer>
+    public sealed class ManialinkPageAnswerStruct : BaseStruct<ManialinkPageAnswerStruct>
     {
         /// <summary>
         /// Backing field for the Login property.
@@ -66,7 +66,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         /// </summary>
         /// <param name="xElement">The struct element storing the information.</param>
         /// <returns>Itself, for convenience.</returns>
-        public override ManialinkPageAnswer ParseXml(XElement xElement)
+        public override ManialinkPageAnswerStruct ParseXml(XElement xElement)
         {
             checkName(xElement);
 
