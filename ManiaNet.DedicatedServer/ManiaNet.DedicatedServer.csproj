@@ -43,14 +43,14 @@
     <Compile Include="GameModes.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="LadderModes.cs" />
-    <Compile Include="XmlRpc\MethodCalls\XmlRpcMethodCall-1Parameter.cs" />
-    <Compile Include="XmlRpc\MethodCalls\XmlRpcMethodCall-2Parameters.cs" />
-    <Compile Include="XmlRpc\MethodCalls\XmlRpcMethodCall-3Parameters.cs" />
-    <Compile Include="XmlRpc\MethodCalls\XmlRpcMethodCall-4Parameters.cs" />
-    <Compile Include="XmlRpc\MethodCalls\XmlRpcMethodCall-0Parameters.cs" />
+    <Compile Include="XmlRpc\MethodCalls\MethodCall-1Parameter.cs" />
+    <Compile Include="XmlRpc\MethodCalls\MethodCall-2Parameters.cs" />
+    <Compile Include="XmlRpc\MethodCalls\MethodCall-3Parameters.cs" />
+    <Compile Include="XmlRpc\MethodCalls\MethodCall-4Parameters.cs" />
+    <Compile Include="XmlRpc\MethodCalls\MethodCall-0Parameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlRpc\IXmlRpcClient.cs" />
-    <Compile Include="XmlRpc\MethodCalls\XmlRpcAuthenticate.cs" />
+    <Compile Include="XmlRpc\MethodCalls\Authenticate.cs" />
     <Compile Include="XmlRpc\Types\Structs\ApplicationVersionStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\BanInfoStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\BaseStruct.cs" />
@@ -98,7 +98,6 @@
     <Compile Include="XmlRpc\XmlRpcClient.cs" />
     <Compile Include="XmlRpc\XmlRpcConstants.cs" />
     <Compile Include="XmlRpc\Types\XmlRpcType.cs" />
-    <Compile Include="XmlRpc\XmlRpcServerCallback.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="XmlRpc\ServerCallbacks\" />

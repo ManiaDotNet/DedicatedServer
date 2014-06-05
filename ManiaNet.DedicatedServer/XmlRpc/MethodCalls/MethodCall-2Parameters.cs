@@ -15,7 +15,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
     /// <typeparam name="TParam2Base">The type of the second parameter value.</typeparam>
     /// <typeparam name="TReturn">The returned XmlRpcType.</typeparam>
     /// <typeparam name="TReturnBase">The type of the return value.</typeparam>
-    public abstract class XmlRpcMethodCall<TParam1, TParam1Base, TParam2, TParam2Base, TReturn, TReturnBase> : XmlRpcMethodCall<TParam1, TParam1Base, TReturn, TReturnBase>
+    public abstract class MethodCall<TParam1, TParam1Base, TParam2, TParam2Base, TReturn, TReturnBase> : MethodCall<TParam1, TParam1Base, TReturn, TReturnBase>
         where TParam1 : XmlRpcType<TParam1Base>, new()
         where TParam2 : XmlRpcType<TParam2Base>, new()
         where TReturn : XmlRpcType<TReturnBase>, new()
@@ -25,7 +25,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         /// </summary>
         protected TParam2 param2 = new TParam2();
 
-        protected XmlRpcMethodCall(TParam1Base param1, TParam2Base param2)
+        protected MethodCall(TParam1Base param1, TParam2Base param2)
             : base(param1)
         {
             this.param2.Value = param2;

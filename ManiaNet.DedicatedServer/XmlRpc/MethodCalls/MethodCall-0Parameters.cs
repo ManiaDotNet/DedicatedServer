@@ -12,7 +12,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
     /// </summary>
     /// <typeparam name="TReturn">The returned XmlRpcType.</typeparam>
     /// <typeparam name="TReturnBase">The type of the return value.</typeparam>
-    public abstract class XmlRpcMethodCall<TReturn, TReturnBase> where TReturn : XmlRpcType<TReturnBase>, new()
+    public abstract class MethodCall<TReturn, TReturnBase> where TReturn : XmlRpcType<TReturnBase>, new()
     {
         public const string ElementName = "methodCall";
         public const string FaultElement = "fault";
