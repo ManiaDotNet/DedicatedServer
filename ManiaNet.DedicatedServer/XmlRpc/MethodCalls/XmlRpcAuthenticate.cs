@@ -1,33 +1,48 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.XmlRpc.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
 {
-    public sealed class XmlRpcAuthenticate : XmlRpcMethodCall
+    /// <summary>
+    /// Represents a call to the Authenticate method.
+    /// </summary>
+    public sealed class XmlRpcAuthenticate : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
-        public string Login { get; private set; }
+        /// <summary>
+        /// Gets or sets the login used for authentication.
+        /// </summary>
+        public string Login
+        {
+            get { return param1.Value; }
+            set { param1.Value = value; }
+        }
 
-        public override string Name
+        /// <summary>
+        /// Gets the name of the method this call is for.
+        /// </summary>
+        public override string MethodName
         {
             get { return "Authenticate"; }
         }
 
-        public string Password { get; private set; }
+        /// <summary>
+        /// Gets or sets the password used for authentication.
+        /// </summary>
+        public string Password
+        {
+            get { return param2.Value; }
+            set { param2.Value = value; }
+        }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.XmlRpcAuthenticate"/> class with the given login and password for authentication.
+        /// </summary>
+        /// <param name="login">The login used for authentication.</param>
+        /// <param name="password">The password used for authentication.</param>
         public XmlRpcAuthenticate(string login, string password)
-        {
-            Login = login;
-            Password = password;
-        }
-
-        public override string GetXml()
-        {
-            return XmlRpcConstants.XmlDeclaration +
-                XmlRpcConstants.MethodCallAndNameOpening + Name + XmlRpcConstants.MethodNameClosingAndParamsOpening +
-                XmlRpcConstants.ParamOpening + XmlRpcConstants.StringValueOpening + Login + XmlRpcConstants.StringValueClosing + XmlRpcConstants.ParamClosing +
-                XmlRpcConstants.ParamOpening + XmlRpcConstants.StringValueOpening + Password + XmlRpcConstants.StringValueClosing + XmlRpcConstants.ParamClosing +
-                XmlRpcConstants.ParamsAndMethodCallClosing;
-        }
+            : base(login, password)
+        { }
     }
 }
