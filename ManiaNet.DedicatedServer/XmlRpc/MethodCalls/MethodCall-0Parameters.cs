@@ -64,7 +64,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         /// <summary>
         /// Gets the returned information when IsCompleted is true, and HadFault is false, or the default otherwise.
         /// </summary>
-        public virtual TReturnBase Returned
+        public virtual TReturnBase ReturnValue
         {
             get { return returned != null ? returned.Value : default(TReturnBase); }
         }

@@ -28,7 +28,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     /// <summary>
     /// Interface for XmlRpc Clients.
     /// </summary>
-    public interface IXmlRpcClient
+    public interface IXmlRpcClient : IDisposable
     {
         /// <summary>
         /// Stop reading data from the interface connection.

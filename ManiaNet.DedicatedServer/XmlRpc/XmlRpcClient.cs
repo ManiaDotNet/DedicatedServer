@@ -12,7 +12,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     /// <summary>
     /// Represents an XmlRpc Client. Implements the <see cref="ManiaNet.DedicatedServer.XmlRpc.IXmlRpcClient"/> interface.
     /// </summary>
-    public sealed class XmlRpcClient : IXmlRpcClient, IDisposable
+    public sealed class XmlRpcClient : IXmlRpcClient
     {
         private Thread eventDispatcherThread;
         private ConcurrentQueue<Message> messageQueue = new ConcurrentQueue<Message>();
