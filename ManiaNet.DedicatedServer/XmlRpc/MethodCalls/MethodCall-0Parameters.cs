@@ -130,6 +130,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
             returned = null;
         }
 
+        public override string ToString()
+        {
+            return GenerateXml().ToString();
+        }
+
         /// <summary>
         /// Generates Xml containing the parameter data.
         /// <para/>

@@ -48,6 +48,8 @@
     <Compile Include="XmlRpc\MethodCalls\CallVoteEx.cs" />
     <Compile Include="XmlRpc\MethodCalls\CancelVote.cs" />
     <Compile Include="XmlRpc\MethodCalls\ChangeAuthPassword.cs" />
+    <Compile Include="XmlRpc\MethodCalls\ChatSendServerMessage.cs" />
+    <Compile Include="XmlRpc\MethodCalls\ChatSendServerMessageToLanguage.cs" />
     <Compile Include="XmlRpc\MethodCalls\EnableCallbacks.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetCallVoteRatio.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetCallVoteRatios.cs" />

@@ -32,6 +32,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         /// <returns>Itself, for convenience.</returns>
         public abstract TStruct ParseXml(XElement xElement);
 
+        public override string ToString()
+        {
+            return GenerateXml().ToString();
+        }
+
         /// <summary>
         /// Checks if an element is a valid member element.
         /// </summary>

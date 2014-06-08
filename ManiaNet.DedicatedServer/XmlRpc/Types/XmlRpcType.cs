@@ -37,6 +37,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         /// <returns>Itself, for convenience.</returns>
         public abstract XmlRpcType<TValue> ParseXml(XElement xElement);
 
+        public override string ToString()
+        {
+            return GenerateXml().ToString();
+        }
+
         /// <summary>
         /// Checks whether the element has a name name fitting with the ElementName property.
         /// </summary>
