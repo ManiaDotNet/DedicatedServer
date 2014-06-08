@@ -31,6 +31,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     public interface IXmlRpcClient : IDisposable
     {
         /// <summary>
+        /// Gets client's name.
+        /// </summary>
+        string Name { get; }
+
+        /// <summary>
         /// Stop reading data from the interface connection.
         /// </summary>
         void EndReceive();

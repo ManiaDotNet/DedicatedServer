@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -12,7 +13,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
     /// </summary>
     /// <typeparam name="TArray">TArray[] is the Type of the Value property.</typeparam>
     /// <typeparam name="TBase">TBase is the base type that TArray has to derive from.</typeparam>
-    public class XmlRpcArray<TArray, TBase> : XmlRpcType<TArray[]> where TArray : XmlRpcType<TBase>, new()
+    public class XmlRpcArray<TArray, TBase> : XmlRpcType<TArray[]>, IEnumerable<TBase> where TArray : XmlRpcType<TBase>, new()
     {
         public const string DataElement = "data";
 
@@ -52,6 +53,16 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
 
             array.Add(data);
             return array;
+        }
+
+        public IEnumerator<TBase> GetEnumerator()
+        {
+            return Value.Select(value => value.Value).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
         /// <summary>

@@ -51,6 +51,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlRpc\IXmlRpcClient.cs" />
     <Compile Include="XmlRpc\MethodCalls\Authenticate.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SystemListMethods.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SystemMethodSignature.cs" />
     <Compile Include="XmlRpc\Types\Structs\ApplicationVersionStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\BanInfoStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\BaseStruct.cs" />

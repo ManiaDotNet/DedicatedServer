@@ -26,6 +26,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         /// </summary>
         public Config Configuration { get; private set; }
 
+        public string Name
+        {
+            get { return Configuration.Address + ":" + Configuration.Port; }
+        }
+
         /// <summary>
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.XmlRpcCLient"/> class with the given configuration.
         /// </summary>
@@ -84,11 +89,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             connect();
 
             receiveLoopThread = new Thread(receiveLoop);
-            receiveLoopThread.Name = Configuration.Address + " Receive Loop";
+            receiveLoopThread.Name = Name + " Receive Loop";
             receiveLoopThread.IsBackground = true;
 
             eventDispatcherThread = new Thread(eventDispatcher);
-            eventDispatcherThread.Name = Configuration.Address + " Event Dispatcher";
+            eventDispatcherThread.Name = Name + " Event Dispatcher";
             eventDispatcherThread.IsBackground = true;
 
             receiveLoopThread.Start();
