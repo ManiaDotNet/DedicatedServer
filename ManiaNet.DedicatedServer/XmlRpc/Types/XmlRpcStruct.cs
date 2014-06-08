@@ -21,21 +21,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcStruct"/> class with Value set to the parameterless TXmlRpcStruct constructor.
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcStruct"/> class with Value set to default value for TXmlRpcType.
         /// </summary>
         public XmlRpcStruct()
-        {
-            Value = new TXmlRpcStruct();
-        }
+            : base()
+        { }
 
         /// <summary>
         /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcStruct"/> class with the given value.
         /// </summary>
         /// <param name="value">The struct encapsulated by this.</param>
         public XmlRpcStruct(TXmlRpcStruct value)
-        {
-            Value = value;
-        }
+            : base(value)
+        { }
 
         /// <summary>
         /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.

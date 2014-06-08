@@ -19,12 +19,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcDouble"/> class with the default double value for the Value property.
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcDouble"/> class with Value set to the default value for double.
         /// </summary>
         public XmlRpcDouble()
-        {
-            Value = default(double);
-        }
+            : base()
+        { }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcDouble"/> class with the given value.
+        /// </summary>
+        /// <param name="value">The double encapsulated by this.</param>
+        public XmlRpcDouble(double value)
+            : base(value)
+        { }
 
         /// <summary>
         /// Sets the Value property with the information contained in the XElement. It must have a name fitting with the ElementName property.

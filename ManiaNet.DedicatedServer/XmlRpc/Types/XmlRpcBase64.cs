@@ -22,9 +22,16 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcBase64"/> class with a zero-length byte array for the Value property.
         /// </summary>
         public XmlRpcBase64()
-        {
-            Value = new byte[0];
-        }
+            : base(new byte[0])
+        { }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcBase64"/> class with the given value.
+        /// </summary>
+        /// <param name="value">The data encapsulated by this.</param>
+        public XmlRpcBase64(byte[] value)
+            : base(value)
+        { }
 
         /// <summary>
         /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.

@@ -20,12 +20,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcDateTime"/> class with the default DateTime value for the Value property.
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcDateTime"/> class with Value set to the defaut value for DateTime.
         /// </summary>
         public XmlRpcDateTime()
-        {
-            Value = default(DateTime);
-        }
+            : base()
+        { }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcDateTime"/> class with the given value.
+        /// </summary>
+        /// <param name="value">The DateTime encapsulated by this.</param>
+        public XmlRpcDateTime(DateTime value)
+            : base(value)
+        { }
 
         /// <summary>
         /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.

@@ -5,6 +5,9 @@ using System.Xml.Linq;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.Types
 {
+    /// <summary>
+    /// Represents an XmlRpcType containing an int.
+    /// </summary>
     public class XmlRpcInt : XmlRpcType<int>
     {
         /// <summary>
@@ -16,12 +19,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcInt"/> class with the default int value for the Value property.
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcInt"/> class with Value set to the default value for int.
         /// </summary>
         public XmlRpcInt()
-        {
-            Value = default(int);
-        }
+            : base()
+        { }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcInt"/> class with the given value.
+        /// </summary>
+        /// <param name="value">The int encapsulated by this.</param>
+        public XmlRpcInt(int value)
+            : base(value)
+        { }
 
         /// <summary>
         /// Sets the Value property with the information contained in the XElement. It must have a name fitting with the ElementName property.

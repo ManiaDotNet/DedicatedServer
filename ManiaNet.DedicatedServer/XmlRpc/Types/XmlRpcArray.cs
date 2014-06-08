@@ -28,12 +28,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcArray"/> class with the given value.
+        /// </summary>
+        /// <param name="value">The array encapsulated by this.</param>
+        public XmlRpcArray(TArray[] value)
+            : base(value)
+        { }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcArray"/> class with a zero-length TArray array for the Value property.
         /// </summary>
         public XmlRpcArray()
-        {
-            Value = new TArray[0];
-        }
+            : base(new TArray[0])
+        { }
 
         /// <summary>
         /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.

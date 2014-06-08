@@ -22,6 +22,23 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         public TValue Value { get; set; }
 
         /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcType"/> class with Value set to the default value for TValue.
+        /// </summary>
+        protected XmlRpcType()
+        {
+            Value = default(TValue);
+        }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcType"/> class with the given value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        protected XmlRpcType(TValue value)
+        {
+            Value = value;
+        }
+
+        /// <summary>
         /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.
         /// </summary>
         /// <returns>The generated Xml.</returns>

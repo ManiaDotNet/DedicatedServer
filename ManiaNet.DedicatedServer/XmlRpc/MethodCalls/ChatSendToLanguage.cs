@@ -8,9 +8,9 @@ using System.Xml.Linq;
 namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
 {
     /// <summary>
-    /// Represents a call to the ChatSendServerMessageToLanguage method.
+    /// Represents a call to the ChatSendToLanguage method.
     /// </summary>
-    public sealed class ChatSendServerMessageToLanguage
+    public sealed class ChatSendToLanguage
         : MethodCall<XmlRpcArray<XmlRpcStruct<LanguageMessageStruct>, LanguageMessageStruct>, XmlRpcStruct<LanguageMessageStruct>[], XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,7 +22,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Gets or sets the different messages that will be send to different languages (without the server login as source).
+        /// Gets or sets the different messages that will be send to the different languages.
         /// The last message in the list is ued if there's no matching one.
         /// </summary>
         public IEnumerable<LanguageMessageStruct> Messages
@@ -36,7 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         /// </summary>
         public override string MethodName
         {
-            get { return "ChatSendServerMessageToLanguage"; }
+            get { return "ChatSendToLanguage"; }
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         /// </summary>
         /// <param name="login">The login that the message is send to.</param>
         /// <param name="messages">The different messages for different languages.</param>
-        public ChatSendServerMessageToLanguage(string login, params LanguageMessageStruct[] messages)
+        public ChatSendToLanguage(string login, params LanguageMessageStruct[] messages)
             : base(messages.Select(message => new XmlRpcStruct<LanguageMessageStruct>(message)).ToArray(), login)
         { }
 
@@ -58,7 +58,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         /// The last message in the list is used if there's no matching one.
         /// </summary>
         /// <param name="messages">The different messages for different languages.</param>
-        public ChatSendServerMessageToLanguage(params LanguageMessageStruct[] messages)
+        public ChatSendToLanguage(params LanguageMessageStruct[] messages)
             : base(messages.Select(message => new XmlRpcStruct<LanguageMessageStruct>(message)).ToArray(), null)
         { }
 

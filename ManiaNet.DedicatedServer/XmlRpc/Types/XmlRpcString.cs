@@ -20,12 +20,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcString"/> class with an empty string for the Value property.
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcString"/> class with Value set to an empty string.
         /// </summary>
         public XmlRpcString()
-        {
-            Value = string.Empty;
-        }
+            : base(string.Empty)
+        { }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcString"/> class with the given value.
+        /// </summary>
+        /// <param name="value">The string encapsulated by this.</param>
+        public XmlRpcString(string value)
+            : base(value)
+        { }
 
         /// <summary>
         /// Generates an XElement from the Value. Default implementation creates an XElement with the ElementName and the content from Value.
