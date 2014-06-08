@@ -33,8 +33,6 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         /// <param name="targetMethod">The name of the method that the signatures are wanted for.</param>
         public SystemMethodSignature(string targetMethod)
             : base(targetMethod)
-        {
-            TargetMethod = targetMethod;
-        }
+        { }
     }
 }

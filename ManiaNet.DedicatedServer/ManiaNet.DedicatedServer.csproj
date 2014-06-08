@@ -40,9 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiVersions.cs" />
     <Compile Include="GameModes.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="LadderModes.cs" />
+    <Compile Include="XmlRpc\MethodCalls\CallVote.cs" />
+    <Compile Include="XmlRpc\MethodCalls\CallVoteEx.cs" />
+    <Compile Include="XmlRpc\MethodCalls\CancelVote.cs" />
+    <Compile Include="XmlRpc\MethodCalls\ChangeAuthPassword.cs" />
+    <Compile Include="XmlRpc\MethodCalls\EnableCallbacks.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetCallVoteRatio.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetCallVoteRatios.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetCurrentCallVote.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetCurrentCallVoteTimeOut.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetStatus.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetVersion.cs" />
     <Compile Include="XmlRpc\MethodCalls\MethodCall-1Parameter.cs" />
     <Compile Include="XmlRpc\MethodCalls\MethodCall-2Parameters.cs" />
     <Compile Include="XmlRpc\MethodCalls\MethodCall-3Parameters.cs" />
@@ -51,7 +63,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlRpc\IXmlRpcClient.cs" />
     <Compile Include="XmlRpc\MethodCalls\Authenticate.cs" />
+    <Compile Include="XmlRpc\MethodCalls\QuitGame.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SetApiVersion.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SetCallVoteRatio.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SetCallVoteRatios.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SetCallVoteTimeOut.cs" />
     <Compile Include="XmlRpc\MethodCalls\SystemListMethods.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SystemMethodHelp.cs" />
     <Compile Include="XmlRpc\MethodCalls\SystemMethodSignature.cs" />
     <Compile Include="XmlRpc\Types\Structs\ApplicationVersionStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\BanInfoStruct.cs" />

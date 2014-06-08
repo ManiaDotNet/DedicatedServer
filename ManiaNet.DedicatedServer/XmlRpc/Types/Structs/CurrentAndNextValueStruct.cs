@@ -8,7 +8,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
     /// <summary>
     /// Represents the struct returned by various method calls.
     /// </summary>
-    public sealed class I4CurrentAndNextValueStruct<TXmlRpcType, TBase> : BaseStruct<I4CurrentAndNextValueStruct<TXmlRpcType, TBase>>
+    public sealed class CurrentAndNextValueStruct<TXmlRpcType, TBase> : BaseStruct<CurrentAndNextValueStruct<TXmlRpcType, TBase>>
         where TXmlRpcType : XmlRpcType<TBase>, new()
     {
         /// <summary>
@@ -53,7 +53,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         /// </summary>
         /// <param name="xElement">The struct element storing the information.</param>
         /// <returns>Itself, for convenience.</returns>
-        public override I4CurrentAndNextValueStruct<TXmlRpcType, TBase> ParseXml(XElement xElement)
+        public override CurrentAndNextValueStruct<TXmlRpcType, TBase> ParseXml(XElement xElement)
         {
             checkName(xElement);
 

@@ -21,11 +21,20 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcStruct"/> class with the parameterless TXmlRpcStruct constructor.
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcStruct"/> class with Value set to the parameterless TXmlRpcStruct constructor.
         /// </summary>
         public XmlRpcStruct()
         {
             Value = new TXmlRpcStruct();
+        }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ManiaNet.XmlRpc.Types.XmlRpcStruct"/> class with the given value.
+        /// </summary>
+        /// <param name="value">The struct encapsulated by this.</param>
+        public XmlRpcStruct(TXmlRpcStruct value)
+        {
+            Value = value;
         }
 
         /// <summary>
