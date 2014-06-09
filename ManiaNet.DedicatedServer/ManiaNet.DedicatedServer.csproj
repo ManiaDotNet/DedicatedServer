@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,6 +64,7 @@
     <Compile Include="XmlRpc\MethodCalls\CleanBanList.cs" />
     <Compile Include="XmlRpc\MethodCalls\CleanBlackList.cs" />
     <Compile Include="XmlRpc\MethodCalls\CleanGuestList.cs" />
+    <Compile Include="XmlRpc\MethodCalls\Echo.cs" />
     <Compile Include="XmlRpc\MethodCalls\EnableCallbacks.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetBanList.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetBlackList.cs" />
@@ -75,6 +75,7 @@
     <Compile Include="XmlRpc\MethodCalls\GetCurrentCallVote.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetCurrentCallVoteTimeOut.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetGuestList.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetList.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetManialinkPageAnswers.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetStatus.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetVersion.cs" />
@@ -111,6 +112,8 @@
     <Compile Include="XmlRpc\MethodCalls\SystemListMethods.cs" />
     <Compile Include="XmlRpc\MethodCalls\SystemMethodHelp.cs" />
     <Compile Include="XmlRpc\MethodCalls\SystemMethodSignature.cs" />
+    <Compile Include="XmlRpc\MethodCalls\TunnelSendDataToId.cs" />
+    <Compile Include="XmlRpc\MethodCalls\TunnelSendDataToLogin.cs" />
     <Compile Include="XmlRpc\MethodCalls\UnBan.cs" />
     <Compile Include="XmlRpc\MethodCalls\UnBlackList.cs" />
     <Compile Include="XmlRpc\MethodCalls\WriteFile.cs" />
@@ -119,7 +122,6 @@
     <Compile Include="XmlRpc\Types\Structs\BaseStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\BasicMapInfoStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\BillStateStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\BlackListInfoStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\CallVoteRatioStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\CallVoteStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\DemoTokenInfosStruct.cs" />
@@ -131,7 +133,6 @@
     <Compile Include="XmlRpc\Types\Structs\ForcedSkinStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\ForceScoreStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\GameInfosStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\GuestListInfo.cs" />
     <Compile Include="XmlRpc\Types\Structs\JoinServerStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\MapInfoStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\NetworkStatsStruct.cs" />

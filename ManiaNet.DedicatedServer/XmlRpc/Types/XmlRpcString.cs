@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Xml.Linq;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.Types
@@ -40,7 +39,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         /// <returns>The generated Xml.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName), HttpUtility.HtmlEncode(Value));
+            return new XElement(XName.Get(ElementName), Value);
         }
 
         /// <summary>
@@ -52,7 +51,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types
         {
             checkName(xElement);
 
-            Value = HttpUtility.HtmlDecode(xElement.Value);
+            Value = xElement.Value;
 
             return this;
         }
