@@ -11,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
     public sealed class SetApiVersion : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
-        /// Gets or sets the Api Version used for callbacks.
+        /// Gets or sets the Api Version used for callbacks. Use values from <see cref="ManiaNet.DedicatedServer.ApiVersions"/>.
         /// </summary>
         public string ApiVersion
         {
