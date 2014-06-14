@@ -170,7 +170,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         }
 
         /// <summary>
-        /// Gets the current vehicle quality.
+        /// Gets the current vehicle quality. Compare to values from <see cref="ManiaNet.DedicatedServer.VehicleNetQualities"/>.
         /// </summary>
         public int CurrentVehicleNetQuality
         {
@@ -234,7 +234,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         }
 
         /// <summary>
-        /// Gets the next vehicle quality.
+        /// Gets the next vehicle quality. Compare to values from <see cref="ManiaNet.DedicatedServer.VehicleNetQualities"/>.
         /// </summary>
         public int NextVehicleNetQuality
         {

@@ -195,7 +195,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         }
 
         /// <summary>
-        /// Gets or sets the next vehicle quality.
+        /// Gets or sets the next vehicle quality. Use values from <see cref="ManiaNet.DedicatedServer.VehicleNetQualities"/>.
         /// </summary>
         public int NextVehicleNetQuality
         {

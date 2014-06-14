@@ -8,7 +8,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
     /// <summary>
     /// Represents the struct returned by the GetLadderServerLimits method call.
     /// </summary>
-    public sealed class LadderServerLimitStruct : BaseStruct<LadderServerLimitStruct>
+    public sealed class LadderServerLimitsStruct : BaseStruct<LadderServerLimitsStruct>
     {
         /// <summary>
         /// Backing field for the LadderServerLimitMax property.
@@ -52,7 +52,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Types.Structs
         /// </summary>
         /// <param name="xElement">The struct element storing the information.</param>
         /// <returns>Itself, for convenience.</returns>
-        public override LadderServerLimitStruct ParseXml(XElement xElement)
+        public override LadderServerLimitsStruct ParseXml(XElement xElement)
         {
             checkName(xElement);
 
