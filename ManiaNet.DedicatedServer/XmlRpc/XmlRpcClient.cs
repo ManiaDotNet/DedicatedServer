@@ -20,6 +20,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         private uint requestHandle = XmlRpcConstants.ServerCallbackHandle;
         private Stream stream;
         private StreamWriter writer;
+        private object writerLock = new object();
 
         /// <summary>
         /// Gets the configuration of this client.
@@ -66,19 +67,22 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         /// <returns>The request handle associated with the call.</returns>
         public uint SendRequest(string request)
         {
-            requestHandle++;
+            lock (writerLock)
+            {
+                requestHandle++;
 
-            List<byte> bytes = new List<byte>();
-            bytes.AddRange(BitConverter.GetBytes((uint)request.Length));
-            bytes.AddRange(BitConverter.GetBytes(requestHandle));
+                List<byte> bytes = new List<byte>();
+                bytes.AddRange(BitConverter.GetBytes((uint)request.Length));
+                bytes.AddRange(BitConverter.GetBytes(requestHandle));
 
-            stream.Write(bytes.ToArray(), 0, bytes.Count);
-            stream.Flush();
+                stream.Write(bytes.ToArray(), 0, bytes.Count);
+                stream.Flush();
 
-            writer.Write(request);
-            writer.Flush();
+                writer.Write(request);
+                writer.Flush();
 
-            return requestHandle;
+                return requestHandle;
+            }
         }
 
         /// <summary>

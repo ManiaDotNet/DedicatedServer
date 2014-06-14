@@ -80,7 +80,10 @@
     <Compile Include="XmlRpc\MethodCalls\GetIgnoreList.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetList.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetManialinkPageAnswers.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetServerComment.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetServerName.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetServerPlanets.cs" />
+    <Compile Include="XmlRpc\MethodCalls\GetServerTags.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetStatus.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetSystemInfo.cs" />
     <Compile Include="XmlRpc\MethodCalls\GetVersion.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="XmlRpc\MethodCalls\QuitGame.cs" />
     <Compile Include="XmlRpc\MethodCalls\RemoveGuest.cs" />
     <Compile Include="XmlRpc\MethodCalls\RemoveGuestId.cs" />
+    <Compile Include="XmlRpc\MethodCalls\ResetServerTags.cs" />
     <Compile Include="XmlRpc\MethodCalls\SaveBlackList.cs" />
     <Compile Include="XmlRpc\MethodCalls\SaveGuestList.cs" />
     <Compile Include="XmlRpc\MethodCalls\SendBill.cs" />
@@ -118,6 +122,10 @@
     <Compile Include="XmlRpc\MethodCalls\SetCallVoteRatio.cs" />
     <Compile Include="XmlRpc\MethodCalls\SetCallVoteRatios.cs" />
     <Compile Include="XmlRpc\MethodCalls\SetCallVoteTimeOut.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SetConnectionRates.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SetServerComment.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SetServerName.cs" />
+    <Compile Include="XmlRpc\MethodCalls\SetServerTag.cs" />
     <Compile Include="XmlRpc\MethodCalls\SystemListMethods.cs" />
     <Compile Include="XmlRpc\MethodCalls\SystemMethodHelp.cs" />
     <Compile Include="XmlRpc\MethodCalls\SystemMethodSignature.cs" />
@@ -127,6 +135,7 @@
     <Compile Include="XmlRpc\MethodCalls\UnBlackList.cs" />
     <Compile Include="XmlRpc\MethodCalls\UnIgnore.cs" />
     <Compile Include="XmlRpc\MethodCalls\UnIgnoreId.cs" />
+    <Compile Include="XmlRpc\MethodCalls\UnsetServerTag.cs" />
     <Compile Include="XmlRpc\MethodCalls\WriteFile.cs" />
     <Compile Include="XmlRpc\Types\Structs\ApplicationVersionStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\BanInfoStruct.cs" />
@@ -160,6 +169,7 @@
     <Compile Include="XmlRpc\Types\Structs\RankingStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\ReturnedGameInfosStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\ReturnedServerOptionsStruct.cs" />
+    <Compile Include="XmlRpc\Types\Structs\ServerTagStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\StatusStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\SystemInfoStruct.cs" />
     <Compile Include="XmlRpc\Types\Structs\TeamInfoStruct.cs" />
