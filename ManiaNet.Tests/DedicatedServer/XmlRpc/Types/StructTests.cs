@@ -1,5 +1,5 @@
 ﻿using ManiaNet.DedicatedServer.XmlRpc.Types;
-using ManiaNet.DedicatedServer.XmlRpc.Types.Structs;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

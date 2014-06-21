@@ -40,6 +40,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="XmlRpc">
+      <HintPath>..\..\..\..\..\..\..\Programming\Projects\XmlRpc\XmlRpc\bin\Release\XmlRpc.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiVersions.cs" />
@@ -215,13 +218,7 @@
     <Compile Include="XmlRpc\MethodCalls\ManualFlowControlGetCurTransition.cs" />
     <Compile Include="XmlRpc\MethodCalls\ManualFlowControlsEnabled.cs" />
     <Compile Include="XmlRpc\MethodCalls\ManualFlowControlProceed.cs" />
-    <Compile Include="XmlRpc\MethodCalls\MethodCall-1Parameter.cs" />
-    <Compile Include="XmlRpc\MethodCalls\MethodCall-2Parameters.cs" />
-    <Compile Include="XmlRpc\MethodCalls\MethodCall-3Parameters.cs" />
-    <Compile Include="XmlRpc\MethodCalls\MethodCall-4Parameters.cs" />
-    <Compile Include="XmlRpc\MethodCalls\MethodCall-0Parameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XmlRpc\IXmlRpcClient.cs" />
     <Compile Include="XmlRpc\MethodCalls\Authenticate.cs" />
     <Compile Include="XmlRpc\MethodCalls\NextMap.cs" />
     <Compile Include="XmlRpc\MethodCalls\Pay.cs" />
@@ -315,62 +312,44 @@
     <Compile Include="XmlRpc\MethodCalls\UnIgnoreId.cs" />
     <Compile Include="XmlRpc\MethodCalls\UnsetServerTag.cs" />
     <Compile Include="XmlRpc\MethodCalls\WriteFile.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ApplicationVersionStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\BanInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\BaseStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\BasicMapInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\BillStateStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\CallVoteRatioStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\CallVoteStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\DemoTokenInfosStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\FaultStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ForcedClubLinksStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ForcedModsStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ForcedModStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ForcedMusicStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ForcedSkinStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ForceScoreStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\GameInfosStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\JoinServerStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\MapInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\NetworkStatsStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\PassedInGameInfosStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\LadderServerLimitsStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\LanguageMessageStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\LobbyInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\LoginStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ManiaLinkPageAnswerStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\CurrentAndNextValueStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\PassedInServerOptionsStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\PlayerInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\PlayerNetInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\RankingStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ReturnedGameInfosStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ReturnedServerOptionsStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\ServerTagStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\StatusStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\SystemInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\Structs\TeamInfoStruct.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcArray.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcBase64.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcBoolean.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcDateTime.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcDouble.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcI4.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcInt.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcString.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcStruct.cs" />
-    <Compile Include="XmlRpc\XmlRpcClient.cs" />
-    <Compile Include="XmlRpc\XmlRpcConstants.cs" />
-    <Compile Include="XmlRpc\Types\XmlRpcType.cs" />
+    <Compile Include="XmlRpc\Structs\ApplicationVersionStruct.cs" />
+    <Compile Include="XmlRpc\Structs\BanInfoStruct.cs" />
+    <Compile Include="XmlRpc\Structs\BasicMapInfoStruct.cs" />
+    <Compile Include="XmlRpc\Structs\BillStateStruct.cs" />
+    <Compile Include="XmlRpc\Structs\CallVoteRatioStruct.cs" />
+    <Compile Include="XmlRpc\Structs\CallVoteStruct.cs" />
+    <Compile Include="XmlRpc\Structs\DemoTokenInfosStruct.cs" />
+    <Compile Include="XmlRpc\Structs\FaultStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ForcedClubLinksStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ForcedModsStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ForcedModStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ForcedMusicStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ForcedSkinStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ForceScoreStruct.cs" />
+    <Compile Include="XmlRpc\Structs\GameInfosStruct.cs" />
+    <Compile Include="XmlRpc\Structs\JoinServerStruct.cs" />
+    <Compile Include="XmlRpc\Structs\MapInfoStruct.cs" />
+    <Compile Include="XmlRpc\Structs\NetworkStatsStruct.cs" />
+    <Compile Include="XmlRpc\Structs\PassedInGameInfosStruct.cs" />
+    <Compile Include="XmlRpc\Structs\LadderServerLimitsStruct.cs" />
+    <Compile Include="XmlRpc\Structs\LanguageMessageStruct.cs" />
+    <Compile Include="XmlRpc\Structs\LobbyInfoStruct.cs" />
+    <Compile Include="XmlRpc\Structs\LoginStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ManiaLinkPageAnswerStruct.cs" />
+    <Compile Include="XmlRpc\Structs\CurrentAndNextValueStruct.cs" />
+    <Compile Include="XmlRpc\Structs\PassedInServerOptionsStruct.cs" />
+    <Compile Include="XmlRpc\Structs\PlayerInfoStruct.cs" />
+    <Compile Include="XmlRpc\Structs\PlayerNetInfoStruct.cs" />
+    <Compile Include="XmlRpc\Structs\RankingStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ReturnedGameInfosStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ReturnedServerOptionsStruct.cs" />
+    <Compile Include="XmlRpc\Structs\ServerTagStruct.cs" />
+    <Compile Include="XmlRpc\Structs\StatusStruct.cs" />
+    <Compile Include="XmlRpc\Structs\SystemInfoStruct.cs" />
+    <Compile Include="XmlRpc\Structs\TeamInfoStruct.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="XmlRpc\ServerCallbacks\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="XmlRpc\Types\Structs\StructParseXml.snippet">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

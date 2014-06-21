@@ -1,8 +1,9 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Types;
-using ManiaNet.DedicatedServer.XmlRpc.Types.Structs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using XmlRpc.MethodCalls;
+using XmlRpc.Types;
+using XmlRpc.Types.Structs;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
 {

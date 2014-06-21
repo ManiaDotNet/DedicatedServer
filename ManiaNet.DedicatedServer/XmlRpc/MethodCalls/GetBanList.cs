@@ -1,4 +1,4 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Types.Structs;
+﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
