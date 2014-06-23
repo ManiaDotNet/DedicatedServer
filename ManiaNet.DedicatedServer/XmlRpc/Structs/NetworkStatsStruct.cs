@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetNetworkStats method call.
     /// </summary>
-    public sealed class NetworkStatsStruct : BaseStruct<NetworkStatsStruct>
+    public sealed class NetworkStatsStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the MeanConnectionTime property.
@@ -135,72 +136,73 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Uptime", uptime.GenerateXml()),
-                makeMemberElement("NbrConnection", nbrConnection.GenerateXml()),
-                makeMemberElement("MeanConnectionTime", meanConnectionTime.GenerateXml()),
-                makeMemberElement("MeanNbrPlayer", meanNbrPlayer.GenerateXml()),
-                makeMemberElement("RecvNetRate", recvNetRate.GenerateXml()),
-                makeMemberElement("SendNetRate", sendNetRate.GenerateXml()),
-                makeMemberElement("TotalReceivingSize", totalReceivingSize.GenerateXml()),
-                makeMemberElement("TotalSendingSize", totalSendingSize.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Uptime", uptime),
+                makeMemberElement("NbrConnection", nbrConnection),
+                makeMemberElement("MeanConnectionTime", meanConnectionTime),
+                makeMemberElement("MeanNbrPlayer", meanNbrPlayer),
+                makeMemberElement("RecvNetRate", recvNetRate),
+                makeMemberElement("SendNetRate", sendNetRate),
+                makeMemberElement("TotalReceivingSize", totalReceivingSize),
+                makeMemberElement("TotalSendingSize", totalSendingSize));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override NetworkStatsStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Uptime":
+                    if (!uptime.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "NbrConnection":
+                    if (!nbrConnection.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Uptime":
-                        uptime.ParseXml(getValueContent(value, uptime.ElementName));
-                        break;
+                case "MeanConnectionTime":
+                    if (!meanConnectionTime.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NbrConnection":
-                        nbrConnection.ParseXml(getValueContent(value, nbrConnection.ElementName));
-                        break;
+                case "MeanNbrPlayer":
+                    if (!meanNbrPlayer.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "MeanConnectionTime":
-                        meanConnectionTime.ParseXml(getValueContent(value, meanConnectionTime.ElementName));
-                        break;
+                case "RecvNetRate":
+                    if (!recvNetRate.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "MeanNbrPlayer":
-                        meanNbrPlayer.ParseXml(getValueContent(value, meanNbrPlayer.ElementName));
-                        break;
+                case "SendNetRate":
+                    if (!sendNetRate.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "RecvNetRate":
-                        recvNetRate.ParseXml(getValueContent(value, recvNetRate.ElementName));
-                        break;
+                case "TotalReceivingSize":
+                    if (!totalReceivingSize.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "SendNetRate":
-                        sendNetRate.ParseXml(getValueContent(value, sendNetRate.ElementName));
-                        break;
+                case "TotalSendingSize":
+                    if (!totalSendingSize.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "TotalReceivingSize":
-                        totalReceivingSize.ParseXml(getValueContent(value, totalReceivingSize.ElementName));
-                        break;
-
-                    case "TotalSendingSize":
-                        totalSendingSize.ParseXml(getValueContent(value, totalSendingSize.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

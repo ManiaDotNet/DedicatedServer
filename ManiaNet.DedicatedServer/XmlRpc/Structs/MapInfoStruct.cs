@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetCurrentMapInfo, GetNextMapInfo, and GetMapInfo method calls.
     /// </summary>
-    public sealed class MapInfoStruct : BaseStruct<MapInfoStruct>
+    public sealed class MapInfoStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the Author property.
@@ -218,108 +219,116 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("UId", uId.GenerateXml()),
-                makeMemberElement("Name", name.GenerateXml()),
-                makeMemberElement("Filename", filename.GenerateXml()),
-                makeMemberElement("Author", author.GenerateXml()),
-                makeMemberElement("Environnement", environment.GenerateXml()), // [sic]
-                makeMemberElement("Mood", mood.GenerateXml()),
-                makeMemberElement("BronzeTime", bronzeTime.GenerateXml()),
-                makeMemberElement("SilverTime", silverTime.GenerateXml()),
-                makeMemberElement("GoldTime", goldTime.GenerateXml()),
-                makeMemberElement("AuthorTime", authorTime.GenerateXml()),
-                makeMemberElement("CopperPrice", copperPrice.GenerateXml()),
-                makeMemberElement("LapRace", lapRace.GenerateXml()),
-                makeMemberElement("NbLaps", nbLaps.GenerateXml()),
-                makeMemberElement("NbCheckpoints", nbCheckpoints.GenerateXml()),
-                makeMemberElement("MapType", mapType.GenerateXml()),
-                makeMemberElement("MapStyle", mapStyle.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("UId", uId),
+                makeMemberElement("Name", name),
+                makeMemberElement("Filename", filename),
+                makeMemberElement("Author", author),
+                makeMemberElement("Environnement", environment), // [sic]
+                makeMemberElement("Mood", mood),
+                makeMemberElement("BronzeTime", bronzeTime),
+                makeMemberElement("SilverTime", silverTime),
+                makeMemberElement("GoldTime", goldTime),
+                makeMemberElement("AuthorTime", authorTime),
+                makeMemberElement("CopperPrice", copperPrice),
+                makeMemberElement("LapRace", lapRace),
+                makeMemberElement("NbLaps", nbLaps),
+                makeMemberElement("NbCheckpoints", nbCheckpoints),
+                makeMemberElement("MapType", mapType),
+                makeMemberElement("MapStyle", mapStyle));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override MapInfoStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "UId":
+                    if (!uId.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "Name":
+                    if (!name.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "UId":
-                        uId.ParseXml(getValueContent(value, uId.ElementName));
-                        break;
+                case "Filename":
+                    if (!filename.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Name":
-                        name.ParseXml(getValueContent(value, name.ElementName));
-                        break;
+                case "Author":
+                    if (!author.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Filename":
-                        filename.ParseXml(getValueContent(value, filename.ElementName));
-                        break;
+                case "Environnement": // [sic]
+                    if (!environment.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Author":
-                        author.ParseXml(getValueContent(value, author.ElementName));
-                        break;
+                case "Mood":
+                    if (!mood.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Environnement": // [sic]
-                        environment.ParseXml(getValueContent(value, environment.ElementName));
-                        break;
+                case "BronzeTime":
+                    if (!bronzeTime.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Mood":
-                        mood.ParseXml(getValueContent(value, mood.ElementName));
-                        break;
+                case "SilverTime":
+                    if (!silverTime.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "BronzeTime":
-                        bronzeTime.ParseXml(getValueContent(value, bronzeTime.ElementName));
-                        break;
+                case "GoldTime":
+                    if (!goldTime.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "SilverTime":
-                        silverTime.ParseXml(getValueContent(value, silverTime.ElementName));
-                        break;
+                case "AuthorTime":
+                    if (!authorTime.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "GoldTime":
-                        goldTime.ParseXml(getValueContent(value, goldTime.ElementName));
-                        break;
+                case "CopperPrice":
+                    if (!copperPrice.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "AuthorTime":
-                        authorTime.ParseXml(getValueContent(value, authorTime.ElementName));
-                        break;
+                case "NbLaps":
+                    if (!nbLaps.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CopperPrice":
-                        copperPrice.ParseXml(getValueContent(value, copperPrice.ElementName));
-                        break;
+                case "NbCheckpoints":
+                    if (!nbCheckpoints.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NbLaps":
-                        nbLaps.ParseXml(getValueContent(value, nbLaps.ElementName));
-                        break;
+                case "MapType":
+                    if (!mapType.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NbCheckpoints":
-                        nbCheckpoints.ParseXml(getValueContent(value, nbCheckpoints.ElementName));
-                        break;
+                case "MapStyle":
+                    if (!mapStyle.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "MapType":
-                        mapType.ParseXml(getValueContent(value, mapType.ElementName));
-                        break;
-
-                    case "MapStyle":
-                        mapStyle.ParseXml(getValueContent(value, mapStyle.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

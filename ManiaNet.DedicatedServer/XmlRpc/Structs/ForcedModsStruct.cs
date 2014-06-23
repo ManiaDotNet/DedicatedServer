@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetForcedMods method call.
     /// </summary>
-    public sealed class ForcedModsStruct : BaseStruct<ForcedModsStruct>
+    public sealed class ForcedModsStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the Override property.
@@ -44,42 +45,37 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Override", @override.GenerateXml()),
-                makeMemberElement("Mods", mods.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Override", @override),
+                makeMemberElement("Mods", mods));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override ForcedModsStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Override":
+                    if (!@override.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "Mods":
+                    if (!mods.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Override":
-                        @override.ParseXml(getValueContent(value, @override.ElementName));
-                        break;
-
-                    case "Mods":
-                        mods.ParseXml(getValueContent(value, mods.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

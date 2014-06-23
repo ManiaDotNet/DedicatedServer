@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct passed to the SetGameInfos method call.
     /// </summary>
-    public sealed class PassedInGameInfosStruct : BaseStruct<PassedInGameInfosStruct>
+    public sealed class PassedInGameInfosStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the ChatTime property.
@@ -270,93 +271,98 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("GameMode", gameMode.GenerateXml()),
-                makeMemberElement("ChatTime", chatTime.GenerateXml()),
-                makeMemberElement("RoundsPointsLimit", roundsPointsLimit.GenerateXml()),
-                makeMemberElement("RoundsUseNewRules", roundsUseNewRules.GenerateXml()),
-                makeMemberElement("RoundsForcedLaps", roundsForcedLaps.GenerateXml()),
-                makeMemberElement("TimeAttackLimit", timeAttackLimit.GenerateXml()),
-                makeMemberElement("TimeAttackSynchStartPeriod", timeAttackSynchStartPeriod.GenerateXml()),
-                makeMemberElement("TeamPointsLimit", teamPointsLimit.GenerateXml()),
-                makeMemberElement("TeamMaxPoints", teamMaxPoints.GenerateXml()),
-                makeMemberElement("TeamUseNewRules", teamUseNewRules.GenerateXml()),
-                makeMemberElement("LapsNbLaps", lapsNbLaps.GenerateXml()),
-                makeMemberElement("LapsTimeLimit", lapsTimeLimit.GenerateXml()),
-                makeMemberElement("FinishTimeout", finishTimeout.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("GameMode", gameMode),
+                makeMemberElement("ChatTime", chatTime),
+                makeMemberElement("RoundsPointsLimit", roundsPointsLimit),
+                makeMemberElement("RoundsUseNewRules", roundsUseNewRules),
+                makeMemberElement("RoundsForcedLaps", roundsForcedLaps),
+                makeMemberElement("TimeAttackLimit", timeAttackLimit),
+                makeMemberElement("TimeAttackSynchStartPeriod", timeAttackSynchStartPeriod),
+                makeMemberElement("TeamPointsLimit", teamPointsLimit),
+                makeMemberElement("TeamMaxPoints", teamMaxPoints),
+                makeMemberElement("TeamUseNewRules", teamUseNewRules),
+                makeMemberElement("LapsNbLaps", lapsNbLaps),
+                makeMemberElement("LapsTimeLimit", lapsTimeLimit),
+                makeMemberElement("FinishTimeout", finishTimeout));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override PassedInGameInfosStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "GameMode":
+                    if (!gameMode.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "RoundsPointsLimit":
+                    if (!roundsPointsLimit.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "GameMode":
-                        gameMode.ParseXml(getValueContent(value, gameMode.ElementName));
-                        break;
+                case "RoundsUseNewRules":
+                    if (!roundsUseNewRules.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "RoundsPointsLimit":
-                        roundsPointsLimit.ParseXml(getValueContent(value, roundsPointsLimit.ElementName));
-                        break;
+                case "RoundsForcedLaps":
+                    if (!roundsForcedLaps.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "RoundsUseNewRules":
-                        roundsUseNewRules.ParseXml(getValueContent(value, roundsUseNewRules.ElementName));
-                        break;
+                case "TimeAttackLimit":
+                    if (!timeAttackLimit.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "RoundsForcedLaps":
-                        roundsForcedLaps.ParseXml(getValueContent(value, roundsForcedLaps.ElementName));
-                        break;
+                case "TimeAttackSynchStartPeriod":
+                    if (!timeAttackSynchStartPeriod.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "TimeAttackLimit":
-                        timeAttackLimit.ParseXml(getValueContent(value, timeAttackLimit.ElementName));
-                        break;
+                case "TeamPointsLimit":
+                    if (!teamPointsLimit.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "TimeAttackSynchStartPeriod":
-                        timeAttackSynchStartPeriod.ParseXml(getValueContent(value, timeAttackSynchStartPeriod.ElementName));
-                        break;
+                case "TeamMaxPoints":
+                    if (!teamMaxPoints.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "TeamPointsLimit":
-                        teamPointsLimit.ParseXml(getValueContent(value, teamPointsLimit.ElementName));
-                        break;
+                case "TeamUseNewRules":
+                    if (!teamUseNewRules.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "TeamMaxPoints":
-                        teamMaxPoints.ParseXml(getValueContent(value, teamMaxPoints.ElementName));
-                        break;
+                case "LapsNbLaps":
+                    if (!lapsNbLaps.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "TeamUseNewRules":
-                        teamUseNewRules.ParseXml(getValueContent(value, teamUseNewRules.ElementName));
-                        break;
+                case "LapsTimeLimit":
+                    if (!lapsTimeLimit.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "LapsNbLaps":
-                        lapsNbLaps.ParseXml(getValueContent(value, lapsNbLaps.ElementName));
-                        break;
+                case "FinishTimeout":
+                    if (!finishTimeout.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "LapsTimeLimit":
-                        lapsTimeLimit.ParseXml(getValueContent(value, lapsTimeLimit.ElementName));
-                        break;
-
-                    case "FinishTimeout":
-                        finishTimeout.ParseXml(getValueContent(value, finishTimeout.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

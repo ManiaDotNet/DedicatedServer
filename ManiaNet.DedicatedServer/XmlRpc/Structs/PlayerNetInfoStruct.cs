@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the structs returned from the GetNetworkStats method call in the PlayerNetInfos array.
     /// </summary>
-    public sealed class PlayerNetInfoStruct : BaseStruct<PlayerNetInfoStruct>
+    public sealed class PlayerNetInfoStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the IPAddress property.
@@ -96,62 +97,61 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Login", login.GenerateXml()),
-                makeMemberElement("IPAddress", ipAddress.GenerateXml()),
-                makeMemberElement("StateUpdateLatency", stateUpdateLatency.GenerateXml()),
-                makeMemberElement("StateUpdatePeriod", stateUpdatePeriod.GenerateXml()),
-                makeMemberElement("LatestNetworkActivity", latestNetworkActivity.GenerateXml()),
-                makeMemberElement("NetworkLossRate", networkLossRate.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Login", login),
+                makeMemberElement("IPAddress", ipAddress),
+                makeMemberElement("StateUpdateLatency", stateUpdateLatency),
+                makeMemberElement("StateUpdatePeriod", stateUpdatePeriod),
+                makeMemberElement("LatestNetworkActivity", latestNetworkActivity),
+                makeMemberElement("NetworkLossRate", networkLossRate));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override PlayerNetInfoStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Login":
+                    if (!login.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "IPAddress":
+                    if (!ipAddress.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Login":
-                        login.ParseXml(getValueContent(value, login.ElementName));
-                        break;
+                case "StateUpdateLatency":
+                    if (!stateUpdateLatency.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "IPAddress":
-                        ipAddress.ParseXml(getValueContent(value, ipAddress.ElementName));
-                        break;
+                case "StateUpdatePeriod":
+                    if (!stateUpdatePeriod.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "StateUpdateLatency":
-                        stateUpdateLatency.ParseXml(getValueContent(value, stateUpdateLatency.ElementName));
-                        break;
+                case "LatestNetworkActivity":
+                    if (!latestNetworkActivity.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "StateUpdatePeriod":
-                        stateUpdatePeriod.ParseXml(getValueContent(value, stateUpdatePeriod.ElementName));
-                        break;
+                case "NetworkLossRate":
+                    if (!networkLossRate.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "LatestNetworkActivity":
-                        latestNetworkActivity.ParseXml(getValueContent(value, latestNetworkActivity.ElementName));
-                        break;
-
-                    case "NetworkLossRate":
-                        networkLossRate.ParseXml(getValueContent(value, networkLossRate.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

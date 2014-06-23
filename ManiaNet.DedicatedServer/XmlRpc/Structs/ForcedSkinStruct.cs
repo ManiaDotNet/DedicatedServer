@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the structs that are returned from the GetForcedSkins and passed to the SetForcedSkins method calls.
     /// </summary>
-    public sealed class ForcedSkinStruct : BaseStruct<ForcedSkinStruct>
+    public sealed class ForcedSkinStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the Checksum property.
@@ -105,52 +106,49 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Orig", orig.GenerateXml()),
-                makeMemberElement("Name", name.GenerateXml()),
-                makeMemberElement("Checksum", checksum.GenerateXml()),
-                makeMemberElement("Url", url.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Orig", orig),
+                makeMemberElement("Name", name),
+                makeMemberElement("Checksum", checksum),
+                makeMemberElement("Url", url));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override ForcedSkinStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Orig":
+                    if (!orig.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "Name":
+                    if (!name.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Orig":
-                        orig.ParseXml(getValueContent(value, orig.ElementName));
-                        break;
+                case "Checksum":
+                    if (!checksum.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Name":
-                        name.ParseXml(getValueContent(value, name.ElementName));
-                        break;
+                case "Url":
+                    if (!url.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Checksum":
-                        checksum.ParseXml(getValueContent(value, checksum.ElementName));
-                        break;
-
-                    case "Url":
-                        url.ParseXml(getValueContent(value, url.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

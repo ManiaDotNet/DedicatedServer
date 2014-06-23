@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the structs returned by the GetMapList method call.
     /// </summary>
-    public sealed class BasicMapInfoStruct : BaseStruct<BasicMapInfoStruct>
+    public sealed class BasicMapInfoStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the Author property.
@@ -127,77 +128,79 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Name", name.GenerateXml()),
-                makeMemberElement("UId", uId.GenerateXml()),
-                makeMemberElement("Filename", filename.GenerateXml()),
-                makeMemberElement("Environnement", environment.GenerateXml()), // [sic]
-                makeMemberElement("Author", author.GenerateXml()),
-                makeMemberElement("GoldTime", goldTime.GenerateXml()),
-                makeMemberElement("CopperPrice", copperPrice.GenerateXml()),
-                makeMemberElement("MapType", mapType.GenerateXml()),
-                makeMemberElement("MapStyle", mapStyle.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Name", name),
+                makeMemberElement("UId", uId),
+                makeMemberElement("Filename", filename),
+                makeMemberElement("Environnement", environment), // [sic]
+                makeMemberElement("Author", author),
+                makeMemberElement("GoldTime", goldTime),
+                makeMemberElement("CopperPrice", copperPrice),
+                makeMemberElement("MapType", mapType),
+                makeMemberElement("MapStyle", mapStyle));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override BasicMapInfoStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Name":
+                    if (!name.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "UId":
+                    if (!uId.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Name":
-                        name.ParseXml(getValueContent(value, name.ElementName));
-                        break;
+                case "Filename":
+                    if (!filename.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "UId":
-                        uId.ParseXml(getValueContent(value, uId.ElementName));
-                        break;
+                case "Environnement": // [sic]
+                    if (!environment.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Filename":
-                        filename.ParseXml(getValueContent(value, filename.ElementName));
-                        break;
+                case "Author":
+                    if (!author.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Environnement": // [sic]
-                        environment.ParseXml(getValueContent(value, environment.ElementName));
-                        break;
+                case "GoldTime":
+                    if (!goldTime.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Author":
-                        author.ParseXml(getValueContent(value, author.ElementName));
-                        break;
+                case "CopperPrice":
+                    if (!copperPrice.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "GoldTime":
-                        goldTime.ParseXml(getValueContent(value, goldTime.ElementName));
-                        break;
+                case "MapType":
+                    if (!mapType.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CopperPrice":
-                        copperPrice.ParseXml(getValueContent(value, copperPrice.ElementName));
-                        break;
+                case "MapStyle":
+                    if (!mapStyle.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "MapType":
-                        mapType.ParseXml(getValueContent(value, mapType.ElementName));
-                        break;
-
-                    case "MapStyle":
-                        mapStyle.ParseXml(getValueContent(value, mapStyle.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

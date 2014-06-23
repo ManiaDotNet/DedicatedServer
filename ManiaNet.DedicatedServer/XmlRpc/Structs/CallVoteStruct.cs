@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetCurrentCallVote method call.
     /// </summary>
-    public sealed class CallVoteStruct : BaseStruct<CallVoteStruct>
+    public sealed class CallVoteStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the CallerLogin property.
@@ -57,47 +58,43 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("CallerLogin", callerLogin.GenerateXml()),
-                makeMemberElement("CmdName", cmdName.GenerateXml()),
-                makeMemberElement("CmdParam", cmdParam.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("CallerLogin", callerLogin),
+                makeMemberElement("CmdName", cmdName),
+                makeMemberElement("CmdParam", cmdParam));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override CallVoteStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "CallerLogin":
+                    if (!callerLogin.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "CmdName":
+                    if (!cmdName.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "CallerLogin":
-                        callerLogin.ParseXml(getValueContent(value, callerLogin.ElementName));
-                        break;
+                case "CmdParam":
+                    if (!cmdParam.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CmdName":
-                        cmdName.ParseXml(getValueContent(value, cmdName.ElementName));
-                        break;
-
-                    case "CmdParam":
-                        cmdParam.ParseXml(getValueContent(value, cmdParam.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

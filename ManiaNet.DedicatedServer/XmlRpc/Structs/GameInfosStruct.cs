@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetGameInfos method call.
     /// </summary>
-    public sealed class GameInfosStruct : BaseStruct<GameInfosStruct>
+    public sealed class GameInfosStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the CurrentGameInfos property.
@@ -44,42 +45,37 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("CurrentGameInfos", CurrentGameInfos.GenerateXml()),
-                makeMemberElement("NextGameInfos", NextGameInfos.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("CurrentGameInfos", currentGameInfos),
+                makeMemberElement("NextGameInfos", nextGameInfos));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override GameInfosStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "CurrentGameInfos":
+                    if (!CurrentGameInfos.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "NextGameInfos":
+                    if (!NextGameInfos.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "CurrentGameInfos":
-                        CurrentGameInfos.ParseXml(getValueContent(value, currentGameInfos.ElementName));
-                        break;
-
-                    case "NextGameInfos":
-                        NextGameInfos.ParseXml(getValueContent(value, nextGameInfos.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

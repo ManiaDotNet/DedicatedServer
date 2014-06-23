@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetPlayerList, GetPlayerInfo, and GetMainServerPlayerInfo method calls.
     /// </summary>
-    public sealed class PlayerInfoStruct : BaseStruct<PlayerInfoStruct>
+    public sealed class PlayerInfoStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the IsInOfficialMode property.
@@ -109,67 +110,67 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Login", login.GenerateXml()),
-                makeMemberElement("NickName", nickName.GenerateXml()),
-                makeMemberElement("PlayerId", playerId.GenerateXml()),
-                makeMemberElement("TeamId", teamId.GenerateXml()),
-                makeMemberElement("IsSpectator", isSpectator.GenerateXml()),
-                makeMemberElement("IsInOfficialMode", isInOfficialMode.GenerateXml()),
-                makeMemberElement("LadderRanking", ladderRanking.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Login", login),
+                makeMemberElement("NickName", nickName),
+                makeMemberElement("PlayerId", playerId),
+                makeMemberElement("TeamId", teamId),
+                makeMemberElement("IsSpectator", isSpectator),
+                makeMemberElement("IsInOfficialMode", isInOfficialMode),
+                makeMemberElement("LadderRanking", ladderRanking));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override PlayerInfoStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Login":
+                    if (!login.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "NickName":
+                    if (!nickName.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Login":
-                        login.ParseXml(getValueContent(value, login.ElementName));
-                        break;
+                case "PlayerId":
+                    if (!playerId.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NickName":
-                        nickName.ParseXml(getValueContent(value, nickName.ElementName));
-                        break;
+                case "TeamId":
+                    if (!teamId.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "PlayerId":
-                        playerId.ParseXml(getValueContent(value, playerId.ElementName));
-                        break;
+                case "IsSpectator":
+                    if (!isSpectator.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "TeamId":
-                        teamId.ParseXml(getValueContent(value, teamId.ElementName));
-                        break;
+                case "IsInOfficialMode":
+                    if (!isInOfficialMode.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "IsSpectator":
-                        isSpectator.ParseXml(getValueContent(value, isSpectator.ElementName));
-                        break;
+                case "LadderRanking":
+                    if (!ladderRanking.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "IsInOfficialMode":
-                        isInOfficialMode.ParseXml(getValueContent(value, isInOfficialMode.ElementName));
-                        break;
-
-                    case "LadderRanking":
-                        ladderRanking.ParseXml(getValueContent(value, ladderRanking.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

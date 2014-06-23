@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetLadderServerLimits method call.
     /// </summary>
-    public sealed class LadderServerLimitsStruct : BaseStruct<LadderServerLimitsStruct>
+    public sealed class LadderServerLimitsStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the LadderServerLimitMax property.
@@ -44,42 +45,37 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("LadderServerLimitMin", ladderServerLimitMin.GenerateXml()),
-                makeMemberElement("LadderServerLimitMax", ladderServerLimitMax.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("LadderServerLimitMin", ladderServerLimitMin),
+                makeMemberElement("LadderServerLimitMax", ladderServerLimitMax));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override LadderServerLimitsStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "LadderServerLimitMin":
+                    if (!ladderServerLimitMin.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "LadderServerLimitMax":
+                    if (!ladderServerLimitMax.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "LadderServerLimitMin":
-                        ladderServerLimitMin.ParseXml(getValueContent(value, ladderServerLimitMin.ElementName));
-                        break;
-
-                    case "LadderServerLimitMax":
-                        ladderServerLimitMax.ParseXml(getValueContent(value, ladderServerLimitMax.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

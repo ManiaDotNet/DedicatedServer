@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetServerOptions method call.
     /// </summary>
-    public sealed class ReturnedServerOptionsStruct : BaseStruct<ReturnedServerOptionsStruct>
+    public sealed class ReturnedServerOptionsStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the AllowChallengeDownload property.
@@ -265,127 +266,139 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Name", name.GenerateXml()),
-                makeMemberElement("Comment", comment.GenerateXml()),
-                makeMemberElement("Password", password.GenerateXml()),
-                makeMemberElement("PasswordForSpectator", passwordForSpectator.GenerateXml()),
-                makeMemberElement("CurrentMaxPlayers", currentMaxPlayers.GenerateXml()),
-                makeMemberElement("NextMaxPlayers", nextMaxPlayers.GenerateXml()),
-                makeMemberElement("CurrentMaxSpectators", currentMaxSpectators.GenerateXml()),
-                makeMemberElement("NextMaxSpectators", nextMaxSpectators.GenerateXml()),
-                makeMemberElement("IsP2PUpload", isP2PUpload.GenerateXml()),
-                makeMemberElement("IsP2PDownload", isP2PDownload.GenerateXml()),
-                makeMemberElement("CurrentLadderMode", currentLadderMode.GenerateXml()),
-                makeMemberElement("NextLadderMode", nextLadderMode.GenerateXml()),
-                makeMemberElement("CurrentVehicleNetQuality", nextLadderMode.GenerateXml()),
-                makeMemberElement("NextVehicleNetQuality", nextVehicleNetQuality.GenerateXml()),
-                makeMemberElement("CurrentCallVoteTimeOut", currentCallVoteTimeOut.GenerateXml()),
-                makeMemberElement("NextCallVoteTimeOut", nextCallVoteTimeOut.GenerateXml()),
-                makeMemberElement("CallVoteRatio", callVoteRatio.GenerateXml()),
-                makeMemberElement("AllowChallengeDownload", allowChallengeDownload.GenerateXml()),
-                makeMemberElement("AutoSaveReplays", autoSaveReplays.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Name", name),
+                makeMemberElement("Comment", comment),
+                makeMemberElement("Password", password),
+                makeMemberElement("PasswordForSpectator", passwordForSpectator),
+                makeMemberElement("CurrentMaxPlayers", currentMaxPlayers),
+                makeMemberElement("NextMaxPlayers", nextMaxPlayers),
+                makeMemberElement("CurrentMaxSpectators", currentMaxSpectators),
+                makeMemberElement("NextMaxSpectators", nextMaxSpectators),
+                makeMemberElement("IsP2PUpload", isP2PUpload),
+                makeMemberElement("IsP2PDownload", isP2PDownload),
+                makeMemberElement("CurrentLadderMode", currentLadderMode),
+                makeMemberElement("NextLadderMode", nextLadderMode),
+                makeMemberElement("CurrentVehicleNetQuality", nextLadderMode),
+                makeMemberElement("NextVehicleNetQuality", nextVehicleNetQuality),
+                makeMemberElement("CurrentCallVoteTimeOut", currentCallVoteTimeOut),
+                makeMemberElement("NextCallVoteTimeOut", nextCallVoteTimeOut),
+                makeMemberElement("CallVoteRatio", callVoteRatio),
+                makeMemberElement("AllowChallengeDownload", allowChallengeDownload),
+                makeMemberElement("AutoSaveReplays", autoSaveReplays));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override ReturnedServerOptionsStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Name":
+                    if (!name.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "Comment":
+                    if (!comment.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Name":
-                        name.ParseXml(getValueContent(value, name.ElementName));
-                        break;
+                case "Password":
+                    if (!password.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Comment":
-                        comment.ParseXml(getValueContent(value, comment.ElementName));
-                        break;
+                case "PasswordForSpectator":
+                    if (!passwordForSpectator.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Password":
-                        password.ParseXml(getValueContent(value, password.ElementName));
-                        break;
+                case "CurrentMaxPlayers":
+                    if (!currentMaxPlayers.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "PasswordForSpectator":
-                        passwordForSpectator.ParseXml(getValueContent(value, passwordForSpectator.ElementName));
-                        break;
+                case "NextMaxPlayers":
+                    if (!nextMaxPlayers.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CurrentMaxPlayers":
-                        currentMaxPlayers.ParseXml(getValueContent(value, currentMaxPlayers.ElementName));
-                        break;
+                case "CurrentMaxSpectators":
+                    if (!currentMaxSpectators.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NextMaxPlayers":
-                        nextMaxPlayers.ParseXml(getValueContent(value, nextMaxPlayers.ElementName));
-                        break;
+                case "NextMaxSpectators":
+                    if (!nextMaxSpectators.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CurrentMaxSpectators":
-                        currentMaxSpectators.ParseXml(getValueContent(value, currentMaxSpectators.ElementName));
-                        break;
+                case "IsP2PUpload":
+                    if (!isP2PUpload.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NextMaxSpectators":
-                        nextMaxSpectators.ParseXml(getValueContent(value, nextMaxSpectators.ElementName));
-                        break;
+                case "IsP2PDownload":
+                    if (!isP2PDownload.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "IsP2PUpload":
-                        isP2PUpload.ParseXml(getValueContent(value, isP2PUpload.ElementName));
-                        break;
+                case "CurrentLadderMode":
+                    if (!currentLadderMode.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "IsP2PDownload":
-                        isP2PDownload.ParseXml(getValueContent(value, isP2PDownload.ElementName));
-                        break;
+                case "NextLadderMode":
+                    if (!nextLadderMode.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CurrentLadderMode":
-                        currentLadderMode.ParseXml(getValueContent(value, currentLadderMode.ElementName));
-                        break;
+                case "CurrentVehicleNetQuality":
+                    if (!currentVehicleNetQuality.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NextLadderMode":
-                        nextLadderMode.ParseXml(getValueContent(value, nextLadderMode.ElementName));
-                        break;
+                case "NextVehicleNetQuality":
+                    if (!nextVehicleNetQuality.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CurrentVehicleNetQuality":
-                        currentVehicleNetQuality.ParseXml(getValueContent(value, currentVehicleNetQuality.ElementName));
-                        break;
+                case "CurrentCallVoteTimeOut":
+                    if (!currentCallVoteTimeOut.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NextVehicleNetQuality":
-                        nextVehicleNetQuality.ParseXml(getValueContent(value, nextVehicleNetQuality.ElementName));
-                        break;
+                case "NextCallVoteTimeOut":
+                    if (!nextCallVoteTimeOut.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CurrentCallVoteTimeOut":
-                        currentCallVoteTimeOut.ParseXml(getValueContent(value, currentCallVoteTimeOut.ElementName));
-                        break;
+                case "CallVoteRatio":
+                    if (!callVoteRatio.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NextCallVoteTimeOut":
-                        nextCallVoteTimeOut.ParseXml(getValueContent(value, nextCallVoteTimeOut.ElementName));
-                        break;
+                case "AllowChallengeDownload":
+                    if (!allowChallengeDownload.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "CallVoteRatio":
-                        callVoteRatio.ParseXml(getValueContent(value, callVoteRatio.ElementName));
-                        break;
+                case "AutoSaveReplays":
+                    if (!autoSaveReplays.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "AllowChallengeDownload":
-                        allowChallengeDownload.ParseXml(getValueContent(value, allowChallengeDownload.ElementName));
-                        break;
-
-                    case "AutoSaveReplays":
-                        autoSaveReplays.ParseXml(getValueContent(value, autoSaveReplays.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

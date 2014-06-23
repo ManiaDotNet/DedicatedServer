@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned by the GetSystemInfo method call.
     /// </summary>
-    public sealed class SystemInfoStruct : BaseStruct<SystemInfoStruct>
+    public sealed class SystemInfoStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the ConnectionDownloadRate property.
@@ -148,82 +149,85 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("PublishedIp", publishedIp.GenerateXml()),
-                makeMemberElement("Port", port.GenerateXml()),
-                makeMemberElement("P2PPort", p2pPort.GenerateXml()),
-                makeMemberElement("TitleId", titleId.GenerateXml()),
-                makeMemberElement("ServerLogin", serverLogin.GenerateXml()),
-                makeMemberElement("ServerPlayerId", serverPlayerId.GenerateXml()),
-                makeMemberElement("ConnectionDownloadRate", connectionDownloadRate.GenerateXml()),
-                makeMemberElement("ConnectionUploadRate", connectionUploadRate.GenerateXml()),
-                makeMemberElement("IsServer", isServer.GenerateXml()),
-                makeMemberElement("IsDedicated", isDedicated.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("PublishedIp", publishedIp),
+                makeMemberElement("Port", port),
+                makeMemberElement("P2PPort", p2pPort),
+                makeMemberElement("TitleId", titleId),
+                makeMemberElement("ServerLogin", serverLogin),
+                makeMemberElement("ServerPlayerId", serverPlayerId),
+                makeMemberElement("ConnectionDownloadRate", connectionDownloadRate),
+                makeMemberElement("ConnectionUploadRate", connectionUploadRate),
+                makeMemberElement("IsServer", isServer),
+                makeMemberElement("IsDedicated", isDedicated));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override SystemInfoStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "PublishedIp":
+                    if (!publishedIp.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "Port":
+                    if (!port.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "PublishedIp":
-                        publishedIp.ParseXml(getValueContent(value, publishedIp.ElementName));
-                        break;
+                case "P2PPort":
+                    if (!p2pPort.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Port":
-                        port.ParseXml(getValueContent(value, port.ElementName));
-                        break;
+                case "TitleId":
+                    if (!titleId.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "P2PPort":
-                        p2pPort.ParseXml(getValueContent(value, p2pPort.ElementName));
-                        break;
+                case "ServerLogin":
+                    if (!serverLogin.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "TitleId":
-                        titleId.ParseXml(getValueContent(value, titleId.ElementName));
-                        break;
+                case "ServerPlayerId":
+                    if (!serverPlayerId.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "ServerLogin":
-                        serverLogin.ParseXml(getValueContent(value, serverLogin.ElementName));
-                        break;
+                case "ConnectionDownloadRate":
+                    if (!connectionDownloadRate.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "ServerPlayerId":
-                        serverPlayerId.ParseXml(getValueContent(value, serverPlayerId.ElementName));
-                        break;
+                case "ConnectionUploadRate":
+                    if (!connectionUploadRate.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "ConnectionDownloadRate":
-                        connectionDownloadRate.ParseXml(getValueContent(value, connectionDownloadRate.ElementName));
-                        break;
+                case "IsServer":
+                    if (!isServer.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "ConnectionUploadRate":
-                        connectionUploadRate.ParseXml(getValueContent(value, connectionUploadRate.ElementName));
-                        break;
+                case "IsDedicated":
+                    if (!isDedicated.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "IsServer":
-                        isServer.ParseXml(getValueContent(value, isServer.ElementName));
-                        break;
-
-                    case "IsDedicated":
-                        isDedicated.ParseXml(getValueContent(value, isDedicated.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

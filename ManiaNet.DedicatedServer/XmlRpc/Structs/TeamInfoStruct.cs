@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the struct returned from the GetTeamInfo method call.
     /// </summary>
-    public sealed class TeamInfoStruct : BaseStruct<TeamInfoStruct>
+    public sealed class TeamInfoStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the City property.
@@ -122,67 +123,73 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Name", name.GenerateXml()),
-                makeMemberElement("ZonePath", zonePath.GenerateXml()),
-                makeMemberElement("City", city.GenerateXml()),
-                makeMemberElement("EmblemUrl", emblemUrl.GenerateXml()),
-                makeMemberElement("ClubLinkUrl", clubLinkUrl.GenerateXml()),
-                makeMemberElement("HuePrimary", huePrimary.GenerateXml()),
-                makeMemberElement("HueSecondary", hueSecondary.GenerateXml()),
-                makeMemberElement("RGB", rgb.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Name", name),
+                makeMemberElement("ZonePath", zonePath),
+                makeMemberElement("City", city),
+                makeMemberElement("EmblemUrl", emblemUrl),
+                makeMemberElement("ClubLinkUrl", clubLinkUrl),
+                makeMemberElement("HuePrimary", huePrimary),
+                makeMemberElement("HueSecondary", hueSecondary),
+                makeMemberElement("RGB", rgb));
         }
 
-        public override TeamInfoStruct ParseXml(XElement xElement)
+        /// <summary>
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
+        /// </summary>
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Name":
+                    if (!name.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "ZonePath":
+                    if (!zonePath.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Name":
-                        name.ParseXml(getValueContent(value, name.ElementName));
-                        break;
+                case "City":
+                    if (!city.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "ZonePath":
-                        zonePath.ParseXml(getValueContent(value, zonePath.ElementName));
-                        break;
+                case "EmblemUrl":
+                    if (!emblemUrl.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "City":
-                        city.ParseXml(getValueContent(value, city.ElementName));
-                        break;
+                case "ClubLinkUrl":
+                    if (!clubLinkUrl.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "EmblemUrl":
-                        emblemUrl.ParseXml(getValueContent(value, emblemUrl.ElementName));
-                        break;
+                case "HuePrimary":
+                    if (!huePrimary.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "ClubLinkUrl":
-                        clubLinkUrl.ParseXml(getValueContent(value, clubLinkUrl.ElementName));
-                        break;
+                case "HueSecondary":
+                    if (!hueSecondary.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "HuePrimary":
-                        huePrimary.ParseXml(getValueContent(value, huePrimary.ElementName));
-                        break;
+                case "RGB":
+                    if (!rgb.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "HueSecondary":
-                        hueSecondary.ParseXml(getValueContent(value, hueSecondary.ElementName));
-                        break;
-
-                    case "RGB":
-                        rgb.ParseXml(getValueContent(value, rgb.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }

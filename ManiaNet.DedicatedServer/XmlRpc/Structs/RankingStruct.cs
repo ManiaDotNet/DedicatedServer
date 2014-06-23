@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc;
 using XmlRpc.Types;
 using XmlRpc.Types.Structs;
 
@@ -10,7 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
     /// <summary>
     /// Represents the structs returned by the GetCurrentRanking and GetCurrentRankingForLogin method calls.
     /// </summary>
-    public sealed class RankingStruct : BaseStruct<RankingStruct>
+    public sealed class RankingStruct : BaseStruct
     {
         /// <summary>
         /// Backing field for the BestCheckpoints property.
@@ -127,77 +128,79 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>The generated XElement.</returns>
         public override XElement GenerateXml()
         {
-            return new XElement(XName.Get(ElementName),
-                makeMemberElement("Login", login.GenerateXml()),
-                makeMemberElement("NickName", nickName.GenerateXml()),
-                makeMemberElement("PlayerId", playerId.GenerateXml()),
-                makeMemberElement("Rank", rank.GenerateXml()),
-                makeMemberElement("BestTime", bestTime.GenerateXml()),
-                makeMemberElement("BestCheckpoints", bestCheckpoints.GenerateXml()),
-                makeMemberElement("Score", score.GenerateXml()),
-                makeMemberElement("NbrLapsFinished", nbrLapsFinished.GenerateXml()),
-                makeMemberElement("LadderScore", ladderScore.GenerateXml()));
+            return new XElement(XName.Get(XmlRpcElements.StructElement),
+                makeMemberElement("Login", login),
+                makeMemberElement("NickName", nickName),
+                makeMemberElement("PlayerId", playerId),
+                makeMemberElement("Rank", rank),
+                makeMemberElement("BestTime", bestTime),
+                makeMemberElement("BestCheckpoints", bestCheckpoints),
+                makeMemberElement("Score", score),
+                makeMemberElement("NbrLapsFinished", nbrLapsFinished),
+                makeMemberElement("LadderScore", ladderScore));
         }
 
         /// <summary>
-        /// Fills the properties of this struct with the information contained in the element.
+        /// Fills the property of this struct that has the correct name with the information contained in the member-XElement.
         /// </summary>
-        /// <param name="xElement">The struct element storing the information.</param>
-        /// <returns>Itself, for convenience.</returns>
-        public override RankingStruct ParseXml(XElement xElement)
+        /// <param name="member">The member element storing the information.</param>
+        /// <returns>Whether it was successful or not.</returns>
+        protected override bool parseXml(XElement member)
         {
-            checkName(xElement);
+            XElement value = getMemberValueElement(member);
 
-            foreach (XElement member in xElement.Descendants(XName.Get(MemberElement)))
+            switch (getMemberName(member))
             {
-                checkIsValidMemberElement(member);
+                case "Login":
+                    if (!login.ParseXml(value))
+                        return false;
+                    break;
 
-                XElement value = getMemberValueElement(member);
+                case "NickName":
+                    if (!nickName.ParseXml(value))
+                        return false;
+                    break;
 
-                switch (getMemberName(member))
-                {
-                    case "Login":
-                        login.ParseXml(getValueContent(value, login.ElementName));
-                        break;
+                case "PlayerId":
+                    if (!playerId.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NickName":
-                        nickName.ParseXml(getValueContent(value, nickName.ElementName));
-                        break;
+                case "Rank":
+                    if (!rank.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "PlayerId":
-                        playerId.ParseXml(getValueContent(value, playerId.ElementName));
-                        break;
+                case "BestTime":
+                    if (!bestTime.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Rank":
-                        rank.ParseXml(getValueContent(value, rank.ElementName));
-                        break;
+                case "BestCheckpoints":
+                    if (!bestCheckpoints.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "BestTime":
-                        bestTime.ParseXml(getValueContent(value, bestTime.ElementName));
-                        break;
+                case "Score":
+                    if (!score.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "BestCheckpoints":
-                        bestCheckpoints.ParseXml(getValueContent(value, bestCheckpoints.ElementName));
-                        break;
+                case "NbrLapsFinished":
+                    if (!nbrLapsFinished.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "Score":
-                        score.ParseXml(getValueContent(value, score.ElementName));
-                        break;
+                case "LadderScore":
+                    if (!ladderScore.ParseXml(value))
+                        return false;
+                    break;
 
-                    case "NbrLapsFinished":
-                        nbrLapsFinished.ParseXml(getValueContent(value, nbrLapsFinished.ElementName));
-                        break;
-
-                    case "LadderScore":
-                        ladderScore.ParseXml(getValueContent(value, ladderScore.ElementName));
-                        break;
-
-                    default:
-                        throw new FormatException("Unexpected member with name " + getMemberName(member));
-                }
+                default:
+                    return false;
             }
 
-            return this;
+            return true;
         }
     }
 }
