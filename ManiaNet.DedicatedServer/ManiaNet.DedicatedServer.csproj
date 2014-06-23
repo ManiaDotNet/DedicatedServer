@@ -347,6 +347,7 @@
     <Compile Include="XmlRpc\Structs\StatusStruct.cs" />
     <Compile Include="XmlRpc\Structs\SystemInfoStruct.cs" />
     <Compile Include="XmlRpc\Structs\TeamInfoStruct.cs" />
+    <Compile Include="XmlRpc\XmlRpcClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="XmlRpc\ServerCallbacks\" />
