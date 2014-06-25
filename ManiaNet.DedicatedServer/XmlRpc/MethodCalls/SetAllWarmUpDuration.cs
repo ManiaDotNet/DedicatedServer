@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetAllWarmUpDuration method.
     /// </summary>
-    public sealed class SetAllWarmUpDuration : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SetAllWarmUpDuration : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new duration of the warm up phase for all modes.
@@ -31,7 +31,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetAllWarmUpDuration"/> class for the given duration.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetAllWarmUpDuration"/> class for the given duration.
         /// </summary>
         /// <param name="duration">The new duration of the warm up phase for all modes.
         /// Number of rounds in rounds and laps mode, number of times the gold medal time in other modes.

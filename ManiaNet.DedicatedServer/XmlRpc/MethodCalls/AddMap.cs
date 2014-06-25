@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the AddMap method.
     /// </summary>
-    public sealed class AddMap : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class AddMap : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filename of the map to add.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.AddMap"/> class for the given filename.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.AddMap"/> class for the given filename.
         /// </summary>
         /// <param name="filename">The filename of the map to add.</param>
         public AddMap(string filename)

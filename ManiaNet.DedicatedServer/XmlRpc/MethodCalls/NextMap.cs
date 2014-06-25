@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the NextMap method.
     /// </summary>
-    public sealed class NextMap : MethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
+    public sealed class NextMap : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets whether to clear scores in cup mode or not.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.NextMap"/> class with an optional value for whether to clear cup scores or not.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.NextMap"/> class with an optional value for whether to clear cup scores or not.
         /// </summary>
         /// <param name="clearCupScores">Whether to clear scores in cup mode or not.</param>
         public NextMap(bool clearCupScores = true)

@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetServerTags method.
     /// </summary>
-    public sealed class GetServerTags : MethodCall<XmlRpcArray<XmlRpcStruct<ServerTagStruct>, ServerTagStruct>, XmlRpcStruct<ServerTagStruct>[]>
+    public sealed class GetServerTags : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<ServerTagStruct>, ServerTagStruct>, XmlRpcStruct<ServerTagStruct>[]>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

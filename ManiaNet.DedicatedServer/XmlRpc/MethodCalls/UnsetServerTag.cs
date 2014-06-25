@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the UnsetServerTag method.
     /// </summary>
-    public sealed class UnsetServerTag : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class UnsetServerTag : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.UnsetServerTag"/> for the given tag name.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.UnsetServerTag"/> for the given tag name.
         /// </summary>
         /// <param name="name">The name of the tag that will be removed.</param>
         public UnsetServerTag(string name)

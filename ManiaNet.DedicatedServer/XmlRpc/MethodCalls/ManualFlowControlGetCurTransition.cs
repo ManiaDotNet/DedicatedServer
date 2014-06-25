@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the ManualFlowControlGetCurTransition method.
     /// </summary>
-    public sealed class ManualFlowControlGetCurTransition : MethodCall<XmlRpcString, string>
+    public sealed class ManualFlowControlGetCurTransition : XmlRpcMethodCall<XmlRpcString, string>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

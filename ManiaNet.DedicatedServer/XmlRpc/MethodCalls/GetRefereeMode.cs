@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetRefereeMode method.
     /// </summary>
-    public sealed class GetRefereeMode : MethodCall<XmlRpcI4, int>
+    public sealed class GetRefereeMode : XmlRpcMethodCall<XmlRpcI4, int>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

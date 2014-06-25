@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetHideServer method.
     /// </summary>
-    public sealed class SetHideServer : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SetHideServer : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetHideServer"/> class with the given visibility mode.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetHideServer"/> class with the given visibility mode.
         /// </summary>
         /// <param name="visability">The new visibility mode. Use values from <see cref="ManiaNet.DedicatedServer.VisibilityModes"/>.</param>
         public SetHideServer(int visability)

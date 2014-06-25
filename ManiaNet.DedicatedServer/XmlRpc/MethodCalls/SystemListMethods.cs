@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the system.listMethods method.
     /// </summary>
-    public sealed class SystemListMethods : MethodCall<XmlRpcArray<XmlRpcString, string>, XmlRpcString[]>
+    public sealed class SystemListMethods : XmlRpcMethodCall<XmlRpcArray<XmlRpcString, string>, XmlRpcString[]>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

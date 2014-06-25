@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetLobbyInfo method.
     /// </summary>
-    public sealed class GetLobbyInfo : MethodCall<XmlRpcStruct<LobbyInfoStruct>, LobbyInfoStruct>
+    public sealed class GetLobbyInfo : XmlRpcMethodCall<XmlRpcStruct<LobbyInfoStruct>, LobbyInfoStruct>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

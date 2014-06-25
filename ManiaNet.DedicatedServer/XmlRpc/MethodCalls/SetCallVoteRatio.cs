@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetCallVoteRatio method.
     /// </summary>
-    public sealed class SetCallVoteRatio : MethodCall<XmlRpcDouble, double, XmlRpcBoolean, bool>
+    public sealed class SetCallVoteRatio : XmlRpcMethodCall<XmlRpcDouble, double, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetCallVoteRatio"/> class with the given timeout.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetCallVoteRatio"/> class with the given timeout.
         /// </summary>
         /// <param name="ratio">The new default ratio for call votes. Has to be between 0 and 1.</param>
         public SetCallVoteRatio(double ratio)

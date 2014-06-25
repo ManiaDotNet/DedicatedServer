@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetGameMode method.
     /// </summary>
-    public sealed class SetGameMode : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SetGameMode : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetGameMode"/> class for the given game mode.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetGameMode"/> class for the given game mode.
         /// </summary>
         /// <param name="mode">The new game mode. USe values from <see cref="ManiaNet.DedicatedServer.GameModes"/>.</param>
         public SetGameMode(int mode)

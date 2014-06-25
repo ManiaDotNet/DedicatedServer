@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetCupNbWinners method.
     /// </summary>
-    public sealed class SetCupNbWinners : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SetCupNbWinners : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetCupNbWinners"/> class with the given number of winners.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetCupNbWinners"/> class with the given number of winners.
         /// </summary>
         /// <param name="winners">The new number of players that have to finish the map before the round is considered over.</param>
         public SetCupNbWinners(int winners)

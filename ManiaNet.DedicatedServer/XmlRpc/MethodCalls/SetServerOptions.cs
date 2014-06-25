@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetServerOptions method.
     /// </summary>
-    public sealed class SetServerOptions : MethodCall<XmlRpcStruct<PassedInServerOptionsStruct>, PassedInServerOptionsStruct, XmlRpcBoolean, bool>
+    public sealed class SetServerOptions : XmlRpcMethodCall<XmlRpcStruct<PassedInServerOptionsStruct>, PassedInServerOptionsStruct, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -30,7 +30,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetServerOptions"/> class with the given server options.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetServerOptions"/> class with the given server options.
         /// </summary>
         /// <param name="serverOptions">The new server options.</param>
         public SetServerOptions(PassedInServerOptionsStruct serverOptions)

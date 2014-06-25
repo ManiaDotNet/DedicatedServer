@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetSystemInfo method.
     /// </summary>
-    public sealed class GetSystemInfo : MethodCall<XmlRpcStruct<SystemInfoStruct>, SystemInfoStruct>
+    public sealed class GetSystemInfo : XmlRpcMethodCall<XmlRpcStruct<SystemInfoStruct>, SystemInfoStruct>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

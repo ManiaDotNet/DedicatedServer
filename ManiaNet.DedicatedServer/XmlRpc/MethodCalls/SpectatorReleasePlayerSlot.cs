@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SpectatorReleasePlayerSlot method.
     /// </summary>
-    public sealed class SpectatorReleasePlayerSlot : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class SpectatorReleasePlayerSlot : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login of the spectator whose player spot will be freed.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SpectatorReleasePlayerSlot"/> class for the given login.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SpectatorReleasePlayerSlot"/> class for the given login.
         /// </summary>
         /// <param name="login">The login of the spectator whose player spot will be freed.</param>
         public SpectatorReleasePlayerSlot(string login)

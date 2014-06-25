@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetCupRoundsPerMap method.
     /// </summary>
-    public sealed class SetCupRoundsPerMap : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SetCupRoundsPerMap : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetCupRoundsPerMap"/> class with the given number of rounds.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetCupRoundsPerMap"/> class with the given number of rounds.
         /// </summary>
         /// <param name="rounds">The new number of rounds on a map in cup mode.</param>
         public SetCupRoundsPerMap(int rounds)

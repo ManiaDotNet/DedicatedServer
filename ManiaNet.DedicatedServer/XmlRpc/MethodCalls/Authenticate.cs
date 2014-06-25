@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the Authenticate method.
     /// </summary>
-    public sealed class Authenticate : MethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class Authenticate : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login used for authentication.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.Authenticate"/> class with the given login and password for authentication.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.Authenticate"/> class with the given login and password for authentication.
         /// </summary>
         /// <param name="login">The login used for authentication.</param>
         /// <param name="password">The password used for authentication.</param>

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the system.methodHelp method.
     /// </summary>
-    public sealed class SystemMethodHelp : MethodCall<XmlRpcString, string, XmlRpcString, string>
+    public sealed class SystemMethodHelp : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SystemMethodHelp"/> class with the given target method name.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SystemMethodHelp"/> class with the given target method name.
         /// </summary>
         /// <param name="targetMethod">The name of the method that the help is wanted for.</param>
         public SystemMethodHelp(string targetMethod)

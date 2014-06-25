@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetTeamInfo method.
     /// </summary>
-    public sealed class GetTeamInfo : MethodCall<XmlRpcInt, int, XmlRpcStruct<TeamInfoStruct>, TeamInfoStruct>
+    public sealed class GetTeamInfo : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcStruct<TeamInfoStruct>, TeamInfoStruct>
     {
         /// <summary>
         /// Gets or sets the Id of the team whose information will be returned. 0, 1, or 2.
@@ -30,7 +30,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.GetTeamInfo"/> class with the given team Id.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetTeamInfo"/> class with the given team Id.
         /// </summary>
         /// <param name="id">The Id of the team. 0, 1, or 2.</param>
         public GetTeamInfo(int id)

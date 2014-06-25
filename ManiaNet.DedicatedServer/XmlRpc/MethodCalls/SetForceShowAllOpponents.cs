@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetForceShowAllOpponents method.
     /// </summary>
-    public sealed class SetForceShowAllOpponents : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SetForceShowAllOpponents : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -30,7 +30,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetForceShowAllOpponents"/> class with the given number of opponents.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetForceShowAllOpponents"/> class with the given number of opponents.
         /// </summary>
         /// <param name="opponents">The number of opponents that will be shown for every player.
         /// 0 means none will be forced, 1 means ALL opponents will be shown.</param>

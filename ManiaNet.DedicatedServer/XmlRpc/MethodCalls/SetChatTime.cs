@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SendChatTime method.
     /// </summary>
-    public sealed class SetChatTime : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SetChatTime : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the chat time at the end of the map in milliseconds.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetChatTime"/> class for the given chat time.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetChatTime"/> class for the given chat time.
         /// </summary>
         /// <param name="chatTime">The chat time at the end of the map in milliseconds.</param>
         public SetChatTime(int chatTime)

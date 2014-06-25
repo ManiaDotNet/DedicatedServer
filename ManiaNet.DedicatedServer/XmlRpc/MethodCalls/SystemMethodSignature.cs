@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the system.methodSignature method.
     /// </summary>
-    public sealed class SystemMethodSignature : MethodCall<XmlRpcString, string, XmlRpcArray<XmlRpcArray<XmlRpcString, string>, XmlRpcString[]>, XmlRpcArray<XmlRpcString, string>[]>
+    public sealed class SystemMethodSignature : XmlRpcMethodCall<XmlRpcString, string, XmlRpcArray<XmlRpcArray<XmlRpcString, string>, XmlRpcString[]>, XmlRpcArray<XmlRpcString, string>[]>
     {
         /// <summary>
         /// Gets or sets the login used for authentication.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SystemMethodSignature"/> class with the given target method name.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SystemMethodSignature"/> class with the given target method name.
         /// </summary>
         /// <param name="targetMethod">The name of the method that the signatures are wanted for.</param>
         public SystemMethodSignature(string targetMethod)

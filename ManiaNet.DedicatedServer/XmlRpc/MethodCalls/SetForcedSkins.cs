@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetForcedSkins method.
     /// </summary>
-    public sealed class SetForcedSkins : MethodCall<XmlRpcArray<XmlRpcStruct<ForcedSkinStruct>, ForcedSkinStruct>, XmlRpcStruct<ForcedSkinStruct>[], XmlRpcBoolean, bool>
+    public sealed class SetForcedSkins : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<ForcedSkinStruct>, ForcedSkinStruct>, XmlRpcStruct<ForcedSkinStruct>[], XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the forced skins.
@@ -30,7 +30,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetForcedSkins"/> class for the given skins.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetForcedSkins"/> class for the given skins.
         /// </summary>
         /// <param name="forcedSkins">The forced skins.</param>
         public SetForcedSkins(params ForcedSkinStruct[] forcedSkins)

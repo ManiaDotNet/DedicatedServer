@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the TunnelSendDataToId method.
     /// </summary>
-    public sealed class TunnelSendDataToId : MethodCall<XmlRpcInt, int, XmlRpcBase64, byte[], XmlRpcBoolean, bool>
+    public sealed class TunnelSendDataToId : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBase64, byte[], XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the data that will be send to the Id.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.TunnelSendDataToId"/> class with the given data for the given Id.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.TunnelSendDataToId"/> class with the given data for the given Id.
         /// </summary>
         /// <param name="id">The Id that the data will be send to.</param>
         /// <param name="data">The data that will be send to the Id.</param>

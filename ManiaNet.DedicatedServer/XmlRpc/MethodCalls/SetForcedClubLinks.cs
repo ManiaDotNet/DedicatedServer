@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetForcedClubLinks method.
     /// </summary>
-    public sealed class SetForcedClubLinks : MethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class SetForcedClubLinks : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new club link for clan 1.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetForcedClubLinks"/> class with the given club links.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetForcedClubLinks"/> class with the given club links.
         /// </summary>
         /// <param name="clubLink1">The new club link for clan 1.</param>
         /// <param name="clubLink2">The new club link for clan 2.</param>

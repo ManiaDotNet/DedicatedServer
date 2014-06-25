@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the CustomizeQuitDialog method.
     /// </summary>
-    public sealed class CustomizeQuitDialog : MethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool, XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class CustomizeQuitDialog : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the delay in milliseconds until the Quit button becomes active.
@@ -56,7 +56,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.CustomizeQuitDialog"/> class with the given settings.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.CustomizeQuitDialog"/> class with the given settings.
         /// </summary>
         /// <param name="manialinkPage">The Xml represneting the displayed manialink.</param>
         /// <param name="sendToServer">A maniaplanet qjoin url that the client will be send to. Format: #qjoin=serverlogin@title</param>

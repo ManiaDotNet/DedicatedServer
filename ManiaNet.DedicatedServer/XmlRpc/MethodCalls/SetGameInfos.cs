@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetGameInfos method.
     /// </summary>
-    public sealed class SetGameInfos : MethodCall<XmlRpcStruct<PassedInGameInfosStruct>, PassedInGameInfosStruct, XmlRpcBoolean, bool>
+    public sealed class SetGameInfos : XmlRpcMethodCall<XmlRpcStruct<PassedInGameInfosStruct>, PassedInGameInfosStruct, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new game infos.
@@ -30,7 +30,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetGameInfos"/> class for the given game infos.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetGameInfos"/> class for the given game infos.
         /// </summary>
         /// <param name="gameInfos">The new game infos.</param>
         public SetGameInfos(PassedInGameInfosStruct gameInfos)

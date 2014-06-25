@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the ConnectFakePlayer method.
     /// </summary>
-    public sealed class ConnectFakePlayer : MethodCall<XmlRpcString, string>
+    public sealed class ConnectFakePlayer : XmlRpcMethodCall<XmlRpcString, string>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

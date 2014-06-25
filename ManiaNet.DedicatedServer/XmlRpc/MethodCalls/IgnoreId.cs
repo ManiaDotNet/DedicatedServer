@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the IgnoreIdId method.
     /// </summary>
-    public sealed class IgnoreId : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class IgnoreId : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Id that will be IgnoreIdd.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.IgnoreId"/> class for the given Id.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.IgnoreId"/> class for the given Id.
         /// </summary>
         /// <param name="id">The Id that will be IgnoreIdd.</param>
         public IgnoreId(int id)

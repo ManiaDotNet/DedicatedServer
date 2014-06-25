@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the ChangeAuthPassword method.
     /// </summary>
-    public sealed class ChangeAuthPassword : MethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class ChangeAuthPassword : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login of which to change the password.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.ChangeAuthPassword"/> class with the given login and password.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ChangeAuthPassword"/> class with the given login and password.
         /// </summary>
         /// <param name="login">The login of which to change the password.</param>
         /// <param name="newPassword">The password that it's changed to.</param>

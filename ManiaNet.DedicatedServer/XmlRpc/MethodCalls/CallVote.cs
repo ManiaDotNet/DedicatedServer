@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the CallVote method.
     /// </summary>
-    public sealed class CallVote : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class CallVote : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the command to be executed when the call vote is successful.
@@ -31,7 +31,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.CallVote"/> class with the given command to be executed when the call vote is successful.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.CallVote"/> class with the given command to be executed when the call vote is successful.
         /// </summary>
         /// <param name="command">The method to be executed when the call vote is successful. Has to correspond to an Xml Rpc method call.</param>
         public CallVote(string command)

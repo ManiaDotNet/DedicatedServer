@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the Echo method.
     /// </summary>
-    public sealed class Echo : MethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class Echo : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.Echo"/> class with the given parameters.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.Echo"/> class with the given parameters.
         /// </summary>
         /// <param name="parameterOne">The first parameter. Seems to be the second parameter in the callback.</param>
         /// <param name="parameterTwo">The second parameter. Seems to be the first parameter in the callback.</param>

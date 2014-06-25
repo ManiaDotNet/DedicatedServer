@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetCupPointsLimit method.
     /// </summary>
-    public sealed class SetCupPointsLimit : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SetCupPointsLimit : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetCupPointsLimit"/> class for the given points limit.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetCupPointsLimit"/> class for the given points limit.
         /// </summary>
         /// <param name="pointsLimit">The new points limit in cup mode.</param>
         public SetCupPointsLimit(int pointsLimit)

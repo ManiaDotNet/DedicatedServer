@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SetNextMapIdent method.
     /// </summary>
-    public sealed class SetNextMapIdent : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class SetNextMapIdent : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new ident of the next map.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SetNextMapIdent"/> class with the given ident.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetNextMapIdent"/> class with the given ident.
         /// </summary>
         /// <param name="ident">The new ident of the next map.</param>
         public SetNextMapIdent(string ident)

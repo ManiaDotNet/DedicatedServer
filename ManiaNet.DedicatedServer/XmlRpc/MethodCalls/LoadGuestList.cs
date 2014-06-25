@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the LoadGuestList method.
     /// </summary>
-    public sealed class LoadGuestList : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class LoadGuestList : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filepath to load the Guestlist from.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.LoadGuestList"/> class for the given filepath.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.LoadGuestList"/> class for the given filepath.
         /// </summary>
         /// <param name="filepath">The filepath to load the Guestlist from.</param>
         public LoadGuestList(string filepath)

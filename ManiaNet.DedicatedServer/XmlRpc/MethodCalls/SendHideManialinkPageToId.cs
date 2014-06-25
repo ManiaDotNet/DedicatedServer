@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SendHideManialinkPageToId method.
     /// </summary>
-    public sealed class SendHideManialinkPageToId : MethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class SendHideManialinkPageToId : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Id for which the manialink page will be hidden.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SendHideManialinkPageToId"/> class wit the given id.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SendHideManialinkPageToId"/> class wit the given id.
         /// </summary>
         /// <param name="id">The Id for which the manialink page will be hidden.</param>
         public SendHideManialinkPageToId(int id)

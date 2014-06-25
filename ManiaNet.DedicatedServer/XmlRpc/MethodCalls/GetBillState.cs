@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetBillState method.
     /// </summary>
-    public sealed class GetBillState : MethodCall<XmlRpcInt, int, XmlRpcStruct<BillStateStruct>, BillStateStruct>
+    public sealed class GetBillState : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcStruct<BillStateStruct>, BillStateStruct>
     {
         /// <summary>
         /// Gets or sets the Id of the bill that the state will be returned of.
@@ -30,7 +30,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.GetBillState"/> class for the given bill Id.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetBillState"/> class for the given bill Id.
         /// </summary>
         /// <param name="id">The Id of the bill that the state will be returned of.</param>
         public GetBillState(int id)

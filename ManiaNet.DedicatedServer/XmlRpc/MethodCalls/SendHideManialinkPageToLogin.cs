@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SendHideManialinkPageToLogin method.
     /// </summary>
-    public sealed class SendHideManialinkPageToLogin : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class SendHideManialinkPageToLogin : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Login for which the manialink page will be hidden.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SendHideManialinkPageToLogin"/> class wit the given login.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SendHideManialinkPageToLogin"/> class wit the given login.
         /// </summary>
         /// <param name="login">The Login for which the manialink page will be hidden.</param>
         public SendHideManialinkPageToLogin(string login)

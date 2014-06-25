@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetVersion method.
     /// </summary>
-    public sealed class GetVersion : MethodCall<XmlRpcStruct<ApplicationVersionStruct>, ApplicationVersionStruct>
+    public sealed class GetVersion : XmlRpcMethodCall<XmlRpcStruct<ApplicationVersionStruct>, ApplicationVersionStruct>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the ForceSpectatorTargetId method.
     /// </summary>
-    public sealed class ForceSpectatorTargetId : MethodCall<XmlRpcInt, int, XmlRpcInt, int, XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class ForceSpectatorTargetId : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcInt, int, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the camera type that the spectator(s) will have. Use values from <see cref="ManiaNet.DedicatedServer.SpectatorCameraTypes"/>.
@@ -47,7 +47,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.ForceSpectatorTargetId"/> class with the given target informations.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ForceSpectatorTargetId"/> class with the given target informations.
         /// </summary>
         /// <param name="spectatorId">The Id of the spectator whose target will be forced. Empty int for all spectators.</param>
         /// <param name="playerId">The Id of the player who will be the target. Empty int for automatic.</param>

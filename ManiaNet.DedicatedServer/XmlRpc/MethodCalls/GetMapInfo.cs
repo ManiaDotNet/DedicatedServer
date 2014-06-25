@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetMapInfo method.
     /// </summary>
-    public sealed class GetMapInfo : MethodCall<XmlRpcString, string, XmlRpcStruct<MapInfoStruct>, MapInfoStruct>
+    public sealed class GetMapInfo : XmlRpcMethodCall<XmlRpcString, string, XmlRpcStruct<MapInfoStruct>, MapInfoStruct>
     {
         /// <summary>
         /// Gets or sets the filename of the map to get the infos for.
@@ -30,7 +30,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.GetMapInfo"/> class for the given filename.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetMapInfo"/> class for the given filename.
         /// </summary>
         /// <param name="filename">The filename of the map to get the infos for.</param>
         public GetMapInfo(string filename)

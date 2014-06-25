@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the ManualFlowControlEnable method.
     /// </summary>
-    public sealed class ManualFlowControlEnable : MethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
+    public sealed class ManualFlowControlEnable : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets whether manual flow control will be enabled or not.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.ManualFlowControlEnable"/> class with the given value for whether to enable it.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ManualFlowControlEnable"/> class with the given value for whether to enable it.
         /// </summary>
         /// <param name="enable">Whether manual flow control will be enabled or not.</param>
         public ManualFlowControlEnable(bool enable)

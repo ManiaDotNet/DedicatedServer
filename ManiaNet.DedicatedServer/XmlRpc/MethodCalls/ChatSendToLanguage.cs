@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the ChatSendToLanguage method.
     /// </summary>
     public sealed class ChatSendToLanguage
-        : MethodCall<XmlRpcArray<XmlRpcStruct<LanguageMessageStruct>, LanguageMessageStruct>, XmlRpcStruct<LanguageMessageStruct>[], XmlRpcString, string, XmlRpcBoolean, bool>
+        : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<LanguageMessageStruct>, LanguageMessageStruct>, XmlRpcStruct<LanguageMessageStruct>[], XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login that the message is send to. If it's null, the message is send to all clients.
@@ -41,7 +41,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.ChatSendServerMessageToLanguage"/> class with the given login and messages.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ChatSendServerMessageToLanguage"/> class with the given login and messages.
         /// <para/>
         /// The last message in the list is used if there's no matching one.
         /// </summary>
@@ -52,7 +52,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         { }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.ChatSendServerMessageToLanguage"/> class with the given messages.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ChatSendServerMessageToLanguage"/> class with the given messages.
         /// <para/>
         /// With no login specified, the message is send to every client.
         /// <para/>
@@ -67,9 +67,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         /// Generates Xml containing the parameter data. Removes the last param element if there's no value for the login.
         /// </summary>
         /// <returns>An XElement containing the parameter data.</returns>
-        protected override XElement generateParamsXml()
+        protected override XElement generateCallParamsXml()
         {
-            XElement paramsElement = base.generateParamsXml();
+            XElement paramsElement = base.generateCallParamsXml();
 
             if (string.IsNullOrWhiteSpace(Login))
                 paramsElement.LastNode.Remove();

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the SaveBlackList method.
     /// </summary>
-    public sealed class SaveBlackList : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class SaveBlackList : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filepath to save the blacklist to.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.SaveBlackList"/> class for the given filepath.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SaveBlackList"/> class for the given filepath.
         /// </summary>
         /// <param name="filepath">The filepath to save the blacklist to.</param>
         public SaveBlackList(string filepath)

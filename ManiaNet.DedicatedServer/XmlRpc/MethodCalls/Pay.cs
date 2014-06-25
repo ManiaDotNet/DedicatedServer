@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the Pay method.
     /// </summary>
-    public sealed class Pay : MethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcString, string, XmlRpcI4, int>
+    public sealed class Pay : XmlRpcMethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcString, string, XmlRpcI4, int>
     {
         /// <summary>
         /// Gets or sets the label that will be send with the payment.
@@ -47,7 +47,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.Pay"/> class with the given payment information.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.Pay"/> class with the given payment information.
         /// </summary>
         /// <param name="payee">The login that will receive the planets.</param>
         /// <param name="planets">The amount of planets the the payee will receive.</param>

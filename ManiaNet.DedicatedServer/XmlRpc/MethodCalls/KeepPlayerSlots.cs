@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the KeepPlayerSlots method.
     /// </summary>
-    public sealed class KeepPlayerSlots : MethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
+    public sealed class KeepPlayerSlots : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.KeepPlayerSlots"/> class with the given value.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.KeepPlayerSlots"/> class with the given value.
         /// </summary>
         /// <param name="value">Whether the server still considers a player that switches to spectator as a player or not.</param>
         public KeepPlayerSlots(bool value)

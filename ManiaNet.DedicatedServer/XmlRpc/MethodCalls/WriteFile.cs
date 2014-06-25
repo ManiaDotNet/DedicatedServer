@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the WriteFile method.
     /// </summary>
-    public sealed class WriteFile : MethodCall<XmlRpcString, string, XmlRpcBase64, byte[], XmlRpcBoolean, bool>
+    public sealed class WriteFile : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBase64, byte[], XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the data that will be written to the file.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.WriteFile"/> class with the given data for the given filepath.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.WriteFile"/> class with the given data for the given filepath.
         /// </summary>
         /// <param name="filepath">The data that will be written to the file.</param>
         /// <param name="data">The filepath relative to the Maps folder that the data will be written to.</param>

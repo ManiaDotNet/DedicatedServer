@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the ChatSendToId method.
     /// </summary>
-    public sealed class ChatSendToId : MethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class ChatSendToId : XmlRpcMethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Id that the message will be send to.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.ChatSendToId"/> class with the given message for the given Id.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ChatSendToId"/> class with the given message for the given Id.
         /// </summary>
         /// <param name="message">The message that will be send to the Id.</param>
         /// <param name="id">The Id that the message will be send to.</param>

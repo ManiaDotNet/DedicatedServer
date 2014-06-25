@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetRoundCustomPoints method.
     /// </summary>
-    public sealed class GetRoundCustomPoints : MethodCall<XmlRpcArray<XmlRpcI4, int>, XmlRpcI4[]>
+    public sealed class GetRoundCustomPoints : XmlRpcMethodCall<XmlRpcArray<XmlRpcI4, int>, XmlRpcI4[]>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

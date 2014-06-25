@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the ForcePlayerTeam method.
     /// </summary>
-    public sealed class ForcePlayerTeam : MethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcBoolean, bool>
+    public sealed class ForcePlayerTeam : XmlRpcMethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login of the player that will be moved.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.ForcePlayerTeam"/> class for the given login and team Id.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ForcePlayerTeam"/> class for the given login and team Id.
         /// </summary>
         /// <param name="login">The login of the player that will be moved.</param>
         /// <param name="teamId">The Id of the team that the player will be moved into. 0 or 1.</param>

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the AppendPlaylistFromMatchSettings method.
     /// </summary>
-    public sealed class AppendPlaylistFromMatchSettings : MethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
+    public sealed class AppendPlaylistFromMatchSettings : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filename of the matchsettings file to append the tracks of at the end of the current list.
@@ -29,7 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.AppendPlaylistFromMatchSettings"/> class for the given filename.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.AppendPlaylistFromMatchSettings"/> class for the given filename.
         /// </summary>
         /// <param name="filename">The filename of the matchsettings to append the tracks of at then end of the current list.</param>
         public AppendPlaylistFromMatchSettings(string filename)

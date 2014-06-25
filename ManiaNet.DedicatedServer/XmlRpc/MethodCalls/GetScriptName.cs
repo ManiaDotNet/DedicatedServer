@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetScriptName method.
     /// </summary>
-    public sealed class GetScriptName : MethodCall<XmlRpcStruct<CurrentAndNextValueStruct<XmlRpcString, string>>, CurrentAndNextValueStruct<XmlRpcString, string>>
+    public sealed class GetScriptName : XmlRpcMethodCall<XmlRpcStruct<CurrentAndNextValueStruct<XmlRpcString, string>>, CurrentAndNextValueStruct<XmlRpcString, string>>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the GetNetworkStats method.
     /// </summary>
-    public sealed class GetNetworkStats : MethodCall<XmlRpcStruct<NetworkStatsStruct>, NetworkStatsStruct>
+    public sealed class GetNetworkStats : XmlRpcMethodCall<XmlRpcStruct<NetworkStatsStruct>, NetworkStatsStruct>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

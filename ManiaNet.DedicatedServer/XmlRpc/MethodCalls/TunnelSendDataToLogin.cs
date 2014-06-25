@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using XmlRpc.MethodCalls;
+using XmlRpc.Methods;
 using XmlRpc.Types;
 
-namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
+namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
     /// Represents a call to the TunnelSendDataToLogin method.
     /// </summary>
-    public sealed class TunnelSendDataToLogin : MethodCall<XmlRpcString, string, XmlRpcBase64, byte[], XmlRpcBoolean, bool>
+    public sealed class TunnelSendDataToLogin : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBase64, byte[], XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the data that will be send to the Login.
@@ -38,7 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.MethodCalls
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.MethodCalls.TunnelSendDataToLogin"/> class with the given data for the given Login.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.TunnelSendDataToLogin"/> class with the given data for the given Login.
         /// </summary>
         /// <param name="login">The login that the data will be send to.</param>
         /// <param name="data">The data that will be send to the Login.</param>
