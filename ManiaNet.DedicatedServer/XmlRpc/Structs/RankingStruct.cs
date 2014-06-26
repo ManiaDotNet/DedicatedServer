@@ -60,6 +60,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
 
         /// <summary>
         /// Gets the checkpoint times of the player's best time in milliseconds.
+        /// Only in legacy modes.
         /// </summary>
         public IEnumerable<int> BestCheckpoints
         {
@@ -68,6 +69,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
 
         /// <summary>
         /// Gets the player's best time in milliseconds.
+        /// Only in legacy modes.
         /// </summary>
         public int BestTime
         {
@@ -76,6 +78,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
 
         /// <summary>
         /// Gets the player's ladder score for the race.
+        /// Only in legacy modes.
         /// </summary>
         public double LadderScore
         {
@@ -88,6 +91,15 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public string Login
         {
             get { return login.Value; }
+        }
+
+        /// <summary>
+        /// Gets the number of laps that the player finished.
+        /// Only in legacy modes.
+        /// </summary>
+        public int NbrLapsFinished
+        {
+            get { return nbrLapsFinished.Value; }
         }
 
         /// <summary>
@@ -116,6 +128,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
 
         /// <summary>
         /// Gets the players score.
+        /// Only in legacy modes.
         /// </summary>
         public int Score
         {

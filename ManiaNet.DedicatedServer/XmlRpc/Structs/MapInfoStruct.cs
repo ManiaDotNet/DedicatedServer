@@ -166,6 +166,14 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         }
 
         /// <summary>
+        /// Gets the type of the map.
+        /// </summary>
+        public string MapType
+        {
+            get { return mapType.Value; }
+        }
+
+        /// <summary>
         /// Gets the map's mood (time of day).
         /// </summary>
         public string Mood
