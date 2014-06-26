@@ -15,7 +15,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     /// </summary>
     public sealed class XmlRpcClient : IXmlRpcClient
     {
+        /// <summary>
+        /// A uint with a 1 at the highest bit.
+        /// If the request handle is 0 after performing a bitwise AND ond this then it's a server callback.
+        /// </summary>
         private const uint ServerCallbackMask = 0x80000000;
+
         private Thread eventDispatcherThread;
         private ConcurrentQueue<Message> messageQueue = new ConcurrentQueue<Message>();
         private Thread receiveLoopThread;

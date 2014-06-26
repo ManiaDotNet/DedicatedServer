@@ -321,9 +321,6 @@
     <Compile Include="XmlRpc\Methods\StartServerInternet.cs" />
     <Compile Include="XmlRpc\Methods\StartServerLan.cs" />
     <Compile Include="XmlRpc\Methods\StopServer.cs" />
-    <Compile Include="XmlRpc\Methods\SystemListMethods.cs" />
-    <Compile Include="XmlRpc\Methods\SystemMethodHelp.cs" />
-    <Compile Include="XmlRpc\Methods\SystemMethodSignature.cs" />
     <Compile Include="XmlRpc\Methods\TunnelSendDataToId.cs" />
     <Compile Include="XmlRpc\Methods\TunnelSendDataToLogin.cs" />
     <Compile Include="XmlRpc\Methods\UnBan.cs" />
