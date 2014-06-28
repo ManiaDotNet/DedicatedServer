@@ -7,9 +7,9 @@ using XmlRpc.Types;
 namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
-    /// Represents a callback for the ManiaPlanet.PlayerCheckpoint method.
+    /// Represents a callback for the TrackMania.PlayerCheckpoint method.
     /// </summary>
-    public sealed class ManiaPlanetPlayerCheckpoint : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcI4, int, XmlRpcI4, int, XmlRpcI4, int, XmlRpcBoolean, bool>
+    public sealed class TrackManiaPlayerCheckpoint : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcI4, int, XmlRpcI4, int, XmlRpcI4, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the index of the checkpoint that the player drove through. I.e. how many checkpoints the player drove through.
@@ -32,7 +32,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         public override string MethodName
         {
-            get { return "ManiaPlanet.PlayerCheckpoint"; }
+            get { return "TrackMania.PlayerCheckpoint"; }
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ManiaPlanetPlayerCheckpoint"/> class with default content (for parsing from Xml).
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.TrackManiaPlayerCheckpoint"/> class with default content (for parsing from Xml).
         /// </summary>
-        public ManiaPlanetPlayerCheckpoint()
+        public TrackManiaPlayerCheckpoint()
             : base(default(int), string.Empty, default(int), default(int), default(int))
         { }
     }

@@ -222,11 +222,11 @@
     <Compile Include="XmlRpc\Methods\ManiaPlanetMapListModified.cs" />
     <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerAlliesChanged.cs" />
     <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerChat.cs" />
-    <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerCheckpoint.cs" />
+    <Compile Include="XmlRpc\Methods\TrackManiaPlayerCheckpoint.cs" />
     <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerConnect.cs" />
     <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerDisconnect.cs" />
-    <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerFinish.cs" />
-    <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerIncoherence.cs" />
+    <Compile Include="XmlRpc\Methods\TrackManiaPlayerFinish.cs" />
+    <Compile Include="XmlRpc\Methods\TrackManiaPlayerIncoherence.cs" />
     <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerInfoChanged.cs" />
     <Compile Include="XmlRpc\Methods\ManiaPlanetPlayerManialinkPageAnswer.cs" />
     <Compile Include="XmlRpc\Methods\ManiaPlanetServerStart.cs" />

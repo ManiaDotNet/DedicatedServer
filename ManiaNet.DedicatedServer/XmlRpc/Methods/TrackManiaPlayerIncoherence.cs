@@ -7,16 +7,16 @@ using XmlRpc.Types;
 namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
     /// <summary>
-    /// Represents a callback for the ManiaPlanet.PlayerFinish method.
+    /// Represents a callback for the TrackMania.PlayerIncoherence method.
     /// </summary>
-    public sealed class ManiaPlanetPlayerFinish : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcI4, int, XmlRpcBoolean, bool>
+    public sealed class TrackManiaPlayerIncoherence : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.
         /// </summary>
         public override string MethodName
         {
-            get { return "ManiaPlanet.PlayerFinish"; }
+            get { return "TrackMania.PlayerIncoherence"; }
         }
 
         /// <summary>
@@ -36,18 +36,10 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         }
 
         /// <summary>
-        /// Gets the time in milliseconds or score of the player that drove through the checkpoint.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.TrackManiaPlayerIncoherence"/> class with default content (for parsing from Xml).
         /// </summary>
-        public int TimeOrScore
-        {
-            get { return param3.Value; }
-        }
-
-        /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ManiaPlanetPlayerFinish"/> class with default content (for parsing from Xml).
-        /// </summary>
-        public ManiaPlanetPlayerFinish()
-            : base(default(int), string.Empty, default(int))
+        public TrackManiaPlayerIncoherence()
+            : base(default(int), string.Empty)
         { }
     }
 }
