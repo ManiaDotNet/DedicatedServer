@@ -136,7 +136,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the path to the map's file, relative to UserData/Maps/
         /// </summary>
-        public string Filename
+        public string FileName
         {
             get { return filename.Value; }
         }
@@ -230,7 +230,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
             return new XElement(XName.Get(XmlRpcElements.StructElement),
                 makeMemberElement("UId", uId),
                 makeMemberElement("Name", name),
-                makeMemberElement("Filename", filename),
+                makeMemberElement("FileName", filename),
                 makeMemberElement("Author", author),
                 makeMemberElement("Environnement", environment), // [sic]
                 makeMemberElement("Mood", mood),
@@ -267,7 +267,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
                         return false;
                     break;
 
-                case "Filename":
+                case "FileName":
                     if (!filename.ParseXml(value))
                         return false;
                     break;
@@ -309,6 +309,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
 
                 case "CopperPrice":
                     if (!copperPrice.ParseXml(value))
+                        return false;
+                    break;
+
+                case "LapRace":
+                    if (!lapRace.ParseXml(value))
                         return false;
                     break;
 
