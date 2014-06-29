@@ -13,7 +13,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     /// <summary>
     /// Represents an XmlRpc Client. Implements the <see cref="XmlRpc.IXmlRpcClient"/> interface.
     /// </summary>
-    public sealed class XmlRpcClient : IXmlRpcClient
+    public sealed class XmlRpcClient : IXmlRpcClient, IDisposable
     {
         /// <summary>
         /// A uint with a 1 at the highest bit.
