@@ -32,7 +32,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         public override string MethodName
         {
-            get { return "ManiaNet.PlayerConnect"; }
+            get { return "ManiaPlanet.PlayerConnect"; }
         }
 
         /// <summary>
