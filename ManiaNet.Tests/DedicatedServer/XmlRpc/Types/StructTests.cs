@@ -1,10 +1,10 @@
-﻿using XmlRpc.Types;
-using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using XmlRpc.Types;
 
 namespace ManiaNet.Tests.DedicatedServer.XmlRpc.Types
 {
@@ -16,29 +16,29 @@ namespace ManiaNet.Tests.DedicatedServer.XmlRpc.Types
         {
             #region XML
 
-            string xml = @"<struct>
+            string xml = @"<value><struct>
 <member><name>Name</name>
 <value><string>ManiaPlanet</string></value></member>
 <member><name>TitleId</name>
-<value>TMCanyon</value></member>
+<value><string>TMCanyon</string></value></member>
 <member><name>Version</name>
 <value><string>3.3.0</string></value></member>
 <member><name>Build</name>
 <value><string>2014-04-30_00_04</string></value></member>
 <member><name>ApiVersion</name>
-<value><string>2011-08-01</string></value></member>
-</struct>";
+<value><string>2013-04-16</string></value></member>
+</struct></value>";
 
             #endregion XML
 
             var applicationVersionStruct = new XmlRpcStruct<ApplicationVersionStruct>();
-            applicationVersionStruct.ParseXml(XDocument.Parse(xml).Root);
+            Assert.IsTrue(applicationVersionStruct.ParseXml(XDocument.Parse(xml).Root));
 
             Assert.AreEqual<string>("ManiaPlanet", applicationVersionStruct.Value.Name);
             Assert.AreEqual<string>("TMCanyon", applicationVersionStruct.Value.TitleId);
             Assert.AreEqual<string>("3.3.0", applicationVersionStruct.Value.Version);
             Assert.AreEqual<string>("2014-04-30_00_04", applicationVersionStruct.Value.Build);
-            Assert.AreEqual<string>("2011-08-01", applicationVersionStruct.Value.ApiVersion);
+            Assert.AreEqual<string>("2013-04-16", applicationVersionStruct.Value.ApiVersion);
         }
 
         [TestMethod]

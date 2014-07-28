@@ -39,8 +39,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
-    <Reference Include="XmlRpc">
-      <HintPath>..\XmlRpc.dll</HintPath>
+    <Reference Include="XmlRpc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\XmlRpc.1.1\lib\XmlRpc.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -338,7 +339,6 @@
     <Compile Include="XmlRpc\Structs\CallVoteStruct.cs" />
     <Compile Include="XmlRpc\Structs\DemoTokenInfosStruct.cs" />
     <Compile Include="XmlRpc\Structs\EntryValueStruct.cs" />
-    <Compile Include="XmlRpc\Structs\FaultStruct.cs" />
     <Compile Include="XmlRpc\Structs\ForcedClubLinksStruct.cs" />
     <Compile Include="XmlRpc\Structs\ForcedModsStruct.cs" />
     <Compile Include="XmlRpc\Structs\ForcedModStruct.cs" />
@@ -368,7 +368,9 @@
     <Compile Include="XmlRpc\Structs\TeamInfoStruct.cs" />
     <Compile Include="XmlRpc\XmlRpcClient.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

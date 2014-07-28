@@ -38,6 +38,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -45,7 +46,7 @@
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="XmlRpc">
-      <HintPath>..\XmlRpc.dll</HintPath>
+      <HintPath>..\packages\XmlRpc.1.1\lib\XmlRpc.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>
@@ -69,6 +70,9 @@
       <Project>{086bb4ea-e79a-482e-84fc-4ea256ecf4b4}</Project>
       <Name>ManiaNet.DedicatedServer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
