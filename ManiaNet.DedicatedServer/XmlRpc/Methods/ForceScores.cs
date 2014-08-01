@@ -10,7 +10,8 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the ForceScores method.
     /// </summary>
-    public sealed class ForceScores : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<ForceScoreStruct>, ForceScoreStruct>, XmlRpcStruct<ForceScoreStruct>[], XmlRpcBoolean, bool, XmlRpcBoolean, bool>
+    public sealed class ForceScores
+        : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<ForceScoreStruct>, ForceScoreStruct>, XmlRpcStruct<ForceScoreStruct>[], XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the scores that will be forced.

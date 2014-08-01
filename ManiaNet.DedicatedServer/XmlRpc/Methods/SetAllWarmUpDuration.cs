@@ -33,9 +33,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetAllWarmUpDuration"/> class for the given duration.
         /// </summary>
-        /// <param name="duration">The new duration of the warm up phase for all modes.
+        /// <param name="duration">
+        /// The new duration of the warm up phase for all modes.
         /// Number of rounds in rounds and laps mode, number of times the gold medal time in other modes.
-        /// 0 means no warm up phase.</param>
+        /// 0 means no warm up phase.
+        /// </param>
         public SetAllWarmUpDuration(int duration)
             : base(duration)
         { }

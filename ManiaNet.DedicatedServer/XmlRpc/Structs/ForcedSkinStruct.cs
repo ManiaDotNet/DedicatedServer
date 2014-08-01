@@ -16,22 +16,22 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Checksum property.
         /// </summary>
-        private XmlRpcString checksum = new XmlRpcString();
+        private readonly XmlRpcString checksum = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Name property.
         /// </summary>
-        private XmlRpcString name = new XmlRpcString();
+        private readonly XmlRpcString name = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Orig property.
         /// </summary>
-        private XmlRpcString orig = new XmlRpcString();
+        private readonly XmlRpcString orig = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Url property.
         /// </summary>
-        private XmlRpcString url = new XmlRpcString();
+        private readonly XmlRpcString url = new XmlRpcString();
 
         /// <summary>
         /// Gets or sets the checksum of the skin.

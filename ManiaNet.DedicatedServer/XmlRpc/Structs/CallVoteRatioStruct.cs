@@ -21,12 +21,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Command property.
         /// </summary>
-        private XmlRpcString command = new XmlRpcString();
+        private readonly XmlRpcString command = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Ratio property.
         /// </summary>
-        private XmlRpcDouble ratio = new XmlRpcDouble();
+        private readonly XmlRpcDouble ratio = new XmlRpcDouble();
 
         /// <summary>
         /// Gets or sets the name of the call-vote command that this ratio is for. * for all.
@@ -67,8 +67,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Structs.CallVoteRatioStruct"/> class without content (for parsing from Xml).
         /// </summary>
         public CallVoteRatioStruct()
-        {
-        }
+        { }
 
         /// <summary>
         /// Generates an XElement storing the information in this struct.

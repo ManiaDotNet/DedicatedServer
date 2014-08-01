@@ -16,17 +16,17 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Login property.
         /// </summary>
-        private XmlRpcString login = new XmlRpcString();
+        private readonly XmlRpcString login = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the PlayerId property.
         /// </summary>
-        private XmlRpcInt playerId = new XmlRpcInt(); //Probably actually an i4
+        private readonly XmlRpcInt playerId = new XmlRpcInt(); //Probably actually an i4
 
         /// <summary>
         /// Backing field for the Result property.
         /// </summary>
-        private XmlRpcInt result = new XmlRpcInt();
+        private readonly XmlRpcInt result = new XmlRpcInt();
 
         /// <summary>
         /// Gets the login of the player that this page answer is for.

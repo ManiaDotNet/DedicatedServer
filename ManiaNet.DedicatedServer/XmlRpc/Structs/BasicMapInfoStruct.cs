@@ -16,47 +16,47 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Author property.
         /// </summary>
-        private XmlRpcString author = new XmlRpcString();
+        private readonly XmlRpcString author = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the CopperPrice property.
         /// </summary>
-        private XmlRpcI4 copperPrice = new XmlRpcI4();
+        private readonly XmlRpcI4 copperPrice = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Environment property.
         /// </summary>
-        private XmlRpcString environment = new XmlRpcString();
+        private readonly XmlRpcString environment = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Filename property.
         /// </summary>
-        private XmlRpcString filename = new XmlRpcString();
+        private readonly XmlRpcString filename = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the GoldTime property.
         /// </summary>
-        private XmlRpcI4 goldTime = new XmlRpcI4();
+        private readonly XmlRpcI4 goldTime = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the MapStyle property.
         /// </summary>
-        private XmlRpcString mapStyle = new XmlRpcString();
+        private readonly XmlRpcString mapStyle = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the MapType property.
         /// </summary>
-        private XmlRpcString mapType = new XmlRpcString();
+        private readonly XmlRpcString mapType = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Name property.
         /// </summary>
-        private XmlRpcString name = new XmlRpcString();
+        private readonly XmlRpcString name = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the UId property.
         /// </summary>
-        private XmlRpcString uId = new XmlRpcString();
+        private readonly XmlRpcString uId = new XmlRpcString();
 
         /// <summary>
         /// Gets the login of the map's author.

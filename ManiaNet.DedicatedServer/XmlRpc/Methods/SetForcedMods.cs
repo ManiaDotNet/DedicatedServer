@@ -10,7 +10,8 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetForcedMods method.
     /// </summary>
-    public sealed class SetForcedMods : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcArray<XmlRpcStruct<ForcedModStruct>, ForcedModStruct>, XmlRpcStruct<ForcedModStruct>[], XmlRpcBoolean, bool>
+    public sealed class SetForcedMods
+        : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcArray<XmlRpcStruct<ForcedModStruct>, ForcedModStruct>, XmlRpcStruct<ForcedModStruct>[], XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the forced mods.

@@ -10,7 +10,8 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the GetManialinkPageAnswers method.
     /// </summary>
-    public sealed class GetManialinkPageAnswers : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<ManialinkPageAnswerStruct>, ManialinkPageAnswerStruct>, XmlRpcStruct<ManialinkPageAnswerStruct>[]>
+    public sealed class GetManialinkPageAnswers
+        : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<ManialinkPageAnswerStruct>, ManialinkPageAnswerStruct>, XmlRpcStruct<ManialinkPageAnswerStruct>[]>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

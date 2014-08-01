@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the CanPayToken property.
         /// </summary>
-        private XmlRpcBoolean canPayToken = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean canPayToken = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the TokenCost property.
         /// </summary>
-        private XmlRpcI4 tokenCost = new XmlRpcI4();
+        private readonly XmlRpcI4 tokenCost = new XmlRpcI4();
 
         /// <summary>
         /// Gets whether the player can pay for the token or not.

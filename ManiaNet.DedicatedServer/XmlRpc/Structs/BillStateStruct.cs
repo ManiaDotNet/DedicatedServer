@@ -16,17 +16,17 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the State property.
         /// </summary>
-        private XmlRpcI4 state = new XmlRpcI4();
+        private readonly XmlRpcI4 state = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the StateName property.
         /// </summary>
-        private XmlRpcString stateName = new XmlRpcString();
+        private readonly XmlRpcString stateName = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the TransactionId property.
         /// </summary>
-        private XmlRpcI4 transactionId = new XmlRpcI4();
+        private readonly XmlRpcI4 transactionId = new XmlRpcI4();
 
         /// <summary>
         /// Gets the code for the current status of the transaction.

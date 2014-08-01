@@ -29,7 +29,8 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.AutoSaveValidationReplays"/> class with the given value for whether to automatically save them or not.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.AutoSaveValidationReplays"/> class with the given value for whether to automatically save them or
+        /// not.
         /// </summary>
         /// <param name="value">Whether validation replays of every time will be automatically saved or not.</param>
         public AutoSaveValidationReplays(bool value)

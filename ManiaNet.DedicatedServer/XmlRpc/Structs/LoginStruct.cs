@@ -16,7 +16,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Login property.
         /// </summary>
-        private XmlRpcString login = new XmlRpcString();
+        private readonly XmlRpcString login = new XmlRpcString();
 
         /// <summary>
         /// Gets the Login of the player.

@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Name property.
         /// </summary>
-        private XmlRpcString name = new XmlRpcString();
+        private readonly XmlRpcString name = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Value property.
         /// </summary>
-        private XmlRpcString value = new XmlRpcString();
+        private readonly XmlRpcString value = new XmlRpcString();
 
         /// <summary>
         /// Generates an XElement storing the information in this struct.

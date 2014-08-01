@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Override property.
         /// </summary>
-        private XmlRpcBoolean @override = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean @override = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the Mods property.
         /// </summary>
-        private XmlRpcArray<XmlRpcStruct<ForcedModStruct>, ForcedModStruct> mods = new XmlRpcArray<XmlRpcStruct<ForcedModStruct>, ForcedModStruct>();
+        private readonly XmlRpcArray<XmlRpcStruct<ForcedModStruct>, ForcedModStruct> mods = new XmlRpcArray<XmlRpcStruct<ForcedModStruct>, ForcedModStruct>();
 
         /// <summary>
         /// Gets the forced mods.

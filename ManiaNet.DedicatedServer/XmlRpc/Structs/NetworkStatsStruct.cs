@@ -16,47 +16,48 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the MeanConnectionTime property.
         /// </summary>
-        private XmlRpcI4 meanConnectionTime = new XmlRpcI4();
+        private readonly XmlRpcI4 meanConnectionTime = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the MeanNbrPlayer property.
         /// </summary>
-        private XmlRpcI4 meanNbrPlayer = new XmlRpcI4();
+        private readonly XmlRpcI4 meanNbrPlayer = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NbrConnection property.
         /// </summary>
-        private XmlRpcI4 nbrConnection = new XmlRpcI4();
+        private readonly XmlRpcI4 nbrConnection = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the PlayerNetInfos property.
         /// </summary>
-        private XmlRpcArray<XmlRpcStruct<PlayerNetInfoStruct>, PlayerNetInfoStruct> playerNetInfos = new XmlRpcArray<XmlRpcStruct<PlayerNetInfoStruct>, PlayerNetInfoStruct>();
+        private readonly XmlRpcArray<XmlRpcStruct<PlayerNetInfoStruct>, PlayerNetInfoStruct> playerNetInfos =
+            new XmlRpcArray<XmlRpcStruct<PlayerNetInfoStruct>, PlayerNetInfoStruct>();
 
         /// <summary>
         /// Backing field for the RecvNetRate property.
         /// </summary>
-        private XmlRpcI4 recvNetRate = new XmlRpcI4();
+        private readonly XmlRpcI4 recvNetRate = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the SendNetRate property.
         /// </summary>
-        private XmlRpcI4 sendNetRate = new XmlRpcI4();
+        private readonly XmlRpcI4 sendNetRate = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TotalReceivingSize property.
         /// </summary>
-        private XmlRpcI4 totalReceivingSize = new XmlRpcI4();
+        private readonly XmlRpcI4 totalReceivingSize = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TotalSendingSize property.
         /// </summary>
-        private XmlRpcI4 totalSendingSize = new XmlRpcI4();
+        private readonly XmlRpcI4 totalSendingSize = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Uptime property.
         /// </summary>
-        private XmlRpcI4 uptime = new XmlRpcI4();
+        private readonly XmlRpcI4 uptime = new XmlRpcI4();
 
         /// <summary>
         /// Gets the mean connection time of players in seconds.

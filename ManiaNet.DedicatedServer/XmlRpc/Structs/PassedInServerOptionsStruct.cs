@@ -13,72 +13,72 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the AllowChallengeDownload property.
         /// </summary>
-        private XmlRpcBoolean allowChallengeDownload = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean allowChallengeDownload = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the AutoSaveReplays property.
         /// </summary>
-        private XmlRpcBoolean autoSaveReplays = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean autoSaveReplays = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the CallVoteRatio property.
         /// </summary>
-        private XmlRpcDouble callVoteRatio = new XmlRpcDouble();
+        private readonly XmlRpcDouble callVoteRatio = new XmlRpcDouble();
 
         /// <summary>
         /// Backing field for the Comment property.
         /// </summary>
-        private XmlRpcString comment = new XmlRpcString();
+        private readonly XmlRpcString comment = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the IsP2PDownload property.
         /// </summary>
-        private XmlRpcBoolean isP2PDownload = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isP2PDownload = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the IsP2PUpload property.
         /// </summary>
-        private XmlRpcBoolean isP2PUpload = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isP2PUpload = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the Name property.
         /// </summary>
-        private XmlRpcString name = new XmlRpcString();
+        private readonly XmlRpcString name = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the NextCallVoteTimeOut property.
         /// </summary>
-        private XmlRpcI4 nextCallVoteTimeOut = new XmlRpcI4();
+        private readonly XmlRpcI4 nextCallVoteTimeOut = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NextLadderMode property.
         /// </summary>
-        private XmlRpcI4 nextLadderMode = new XmlRpcI4();
+        private readonly XmlRpcI4 nextLadderMode = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NextMaxPlayers property.
         /// </summary>
-        private XmlRpcI4 nextMaxPlayers = new XmlRpcI4();
+        private readonly XmlRpcI4 nextMaxPlayers = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NextMaxSpectators property.
         /// </summary>
-        private XmlRpcI4 nextMaxSpectators = new XmlRpcI4();
+        private readonly XmlRpcI4 nextMaxSpectators = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NextVehicleNetQuality property.
         /// </summary>
-        private XmlRpcI4 nextVehicleNetQuality = new XmlRpcI4();
+        private readonly XmlRpcI4 nextVehicleNetQuality = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Password property.
         /// </summary>
-        private XmlRpcString password = new XmlRpcString();
+        private readonly XmlRpcString password = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the PasswordForSpectator property.
         /// </summary>
-        private XmlRpcString passwordForSpectator = new XmlRpcString();
+        private readonly XmlRpcString passwordForSpectator = new XmlRpcString();
 
         /// <summary>
         /// Gets or sets whether clients are allowed to download the challenges from the server.
@@ -179,10 +179,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int NextMaxPlayers
         {
             get { return nextMaxPlayers.Value; }
-            set
-            {
-                nextMaxPlayers.Value = value > 0 ? value : 1;
-            }
+            set { nextMaxPlayers.Value = value > 0 ? value : 1; }
         }
 
         /// <summary>
@@ -191,10 +188,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int NextMaxSpectators
         {
             get { return nextMaxSpectators.Value; }
-            set
-            {
-                nextMaxSpectators.Value = value > -1 ? value : 0;
-            }
+            set { nextMaxSpectators.Value = value > -1 ? value : 0; }
         }
 
         /// <summary>
@@ -203,10 +197,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int NextVehicleNetQuality
         {
             get { return nextVehicleNetQuality.Value; }
-            set
-            {
-                nextVehicleNetQuality.Value = value;
-            }
+            set { nextVehicleNetQuality.Value = value; }
         }
 
         /// <summary>

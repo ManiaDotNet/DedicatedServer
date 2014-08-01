@@ -16,22 +16,22 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the IsLobby property.
         /// </summary>
-        private XmlRpcBoolean isLobby = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isLobby = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the LobbyMaxPlayers property.
         /// </summary>
-        private XmlRpcI4 lobbyMaxPlayers = new XmlRpcI4();
+        private readonly XmlRpcI4 lobbyMaxPlayers = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the LobbyPlayers property.
         /// </summary>
-        private XmlRpcI4 lobbyPlayers = new XmlRpcI4();
+        private readonly XmlRpcI4 lobbyPlayers = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the LobbyPlayersLevel property.
         /// </summary>
-        private XmlRpcDouble lobbyPlayersLevel = new XmlRpcDouble();
+        private readonly XmlRpcDouble lobbyPlayersLevel = new XmlRpcDouble();
 
         /// <summary>
         /// Gets whether this server is a lobby or not.

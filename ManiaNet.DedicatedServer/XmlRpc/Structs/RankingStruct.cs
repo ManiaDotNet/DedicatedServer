@@ -16,47 +16,47 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the BestCheckpoints property.
         /// </summary>
-        private XmlRpcArray<XmlRpcI4, int> bestCheckpoints = new XmlRpcArray<XmlRpcI4, int>();
+        private readonly XmlRpcArray<XmlRpcI4, int> bestCheckpoints = new XmlRpcArray<XmlRpcI4, int>();
 
         /// <summary>
         /// Backing field for the BestTime property.
         /// </summary>
-        private XmlRpcI4 bestTime = new XmlRpcI4();
+        private readonly XmlRpcI4 bestTime = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the LadderScore property.
         /// </summary>
-        private XmlRpcDouble ladderScore = new XmlRpcDouble();
+        private readonly XmlRpcDouble ladderScore = new XmlRpcDouble();
 
         /// <summary>
         /// Backing field for the Login property.
         /// </summary>
-        private XmlRpcString login = new XmlRpcString();
+        private readonly XmlRpcString login = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the NbrLapsFinished property.
         /// </summary>
-        private XmlRpcI4 nbrLapsFinished = new XmlRpcI4();
+        private readonly XmlRpcI4 nbrLapsFinished = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NickName property.
         /// </summary>
-        private XmlRpcString nickName = new XmlRpcString();
+        private readonly XmlRpcString nickName = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the PlayerId property.
         /// </summary>
-        private XmlRpcI4 playerId = new XmlRpcI4();
+        private readonly XmlRpcI4 playerId = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Rank property.
         /// </summary>
-        private XmlRpcI4 rank = new XmlRpcI4();
+        private readonly XmlRpcI4 rank = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Score property.
         /// </summary>
-        private XmlRpcI4 score = new XmlRpcI4();
+        private readonly XmlRpcI4 score = new XmlRpcI4();
 
         /// <summary>
         /// Gets the checkpoint times of the player's best time in milliseconds.

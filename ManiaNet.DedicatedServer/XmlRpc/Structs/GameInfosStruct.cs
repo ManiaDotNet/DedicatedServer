@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the CurrentGameInfos property.
         /// </summary>
-        private XmlRpcStruct<ReturnedGameInfosStruct> currentGameInfos = new XmlRpcStruct<ReturnedGameInfosStruct>();
+        private readonly XmlRpcStruct<ReturnedGameInfosStruct> currentGameInfos = new XmlRpcStruct<ReturnedGameInfosStruct>();
 
         /// <summary>
         /// Backing field for the NextGameInfos property.
         /// </summary>
-        private XmlRpcStruct<ReturnedGameInfosStruct> nextGameInfos = new XmlRpcStruct<ReturnedGameInfosStruct>();
+        private readonly XmlRpcStruct<ReturnedGameInfosStruct> nextGameInfos = new XmlRpcStruct<ReturnedGameInfosStruct>();
 
         /// <summary>
         /// Gets the current game infos.

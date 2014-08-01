@@ -16,17 +16,17 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the CallerLogin property.
         /// </summary>
-        private XmlRpcString callerLogin = new XmlRpcString();
+        private readonly XmlRpcString callerLogin = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the CmdName property.
         /// </summary>
-        private XmlRpcString cmdName = new XmlRpcString();
+        private readonly XmlRpcString cmdName = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the CmdParam property.
         /// </summary>
-        private XmlRpcString cmdParam = new XmlRpcString();
+        private readonly XmlRpcString cmdParam = new XmlRpcString();
 
         /// <summary>
         /// Gets the Login of the player who started the call-vote.

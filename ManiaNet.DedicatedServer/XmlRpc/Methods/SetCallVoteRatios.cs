@@ -7,7 +7,8 @@ using XmlRpc.Types;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.Methods
 {
-    public sealed class SetCallVoteRatios : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<CallVoteRatioStruct>, CallVoteRatioStruct>, XmlRpcStruct<CallVoteRatioStruct>[], XmlRpcBoolean, bool>
+    public sealed class SetCallVoteRatios
+        : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<CallVoteRatioStruct>, CallVoteRatioStruct>, XmlRpcStruct<CallVoteRatioStruct>[], XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

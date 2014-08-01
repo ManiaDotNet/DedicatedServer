@@ -10,7 +10,10 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.PlayerManialinkPageAnswer method.
     /// </summary>
-    public sealed class ManiaPlanetPlayerManialinkPageAnswer : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcString, string, XmlRpcArray<XmlRpcStruct<EntryValueStruct>, EntryValueStruct>, XmlRpcStruct<EntryValueStruct>[], XmlRpcBoolean, bool>
+    public sealed class ManiaPlanetPlayerManialinkPageAnswer
+        : XmlRpcMethodCall
+              <XmlRpcI4, int, XmlRpcString, string, XmlRpcString, string, XmlRpcArray<XmlRpcStruct<EntryValueStruct>, EntryValueStruct>, XmlRpcStruct<EntryValueStruct>[],
+              XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the client's answer.

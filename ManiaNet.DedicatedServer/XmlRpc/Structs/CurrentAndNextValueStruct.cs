@@ -17,12 +17,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the CurrentValue property.
         /// </summary>
-        private TXmlRpcType currentValue = new TXmlRpcType();
+        private readonly TXmlRpcType currentValue = new TXmlRpcType();
 
         /// <summary>
         /// Backing field for the NextValue property.
         /// </summary>
-        private TXmlRpcType nextValue = new TXmlRpcType();
+        private readonly TXmlRpcType nextValue = new TXmlRpcType();
 
         /// <summary>
         /// Gets the current value.

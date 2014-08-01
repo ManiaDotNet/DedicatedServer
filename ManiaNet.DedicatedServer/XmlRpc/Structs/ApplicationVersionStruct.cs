@@ -16,27 +16,27 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the ApiVersion property.
         /// </summary>
-        private XmlRpcString apiVersion = new XmlRpcString();
+        private readonly XmlRpcString apiVersion = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Build property.
         /// </summary>
-        private XmlRpcString build = new XmlRpcString();
+        private readonly XmlRpcString build = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Name property.
         /// </summary>
-        private XmlRpcString name = new XmlRpcString();
+        private readonly XmlRpcString name = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the TitleId property.
         /// </summary>
-        private XmlRpcString titleId = new XmlRpcString();
+        private readonly XmlRpcString titleId = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Version property.
         /// </summary>
-        private XmlRpcString version = new XmlRpcString();
+        private readonly XmlRpcString version = new XmlRpcString();
 
         /// <summary>
         /// Gets the Version of the API used for callbacks.

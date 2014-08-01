@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Code property.
         /// </summary>
-        private XmlRpcI4 code = new XmlRpcI4();
+        private readonly XmlRpcI4 code = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Name property.
         /// </summary>
-        private XmlRpcString name = new XmlRpcString();
+        private readonly XmlRpcString name = new XmlRpcString();
 
         /// <summary>
         /// Gets the Code for the current status of the server application.

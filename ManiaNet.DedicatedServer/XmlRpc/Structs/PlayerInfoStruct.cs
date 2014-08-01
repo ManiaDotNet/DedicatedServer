@@ -16,37 +16,37 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the IsInOfficialMode property.
         /// </summary>
-        private XmlRpcBoolean isInOfficialMode = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isInOfficialMode = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the IsSpectator property.
         /// </summary>
-        private XmlRpcBoolean isSpectator = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isSpectator = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the LadderRanking property.
         /// </summary>
-        private XmlRpcI4 ladderRanking = new XmlRpcI4();
+        private readonly XmlRpcI4 ladderRanking = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Login property.
         /// </summary>
-        private XmlRpcString login = new XmlRpcString();
+        private readonly XmlRpcString login = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the NickName property.
         /// </summary>
-        private XmlRpcString nickName = new XmlRpcString();
+        private readonly XmlRpcString nickName = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the PlayerId property.
         /// </summary>
-        private XmlRpcI4 playerId = new XmlRpcI4();
+        private readonly XmlRpcI4 playerId = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TeamId property.
         /// </summary>
-        private XmlRpcI4 teamId = new XmlRpcI4();
+        private readonly XmlRpcI4 teamId = new XmlRpcI4();
 
         /// <summary>
         /// Gets whether the player is in official mode or not.

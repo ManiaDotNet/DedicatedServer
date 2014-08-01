@@ -16,32 +16,32 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the IPAddress property.
         /// </summary>
-        private XmlRpcString ipAddress = new XmlRpcString();
+        private readonly XmlRpcString ipAddress = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the LatestNetworkActivity property.
         /// </summary>
-        private XmlRpcI4 latestNetworkActivity = new XmlRpcI4();
+        private readonly XmlRpcI4 latestNetworkActivity = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Login property.
         /// </summary>
-        private XmlRpcString login = new XmlRpcString();
+        private readonly XmlRpcString login = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the NetworkLossRate property.
         /// </summary>
-        private XmlRpcDouble networkLossRate = new XmlRpcDouble();
+        private readonly XmlRpcDouble networkLossRate = new XmlRpcDouble();
 
         /// <summary>
         /// Backing field for the StateUpdateLatency property.
         /// </summary>
-        private XmlRpcI4 stateUpdateLatency = new XmlRpcI4();
+        private readonly XmlRpcI4 stateUpdateLatency = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the StateUpdatePeriod property.
         /// </summary>
-        private XmlRpcI4 stateUpdatePeriod = new XmlRpcI4();
+        private readonly XmlRpcI4 stateUpdatePeriod = new XmlRpcI4();
 
         /// <summary>
         /// Gets the player's IP address, including the port.

@@ -13,12 +13,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the PlayerId property.
         /// </summary>
-        private XmlRpcInt playerId = new XmlRpcInt();
+        private readonly XmlRpcInt playerId = new XmlRpcInt();
 
         /// <summary>
         /// Backing field for the Score property.
         /// </summary>
-        private XmlRpcInt score = new XmlRpcInt();
+        private readonly XmlRpcInt score = new XmlRpcInt();
 
         /// <summary>
         /// Gets or sets the id of the player who's score is going to be forced.

@@ -11,7 +11,7 @@ using XmlRpc;
 namespace ManiaNet.DedicatedServer.XmlRpc
 {
     /// <summary>
-    /// Represents an XmlRpc Client. Implements the <see cref="XmlRpc.IXmlRpcClient"/> interface.
+    /// Represents an XmlRpc Client. Implements the <see cref="IXmlRpcClient"/> interface.
     /// </summary>
     public sealed class XmlRpcClient : IXmlRpcClient, IDisposable
     {
@@ -19,15 +19,15 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         /// A uint with a 1 at the highest bit.
         /// If the request handle is 0 after performing a bitwise AND ond this then it's a server callback.
         /// </summary>
-        private const uint ServerCallbackMask = 0x80000000;
+        private const uint serverCallbackMask = 0x80000000;
 
+        private readonly ConcurrentQueue<Message> messageQueue = new ConcurrentQueue<Message>();
+        private readonly object writerLock = new object();
         private Thread eventDispatcherThread;
-        private ConcurrentQueue<Message> messageQueue = new ConcurrentQueue<Message>();
         private Thread receiveLoopThread;
-        private uint requestHandle = ServerCallbackMask;
+        private uint requestHandle = serverCallbackMask;
         private Stream stream;
         private StreamWriter writer;
-        private object writerLock = new object();
 
         /// <summary>
         /// Gets the configuration of this client.
@@ -40,7 +40,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="XmlRpc.XmlRpcCLient"/> class with the given configuration.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.XmlRpcClient"/> class with the given configuration.
         /// </summary>
         /// <param name="config">The configuration to be used.</param>
         public XmlRpcClient(Config config)
@@ -78,7 +78,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             {
                 requestHandle++;
 
-                List<byte> bytes = new List<byte>();
+                var bytes = new List<byte>();
                 bytes.AddRange(BitConverter.GetBytes((uint)request.Length));
                 bytes.AddRange(BitConverter.GetBytes(requestHandle));
 
@@ -93,19 +93,23 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         }
 
         /// <summary>
-        /// Connects to the xml rpc server and starts Threads for receiving data from the opened connection and dispatching the appropriate events.
+        /// Connects to the XmlRpc server and starts Threads for receiving data from the opened connection and dispatching the appropriate events.
         /// </summary>
         public void StartReceive()
         {
             connect();
 
-            receiveLoopThread = new Thread(receiveLoop);
-            receiveLoopThread.Name = Name + " Receive Loop";
-            receiveLoopThread.IsBackground = true;
+            receiveLoopThread = new Thread(receiveLoop)
+            {
+                Name = Name + " Receive Loop",
+                IsBackground = true
+            };
 
-            eventDispatcherThread = new Thread(eventDispatcher);
-            eventDispatcherThread.Name = Name + " Event Dispatcher";
-            eventDispatcherThread.IsBackground = true;
+            eventDispatcherThread = new Thread(eventDispatcher)
+            {
+                Name = Name + " Event Dispatcher",
+                IsBackground = true
+            };
 
             receiveLoopThread.Start();
             eventDispatcherThread.Start();
@@ -119,7 +123,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             stream = new TcpClient(Configuration.Address, Configuration.Port).GetStream();
             writer = new StreamWriter(stream, Encoding.ASCII);
 
-            byte[] protocolNameLengthBytes = new byte[4];
+            var protocolNameLengthBytes = new byte[4];
             stream.Read(protocolNameLengthBytes, 0, 4);
             uint protocolNameLength = BitConverter.ToUInt32(protocolNameLengthBytes, 0);
 
@@ -139,7 +143,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         /// <returns>The decoded string.</returns>
         private string decodeBytes(byte[] bytes)
         {
-            char[] chars = new char[bytes.Length];
+            var chars = new char[bytes.Length];
             int usedBytes;
             int usedChars;
             bool complete;
@@ -150,12 +154,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc
 
         private void eventDispatcher()
         {
-            Message message;
             while (true)
             {
+                Message message;
                 if (messageQueue.TryDequeue(out message))
                 {
-                    if ((message.Handle & ServerCallbackMask) == 0)
+                    if ((message.Handle & serverCallbackMask) == 0)
                     {
                         //Message is a server callback
                         onServerCallback(message.Content);
@@ -167,10 +171,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc
                     }
                 }
                 else //If it couldn't dequeue a Message, it means there's none waiting.
-                {
                     Thread.Sleep(100);
-                }
             }
+            // ReSharper disable once FunctionNeverReturns
         }
 
         /// <summary>
@@ -211,7 +214,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         /// <returns>count read bytes.</returns>
         private byte[] read(int count)
         {
-            byte[] result = new byte[count];
+            var result = new byte[count];
             int offset = 0;
 
             while (count - offset > 0)
@@ -222,17 +225,15 @@ namespace ManiaNet.DedicatedServer.XmlRpc
 
         private void receiveLoop()
         {
-            byte[] messageHeaderBytes = new byte[8];
-            uint messageLength;
-            uint messageHandle;
+            var messageHeaderBytes = new byte[8];
 
             while (true)
             {
                 try
                 {
                     stream.Read(messageHeaderBytes, 0, 8);
-                    messageLength = BitConverter.ToUInt32(messageHeaderBytes, 0);
-                    messageHandle = BitConverter.ToUInt32(messageHeaderBytes, 4);
+                    uint messageLength = BitConverter.ToUInt32(messageHeaderBytes, 0);
+                    uint messageHandle = BitConverter.ToUInt32(messageHeaderBytes, 4);
 
                     string messageContent = decodeBytes(read((int)messageLength));
 

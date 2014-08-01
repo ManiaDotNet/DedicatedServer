@@ -16,52 +16,52 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the ConnectionDownloadRate property.
         /// </summary>
-        private XmlRpcI4 connectionDownloadRate = new XmlRpcI4();
+        private readonly XmlRpcI4 connectionDownloadRate = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the ConnectionUploadRate property.
         /// </summary>
-        private XmlRpcI4 connectionUploadRate = new XmlRpcI4();
+        private readonly XmlRpcI4 connectionUploadRate = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the IsDedicated property.
         /// </summary>
-        private XmlRpcBoolean isDedicated = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isDedicated = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the IsServer property.
         /// </summary>
-        private XmlRpcBoolean isServer = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isServer = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the P2PPort property.
         /// </summary>
-        private XmlRpcI4 p2pPort = new XmlRpcI4();
+        private readonly XmlRpcI4 p2pPort = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Port property.
         /// </summary>
-        private XmlRpcI4 port = new XmlRpcI4();
+        private readonly XmlRpcI4 port = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the PublishedIp property.
         /// </summary>
-        private XmlRpcString publishedIp = new XmlRpcString();
+        private readonly XmlRpcString publishedIp = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the ServerLogin property.
         /// </summary>
-        private XmlRpcString serverLogin = new XmlRpcString();
+        private readonly XmlRpcString serverLogin = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the ServerPlayerId property.
         /// </summary>
-        private XmlRpcI4 serverPlayerId = new XmlRpcI4();
+        private readonly XmlRpcI4 serverPlayerId = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TitleId property.
         /// </summary>
-        private XmlRpcString titleId = new XmlRpcString();
+        private readonly XmlRpcString titleId = new XmlRpcString();
 
         /// <summary>
         /// Gets the maximum download rate of the server. In kBits per second.

@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the LadderServerLimitMax property.
         /// </summary>
-        private XmlRpcDouble ladderServerLimitMax = new XmlRpcDouble();
+        private readonly XmlRpcDouble ladderServerLimitMax = new XmlRpcDouble();
 
         /// <summary>
         /// Backing field for the LadderServerLimitMin property.
         /// </summary>
-        private XmlRpcDouble ladderServerLimitMin = new XmlRpcDouble();
+        private readonly XmlRpcDouble ladderServerLimitMin = new XmlRpcDouble();
 
         /// <summary>
         /// Gets the maximum number of ladder points a player can reach on the server.

@@ -10,7 +10,8 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.EndMatch method.
     /// </summary>
-    public sealed class ManiaPlanetEndMatch : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<RankingStruct>, RankingStruct>, XmlRpcStruct<RankingStruct>[], XmlRpcI4, int, XmlRpcBoolean, bool>
+    public sealed class ManiaPlanetEndMatch
+        : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<RankingStruct>, RankingStruct>, XmlRpcStruct<RankingStruct>[], XmlRpcI4, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the method this call is for.

@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Lang property.
         /// </summary>
-        private XmlRpcString lang = new XmlRpcString();
+        private readonly XmlRpcString lang = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Text property.
         /// </summary>
-        private XmlRpcString text = new XmlRpcString();
+        private readonly XmlRpcString text = new XmlRpcString();
 
         /// <summary>
         /// Gets or sets the two letter language code for this message.

@@ -16,97 +16,97 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the AllowChallengeDownload property.
         /// </summary>
-        private XmlRpcBoolean allowChallengeDownload = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean allowChallengeDownload = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the AutoSaveReplays property.
         /// </summary>
-        private XmlRpcBoolean autoSaveReplays = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean autoSaveReplays = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the CallVoteRatio property.
         /// </summary>
-        private XmlRpcDouble callVoteRatio = new XmlRpcDouble();
+        private readonly XmlRpcDouble callVoteRatio = new XmlRpcDouble();
 
         /// <summary>
         /// Backing field for the Comment property.
         /// </summary>
-        private XmlRpcString comment = new XmlRpcString();
+        private readonly XmlRpcString comment = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the CurrentCallVoteTimeOut property.
         /// </summary>
-        private XmlRpcI4 currentCallVoteTimeOut = new XmlRpcI4();
+        private readonly XmlRpcI4 currentCallVoteTimeOut = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the CurrentLadderMode property.
         /// </summary>
-        private XmlRpcI4 currentLadderMode = new XmlRpcI4();
+        private readonly XmlRpcI4 currentLadderMode = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the CurrentMaxPlayers property.
         /// </summary>
-        private XmlRpcI4 currentMaxPlayers = new XmlRpcI4();
+        private readonly XmlRpcI4 currentMaxPlayers = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the CurrentMaxSpectators property.
         /// </summary>
-        private XmlRpcI4 currentMaxSpectators = new XmlRpcI4();
+        private readonly XmlRpcI4 currentMaxSpectators = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the CurrentVehicleNetQuality property.
         /// </summary>
-        private XmlRpcI4 currentVehicleNetQuality = new XmlRpcI4();
+        private readonly XmlRpcI4 currentVehicleNetQuality = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the IsP2PDownload property.
         /// </summary>
-        private XmlRpcBoolean isP2PDownload = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isP2PDownload = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the IsP2PUpload property.
         /// </summary>
-        private XmlRpcBoolean isP2PUpload = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean isP2PUpload = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the Name property.
         /// </summary>
-        private XmlRpcString name = new XmlRpcString();
+        private readonly XmlRpcString name = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the NextCallVoteTimeOut property.
         /// </summary>
-        private XmlRpcI4 nextCallVoteTimeOut = new XmlRpcI4();
+        private readonly XmlRpcI4 nextCallVoteTimeOut = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NextLadderMode property.
         /// </summary>
-        private XmlRpcI4 nextLadderMode = new XmlRpcI4();
+        private readonly XmlRpcI4 nextLadderMode = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NextMaxPlayers property.
         /// </summary>
-        private XmlRpcI4 nextMaxPlayers = new XmlRpcI4();
+        private readonly XmlRpcI4 nextMaxPlayers = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NextMaxSpectators property.
         /// </summary>
-        private XmlRpcI4 nextMaxSpectators = new XmlRpcI4();
+        private readonly XmlRpcI4 nextMaxSpectators = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NextVehicleNetQuality property.
         /// </summary>
-        private XmlRpcI4 nextVehicleNetQuality = new XmlRpcI4();
+        private readonly XmlRpcI4 nextVehicleNetQuality = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Password property.
         /// </summary>
-        private XmlRpcString password = new XmlRpcString();
+        private readonly XmlRpcString password = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the PasswordForSpectator property.
         /// </summary>
-        private XmlRpcString passwordForSpectator = new XmlRpcString();
+        private readonly XmlRpcString passwordForSpectator = new XmlRpcString();
 
         /// <summary>
         /// Gets whether clients are allowed to download the challenges from the server.

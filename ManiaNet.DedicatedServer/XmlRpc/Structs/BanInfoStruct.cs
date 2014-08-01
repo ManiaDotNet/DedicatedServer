@@ -16,17 +16,17 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the ClientName property.
         /// </summary>
-        private XmlRpcString clientName = new XmlRpcString();
+        private readonly XmlRpcString clientName = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the IPAddress property.
         /// </summary>
-        private XmlRpcString ipAddress = new XmlRpcString();
+        private readonly XmlRpcString ipAddress = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Login property.
         /// </summary>
-        private XmlRpcString login = new XmlRpcString();
+        private readonly XmlRpcString login = new XmlRpcString();
 
         /// <summary>
         /// Gets the ClientName of the banned player.

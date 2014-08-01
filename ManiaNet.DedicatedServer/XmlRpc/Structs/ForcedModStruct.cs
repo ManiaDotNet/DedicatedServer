@@ -17,12 +17,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the EnvName property.
         /// </summary>
-        private XmlRpcString envName = new XmlRpcString();
+        private readonly XmlRpcString envName = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Url property.
         /// </summary>
-        private XmlRpcString url = new XmlRpcString();
+        private readonly XmlRpcString url = new XmlRpcString();
 
         /// <summary>
         /// Gets or sets the name of the environment that this mod is for.

@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the ClubLink1 property.
         /// </summary>
-        private XmlRpcString clubLink1 = new XmlRpcString();
+        private readonly XmlRpcString clubLink1 = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the ClubLink2 property.
         /// </summary>
-        private XmlRpcString clubLink2 = new XmlRpcString();
+        private readonly XmlRpcString clubLink2 = new XmlRpcString();
 
         /// <summary>
         /// Gets the forced club link for team 1.

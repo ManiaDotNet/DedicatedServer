@@ -16,12 +16,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Login property.
         /// </summary>
-        private XmlRpcString server = new XmlRpcString();
+        private readonly XmlRpcString server = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Login property.
         /// </summary>
-        private XmlRpcString serverPassword = new XmlRpcString();
+        private readonly XmlRpcString serverPassword = new XmlRpcString();
 
         /// <summary>
         /// Gets or sets the IP address of the server to connect to.

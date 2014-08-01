@@ -16,68 +16,67 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the ChatTime property.
         /// </summary>
-        private XmlRpcI4 chatTime = new XmlRpcI4();
+        private readonly XmlRpcI4 chatTime = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the FinishTimeout property.
         /// </summary>
-        private XmlRpcI4 finishTimeout = new XmlRpcI4();
+        private readonly XmlRpcI4 finishTimeout = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the GameMode property.
         /// </summary>
-        private XmlRpcI4 gameMode = new XmlRpcI4();
+        private readonly XmlRpcI4 gameMode = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the LapsNbLaps property.
         /// </summary>
-        private XmlRpcI4 lapsNbLaps = new XmlRpcI4();
+        private readonly XmlRpcI4 lapsNbLaps = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the LapsTimeLimit property.
         /// </summary>
-        private XmlRpcI4 lapsTimeLimit = new XmlRpcI4();
+        private readonly XmlRpcI4 lapsTimeLimit = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the RoundsForcedLaps property.
         /// </summary>
-
-        private XmlRpcI4 roundsForcedLaps = new XmlRpcI4();
+        private readonly XmlRpcI4 roundsForcedLaps = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the RoundsPointsLimit property.
         /// </summary>
-        private XmlRpcI4 roundsPointsLimit = new XmlRpcI4();
+        private readonly XmlRpcI4 roundsPointsLimit = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the RoundsUseNewRules property.
         /// </summary>
-        private XmlRpcBoolean roundsUseNewRules = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean roundsUseNewRules = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the TeamMaxPoints property.
         /// </summary>
-        private XmlRpcI4 teamMaxPoints = new XmlRpcI4();
+        private readonly XmlRpcI4 teamMaxPoints = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TeamPointsLimit property.
         /// </summary>
-        private XmlRpcI4 teamPointsLimit = new XmlRpcI4();
+        private readonly XmlRpcI4 teamPointsLimit = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TeamUseNewRules property.
         /// </summary>
-        private XmlRpcBoolean teamUseNewRules = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean teamUseNewRules = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the TimeAttackLimit property.
         /// </summary>
-        private XmlRpcI4 timeAttackLimit = new XmlRpcI4();
+        private readonly XmlRpcI4 timeAttackLimit = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TimeAttackSynchStartPeriod property.
         /// </summary>
-        private XmlRpcI4 timeAttackSynchStartPeriod = new XmlRpcI4();
+        private readonly XmlRpcI4 timeAttackSynchStartPeriod = new XmlRpcI4();
 
         /// <summary>
         /// Gets or sets the chat time at the end of the map in milliseconds.
@@ -85,10 +84,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int ChatTime
         {
             get { return chatTime.Value; }
-            set
-            {
-                chatTime.Value = value > 0 ? value : 0;
-            }
+            set { chatTime.Value = value > 0 ? value : 0; }
         }
 
         /// <summary>
@@ -97,10 +93,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int FinishTimeout
         {
             get { return finishTimeout.Value; }
-            set
-            {
-                finishTimeout.Value = value > 0 ? value : 0;
-            }
+            set { finishTimeout.Value = value > 0 ? value : 0; }
         }
 
         /// <summary>
@@ -130,10 +123,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int LapsNbLaps
         {
             get { return lapsNbLaps.Value; }
-            set
-            {
-                lapsNbLaps.Value = value > 1 ? value : 1;
-            }
+            set { lapsNbLaps.Value = value > 1 ? value : 1; }
         }
 
         /// <summary>
@@ -142,10 +132,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int LapsTimeLimit
         {
             get { return lapsTimeLimit.Value; }
-            set
-            {
-                lapsTimeLimit.Value = value > 1 ? value : 1;
-            }
+            set { lapsTimeLimit.Value = value > 1 ? value : 1; }
         }
 
         /// <summary>
@@ -154,10 +141,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int RoundsForcedLaps
         {
             get { return roundsForcedLaps.Value; }
-            set
-            {
-                roundsForcedLaps.Value = value > 0 ? value : 0;
-            }
+            set { roundsForcedLaps.Value = value > 0 ? value : 0; }
         }
 
         /// <summary>
@@ -166,10 +150,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int RoundsPointsLimit
         {
             get { return roundsPointsLimit.Value; }
-            set
-            {
-                roundsPointsLimit.Value = value > 1 ? value : 1;
-            }
+            set { roundsPointsLimit.Value = value > 1 ? value : 1; }
         }
 
         /// <summary>
@@ -187,10 +168,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int TeamMaxPoints
         {
             get { return teamMaxPoints.Value; }
-            set
-            {
-                teamMaxPoints.Value = value > 1 ? value : 1;
-            }
+            set { teamMaxPoints.Value = value > 1 ? value : 1; }
         }
 
         /// <summary>
@@ -199,10 +177,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int TeamPointsLimit
         {
             get { return teamPointsLimit.Value; }
-            set
-            {
-                teamPointsLimit.Value = value > 1 ? value : 1;
-            }
+            set { teamPointsLimit.Value = value > 1 ? value : 1; }
         }
 
         /// <summary>
@@ -220,10 +195,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int TimeAttackLimit
         {
             get { return timeAttackLimit.Value; }
-            set
-            {
-                timeAttackLimit.Value = value > 1 ? value : 1;
-            }
+            set { timeAttackLimit.Value = value > 1 ? value : 1; }
         }
 
         /// <summary>
@@ -232,10 +204,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public int TimeAttackSynchStartPeriod
         {
             get { return timeAttackSynchStartPeriod.Value; }
-            set
-            {
-                timeAttackSynchStartPeriod.Value = value > 0 ? value : 0;
-            }
+            set { timeAttackSynchStartPeriod.Value = value > 0 ? value : 0; }
         }
 
         /// <summary>

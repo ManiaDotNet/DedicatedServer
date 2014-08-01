@@ -12,7 +12,8 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// Represents a call to the ChatSendServerMessageToLanguage method.
     /// </summary>
     public sealed class ChatSendServerMessageToLanguage
-        : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<LanguageMessageStruct>, LanguageMessageStruct>, XmlRpcStruct<LanguageMessageStruct>[], XmlRpcString, string, XmlRpcBoolean, bool>
+        : XmlRpcMethodCall
+              <XmlRpcArray<XmlRpcStruct<LanguageMessageStruct>, LanguageMessageStruct>, XmlRpcStruct<LanguageMessageStruct>[], XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login that the message is send to. If it's null, the message is send to all clients.

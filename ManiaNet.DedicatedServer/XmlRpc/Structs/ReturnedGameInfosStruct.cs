@@ -16,73 +16,72 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the ChatTime property.
         /// </summary>
-        private XmlRpcI4 chatTime = new XmlRpcI4();
+        private readonly XmlRpcI4 chatTime = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the FinishTimeout property.
         /// </summary>
-        private XmlRpcI4 finishTimeout = new XmlRpcI4();
+        private readonly XmlRpcI4 finishTimeout = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the GameMode property.
         /// </summary>
-        private XmlRpcI4 gameMode = new XmlRpcI4();
+        private readonly XmlRpcI4 gameMode = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the LapsNbLaps property.
         /// </summary>
-        private XmlRpcI4 lapsNbLaps = new XmlRpcI4();
+        private readonly XmlRpcI4 lapsNbLaps = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the LapsTimeLimit property.
         /// </summary>
-        private XmlRpcI4 lapsTimeLimit = new XmlRpcI4();
+        private readonly XmlRpcI4 lapsTimeLimit = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the NbChallenge property.
         /// </summary>
-        private XmlRpcI4 nbChallenge = new XmlRpcI4();
+        private readonly XmlRpcI4 nbChallenge = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the RoundsForcedLaps property.
         /// </summary>
-
-        private XmlRpcI4 roundsForcedLaps = new XmlRpcI4();
+        private readonly XmlRpcI4 roundsForcedLaps = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the RoundsPointsLimit property.
         /// </summary>
-        private XmlRpcI4 roundsPointsLimit = new XmlRpcI4();
+        private readonly XmlRpcI4 roundsPointsLimit = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the RoundsUseNewRules property.
         /// </summary>
-        private XmlRpcBoolean roundsUseNewRules = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean roundsUseNewRules = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the TeamMaxPoints property.
         /// </summary>
-        private XmlRpcI4 teamMaxPoints = new XmlRpcI4();
+        private readonly XmlRpcI4 teamMaxPoints = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TeamPointsLimit property.
         /// </summary>
-        private XmlRpcI4 teamPointsLimit = new XmlRpcI4();
+        private readonly XmlRpcI4 teamPointsLimit = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TeamUseNewRules property.
         /// </summary>
-        private XmlRpcBoolean teamUseNewRules = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean teamUseNewRules = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the TimeAttackLimit property.
         /// </summary>
-        private XmlRpcI4 timeAttackLimit = new XmlRpcI4();
+        private readonly XmlRpcI4 timeAttackLimit = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the TimeAttackSynchStartPeriod property.
         /// </summary>
-        private XmlRpcI4 timeAttackSynchStartPeriod = new XmlRpcI4();
+        private readonly XmlRpcI4 timeAttackSynchStartPeriod = new XmlRpcI4();
 
         /// <summary>
         /// Gets the chat time at the end of the map in milliseconds.

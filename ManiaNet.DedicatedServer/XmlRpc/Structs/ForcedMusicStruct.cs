@@ -16,17 +16,17 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the Override property.
         /// </summary>
-        private XmlRpcBoolean @override = new XmlRpcBoolean();
+        private readonly XmlRpcBoolean @override = new XmlRpcBoolean();
 
         /// <summary>
         /// Backing field for the File property.
         /// </summary>
-        private XmlRpcString file = new XmlRpcString();
+        private readonly XmlRpcString file = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Url property.
         /// </summary>
-        private XmlRpcString url = new XmlRpcString();
+        private readonly XmlRpcString url = new XmlRpcString();
 
         /// <summary>
         /// Gets the path to the music file.

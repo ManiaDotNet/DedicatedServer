@@ -32,8 +32,10 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetForceShowAllOpponents"/> class with the given number of opponents.
         /// </summary>
-        /// <param name="opponents">The number of opponents that will be shown for every player.
-        /// 0 means none will be forced, 1 means ALL opponents will be shown.</param>
+        /// <param name="opponents">
+        /// The number of opponents that will be shown for every player.
+        /// 0 means none will be forced, 1 means ALL opponents will be shown.
+        /// </param>
         public SetForceShowAllOpponents(int opponents)
             : base(opponents)
         { }

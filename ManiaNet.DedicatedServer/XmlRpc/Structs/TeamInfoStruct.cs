@@ -16,42 +16,42 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the City property.
         /// </summary>
-        private XmlRpcString city = new XmlRpcString();
+        private readonly XmlRpcString city = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the ClubLinkUrl property.
         /// </summary>
-        private XmlRpcString clubLinkUrl = new XmlRpcString();
+        private readonly XmlRpcString clubLinkUrl = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the EmblemUrl property.
         /// </summary>
-        private XmlRpcString emblemUrl = new XmlRpcString();
+        private readonly XmlRpcString emblemUrl = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the HuePrimary property.
         /// </summary>
-        private XmlRpcDouble huePrimary = new XmlRpcDouble();
+        private readonly XmlRpcDouble huePrimary = new XmlRpcDouble();
 
         /// <summary>
         /// Backing field for the HueSecondary property.
         /// </summary>
-        private XmlRpcDouble hueSecondary = new XmlRpcDouble();
+        private readonly XmlRpcDouble hueSecondary = new XmlRpcDouble();
 
         /// <summary>
         /// Backing field for the Name property.
         /// </summary>
-        private XmlRpcString name = new XmlRpcString();
+        private readonly XmlRpcString name = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the Rgb property.
         /// </summary>
-        private XmlRpcString rgb = new XmlRpcString();
+        private readonly XmlRpcString rgb = new XmlRpcString();
 
         /// <summary>
         /// Backing field for the ZonePath property.
         /// </summary>
-        private XmlRpcString zonePath = new XmlRpcString();
+        private readonly XmlRpcString zonePath = new XmlRpcString();
 
         /// <summary>
         /// Gets the name of the City that the team is from.
