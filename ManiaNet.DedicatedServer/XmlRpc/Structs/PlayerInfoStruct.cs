@@ -166,6 +166,15 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
                         return false;
                     break;
 
+                case "SpectatorStatus":
+                    // TODO: Do something about spectator status.
+                    // Should have 5 numerals, but method returns 7...
+                    break;
+
+                case "Flags":
+                    //TODO: Do something about flags.
+                    break;
+
                 default:
                     return false;
             }
