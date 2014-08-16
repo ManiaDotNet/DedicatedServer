@@ -376,11 +376,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if "$(ConfigurationName)" == "Release" (
-	if exist "$(SolutionDir)..\ServerController" (
-		echo "Copying .dll and .xml to ServerController"
-		copy /Y "$(TargetPath)" "$(SolutionDir)..\ServerController"
-		copy /Y  "$(TargetDir)$(TargetName).xml" "$(SolutionDir)..\ServerController
+    <PostBuildEvent>echo "Copying .dll and .xml to Plugins and Server Controller"
+for %25%25p in ( "ServerController", "CurrentMap", "ChallengeAdvisor" ) do (
+	if exist "$(SolutionDir)..\%25%25p" (
+		copy /Y "$(TargetPath)" "$(SolutionDir)..\%25%25p"
+		copy /Y  "$(TargetDir)$(TargetName).xml" "$(SolutionDir)..\%25%25p"
 	)
 )</PostBuildEvent>
   </PropertyGroup>
