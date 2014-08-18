@@ -45,8 +45,9 @@
     </Reference>
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="XmlRpc">
-      <HintPath>..\packages\XmlRpc.1.1\lib\XmlRpc.dll</HintPath>
+    <Reference Include="XmlRpc, Version=2.0.5343.36861, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\XmlRpc.2.0\lib\XmlRpc.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>
@@ -62,7 +63,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DedicatedServer\XmlRpc\Types\StructTests.cs" />
+    <Compile Include="XmlRpc\MethodCalls.cs" />
+    <Compile Include="XmlRpc\Structs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

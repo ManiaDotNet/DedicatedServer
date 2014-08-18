@@ -62,12 +62,12 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
             switch (getMemberName(member))
             {
                 case "CurrentGameInfos":
-                    if (!CurrentGameInfos.ParseXml(value))
+                    if (!currentGameInfos.ParseXml(value))
                         return false;
                     break;
 
                 case "NextGameInfos":
-                    if (!NextGameInfos.ParseXml(value))
+                    if (!nextGameInfos.ParseXml(value))
                         return false;
                     break;
 

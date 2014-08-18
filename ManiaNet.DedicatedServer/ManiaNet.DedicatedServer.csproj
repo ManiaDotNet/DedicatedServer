@@ -42,9 +42,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
-    <Reference Include="XmlRpc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="XmlRpc, Version=2.0.5343.36861, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\XmlRpc.1.1\lib\XmlRpc.dll</HintPath>
+      <HintPath>..\packages\XmlRpc.2.0\lib\XmlRpc.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

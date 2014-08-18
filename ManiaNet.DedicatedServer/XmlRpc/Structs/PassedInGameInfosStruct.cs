@@ -272,6 +272,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
                         return false;
                     break;
 
+                case "ChatTime":
+                    if (!chatTime.ParseXml(value))
+                        return false;
+                    break;
+
                 case "RoundsPointsLimit":
                     if (!roundsPointsLimit.ParseXml(value))
                         return false;
