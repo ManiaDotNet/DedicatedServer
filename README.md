@@ -1,92 +1,47 @@
-ManiaNet
-========
+ManiaNet DedicatedServer
+========================
 
-TrackMania Dedicated Server Controller in C#/.NET
+This library contains all the required MethodCalls and Structs for interfacing with ManiaPlanet Dedicated Servers using the [XmlRpc](https://github.com/Banane9/XmlRpc) library.
+
+An automatically generated Documentation of all the Types is avilable [here](http://maniadotnet.github.io/DedicatedServer), courtesy of [SharpDox](http://sharpdox.de).
+
+The official documentation for all the methods offered by the Dedicated Server can be found [here](http://doc.maniaplanet.com/dedicated-server/xmlrpc/methods/latest.html).
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
-Based on the code in the [ManiaPlanet Dedicated Server API](https://github.com/maniaplanet/dedicated-server-api/tree/master/libraries/Maniaplanet/DedicatedServer) in PHP,
-the structure seems to be as follows:
+##Usage##
 
-###Initialization###
+Simply `new` up an instance of the `XmlRpcClient` and you're ready to send/receive method calls.
 
-The dedicated server listens for TCP connections on port 5000 by default, and uses ASCII encodings (PHP only supports one-byte characters in normal strings) or UTF-8 (in the XML declaration).
+``` CSharp
+using ManiaNet.DedicatedServer.XmlRpc;
+using ManiaNet.DedicatedServer.XmlRpc.Methods;
 
-When there's a connection it sends a 4 byte uint, which contains the number of bytes that follow and are to be read as characters, labeling the used protocol.
+// You'll most likely have to change the port that is used (5000 is the default port - also used by the game)
+var xmlRpcConnection = new XmlRpcClient(new XmlRpcClient.Config(port: 5001));
 
-The two possible protocols are `GBXRemote 1` and `GBXRemote 2`, so the character count should always be 11.
+// If you don't care for the response, you don't have to store the returned handle.
+var responseHandle = xmlRpcConnection.SendRequest(new Authenticate(login, password));
 
-###Calling Methods###
-
-Method calls are send to the server in XML format.
-
-For `GBXRemote 2` the XML declaration has to be preceded by 8 bytes, containing two uints for the length of the response and the handle respectively.
-For `GBXRemote 1` it's only 4 bytes for the length.
-
-For a parameterless method it would be (formatting added by me):
-
-``` XML
-<?xml version="1.0" encoding="utf-8" ?>
-<methodCall>
-	<methodName>methodName</methodName>
-	<params></params>
-</methodCall>
+// If you do, just register for the MethodResponse event on the Client, and wait for the right handle to return.
+// Then just parse the response into the right methodCall and it will contain the response.
+xmlRpcConnection.MethodResponse += xmlRpcConnection_MethodResponse;
 ```
 
-For a method with parameters, it would be (formatting added by me):
 
-``` XML
-<?xml version="1.0" encoding="utf-8" ?>
-<methodCall>
-	<methodName>Authenticate</methodName>
-	<params>
-		<param>
-			<value>
-				<string>SuperAdmin</string>
-			</value>
-		</param>
-		<param>
-			<value>
-				<string>ManiaNet</string>
-			</value>
-		</param>
-	</params>
-</methodCall>
+If you're using the [ManiaNet Server Controller](https://github.com/ManiaDotNet/ServerController), it's all done for you.
+
+``` CSharp
+var success = controller.CallMethod(methodCall, timeout);
+
+if (success)
+{
+	// methodCall contains the response.
+}
 ```
-
-###Method Responses###
-
-Method responses are send back in XML format.
-
-For `GBXRemote 2` the XML declaration is preceded by 8 bytes, containing two uints for the length of the response and the handle respectively.
-For `GBXRemote 1` it's only 4 bytes for the length.
-
----------------------------------------------------------------------------------------------------------------------------------
-
-The value tag can contain one of the following tags:
-
-* `<boolean>` containing a boolean, where `true` is `1` and `false` is `0`.
-
-* `<int>` containing an integer number.
-
-* `<double>` containing a float number.
-
-* `<string>` containing a string, in which any special characters have been replaced by their HTML representation.
-
-* `<array>` containing a `<data>` tag which contains `<value>` tags, which can contain any of the types in this list.
-
-* `<struct>` containing a `<member>` tag which contains a `<name>` tag with the string name of the member, and a `<value>` tag, which can contain any of the types in this list.
-
-* `<dateTime.iso8601>` containing a string representation of a date, formatted according to ISO-8601 `yyyymmddThh:mm:ss` (the T is a literal).
-
-* `<base64>` containing data encoded into a base64 string.
-
----------------------------------------------------------------------------------------------------------------------------------
-
-The list of methods (without description) can be found [here](https://github.com/Banane9/ManiaNet/blob/master/RPC-Method-List.md) and the official documentation is [here](http://maniaplanet.github.io/documentation//dedicated-server/methods/latest.html).
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
 ##License##
 
-#####[GPL V2](https://github.com/Banane9/ManiaNet/blob/master/LICENSE.md)#####
+#####[GPL V2](https://github.com/ManiaDotNet/DedicatedServer/blob/master/LICENSE.md)#####
