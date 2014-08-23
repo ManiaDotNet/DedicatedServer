@@ -1,0 +1,4414 @@
+
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>ManiaNet Dedicated Server - ManiaNet.DedicatedServer.XmlRpc.Methods</title>
+        <meta name="viewport" content="width=device-width">
+
+					<link rel="stylesheet" type="text/css" href="../assets/css/style.css?version=0.9.4.1" />
+			<script src="../assets/js/vendor.js?version=0.9.4.1"></script>
+			<script src="../assets/js/frame.js?version=0.9.4.1"></script>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+
+    </head>
+    <body>        
+       
+	    <div id="dropdown-1" class="dropdown dropdown-tip">
+			<ul class="dropdown-menu">
+									<li><a href="../type/AddGuest.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AddGuest</a></li>
+
+									<li><a href="../type/AddGuestId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AddGuestId</a></li>
+
+									<li><a href="../type/AddMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AddMap</a></li>
+
+									<li><a href="../type/AddMapList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AddMapList</a></li>
+
+									<li><a href="../type/AllowMapDownload.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AllowMapDownload</a></li>
+
+									<li><a href="../type/AppendPlaylistFromMatchSettings.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AppendPlaylistFromMatchSettings</a></li>
+
+									<li><a href="../type/AreHornsDisabled.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AreHornsDisabled</a></li>
+
+									<li><a href="../type/AreServiceAnnouncementsDisabled.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AreServiceAnnouncementsDisabled</a></li>
+
+									<li><a href="../type/Authenticate.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> Authenticate</a></li>
+
+									<li><a href="../type/AutoSaveReplays.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AutoSaveReplays</a></li>
+
+									<li><a href="../type/AutoSaveValidationReplays.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AutoSaveValidationReplays</a></li>
+
+									<li><a href="../type/AutoTeamBalance.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> AutoTeamBalance</a></li>
+
+									<li><a href="../type/Ban.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> Ban</a></li>
+
+									<li><a href="../type/BanAndBlackList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BanAndBlackList</a></li>
+
+									<li><a href="../type/BanId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BanId</a></li>
+
+									<li><a href="../type/BlackList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BlackList</a></li>
+
+									<li><a href="../type/BlackListId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BlackListId</a></li>
+
+									<li><a href="../type/CallVote.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CallVote</a></li>
+
+									<li><a href="../type/CallVoteEx.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CallVoteEx</a></li>
+
+									<li><a href="../type/CancelVote.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CancelVote</a></li>
+
+									<li><a href="../type/ChangeAuthPassword.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChangeAuthPassword</a></li>
+
+									<li><a href="../type/ChatSend.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChatSend</a></li>
+
+									<li><a href="../type/ChatSendServerMessage.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChatSendServerMessage</a></li>
+
+									<li><a href="../type/ChatSendServerMessageToId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChatSendServerMessageToId</a></li>
+
+									<li><a href="../type/ChatSendServerMessageToLanguage.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChatSendServerMessageToLanguage</a></li>
+
+									<li><a href="../type/ChatSendToId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChatSendToId</a></li>
+
+									<li><a href="../type/ChatSendToLanguage.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChatSendToLanguage</a></li>
+
+									<li><a href="../type/ChatSendToLogin.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChatSendToLogin</a></li>
+
+									<li><a href="../type/CheckEndMatchCondition.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CheckEndMatchCondition</a></li>
+
+									<li><a href="../type/CheckMapForCurrentServerParams.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CheckMapForCurrentServerParams</a></li>
+
+									<li><a href="../type/ChooseNextMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChooseNextMap</a></li>
+
+									<li><a href="../type/ChooseNextMapList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ChooseNextMapList</a></li>
+
+									<li><a href="../type/CleanBanList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CleanBanList</a></li>
+
+									<li><a href="../type/CleanBlackList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CleanBlackList</a></li>
+
+									<li><a href="../type/CleanGuestList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CleanGuestList</a></li>
+
+									<li><a href="../type/CleanIgnoreList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CleanIgnoreList</a></li>
+
+									<li><a href="../type/ConnectFakePlayer.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ConnectFakePlayer</a></li>
+
+									<li><a href="../type/CustomizeQuitDialog.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CustomizeQuitDialog</a></li>
+
+									<li><a href="../type/DisableHorns.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> DisableHorns</a></li>
+
+									<li><a href="../type/DisableServiceAnnouncements.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> DisableServiceAnnouncements</a></li>
+
+									<li><a href="../type/DisconnectFakePlayer.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> DisconnectFakePlayer</a></li>
+
+									<li><a href="../type/Echo.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> Echo</a></li>
+
+									<li><a href="../type/EnableCallbacks.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> EnableCallbacks</a></li>
+
+									<li><a href="../type/EnableP2PDownload.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> EnableP2PDownload</a></li>
+
+									<li><a href="../type/EnableP2PUpload.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> EnableP2PUpload</a></li>
+
+									<li><a href="../type/ForceEndRound.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForceEndRound</a></li>
+
+									<li><a href="../type/ForcePlayerTeam.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForcePlayerTeam</a></li>
+
+									<li><a href="../type/ForcePlayerTeamId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForcePlayerTeamId</a></li>
+
+									<li><a href="../type/ForceScores.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForceScores</a></li>
+
+									<li><a href="../type/ForceSpectator.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForceSpectator</a></li>
+
+									<li><a href="../type/ForceSpectatorId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForceSpectatorId</a></li>
+
+									<li><a href="../type/ForceSpectatorTarget.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForceSpectatorTarget</a></li>
+
+									<li><a href="../type/ForceSpectatorTargetId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForceSpectatorTargetId</a></li>
+
+									<li><a href="../type/GetAllWarmUpDuration.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetAllWarmUpDuration</a></li>
+
+									<li><a href="../type/GetBanList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetBanList</a></li>
+
+									<li><a href="../type/GetBillState.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetBillState</a></li>
+
+									<li><a href="../type/GetBlackList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetBlackList</a></li>
+
+									<li><a href="../type/GetBuddyNotification.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetBuddyNotification</a></li>
+
+									<li><a href="../type/GetCallVoteRatio.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCallVoteRatio</a></li>
+
+									<li><a href="../type/GetCallVoteRatios.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCallVoteRatios</a></li>
+
+									<li><a href="../type/GetChatLines.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetChatLines</a></li>
+
+									<li><a href="../type/GetChatTime.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetChatTime</a></li>
+
+									<li><a href="../type/GetClientInputsMaxLatency.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetClientInputsMaxLatency</a></li>
+
+									<li><a href="../type/GetCupNbWinners.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCupNbWinners</a></li>
+
+									<li><a href="../type/GetCupPointsLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCupPointsLimit</a></li>
+
+									<li><a href="../type/GetCupRoundsPerMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCupRoundsPerMap</a></li>
+
+									<li><a href="../type/GetCupWarmUpDuration.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCupWarmUpDuration</a></li>
+
+									<li><a href="../type/GetCurrentCallVote.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCurrentCallVote</a></li>
+
+									<li><a href="../type/GetCurrentCallVoteTimeOut.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCurrentCallVoteTimeOut</a></li>
+
+									<li><a href="../type/GetCurrentGameInfos.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCurrentGameInfos</a></li>
+
+									<li><a href="../type/GetCurrentMapIndex.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCurrentMapIndex</a></li>
+
+									<li><a href="../type/GetCurrentMapInfo.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCurrentMapInfo</a></li>
+
+									<li><a href="../type/GetCurrentRankingForLogin.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCurrentRankingForLogin</a></li>
+
+									<li><a href="../type/GetCurrentWinnerTeam.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetCurrentWinnerTeam</a></li>
+
+									<li><a href="../type/GetDemoTokenInfosForPlayer.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetDemoTokenInfosForPlayer</a></li>
+
+									<li><a href="../type/GetDisableRespawn.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetDisableRespawn</a></li>
+
+									<li><a href="../type/GetFinishTimeout.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetFinishTimeout</a></li>
+
+									<li><a href="../type/GetForcedClubLinks.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetForcedClubLinks</a></li>
+
+									<li><a href="../type/GetForcedMods.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetForcedMods</a></li>
+
+									<li><a href="../type/GetForcedMusic.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetForcedMusic</a></li>
+
+									<li><a href="../type/GetForcedSkins.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetForcedSkins</a></li>
+
+									<li><a href="../type/GetForcedTeams.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetForcedTeams</a></li>
+
+									<li><a href="../type/GetForceShowAllOpponents.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetForceShowAllOpponents</a></li>
+
+									<li><a href="../type/GetGameDataDirectory.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetGameDataDirectory</a></li>
+
+									<li><a href="../type/GetGameInfos.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetGameInfos</a></li>
+
+									<li><a href="../type/GetGameMode.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetGameMode</a></li>
+
+									<li><a href="../type/GetGuestList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetGuestList</a></li>
+
+									<li><a href="../type/GetHideServer.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetHideServer</a></li>
+
+									<li><a href="../type/GetIgnoreList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetIgnoreList</a></li>
+
+									<li><a href="../type/GetLadderMode.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetLadderMode</a></li>
+
+									<li><a href="../type/GetLadderServerLimits.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetLadderServerLimits</a></li>
+
+									<li><a href="../type/GetLapsTimeLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetLapsTimeLimit</a></li>
+
+									<li><a href="../type/GetLastConnectionErrorMessage.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetLastConnectionErrorMessage</a></li>
+
+									<li><a href="../type/GetList3.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetList</a></li>
+
+									<li><a href="../type/GetLobbyInfo.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetLobbyInfo</a></li>
+
+									<li><a href="../type/GetManialinkPageAnswers.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetManialinkPageAnswers</a></li>
+
+									<li><a href="../type/GetMapInfo.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetMapInfo</a></li>
+
+									<li><a href="../type/GetMapList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetMapList</a></li>
+
+									<li><a href="../type/GetMapsDirectory.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetMapsDirectory</a></li>
+
+									<li><a href="../type/GetMaxPlayers.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetMaxPlayers</a></li>
+
+									<li><a href="../type/GetMaxPointsTeam.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetMaxPointsTeam</a></li>
+
+									<li><a href="../type/GetModeScriptText.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetModeScriptText</a></li>
+
+									<li><a href="../type/GetNbLaps.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetNbLaps</a></li>
+
+									<li><a href="../type/GetNetworkStats.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetNetworkStats</a></li>
+
+									<li><a href="../type/GetNextGameInfos.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetNextGameInfos</a></li>
+
+									<li><a href="../type/GetNextMapIndex.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetNextMapIndex</a></li>
+
+									<li><a href="../type/GetNextMapInfo.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetNextMapInfo</a></li>
+
+									<li><a href="../type/GetPlayerInfo.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetPlayerInfo</a></li>
+
+									<li><a href="../type/GetPlayerList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetPlayerList</a></li>
+
+									<li><a href="../type/GetRefereeMode.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetRefereeMode</a></li>
+
+									<li><a href="../type/GetRefereePassword.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetRefereePassword</a></li>
+
+									<li><a href="../type/GetRoundCustomPoints.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetRoundCustomPoints</a></li>
+
+									<li><a href="../type/GetRoundForcedLaps.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetRoundForcedLaps</a></li>
+
+									<li><a href="../type/GetRoundPointsLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetRoundPointsLimit</a></li>
+
+									<li><a href="../type/GetScriptName.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetScriptName</a></li>
+
+									<li><a href="../type/GetServerComment.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetServerComment</a></li>
+
+									<li><a href="../type/GetServerName.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetServerName</a></li>
+
+									<li><a href="../type/GetServerOptions.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetServerOptions</a></li>
+
+									<li><a href="../type/GetServerPassword.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetServerPassword</a></li>
+
+									<li><a href="../type/GetServerPasswordForSpectator.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetServerPasswordForSpectator</a></li>
+
+									<li><a href="../type/GetServerPlanets.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetServerPlanets</a></li>
+
+									<li><a href="../type/GetServerTags.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetServerTags</a></li>
+
+									<li><a href="../type/GetSkinsDirectory.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetSkinsDirectory</a></li>
+
+									<li><a href="../type/GetStatus.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetStatus</a></li>
+
+									<li><a href="../type/GetSystemInfo.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetSystemInfo</a></li>
+
+									<li><a href="../type/GetTeamInfo.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetTeamInfo</a></li>
+
+									<li><a href="../type/GetTeamPointsLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetTeamPointsLimit</a></li>
+
+									<li><a href="../type/GetTimeAttackLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetTimeAttackLimit</a></li>
+
+									<li><a href="../type/GetTimeAttackSynchStartPeriod.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetTimeAttackSynchStartPeriod</a></li>
+
+									<li><a href="../type/GetUseChangingValidationSeed.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetUseChangingValidationSeed</a></li>
+
+									<li><a href="../type/GetUseNewRulesRound.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetUseNewRulesRound</a></li>
+
+									<li><a href="../type/GetUseNewRulesTeam.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetUseNewRulesTeam</a></li>
+
+									<li><a href="../type/GetValidationReplay.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetValidationReplay</a></li>
+
+									<li><a href="../type/GetVehicleNetQuality.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetVehicleNetQuality</a></li>
+
+									<li><a href="../type/GetVersion.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetVersion</a></li>
+
+									<li><a href="../type/GetWarmUp.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GetWarmUp</a></li>
+
+									<li><a href="../type/Ignore.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> Ignore</a></li>
+
+									<li><a href="../type/IgnoreId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> IgnoreId</a></li>
+
+									<li><a href="../type/InsertMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> InsertMap</a></li>
+
+									<li><a href="../type/InsertMapList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> InsertMapList</a></li>
+
+									<li><a href="../type/InsertPlaylistFromMatchSettings.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> InsertPlaylistFromMatchSettings</a></li>
+
+									<li><a href="../type/IsAutoSaveReplaysEnabled.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> IsAutoSaveReplaysEnabled</a></li>
+
+									<li><a href="../type/IsAutoSaveValidationReplaysEnabled.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> IsAutoSaveValidationReplaysEnabled</a></li>
+
+									<li><a href="../type/IsKeepingPlayerSlots.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> IsKeepingPlayerSlots</a></li>
+
+									<li><a href="../type/IsMapDownloadAllowed.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> IsMapDownloadAllowed</a></li>
+
+									<li><a href="../type/IsP2PDownload.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> IsP2PDownload</a></li>
+
+									<li><a href="../type/IsP2PUpload.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> IsP2PUpload</a></li>
+
+									<li><a href="../type/IsRelayServer.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> IsRelayServer</a></li>
+
+									<li><a href="../type/JoinServerInternet.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> JoinServerInternet</a></li>
+
+									<li><a href="../type/JoinServerLan.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> JoinServerLan</a></li>
+
+									<li><a href="../type/JumpToMapIdent.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> JumpToMapIdent</a></li>
+
+									<li><a href="../type/JumpToMapIndex.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> JumpToMapIndex</a></li>
+
+									<li><a href="../type/KeepPlayerSlots.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> KeepPlayerSlots</a></li>
+
+									<li><a href="../type/Kick.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> Kick</a></li>
+
+									<li><a href="../type/KickId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> KickId</a></li>
+
+									<li><a href="../type/LoadBlackList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LoadBlackList</a></li>
+
+									<li><a href="../type/LoadGuestList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LoadGuestList</a></li>
+
+									<li><a href="../type/LoadMatchSettings.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LoadMatchSettings</a></li>
+
+									<li><a href="../type/ManiaPlanetBeginMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetBeginMap</a></li>
+
+									<li><a href="../type/ManiaPlanetBeginMatch.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetBeginMatch</a></li>
+
+									<li><a href="../type/ManiaPlanetBillUpdated.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetBillUpdated</a></li>
+
+									<li><a href="../type/ManiaPlanetEcho.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetEcho</a></li>
+
+									<li><a href="../type/ManiaPlanetEndMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetEndMap</a></li>
+
+									<li><a href="../type/ManiaPlanetEndMatch.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetEndMatch</a></li>
+
+									<li><a href="../type/ManiaPlanetMapListModified.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetMapListModified</a></li>
+
+									<li><a href="../type/ManiaPlanetPlayerAlliesChanged.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetPlayerAlliesChanged</a></li>
+
+									<li><a href="../type/ManiaPlanetPlayerChat.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetPlayerChat</a></li>
+
+									<li><a href="../type/ManiaPlanetPlayerConnect.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetPlayerConnect</a></li>
+
+									<li><a href="../type/ManiaPlanetPlayerDisconnect.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetPlayerDisconnect</a></li>
+
+									<li><a href="../type/ManiaPlanetPlayerInfoChanged.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetPlayerInfoChanged</a></li>
+
+									<li><a href="../type/ManiaPlanetPlayerManialinkPageAnswer.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetPlayerManialinkPageAnswer</a></li>
+
+									<li><a href="../type/ManiaPlanetServerStart.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetServerStart</a></li>
+
+									<li><a href="../type/ManiaPlanetServerStop.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetServerStop</a></li>
+
+									<li><a href="../type/ManiaPlanetStatusChanged.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetStatusChanged</a></li>
+
+									<li><a href="../type/ManiaPlanetTunnelDataReceived.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetTunnelDataReceived</a></li>
+
+									<li><a href="../type/ManiaPlanetVoteUpdated.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManiaPlanetVoteUpdated</a></li>
+
+									<li><a href="../type/ManualFlowControlEnable.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManualFlowControlEnable</a></li>
+
+									<li><a href="../type/ManualFlowControlGetCurTransition.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManualFlowControlGetCurTransition</a></li>
+
+									<li><a href="../type/ManualFlowControlProceed.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManualFlowControlProceed</a></li>
+
+									<li><a href="../type/ManualFlowControlsEnabled.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManualFlowControlsEnabled</a></li>
+
+									<li><a href="../type/NextMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> NextMap</a></li>
+
+									<li><a href="../type/Pay.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> Pay</a></li>
+
+									<li><a href="../type/QuitGame.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> QuitGame</a></li>
+
+									<li><a href="../type/RemoveGuest.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> RemoveGuest</a></li>
+
+									<li><a href="../type/RemoveGuestId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> RemoveGuestId</a></li>
+
+									<li><a href="../type/RemoveMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> RemoveMap</a></li>
+
+									<li><a href="../type/RemoveMapList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> RemoveMapList</a></li>
+
+									<li><a href="../type/ResetServerTags.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ResetServerTags</a></li>
+
+									<li><a href="../type/RestartMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> RestartMap</a></li>
+
+									<li><a href="../type/SaveBestGhostsReplay.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SaveBestGhostsReplay</a></li>
+
+									<li><a href="../type/SaveBlackList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SaveBlackList</a></li>
+
+									<li><a href="../type/SaveCurrentReplay.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SaveCurrentReplay</a></li>
+
+									<li><a href="../type/SaveGuestList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SaveGuestList</a></li>
+
+									<li><a href="../type/SaveMatchSettings.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SaveMatchSettings</a></li>
+
+									<li><a href="../type/SendBill.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendBill</a></li>
+
+									<li><a href="../type/SendDisplayManialinkPage.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendDisplayManialinkPage</a></li>
+
+									<li><a href="../type/SendDisplayManialinkPageToId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendDisplayManialinkPageToId</a></li>
+
+									<li><a href="../type/SendDisplayManialinkPageToLogin.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendDisplayManialinkPageToLogin</a></li>
+
+									<li><a href="../type/SendHideManialinkPage.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendHideManialinkPage</a></li>
+
+									<li><a href="../type/SendHideManialinkPageToId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendHideManialinkPageToId</a></li>
+
+									<li><a href="../type/SendHideManialinkPageToLogin.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendHideManialinkPageToLogin</a></li>
+
+									<li><a href="../type/SendOpenLinkToId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendOpenLinkToId</a></li>
+
+									<li><a href="../type/SendOpenLinkToLogin.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SendOpenLinkToLogin</a></li>
+
+									<li><a href="../type/SetAllWarmUpDuration.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetAllWarmUpDuration</a></li>
+
+									<li><a href="../type/SetApiVersion.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetApiVersion</a></li>
+
+									<li><a href="../type/SetBuddyNotification.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetBuddyNotification</a></li>
+
+									<li><a href="../type/SetCallVoteRatio.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetCallVoteRatio</a></li>
+
+									<li><a href="../type/SetCallVoteRatios.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetCallVoteRatios</a></li>
+
+									<li><a href="../type/SetCallVoteTimeOut.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetCallVoteTimeOut</a></li>
+
+									<li><a href="../type/SetChatTime.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetChatTime</a></li>
+
+									<li><a href="../type/SetClientInputsMaxLatency.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetClientInputsMaxLatency</a></li>
+
+									<li><a href="../type/SetConnectionRates.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetConnectionRates</a></li>
+
+									<li><a href="../type/SetCupNbWinners.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetCupNbWinners</a></li>
+
+									<li><a href="../type/SetCupPointsLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetCupPointsLimit</a></li>
+
+									<li><a href="../type/SetCupRoundsPerMap.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetCupRoundsPerMap</a></li>
+
+									<li><a href="../type/SetCupWarmUpDuration.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetCupWarmUpDuration</a></li>
+
+									<li><a href="../type/SetDisableRespawn.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetDisableRespawn</a></li>
+
+									<li><a href="../type/SetFinishTimeout.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetFinishTimeout</a></li>
+
+									<li><a href="../type/SetForcedClubLinks.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetForcedClubLinks</a></li>
+
+									<li><a href="../type/SetForcedMods.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetForcedMods</a></li>
+
+									<li><a href="../type/SetForcedMusic.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetForcedMusic</a></li>
+
+									<li><a href="../type/SetForcedSkins.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetForcedSkins</a></li>
+
+									<li><a href="../type/SetForcedTeams.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetForcedTeams</a></li>
+
+									<li><a href="../type/SetForceShowAllOpponents.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetForceShowAllOpponents</a></li>
+
+									<li><a href="../type/SetGameInfos.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetGameInfos</a></li>
+
+									<li><a href="../type/SetGameMode.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetGameMode</a></li>
+
+									<li><a href="../type/SetHideServer.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetHideServer</a></li>
+
+									<li><a href="../type/SetLadderMode.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetLadderMode</a></li>
+
+									<li><a href="../type/SetLapsTimeLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetLapsTimeLimit</a></li>
+
+									<li><a href="../type/SetMaxPlayers.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetMaxPlayers</a></li>
+
+									<li><a href="../type/SetMaxPointsTeam.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetMaxPointsTeam</a></li>
+
+									<li><a href="../type/SetMaxSpectators.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetMaxSpectators</a></li>
+
+									<li><a href="../type/SetModeScriptText.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetModeScriptText</a></li>
+
+									<li><a href="../type/SetNbLaps.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetNbLaps</a></li>
+
+									<li><a href="../type/SetNextMapIdent.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetNextMapIdent</a></li>
+
+									<li><a href="../type/SetNextMapIndex.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetNextMapIndex</a></li>
+
+									<li><a href="../type/SetRefereeMode.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetRefereeMode</a></li>
+
+									<li><a href="../type/SetRefereePassword.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetRefereePassword</a></li>
+
+									<li><a href="../type/SetRoundCustomPoints.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetRoundCustomPoints</a></li>
+
+									<li><a href="../type/SetRoundForcedLaps.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetRoundForcedLaps</a></li>
+
+									<li><a href="../type/SetRoundPointsLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetRoundPointsLimit</a></li>
+
+									<li><a href="../type/SetScriptName.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetScriptName</a></li>
+
+									<li><a href="../type/SetServerComment.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetServerComment</a></li>
+
+									<li><a href="../type/SetServerName.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetServerName</a></li>
+
+									<li><a href="../type/SetServerOptions.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetServerOptions</a></li>
+
+									<li><a href="../type/SetServerPassword.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetServerPassword</a></li>
+
+									<li><a href="../type/SetServerPasswordForSpectator.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetServerPasswordForSpectator</a></li>
+
+									<li><a href="../type/SetServerTag.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetServerTag</a></li>
+
+									<li><a href="../type/SetTeamPointsLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetTeamPointsLimit</a></li>
+
+									<li><a href="../type/SetTimeAttackLimit.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetTimeAttackLimit</a></li>
+
+									<li><a href="../type/SetTimeAttackSynchStartPeriod.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetTimeAttackSynchStartPeriod</a></li>
+
+									<li><a href="../type/SetUseChangingValidationSeed.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetUseChangingValidationSeed</a></li>
+
+									<li><a href="../type/SetUseNewRulesRound.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetUseNewRulesRound</a></li>
+
+									<li><a href="../type/SetUseNewRulesTeam.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetUseNewRulesTeam</a></li>
+
+									<li><a href="../type/SetVehicleNetQuality.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetVehicleNetQuality</a></li>
+
+									<li><a href="../type/SetWarmUp.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SetWarmUp</a></li>
+
+									<li><a href="../type/SpectatorReleasePlayerSlot.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SpectatorReleasePlayerSlot</a></li>
+
+									<li><a href="../type/SpectatorReleasePlayerSlotId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SpectatorReleasePlayerSlotId</a></li>
+
+									<li><a href="../type/StartServerInternet.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> StartServerInternet</a></li>
+
+									<li><a href="../type/StartServerLan.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> StartServerLan</a></li>
+
+									<li><a href="../type/StopServer.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> StopServer</a></li>
+
+									<li><a href="../type/TrackManiaPlayerCheckpoint.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> TrackManiaPlayerCheckpoint</a></li>
+
+									<li><a href="../type/TrackManiaPlayerFinish.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> TrackManiaPlayerFinish</a></li>
+
+									<li><a href="../type/TrackManiaPlayerIncoherence.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> TrackManiaPlayerIncoherence</a></li>
+
+									<li><a href="../type/TunnelSendDataToId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> TunnelSendDataToId</a></li>
+
+									<li><a href="../type/TunnelSendDataToLogin.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> TunnelSendDataToLogin</a></li>
+
+									<li><a href="../type/UnBan.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> UnBan</a></li>
+
+									<li><a href="../type/UnBlackList.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> UnBlackList</a></li>
+
+									<li><a href="../type/UnIgnore.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> UnIgnore</a></li>
+
+									<li><a href="../type/UnIgnoreId.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> UnIgnoreId</a></li>
+
+									<li><a href="../type/UnsetServerTag.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> UnsetServerTag</a></li>
+
+									<li><a href="../type/WriteFile.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> WriteFile</a></li>
+
+							</ul>
+		</div>
+	   
+	    <div class="ui-layout-north">
+			<div class="toolbar">
+				<a href="#" data-dropdown="#dropdown-1" class="button"><img src="../assets/images/icons/class_public.png"/> Types <span class="info">(272)</span> <i class="icon-caret-down"></i></a>
+				<div class="right">
+					<span class="toolbar-info"> Assembly: ManiaNet.DedicatedServer</span>
+					<a href="#" id="print-button" class="button" title="Print"><i class="icon-print"></i></a>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+        
+		<div class="ui-layout-center">
+			
+				<h3 class="box-title first-heading">Types</h3>
+
+			
+			<div class="table-box">
+				<table>
+					<thead>
+						<tr>
+							<td></td>
+							<td>Name</td>
+							<td>Description</td>
+						</tr>
+					</thead>
+					<tbody>			
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AddGuest" href="../type/AddGuest.html">AddGuest</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AddGuest method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AddGuestId" href="../type/AddGuestId.html">AddGuestId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AddGuestId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AddMap" href="../type/AddMap.html">AddMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AddMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AddMapList" href="../type/AddMapList.html">AddMapList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AddMapList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AllowMapDownload" href="../type/AllowMapDownload.html">AllowMapDownload</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AllowMapDownload method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AppendPlaylistFromMatchSettings" href="../type/AppendPlaylistFromMatchSettings.html">AppendPlaylistFromMatchSettings</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AppendPlaylistFromMatchSettings method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AreHornsDisabled" href="../type/AreHornsDisabled.html">AreHornsDisabled</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AreHornsDisabled method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AreServiceAnnouncementsDisabled" href="../type/AreServiceAnnouncementsDisabled.html">AreServiceAnnouncementsDisabled</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AreServiceAnnouncesDisabled [sic] method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="Authenticate" href="../type/Authenticate.html">Authenticate</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the Authenticate method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AutoSaveReplays" href="../type/AutoSaveReplays.html">AutoSaveReplays</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AutoSaveReplays method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AutoSaveValidationReplays" href="../type/AutoSaveValidationReplays.html">AutoSaveValidationReplays</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AutoSaveValidationReplays method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="AutoTeamBalance" href="../type/AutoTeamBalance.html">AutoTeamBalance</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the AutoTeamBalance method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="Ban" href="../type/Ban.html">Ban</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the Ban method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="BanAndBlackList" href="../type/BanAndBlackList.html">BanAndBlackList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the BanAndBlackList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="BanId" href="../type/BanId.html">BanId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the BanId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="BlackList" href="../type/BlackList.html">BlackList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the BlackList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="BlackListId" href="../type/BlackListId.html">BlackListId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the BlackListId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CallVote" href="../type/CallVote.html">CallVote</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CallVote method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CallVoteEx" href="../type/CallVoteEx.html">CallVoteEx</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CallVoteEx method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CancelVote" href="../type/CancelVote.html">CancelVote</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CancelVote method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChangeAuthPassword" href="../type/ChangeAuthPassword.html">ChangeAuthPassword</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChangeAuthPassword method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChatSend" href="../type/ChatSend.html">ChatSend</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChatSend method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChatSendServerMessage" href="../type/ChatSendServerMessage.html">ChatSendServerMessage</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChatSendServerMessage method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChatSendServerMessageToId" href="../type/ChatSendServerMessageToId.html">ChatSendServerMessageToId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChatSendServerMessageToId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChatSendServerMessageToLanguage" href="../type/ChatSendServerMessageToLanguage.html">ChatSendServerMessageToLanguage</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChatSendServerMessageToLanguage method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChatSendToId" href="../type/ChatSendToId.html">ChatSendToId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChatSendToId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChatSendToLanguage" href="../type/ChatSendToLanguage.html">ChatSendToLanguage</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChatSendToLanguage method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChatSendToLogin" href="../type/ChatSendToLogin.html">ChatSendToLogin</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a class to the ChatSendToLogin method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CheckEndMatchCondition" href="../type/CheckEndMatchCondition.html">CheckEndMatchCondition</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CheckEndMatchCondition method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CheckMapForCurrentServerParams" href="../type/CheckMapForCurrentServerParams.html">CheckMapForCurrentServerParams</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CheckMapForCurrentServerParams</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChooseNextMap" href="../type/ChooseNextMap.html">ChooseNextMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChooseNextMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ChooseNextMapList" href="../type/ChooseNextMapList.html">ChooseNextMapList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ChooseNextMapList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CleanBanList" href="../type/CleanBanList.html">CleanBanList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CleanBanList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CleanBlackList" href="../type/CleanBlackList.html">CleanBlackList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CleanBlackList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CleanGuestList" href="../type/CleanGuestList.html">CleanGuestList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CleanGuestList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CleanIgnoreList" href="../type/CleanIgnoreList.html">CleanIgnoreList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CleanIgnoreList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ConnectFakePlayer" href="../type/ConnectFakePlayer.html">ConnectFakePlayer</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ConnectFakePlayer method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CustomizeQuitDialog" href="../type/CustomizeQuitDialog.html">CustomizeQuitDialog</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the CustomizeQuitDialog method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="DisableHorns" href="../type/DisableHorns.html">DisableHorns</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the DisableHorns method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="DisableServiceAnnouncements" href="../type/DisableServiceAnnouncements.html">DisableServiceAnnouncements</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the DisableServiceAnnounces [sic] method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="DisconnectFakePlayer" href="../type/DisconnectFakePlayer.html">DisconnectFakePlayer</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the DisconnectFakePlayer method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="Echo" href="../type/Echo.html">Echo</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the Echo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="EnableCallbacks" href="../type/EnableCallbacks.html">EnableCallbacks</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the EnableCallbacks method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="EnableP2PDownload" href="../type/EnableP2PDownload.html">EnableP2PDownload</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the EnableP2PDownload method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="EnableP2PUpload" href="../type/EnableP2PUpload.html">EnableP2PUpload</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the EnableP2PUpload method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForceEndRound" href="../type/ForceEndRound.html">ForceEndRound</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ForceEndRound method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForcePlayerTeam" href="../type/ForcePlayerTeam.html">ForcePlayerTeam</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ForcePlayerTeam method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForcePlayerTeamId" href="../type/ForcePlayerTeamId.html">ForcePlayerTeamId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ForcePlayerTeamId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForceScores" href="../type/ForceScores.html">ForceScores</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ForceScores method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForceSpectator" href="../type/ForceSpectator.html">ForceSpectator</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ForceSpectator method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForceSpectatorId" href="../type/ForceSpectatorId.html">ForceSpectatorId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ForceSpectatorId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForceSpectatorTarget" href="../type/ForceSpectatorTarget.html">ForceSpectatorTarget</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ForceSpectatorTarget method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForceSpectatorTargetId" href="../type/ForceSpectatorTargetId.html">ForceSpectatorTargetId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ForceSpectatorTargetId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetAllWarmUpDuration" href="../type/GetAllWarmUpDuration.html">GetAllWarmUpDuration</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetAllWarmUpDuration method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetBanList" href="../type/GetBanList.html">GetBanList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetBanList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetBillState" href="../type/GetBillState.html">GetBillState</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetBillState method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetBlackList" href="../type/GetBlackList.html">GetBlackList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetBlackList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetBuddyNotification" href="../type/GetBuddyNotification.html">GetBuddyNotification</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetBuddyNotification method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCallVoteRatio" href="../type/GetCallVoteRatio.html">GetCallVoteRatio</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCallVoteRatio method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCallVoteRatios" href="../type/GetCallVoteRatios.html">GetCallVoteRatios</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCallVoteRatios method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetChatLines" href="../type/GetChatLines.html">GetChatLines</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetChatLines method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetChatTime" href="../type/GetChatTime.html">GetChatTime</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetChatTime method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetClientInputsMaxLatency" href="../type/GetClientInputsMaxLatency.html">GetClientInputsMaxLatency</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetClientInputsMaxLatency method. Only used by ShootMania.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCupNbWinners" href="../type/GetCupNbWinners.html">GetCupNbWinners</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCupNbWinners method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCupPointsLimit" href="../type/GetCupPointsLimit.html">GetCupPointsLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCupPointsLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCupRoundsPerMap" href="../type/GetCupRoundsPerMap.html">GetCupRoundsPerMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCupRoundsPerMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCupWarmUpDuration" href="../type/GetCupWarmUpDuration.html">GetCupWarmUpDuration</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCupWarmUpDuration method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCurrentCallVote" href="../type/GetCurrentCallVote.html">GetCurrentCallVote</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCurrentCallVote method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCurrentCallVoteTimeOut" href="../type/GetCurrentCallVoteTimeOut.html">GetCurrentCallVoteTimeOut</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCurrentCallVoteTimeOut method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCurrentGameInfos" href="../type/GetCurrentGameInfos.html">GetCurrentGameInfos</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCurrentGameInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCurrentMapIndex" href="../type/GetCurrentMapIndex.html">GetCurrentMapIndex</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCurrentMapIndex method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCurrentMapInfo" href="../type/GetCurrentMapInfo.html">GetCurrentMapInfo</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCurrentMapInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCurrentRankingForLogin" href="../type/GetCurrentRankingForLogin.html">GetCurrentRankingForLogin</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCurrentRankingForLogin method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetCurrentWinnerTeam" href="../type/GetCurrentWinnerTeam.html">GetCurrentWinnerTeam</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetCurrentWinnerTeam method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetDemoTokenInfosForPlayer" href="../type/GetDemoTokenInfosForPlayer.html">GetDemoTokenInfosForPlayer</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetDemoTokenInfosForPlayer method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetDisableRespawn" href="../type/GetDisableRespawn.html">GetDisableRespawn</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetDisableRespawn method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetFinishTimeout" href="../type/GetFinishTimeout.html">GetFinishTimeout</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetFinishTimeout method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetForcedClubLinks" href="../type/GetForcedClubLinks.html">GetForcedClubLinks</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetForcedClubLinks method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetForcedMods" href="../type/GetForcedMods.html">GetForcedMods</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetForcedMods method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetForcedMusic" href="../type/GetForcedMusic.html">GetForcedMusic</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetForcedMusic method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetForcedSkins" href="../type/GetForcedSkins.html">GetForcedSkins</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetForcedSkins method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetForcedTeams" href="../type/GetForcedTeams.html">GetForcedTeams</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetForcedTeams method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetForceShowAllOpponents" href="../type/GetForceShowAllOpponents.html">GetForceShowAllOpponents</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetForceShowAllOpponents method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetGameDataDirectory" href="../type/GetGameDataDirectory.html">GetGameDataDirectory</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GameDataDirectory method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetGameInfos" href="../type/GetGameInfos.html">GetGameInfos</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetGameInfos method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetGameMode" href="../type/GetGameMode.html">GetGameMode</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetGameMode method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetGuestList" href="../type/GetGuestList.html">GetGuestList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetGuestList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetHideServer" href="../type/GetHideServer.html">GetHideServer</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetHideServer method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetIgnoreList" href="../type/GetIgnoreList.html">GetIgnoreList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetIgnoreList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetLadderMode" href="../type/GetLadderMode.html">GetLadderMode</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetLadderMode method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetLadderServerLimits" href="../type/GetLadderServerLimits.html">GetLadderServerLimits</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetLadderServerLimits method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetLapsTimeLimit" href="../type/GetLapsTimeLimit.html">GetLapsTimeLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetLapsTimeLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetLastConnectionErrorMessage" href="../type/GetLastConnectionErrorMessage.html">GetLastConnectionErrorMessage</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetLastConnectionErrorMessage method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetList" href="../type/GetList3.html">GetList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Base for calls to Get*List methods.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetLobbyInfo" href="../type/GetLobbyInfo.html">GetLobbyInfo</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetLobbyInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetManialinkPageAnswers" href="../type/GetManialinkPageAnswers.html">GetManialinkPageAnswers</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetManialinkPageAnswers method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetMapInfo" href="../type/GetMapInfo.html">GetMapInfo</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetMapInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetMapList" href="../type/GetMapList.html">GetMapList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetMapList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetMapsDirectory" href="../type/GetMapsDirectory.html">GetMapsDirectory</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetMapsDirectoy method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetMaxPlayers" href="../type/GetMaxPlayers.html">GetMaxPlayers</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetMaxPlayers method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetMaxPointsTeam" href="../type/GetMaxPointsTeam.html">GetMaxPointsTeam</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetMaxPointsTeam method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetModeScriptText" href="../type/GetModeScriptText.html">GetModeScriptText</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetModeScriptText method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetNbLaps" href="../type/GetNbLaps.html">GetNbLaps</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetNbLaps method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetNetworkStats" href="../type/GetNetworkStats.html">GetNetworkStats</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetNetworkStats method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetNextGameInfos" href="../type/GetNextGameInfos.html">GetNextGameInfos</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetNextGameInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetNextMapIndex" href="../type/GetNextMapIndex.html">GetNextMapIndex</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetNextMapIndex method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetNextMapInfo" href="../type/GetNextMapInfo.html">GetNextMapInfo</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetNextMapInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetPlayerInfo" href="../type/GetPlayerInfo.html">GetPlayerInfo</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetPlayerInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetPlayerList" href="../type/GetPlayerList.html">GetPlayerList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetPlayerList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetRefereeMode" href="../type/GetRefereeMode.html">GetRefereeMode</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetRefereeMode method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetRefereePassword" href="../type/GetRefereePassword.html">GetRefereePassword</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetRefereePassword method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetRoundCustomPoints" href="../type/GetRoundCustomPoints.html">GetRoundCustomPoints</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetRoundCustomPoints method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetRoundForcedLaps" href="../type/GetRoundForcedLaps.html">GetRoundForcedLaps</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetRoundForcedLaps method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetRoundPointsLimit" href="../type/GetRoundPointsLimit.html">GetRoundPointsLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetRoundPointsLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetScriptName" href="../type/GetScriptName.html">GetScriptName</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetScriptName method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetServerComment" href="../type/GetServerComment.html">GetServerComment</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetServerComment method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetServerName" href="../type/GetServerName.html">GetServerName</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetServerName method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetServerOptions" href="../type/GetServerOptions.html">GetServerOptions</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetServerOptions method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetServerPassword" href="../type/GetServerPassword.html">GetServerPassword</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetServerPassword method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetServerPasswordForSpectator" href="../type/GetServerPasswordForSpectator.html">GetServerPasswordForSpectator</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetServerPasswordForSpectator method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetServerPlanets" href="../type/GetServerPlanets.html">GetServerPlanets</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetServerPlanets method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetServerTags" href="../type/GetServerTags.html">GetServerTags</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetServerTags method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetSkinsDirectory" href="../type/GetSkinsDirectory.html">GetSkinsDirectory</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetSkinsDirectory method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetStatus" href="../type/GetStatus.html">GetStatus</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetStatus method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetSystemInfo" href="../type/GetSystemInfo.html">GetSystemInfo</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetSystemInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetTeamInfo" href="../type/GetTeamInfo.html">GetTeamInfo</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetTeamInfo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetTeamPointsLimit" href="../type/GetTeamPointsLimit.html">GetTeamPointsLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetTeamPointsLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetTimeAttackLimit" href="../type/GetTimeAttackLimit.html">GetTimeAttackLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetTimeAttackLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetTimeAttackSynchStartPeriod" href="../type/GetTimeAttackSynchStartPeriod.html">GetTimeAttackSynchStartPeriod</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetTimeAttackSynchStartPeriod method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetUseChangingValidationSeed" href="../type/GetUseChangingValidationSeed.html">GetUseChangingValidationSeed</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetUseChangingValidationSeed method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetUseNewRulesRound" href="../type/GetUseNewRulesRound.html">GetUseNewRulesRound</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetUseNewRulesRound method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetUseNewRulesTeam" href="../type/GetUseNewRulesTeam.html">GetUseNewRulesTeam</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetUseNewRulesTeam method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetValidationReplay" href="../type/GetValidationReplay.html">GetValidationReplay</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetValidationReplay method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetVehicleNetQuality" href="../type/GetVehicleNetQuality.html">GetVehicleNetQuality</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetVehicleNetQuality method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetVersion" href="../type/GetVersion.html">GetVersion</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetVersion method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GetWarmUp" href="../type/GetWarmUp.html">GetWarmUp</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the GetWarmUp method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="Ignore" href="../type/Ignore.html">Ignore</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the Ignore method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="IgnoreId" href="../type/IgnoreId.html">IgnoreId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the IgnoreIdId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="InsertMap" href="../type/InsertMap.html">InsertMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the InsertMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="InsertMapList" href="../type/InsertMapList.html">InsertMapList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the InsertMapList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="InsertPlaylistFromMatchSettings" href="../type/InsertPlaylistFromMatchSettings.html">InsertPlaylistFromMatchSettings</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the InsertPlaylistFromMatchSettings method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="IsAutoSaveReplaysEnabled" href="../type/IsAutoSaveReplaysEnabled.html">IsAutoSaveReplaysEnabled</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the IsAutoSaveReplaysEnabled method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="IsAutoSaveValidationReplaysEnabled" href="../type/IsAutoSaveValidationReplaysEnabled.html">IsAutoSaveValidationReplaysEnabled</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the IsAutoSaveValidationReplaysEnabled method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="IsKeepingPlayerSlots" href="../type/IsKeepingPlayerSlots.html">IsKeepingPlayerSlots</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the IsKeepingPlayerSlots method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="IsMapDownloadAllowed" href="../type/IsMapDownloadAllowed.html">IsMapDownloadAllowed</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the IsMapDownloadAllowed method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="IsP2PDownload" href="../type/IsP2PDownload.html">IsP2PDownload</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the IsP2PDownload method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="IsP2PUpload" href="../type/IsP2PUpload.html">IsP2PUpload</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the IsP2PUpload method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="IsRelayServer" href="../type/IsRelayServer.html">IsRelayServer</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the IsRelayServer method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="JoinServerInternet" href="../type/JoinServerInternet.html">JoinServerInternet</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the JoinServerInternet method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="JoinServerLan" href="../type/JoinServerLan.html">JoinServerLan</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the JoinServerLan method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="JumpToMapIdent" href="../type/JumpToMapIdent.html">JumpToMapIdent</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the JumpToMapIdent method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="JumpToMapIndex" href="../type/JumpToMapIndex.html">JumpToMapIndex</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the JumpToMapIndex method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="KeepPlayerSlots" href="../type/KeepPlayerSlots.html">KeepPlayerSlots</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the KeepPlayerSlots method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="Kick" href="../type/Kick.html">Kick</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the Kick method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="KickId" href="../type/KickId.html">KickId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the KickId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="LoadBlackList" href="../type/LoadBlackList.html">LoadBlackList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the LoadBlackList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="LoadGuestList" href="../type/LoadGuestList.html">LoadGuestList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the LoadGuestList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="LoadMatchSettings" href="../type/LoadMatchSettings.html">LoadMatchSettings</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the LoadMatchSettings method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetBeginMap" href="../type/ManiaPlanetBeginMap.html">ManiaPlanetBeginMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.BeginMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetBeginMatch" href="../type/ManiaPlanetBeginMatch.html">ManiaPlanetBeginMatch</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.BeginMatch method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetBillUpdated" href="../type/ManiaPlanetBillUpdated.html">ManiaPlanetBillUpdated</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.BillUpdated method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetEcho" href="../type/ManiaPlanetEcho.html">ManiaPlanetEcho</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.Echo method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetEndMap" href="../type/ManiaPlanetEndMap.html">ManiaPlanetEndMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.EndMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetEndMatch" href="../type/ManiaPlanetEndMatch.html">ManiaPlanetEndMatch</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.EndMatch method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetMapListModified" href="../type/ManiaPlanetMapListModified.html">ManiaPlanetMapListModified</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.MapListModified method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetPlayerAlliesChanged" href="../type/ManiaPlanetPlayerAlliesChanged.html">ManiaPlanetPlayerAlliesChanged</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.PlayerAlliesChanged method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetPlayerChat" href="../type/ManiaPlanetPlayerChat.html">ManiaPlanetPlayerChat</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.PlayerChat method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetPlayerConnect" href="../type/ManiaPlanetPlayerConnect.html">ManiaPlanetPlayerConnect</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.PlayerConnect method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetPlayerDisconnect" href="../type/ManiaPlanetPlayerDisconnect.html">ManiaPlanetPlayerDisconnect</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.PlayerDisconnect method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetPlayerInfoChanged" href="../type/ManiaPlanetPlayerInfoChanged.html">ManiaPlanetPlayerInfoChanged</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.PlayerInfoChanged method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetPlayerManialinkPageAnswer" href="../type/ManiaPlanetPlayerManialinkPageAnswer.html">ManiaPlanetPlayerManialinkPageAnswer</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.PlayerManialinkPageAnswer method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetServerStart" href="../type/ManiaPlanetServerStart.html">ManiaPlanetServerStart</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.ServerStart method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetServerStop" href="../type/ManiaPlanetServerStop.html">ManiaPlanetServerStop</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.ServerStop method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetStatusChanged" href="../type/ManiaPlanetStatusChanged.html">ManiaPlanetStatusChanged</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.StatusChanged method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetTunnelDataReceived" href="../type/ManiaPlanetTunnelDataReceived.html">ManiaPlanetTunnelDataReceived</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.TunnelDataReceived method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManiaPlanetVoteUpdated" href="../type/ManiaPlanetVoteUpdated.html">ManiaPlanetVoteUpdated</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the ManiaPlanet.VoteUpdated method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManualFlowControlEnable" href="../type/ManualFlowControlEnable.html">ManualFlowControlEnable</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ManualFlowControlEnable method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManualFlowControlGetCurTransition" href="../type/ManualFlowControlGetCurTransition.html">ManualFlowControlGetCurTransition</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ManualFlowControlGetCurTransition method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManualFlowControlProceed" href="../type/ManualFlowControlProceed.html">ManualFlowControlProceed</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ManualFlowControlProceed method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManualFlowControlsEnabled" href="../type/ManualFlowControlsEnabled.html">ManualFlowControlsEnabled</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ManualFlowControllsEnabled [sic] method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="NextMap" href="../type/NextMap.html">NextMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the NextMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="Pay" href="../type/Pay.html">Pay</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the Pay method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="QuitGame" href="../type/QuitGame.html">QuitGame</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the QuitGame method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="RemoveGuest" href="../type/RemoveGuest.html">RemoveGuest</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the RemoveGuest method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="RemoveGuestId" href="../type/RemoveGuestId.html">RemoveGuestId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the RemoveGuestId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="RemoveMap" href="../type/RemoveMap.html">RemoveMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the RemoveMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="RemoveMapList" href="../type/RemoveMapList.html">RemoveMapList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the RemoveMapList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ResetServerTags" href="../type/ResetServerTags.html">ResetServerTags</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the ResetServerTags method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="RestartMap" href="../type/RestartMap.html">RestartMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the RestartMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SaveBestGhostsReplay" href="../type/SaveBestGhostsReplay.html">SaveBestGhostsReplay</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SaveBestGhostsReplay method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SaveBlackList" href="../type/SaveBlackList.html">SaveBlackList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SaveBlackList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SaveCurrentReplay" href="../type/SaveCurrentReplay.html">SaveCurrentReplay</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SaveCurrentReplay method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SaveGuestList" href="../type/SaveGuestList.html">SaveGuestList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SaveGuestList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SaveMatchSettings" href="../type/SaveMatchSettings.html">SaveMatchSettings</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SaveMatchSettings method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendBill" href="../type/SendBill.html">SendBill</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendBill method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendDisplayManialinkPage" href="../type/SendDisplayManialinkPage.html">SendDisplayManialinkPage</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendDisplayManialinkPage method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendDisplayManialinkPageToId" href="../type/SendDisplayManialinkPageToId.html">SendDisplayManialinkPageToId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendDisplayManialinkToId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendDisplayManialinkPageToLogin" href="../type/SendDisplayManialinkPageToLogin.html">SendDisplayManialinkPageToLogin</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendDisplayManialinkToId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendHideManialinkPage" href="../type/SendHideManialinkPage.html">SendHideManialinkPage</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendHideManialinkPage method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendHideManialinkPageToId" href="../type/SendHideManialinkPageToId.html">SendHideManialinkPageToId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendHideManialinkPageToId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendHideManialinkPageToLogin" href="../type/SendHideManialinkPageToLogin.html">SendHideManialinkPageToLogin</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendHideManialinkPageToLogin method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendOpenLinkToId" href="../type/SendOpenLinkToId.html">SendOpenLinkToId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendOpenLinkToId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SendOpenLinkToLogin" href="../type/SendOpenLinkToLogin.html">SendOpenLinkToLogin</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendOpenLinkToLogin method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetAllWarmUpDuration" href="../type/SetAllWarmUpDuration.html">SetAllWarmUpDuration</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetAllWarmUpDuration method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetApiVersion" href="../type/SetApiVersion.html">SetApiVersion</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetApiVersion method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetBuddyNotification" href="../type/SetBuddyNotification.html">SetBuddyNotification</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetBuddyNotification method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetCallVoteRatio" href="../type/SetCallVoteRatio.html">SetCallVoteRatio</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetCallVoteRatio method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetCallVoteRatios" href="../type/SetCallVoteRatios.html">SetCallVoteRatios</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetCallVoteRatios method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetCallVoteTimeOut" href="../type/SetCallVoteTimeOut.html">SetCallVoteTimeOut</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetCallVoteTimeOut method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetChatTime" href="../type/SetChatTime.html">SetChatTime</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SendChatTime method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetClientInputsMaxLatency" href="../type/SetClientInputsMaxLatency.html">SetClientInputsMaxLatency</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetClientInputsMaxLatency method. Only used by ShootMania.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetConnectionRates" href="../type/SetConnectionRates.html">SetConnectionRates</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetConnectionRates method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetCupNbWinners" href="../type/SetCupNbWinners.html">SetCupNbWinners</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetCupNbWinners method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetCupPointsLimit" href="../type/SetCupPointsLimit.html">SetCupPointsLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetCupPointsLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetCupRoundsPerMap" href="../type/SetCupRoundsPerMap.html">SetCupRoundsPerMap</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetCupRoundsPerMap method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetCupWarmUpDuration" href="../type/SetCupWarmUpDuration.html">SetCupWarmUpDuration</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetCupWarmUpDuration method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetDisableRespawn" href="../type/SetDisableRespawn.html">SetDisableRespawn</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetDisableRespawn method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetFinishTimeout" href="../type/SetFinishTimeout.html">SetFinishTimeout</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetFinishTimeout method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetForcedClubLinks" href="../type/SetForcedClubLinks.html">SetForcedClubLinks</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetForcedClubLinks method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetForcedMods" href="../type/SetForcedMods.html">SetForcedMods</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetForcedMods method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetForcedMusic" href="../type/SetForcedMusic.html">SetForcedMusic</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetForcedMusic method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetForcedSkins" href="../type/SetForcedSkins.html">SetForcedSkins</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetForcedSkins method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetForcedTeams" href="../type/SetForcedTeams.html">SetForcedTeams</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetForcedTeams method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetForceShowAllOpponents" href="../type/SetForceShowAllOpponents.html">SetForceShowAllOpponents</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetForceShowAllOpponents method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetGameInfos" href="../type/SetGameInfos.html">SetGameInfos</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetGameInfos method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetGameMode" href="../type/SetGameMode.html">SetGameMode</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetGameMode method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetHideServer" href="../type/SetHideServer.html">SetHideServer</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetHideServer method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetLadderMode" href="../type/SetLadderMode.html">SetLadderMode</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetLadderMode method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetLapsTimeLimit" href="../type/SetLapsTimeLimit.html">SetLapsTimeLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetLapsTimeLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetMaxPlayers" href="../type/SetMaxPlayers.html">SetMaxPlayers</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetMaxPlayers method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetMaxPointsTeam" href="../type/SetMaxPointsTeam.html">SetMaxPointsTeam</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetMaxPointsTeam method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetMaxSpectators" href="../type/SetMaxSpectators.html">SetMaxSpectators</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetMaxSpectators method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetModeScriptText" href="../type/SetModeScriptText.html">SetModeScriptText</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetModeScriptText method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetNbLaps" href="../type/SetNbLaps.html">SetNbLaps</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetNbLaps method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetNextMapIdent" href="../type/SetNextMapIdent.html">SetNextMapIdent</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetNextMapIdent method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetNextMapIndex" href="../type/SetNextMapIndex.html">SetNextMapIndex</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetNextMapIndex method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetRefereeMode" href="../type/SetRefereeMode.html">SetRefereeMode</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetRefereeMode method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetRefereePassword" href="../type/SetRefereePassword.html">SetRefereePassword</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetRefereePassword method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetRoundCustomPoints" href="../type/SetRoundCustomPoints.html">SetRoundCustomPoints</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetRoundCustomPoints method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetRoundForcedLaps" href="../type/SetRoundForcedLaps.html">SetRoundForcedLaps</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetRoundForcedLaps method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetRoundPointsLimit" href="../type/SetRoundPointsLimit.html">SetRoundPointsLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetRoundPointsLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetScriptName" href="../type/SetScriptName.html">SetScriptName</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetScriptName method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetServerComment" href="../type/SetServerComment.html">SetServerComment</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetServerComment method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetServerName" href="../type/SetServerName.html">SetServerName</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetServerName method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetServerOptions" href="../type/SetServerOptions.html">SetServerOptions</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetServerOptions method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetServerPassword" href="../type/SetServerPassword.html">SetServerPassword</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetServerPassword method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetServerPasswordForSpectator" href="../type/SetServerPasswordForSpectator.html">SetServerPasswordForSpectator</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetServerPasswordForSpectator method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetServerTag" href="../type/SetServerTag.html">SetServerTag</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetServerTag method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetTeamPointsLimit" href="../type/SetTeamPointsLimit.html">SetTeamPointsLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetTeamPointsLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetTimeAttackLimit" href="../type/SetTimeAttackLimit.html">SetTimeAttackLimit</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetTimeAttackLimit method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetTimeAttackSynchStartPeriod" href="../type/SetTimeAttackSynchStartPeriod.html">SetTimeAttackSynchStartPeriod</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetTimeAttackSynchStartPeriod method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetUseChangingValidationSeed" href="../type/SetUseChangingValidationSeed.html">SetUseChangingValidationSeed</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetUseChangingValidationSeed method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetUseNewRulesRound" href="../type/SetUseNewRulesRound.html">SetUseNewRulesRound</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetUseNewRulesRound method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetUseNewRulesTeam" href="../type/SetUseNewRulesTeam.html">SetUseNewRulesTeam</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetUseNewRulesTeam method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetVehicleNetQuality" href="../type/SetVehicleNetQuality.html">SetVehicleNetQuality</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetVehicleNetQuality method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SetWarmUp" href="../type/SetWarmUp.html">SetWarmUp</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SetWarmUp method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SpectatorReleasePlayerSlot" href="../type/SpectatorReleasePlayerSlot.html">SpectatorReleasePlayerSlot</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SpectatorReleasePlayerSlot method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SpectatorReleasePlayerSlotId" href="../type/SpectatorReleasePlayerSlotId.html">SpectatorReleasePlayerSlotId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the SpectatorReleasePlayerSlotId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="StartServerInternet" href="../type/StartServerInternet.html">StartServerInternet</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the StartServerInternet method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="StartServerLan" href="../type/StartServerLan.html">StartServerLan</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the StartServerLan method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="StopServer" href="../type/StopServer.html">StopServer</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the StopServer method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="TrackManiaPlayerCheckpoint" href="../type/TrackManiaPlayerCheckpoint.html">TrackManiaPlayerCheckpoint</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the TrackMania.PlayerCheckpoint method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="TrackManiaPlayerFinish" href="../type/TrackManiaPlayerFinish.html">TrackManiaPlayerFinish</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the TrackMania.PlayerFinish method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="TrackManiaPlayerIncoherence" href="../type/TrackManiaPlayerIncoherence.html">TrackManiaPlayerIncoherence</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a callback for the TrackMania.PlayerIncoherence method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="TunnelSendDataToId" href="../type/TunnelSendDataToId.html">TunnelSendDataToId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the TunnelSendDataToId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="TunnelSendDataToLogin" href="../type/TunnelSendDataToLogin.html">TunnelSendDataToLogin</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the TunnelSendDataToLogin method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="UnBan" href="../type/UnBan.html">UnBan</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the UnBan method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="UnBlackList" href="../type/UnBlackList.html">UnBlackList</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the UnBlackList method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="UnIgnore" href="../type/UnIgnore.html">UnIgnore</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the UnIgnore method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="UnIgnoreId" href="../type/UnIgnoreId.html">UnIgnoreId</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the UnIgnoreIdId method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="UnsetServerTag" href="../type/UnsetServerTag.html">UnsetServerTag</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the UnsetServerTag method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="WriteFile" href="../type/WriteFile.html">WriteFile</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a call to the WriteFile method.</p>
+
+																	</td>
+							</tr>
+
+						
+					</tbody>
+				</table>
+			</div>
+
+			
+					</div>
+	   
+    </body>
+</html>
+

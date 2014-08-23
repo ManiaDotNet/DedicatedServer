@@ -1,0 +1,1552 @@
+
+
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>ManiaNet Dedicated Server - ReturnedServerOptionsStruct</title>
+        <meta name="viewport" content="width=device-width">
+
+					<link rel="stylesheet" type="text/css" href="../assets/css/style.css?version=0.9.4.1" />
+			<script src="../assets/js/vendor.js?version=0.9.4.1"></script>
+			<script src="../assets/js/frame.js?version=0.9.4.1"></script>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+
+    </head>
+    <body>        
+        
+		<!-- DropDowns -->
+		<div id="dropdown-1" class="dropdown dropdown-tip">
+			<ul class="dropdown-menu">
+							</ul>
+		</div>
+
+		<div id="dropdown-2" class="dropdown dropdown-tip">
+			<ul class="dropdown-menu">
+							</ul>
+		</div>
+
+		<div id="dropdown-3" class="dropdown dropdown-tip">
+			<ul class="dropdown-menu">
+				
+					<li><a href="#ReturnedServerOptionsStruct"><img alt="Method-Icon" src="../assets/images/icons/method_public.png"> ReturnedServerOptionsStruct()</a></li>
+
+				
+				
+					<li><a href="#GenerateXml31"><img alt="Method-Icon" src="../assets/images/icons/method_public.png"> GenerateXml()</a></li>
+
+				
+					<li><a href="#parseXml31"><img alt="Method-Icon" src="../assets/images/icons/method_protected.png"> parseXml(XElement member)</a></li>
+
+							</ul>
+		</div>
+
+		<div id="dropdown-4" class="dropdown dropdown-tip">
+			<ul class="dropdown-menu">
+				
+					<li><a href="#AllowChallengeDownload"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> AllowChallengeDownload</a></li>
+
+				
+					<li><a href="#AutoSaveReplays"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> AutoSaveReplays</a></li>
+
+				
+					<li><a href="#CallVoteRatio"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> CallVoteRatio</a></li>
+
+				
+					<li><a href="#Comment"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> Comment</a></li>
+
+				
+					<li><a href="#CurrentCallVoteTimeOut"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> CurrentCallVoteTimeOut</a></li>
+
+				
+					<li><a href="#CurrentLadderMode"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> CurrentLadderMode</a></li>
+
+				
+					<li><a href="#CurrentMaxPlayers"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> CurrentMaxPlayers</a></li>
+
+				
+					<li><a href="#CurrentMaxSpectators"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> CurrentMaxSpectators</a></li>
+
+				
+					<li><a href="#CurrentVehicleNetQuality"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> CurrentVehicleNetQuality</a></li>
+
+				
+					<li><a href="#IsP2PDownload"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> IsP2PDownload</a></li>
+
+				
+					<li><a href="#IsP2PUpload"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> IsP2PUpload</a></li>
+
+				
+					<li><a href="#Name"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> Name</a></li>
+
+				
+					<li><a href="#NextCallVoteTimeOut"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> NextCallVoteTimeOut</a></li>
+
+				
+					<li><a href="#NextLadderMode"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> NextLadderMode</a></li>
+
+				
+					<li><a href="#NextMaxPlayers"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> NextMaxPlayers</a></li>
+
+				
+					<li><a href="#NextMaxSpectators"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> NextMaxSpectators</a></li>
+
+				
+					<li><a href="#NextVehicleNetQuality"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> NextVehicleNetQuality</a></li>
+
+				
+					<li><a href="#Password"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> Password</a></li>
+
+				
+					<li><a href="#PasswordForSpectator"><img alt="Property-Icon" src="../assets/images/icons/properties_public.png"> PasswordForSpectator</a></li>
+
+							</ul>
+		</div>
+		<!-- DropDowns Ende -->
+
+	    <div class="ui-layout-north">
+			<div class="toolbar">
+
+									<a href="#" data-dropdown="#dropdown-3" class="button"><img src="../assets/images/icons/method_public.png"/> Methods <span class="info">(3)</span> <i class="icon-caret-down"></i></a>
+									<a href="#" data-dropdown="#dropdown-4" class="button"><img src="../assets/images/icons/properties_public.png"/> Properties <span class="info">(19)</span> <i class="icon-caret-down"></i></a>
+				
+				<div class="right">
+					<span class="toolbar-info"> Namespace: ManiaNet.DedicatedServer.XmlRpc.Structs</span>
+					<a href="#" id="expand-all-button" class="button"><i class="icon-align-justify" title="Expand all"></i></a>
+					<a href="#" id="print-button" class="button"><i class="icon-print" title="Print"></i></a>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+        
+		<div class="ui-layout-center">
+
+			<div>
+				<h3 class="box-title first-heading">Syntax</h3>					
+				<div class="syntax-box">
+					<pre class="wrap-pre"><code>public class ReturnedServerOptionsStruct : BaseStruct</code></pre>
+				</div>
+
+									<h3 class="box-title">Basetype</h3>
+					<div class="list-box">
+						<ul>
+														<li>XmlRpc.Types.Structs.BaseStruct</a></li>
+																			</ul>
+					</div>
+				
+				        
+				
+											<h3 class="box-title">Summary</h3>
+						<div class="doc-box markdown">
+							<p>Represents the struct returned by the GetServerOptions method call.</p>
+
+						</div>
+					
+					
+					
+					
+					
+					
+					
+					
+				
+				
+				
+				
+				
+									<h3 class="box-title">Methods</h3>
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="ReturnedServerOptionsStruct" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/method_public.png"/> <p>ReturnedServerOptionsStruct()</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Represents the struct returned by the GetServerOptions method call.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public void ReturnedServerOptionsStruct()</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="GenerateXml31" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/method_public.png"/> <p>GenerateXml()</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Generates an XElement storing the information in this struct.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public XElement GenerateXml()</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+				<p class="member-box-title">Returns</p>
+				<div class="member-doc-box">
+					<p>The generated XElement.</p>
+
+				</div>
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="parseXml31" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/method_protected.png"/> <p>parseXml(XElement member)</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Fills the property of this struct that has the correct name with the information contained in the member-XElement.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>protected Boolean parseXml(XElement member)</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+				<p class="member-box-title">Parameters</p>
+				<div class="member-doc-box markdown">
+					
+						<p class="key">member</p>
+						
+						
+									
+									<small>XElement</small>
+
+														
+						
+						<div class="inline">
+							<p>The member element storing the information.</p>
+
+						</div>
+					
+				</div>
+			
+
+			
+
+			
+				<p class="member-box-title">Returns</p>
+				<div class="member-doc-box">
+					<p>Whether it was successful or not.</p>
+
+				</div>
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+									
+									<h3 class="box-title">Properties</h3>
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="AllowChallengeDownload" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>AllowChallengeDownload</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets whether clients are allowed to download the challenges from the server.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Boolean AllowChallengeDownload { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="AutoSaveReplays" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>AutoSaveReplays</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets whether the server automatically saves replays of the players.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Boolean AutoSaveReplays { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="CallVoteRatio" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>CallVoteRatio</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the Ratio for call-votes for this command. Range from 0-1, or -1 for disabled.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Double CallVoteRatio { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="Comment" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>Comment</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the server comment.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public String Comment { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="CurrentCallVoteTimeOut" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>CurrentCallVoteTimeOut</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the current call-vote timeout in milliseconds.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 CurrentCallVoteTimeOut { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="CurrentLadderMode" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>CurrentLadderMode</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the current ladder mode.. Compare to LadderModes values.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 CurrentLadderMode { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="CurrentMaxPlayers" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>CurrentMaxPlayers</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the current maximum number of players.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 CurrentMaxPlayers { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="CurrentMaxSpectators" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>CurrentMaxSpectators</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the current maximum number of spectators.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 CurrentMaxSpectators { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="CurrentVehicleNetQuality" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>CurrentVehicleNetQuality</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the current vehicle quality. Compare to values from VehicleNetQualities.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 CurrentVehicleNetQuality { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="IsP2PDownload" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>IsP2PDownload</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets whether p2p download is active or not.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Boolean IsP2PDownload { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="IsP2PUpload" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>IsP2PUpload</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets whether p2p upload is active or not.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Boolean IsP2PUpload { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="Name" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>Name</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the server name.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public String Name { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="NextCallVoteTimeOut" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>NextCallVoteTimeOut</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the next call-vote timeout in milliseconds.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 NextCallVoteTimeOut { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="NextLadderMode" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>NextLadderMode</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the next ladder mode. Compare to Forced and Inactive constants in .</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 NextLadderMode { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="NextMaxPlayers" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>NextMaxPlayers</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the next maximum number of players.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 NextMaxPlayers { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="NextMaxSpectators" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>NextMaxSpectators</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the next maximum number of spectators.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 NextMaxSpectators { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="NextVehicleNetQuality" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>NextVehicleNetQuality</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the next vehicle quality. Compare to values from VehicleNetQualities.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public Int32 NextVehicleNetQuality { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="Password" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>Password</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the server password.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public String Password { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="PasswordForSpectator" class="member">
+	<div class="member-header">		
+		<a href="#"><i class="icon-caret-right"></i><img src="../assets/images/icons/properties_public.png"/> <p>PasswordForSpectator</p></a>
+		
+			
+				<div class="summary markdown">
+					<p>Gets the spectator password.</p>
+
+				</div>
+			
+		
+	</div>
+
+	<div class="member-content">
+
+		<div class="syntax-box">
+			<pre class="wrap-pre"><code>public String PasswordForSpectator { get; }</code></pre>
+		</div>		
+        
+		
+
+		
+		
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+						
+			
+
+		
+
+		
+
+	</div>
+</div>
+
+
+									
+									<div class="svg-diagram">
+						<h3 class="box-title">Classdiagram</h3>
+						<div id="sd-class-diagram" class="svgpan">
+														<svg><g transform="translate(0.00, 100.50)"><rect height="611" width="303" x="0.55" y="0.55" fill="#FFFFFF" stroke="#979797" stroke-width="1" /><text x="118.01" y="20.50" fill="" style="" text-anchor="" font-family="" font-size="11.00" onmouseover="" onmouseout=""><![CDATA[public  class]]></text><a xlink:href="../type/ReturnedServerOptionsStruct.html" xmlns:xlink="xlink"><text x="48.08" y="35.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[ReturnedServerOptionsStruct]]></text></a><path d="M0.5,45.50L303.00,45.50" stroke="#979797" stroke-width="1" stroke-dasharray="" /><image width="16.00" height="16.00" x="15.00" y="53.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAANtQTFRF/wD//vv+8tvyz4jP8OPw46zj8+Pz8NTw7r7u+q7765Hs8uDz9/Cr1dWsrLSuipmu/f394q/i+qv7+pj76ZDq9Ob0plCnu2+87qXv+pv7+pn75pjnkE6R6eWrwcSsrLWtmKSup0+o0W3S+p/77p3vllKXfC58qVKq0WrS1W/VvHC93ZjejkaPnDydfi5+5eKrzM6stbutnKeu5MrkqFCp0mvT027UfjB/nzyfjTWOfC196NHoqVCqy2fMlTiWeit78NXw7djtfzCAdSd169Hr7NLscSRy5szm////y4eOhgAAAAF0Uk5TAEDm2GYAAAABYktHREjwAtTqAAAACXBIWXMAAAsSAAALEgHS3X78AAAAeUlEQVQY02NgwAMY0fhMzCxofFZmNiQ+OzMHJxczN5jNw8vHL8AsKCQsLMIsClchJi4hKSwlLQOUl+WVk1dgUFQSl1BWUVWDq1DX0NTS1tHVAxmhb2BoxGBsYmpmbmFphbDG2sZWz87eAcliRxMnZxcUp7m6uTOQAwDo6wrtzia2FQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMi0wNy0yOVQxMTo1MzowNiswMjowMARwUR4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTAtMDQtMDNUMDU6MTE6MjArMDI6MDAQy5Z4AAAAAElFTkSuQmCC" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#GenerateXml31" xmlns:xlink="xlink"><text x="40.00" y="65.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[GenerateXml]]></text></a><image width="16.00" height="16.00" x="15.00" y="78.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAASNQTFRF/wD/8tvyz4jP8OPw46zj8+Pz8NTw7r7u+q7765Hs8uDz9/Cr1dWsrLSuipmu/f394q/i+qv7+pj76ZDq9Ob0plCnu2+87qXv+pv7+pn75pjnkE6R/Pz86eWrwcSsrLWtmKSup0+o0W3S+p/77p3vllKXfC58+vr6qVKq0WrS1W/VvHC93ZjejkaPnDydfi5+7eLK07h/y691yKlfz7+T0NbZ5MrkqFCp0mvT027UfjB/nzyfjTWOfC196t7G9eyy+NhopoU459ez6NHoqVCqy2fMlTiWeit78NXw9euu/vWsjGsf3bxa/88yo4Au7djtfzCAdSd169Hr7tuW7sAv7NLscSRy5szm8OjW6+HN5NvG7ure6Mhdj24i8Ovf9vLp////QObm/wAAAAF0Uk5TAEDm2GYAAAABYktHRGDFt3wQAAAACXBIWXMAAAsSAAALEgHS3X78AAAAs0lEQVQY02NggANGJmYGZMDIxMLEisRnY2Ln4GTiArO5eXj5+JkEBIWEhJlE4CpExcQlhCSlpBlkuGV55OQVGBSVxMSVVVTVGNShKjQ0tbR1dPX0GdQNDI2MTUwZzMwtLK2sbWwZ7AztHRwcnRgYnF1c9d3cPRgMPb28fXz9gJr8zQMCgxgYDIMdfHxCQAIMoWHhQDLC2NchxC8SyYlRPg5+0Sie8HGA6EAIxMTGoQjEo/ABB3UZPUWDqOwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTItMDctMjlUMTE6NTM6MDYrMDI6MDAEcFEeAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDEwLTA0LTAzVDA1OjExOjIwKzAyOjAwEMuWeAAAAABJRU5ErkJggg==" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#parseXml31" xmlns:xlink="xlink"><text x="40.00" y="90.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[parseXml]]></text></a><image width="16.00" height="16.00" x="15.00" y="103.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAANtQTFRF/wD//vv+8tvyz4jP8OPw46zj8+Pz8NTw7r7u+q7765Hs8uDz9/Cr1dWsrLSuipmu/f394q/i+qv7+pj76ZDq9Ob0plCnu2+87qXv+pv7+pn75pjnkE6R6eWrwcSsrLWtmKSup0+o0W3S+p/77p3vllKXfC58qVKq0WrS1W/VvHC93ZjejkaPnDydfi5+5eKrzM6stbutnKeu5MrkqFCp0mvT027UfjB/nzyfjTWOfC196NHoqVCqy2fMlTiWeit78NXw7djtfzCAdSd169Hr7NLscSRy5szm////y4eOhgAAAAF0Uk5TAEDm2GYAAAABYktHREjwAtTqAAAACXBIWXMAAAsSAAALEgHS3X78AAAAeUlEQVQY02NgwAMY0fhMzCxofFZmNiQ+OzMHJxczN5jNw8vHL8AsKCQsLMIsClchJi4hKSwlLQOUl+WVk1dgUFQSl1BWUVWDq1DX0NTS1tHVAxmhb2BoxGBsYmpmbmFphbDG2sZWz87eAcliRxMnZxcUp7m6uTOQAwDo6wrtzia2FQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMi0wNy0yOVQxMTo1MzowNiswMjowMARwUR4AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTAtMDQtMDNUMDU6MTE6MjArMDI6MDAQy5Z4AAAAAElFTkSuQmCC" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#ReturnedServerOptionsStruct" xmlns:xlink="xlink"><text x="40.00" y="115.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[ReturnedServerOptionsStruct]]></text></a><path d="M0.5,130.50L303.00,130.50" stroke="#979797" stroke-width="1" stroke-dasharray="" /><image width="16.00" height="16.00" x="15.00" y="138.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#AllowChallengeDownload" xmlns:xlink="xlink"><text x="40.00" y="150.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[AllowChallengeDownload { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="163.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#AutoSaveReplays" xmlns:xlink="xlink"><text x="40.00" y="175.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[AutoSaveReplays { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="188.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#CallVoteRatio" xmlns:xlink="xlink"><text x="40.00" y="200.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[CallVoteRatio { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="213.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#Comment" xmlns:xlink="xlink"><text x="40.00" y="225.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[Comment { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="238.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#CurrentCallVoteTimeOut" xmlns:xlink="xlink"><text x="40.00" y="250.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[CurrentCallVoteTimeOut { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="263.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#CurrentLadderMode" xmlns:xlink="xlink"><text x="40.00" y="275.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[CurrentLadderMode { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="288.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#CurrentMaxPlayers" xmlns:xlink="xlink"><text x="40.00" y="300.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[CurrentMaxPlayers { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="313.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#CurrentMaxSpectators" xmlns:xlink="xlink"><text x="40.00" y="325.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[CurrentMaxSpectators { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="338.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#CurrentVehicleNetQuality" xmlns:xlink="xlink"><text x="40.00" y="350.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[CurrentVehicleNetQuality { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="363.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#IsP2PDownload" xmlns:xlink="xlink"><text x="40.00" y="375.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[IsP2PDownload { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="388.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#IsP2PUpload" xmlns:xlink="xlink"><text x="40.00" y="400.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[IsP2PUpload { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="413.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#Name" xmlns:xlink="xlink"><text x="40.00" y="425.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[Name { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="438.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#NextCallVoteTimeOut" xmlns:xlink="xlink"><text x="40.00" y="450.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[NextCallVoteTimeOut { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="463.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#NextLadderMode" xmlns:xlink="xlink"><text x="40.00" y="475.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[NextLadderMode { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="488.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#NextMaxPlayers" xmlns:xlink="xlink"><text x="40.00" y="500.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[NextMaxPlayers { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="513.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#NextMaxSpectators" xmlns:xlink="xlink"><text x="40.00" y="525.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[NextMaxSpectators { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="538.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#NextVehicleNetQuality" xmlns:xlink="xlink"><text x="40.00" y="550.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[NextVehicleNetQuality { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="563.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#Password" xmlns:xlink="xlink"><text x="40.00" y="575.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[Password { get; }]]></text></a><image width="16.00" height="16.00" x="15.00" y="588.50" preserveAspectRatio="" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAXpQTFRF/wD/uKyjxLiV3dnUtaaBo5eAoJaAmY96k4VzgHFczci/nLiZpsGu0MjC+uuwf21b/+tu+uJy9Ndn3L1Ui3JRiZxphcyF7evngGtX/+1orphY+eFy991q8s9W7cdL+roipqJfU6xBfZ3fqrrarKSP+eN/lYRTTzow9ttp89JY7cNA6rsx7KgRjJBQQZ4ypMX/ucnl9uGDcGFL4s16Z2BSUD1B37IyyJkdxJMVjmIUUWZAP5cpt8rx5dOGiZKncGFK3sFhWU1X/9AfMycVCgcQLiECZVZPW3hZMowYwcjR////6enihHVe5eTfzsrC1qkuGxALYFxdlp2kp76kKWYc//37/P7+rK2wclxB09nj4+3/Rk5UwMfR/f7++Pv+8vb96PD83On/wsnToq/E/v//1uX/wcjS/P7/+Pr97/T75u773un60uL40OL/+fv/y979yM/Z9v//7Pn/4fD/1er/0ur/c3V8S0tOTU9UTVFWTFBTS09STE9SS05RJyP7MgAAAAF0Uk5TAEDm2GYAAAABYktHREoeDLXGAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQY02NgAAJGJmYWVjZ2Dk4ubh4Qn4GXj19AQEBQSFhEVAwsIC4hKSUgLSMrJ6+gyKCkpKSsoqomqa6hqaWto6vHoKRvoGJoZGwiaWpmbmFpZc2gZKNia2Rn7+Do5Ozi6ubuweDp5e3j6+Vn7x8QGMTAEBwCFAgN9fIKC4+IjIoG2xADEoiNi09ISIQIJHklJ6ckg0AqRCANqCI9IzMrOycXJpCcnAdWkQ8RKACqKCwsLCouKYUIlJVXVFRUVlXXVNdCBAgCAG+1MCPQVilsAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDEyLTA3LTI5VDExOjUzOjQxKzAyOjAwRZ1hagAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMC0wNC0wM1QwNToxMToyMCswMjowMBDLlngAAAAASUVORK5CYII=" xmlns:xlink="xlink" /><a xlink:href="../type/ReturnedServerOptionsStruct.html#PasswordForSpectator" xmlns:xlink="xlink"><text x="40.00" y="600.50" fill="#1382CE" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="this.setAttribute('fill', '#F58026')" onmouseout="this.setAttribute('fill', '#1382CE')"><![CDATA[PasswordForSpectator { get; }]]></text></a></g><g transform="translate(0.00, 0.00)"><rect height="51" width="176" x="0.55" y="0.55" fill="#FFFFFF" stroke="#979797" stroke-width="1" /><text x="32.06" y="20.50" fill="" style="" text-anchor="" font-family="" font-size="11.00" onmouseover="" onmouseout=""><![CDATA[public abstract class]]></text><text x="49.82" y="35.50" fill="" style="" text-anchor="" font-family="" font-size="14.00" onmouseover="" onmouseout=""><![CDATA[BaseStruct]]></text><path d="M0.5,45.50L176.00,45.50" stroke="#979797" stroke-width="1" stroke-dasharray="" /></g><g><path d="M50.00,50.50L50.00,100.50" stroke="#979797" stroke-width="1" stroke-dasharray="" /><polygon points="50.00,50.50 45.00,60.50 55.00,60.50" fill="#FFFFFF" stroke="#979797" stroke-width="" /></g></svg>
+						</div>
+						<div class="legend">
+							<p class="save"><a href="#"><i class="icon-save"></i>save</a></p>
+							<p class="resetZoom"><a href="#"><i class="icon-refresh"></i>reset</a></p>
+							<p>Drag to pan - Use Mousewheel + Ctrl to zoom</p>
+						</div>
+					</div>
+							</div>
+		</div>
+
+    </body>
+</html>
+

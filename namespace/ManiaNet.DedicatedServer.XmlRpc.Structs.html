@@ -1,0 +1,621 @@
+
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>ManiaNet Dedicated Server - ManiaNet.DedicatedServer.XmlRpc.Structs</title>
+        <meta name="viewport" content="width=device-width">
+
+					<link rel="stylesheet" type="text/css" href="../assets/css/style.css?version=0.9.4.1" />
+			<script src="../assets/js/vendor.js?version=0.9.4.1"></script>
+			<script src="../assets/js/frame.js?version=0.9.4.1"></script>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+
+    </head>
+    <body>        
+       
+	    <div id="dropdown-1" class="dropdown dropdown-tip">
+			<ul class="dropdown-menu">
+									<li><a href="../type/ApplicationVersionStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ApplicationVersionStruct</a></li>
+
+									<li><a href="../type/BanInfoStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BanInfoStruct</a></li>
+
+									<li><a href="../type/BasicMapInfoStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BasicMapInfoStruct</a></li>
+
+									<li><a href="../type/BillStateStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> BillStateStruct</a></li>
+
+									<li><a href="../type/CallVoteRatioStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CallVoteRatioStruct</a></li>
+
+									<li><a href="../type/CallVoteStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CallVoteStruct</a></li>
+
+									<li><a href="../type/CurrentAndNextValueStruct2.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> CurrentAndNextValueStruct</a></li>
+
+									<li><a href="../type/DemoTokenInfosStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> DemoTokenInfosStruct</a></li>
+
+									<li><a href="../type/EntryValueStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> EntryValueStruct</a></li>
+
+									<li><a href="../type/ForcedClubLinksStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForcedClubLinksStruct</a></li>
+
+									<li><a href="../type/ForcedModsStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForcedModsStruct</a></li>
+
+									<li><a href="../type/ForcedModStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForcedModStruct</a></li>
+
+									<li><a href="../type/ForcedMusicStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForcedMusicStruct</a></li>
+
+									<li><a href="../type/ForcedSkinStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForcedSkinStruct</a></li>
+
+									<li><a href="../type/ForceScoreStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ForceScoreStruct</a></li>
+
+									<li><a href="../type/GameInfosStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> GameInfosStruct</a></li>
+
+									<li><a href="../type/JoinServerStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> JoinServerStruct</a></li>
+
+									<li><a href="../type/LadderServerLimitsStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LadderServerLimitsStruct</a></li>
+
+									<li><a href="../type/LanguageMessageStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LanguageMessageStruct</a></li>
+
+									<li><a href="../type/LobbyInfoStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LobbyInfoStruct</a></li>
+
+									<li><a href="../type/LoginStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> LoginStruct</a></li>
+
+									<li><a href="../type/ManialinkPageAnswerStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ManialinkPageAnswerStruct</a></li>
+
+									<li><a href="../type/MapInfoStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> MapInfoStruct</a></li>
+
+									<li><a href="../type/NetworkStatsStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> NetworkStatsStruct</a></li>
+
+									<li><a href="../type/PassedInGameInfosStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> PassedInGameInfosStruct</a></li>
+
+									<li><a href="../type/PassedInServerOptionsStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> PassedInServerOptionsStruct</a></li>
+
+									<li><a href="../type/PlayerInfoStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> PlayerInfoStruct</a></li>
+
+									<li><a href="../type/PlayerNetInfoStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> PlayerNetInfoStruct</a></li>
+
+									<li><a href="../type/RankingStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> RankingStruct</a></li>
+
+									<li><a href="../type/ReturnedGameInfosStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ReturnedGameInfosStruct</a></li>
+
+									<li><a href="../type/ReturnedServerOptionsStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ReturnedServerOptionsStruct</a></li>
+
+									<li><a href="../type/ServerTagStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> ServerTagStruct</a></li>
+
+									<li><a href="../type/StatusStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> StatusStruct</a></li>
+
+									<li><a href="../type/SystemInfoStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> SystemInfoStruct</a></li>
+
+									<li><a href="../type/TeamInfoStruct.html"><img alt="Class-Icon" src="../assets/images/icons/class_public.png"> TeamInfoStruct</a></li>
+
+							</ul>
+		</div>
+	   
+	    <div class="ui-layout-north">
+			<div class="toolbar">
+				<a href="#" data-dropdown="#dropdown-1" class="button"><img src="../assets/images/icons/class_public.png"/> Types <span class="info">(35)</span> <i class="icon-caret-down"></i></a>
+				<div class="right">
+					<span class="toolbar-info"> Assembly: ManiaNet.DedicatedServer</span>
+					<a href="#" id="print-button" class="button" title="Print"><i class="icon-print"></i></a>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+        
+		<div class="ui-layout-center">
+			
+				<h3 class="box-title first-heading">Types</h3>
+
+			
+			<div class="table-box">
+				<table>
+					<thead>
+						<tr>
+							<td></td>
+							<td>Name</td>
+							<td>Description</td>
+						</tr>
+					</thead>
+					<tbody>			
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ApplicationVersionStruct" href="../type/ApplicationVersionStruct.html">ApplicationVersionStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetVersion method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="BanInfoStruct" href="../type/BanInfoStruct.html">BanInfoStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs returned by the GetBanList method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="BasicMapInfoStruct" href="../type/BasicMapInfoStruct.html">BasicMapInfoStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs returned by the GetMapList method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="BillStateStruct" href="../type/BillStateStruct.html">BillStateStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetBillState method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CallVoteRatioStruct" href="../type/CallVoteRatioStruct.html">CallVoteRatioStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs returned by the GetCallVoteRatios and passed to the SetCallVoteRatios method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CallVoteStruct" href="../type/CallVoteStruct.html">CallVoteStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetCurrentCallVote method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="CurrentAndNextValueStruct" href="../type/CurrentAndNextValueStruct2.html">CurrentAndNextValueStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by various method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="DemoTokenInfosStruct" href="../type/DemoTokenInfosStruct.html">DemoTokenInfosStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetDemoTokenInfosForPlayer method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="EntryValueStruct" href="../type/EntryValueStruct.html">EntryValueStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents a struct passed to the ManiaPlanet.PlayerManialinkPageAnswer callback method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForcedClubLinksStruct" href="../type/ForcedClubLinksStruct.html">ForcedClubLinksStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetForcedClubLinks method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForcedModsStruct" href="../type/ForcedModsStruct.html">ForcedModsStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetForcedMods method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForcedModStruct" href="../type/ForcedModStruct.html">ForcedModStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs that are part of the ForcedModsStruct
+and passed to the SetForcedMods method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForcedMusicStruct" href="../type/ForcedMusicStruct.html">ForcedMusicStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetForcedMusic method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForcedSkinStruct" href="../type/ForcedSkinStruct.html">ForcedSkinStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs that are returned from the GetForcedSkins and passed to the SetForcedSkins method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ForceScoreStruct" href="../type/ForceScoreStruct.html">ForceScoreStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs that are passed to the ForceScores method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="GameInfosStruct" href="../type/GameInfosStruct.html">GameInfosStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetGameInfos method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="JoinServerStruct" href="../type/JoinServerStruct.html">JoinServerStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct passed to the JoinServerLan and JoinServerInternet method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="LadderServerLimitsStruct" href="../type/LadderServerLimitsStruct.html">LadderServerLimitsStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetLadderServerLimits method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="LanguageMessageStruct" href="../type/LanguageMessageStruct.html">LanguageMessageStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs passed to the ChatSendServerMessageToLanguage and ChatSendToLanguage method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="LobbyInfoStruct" href="../type/LobbyInfoStruct.html">LobbyInfoStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetLobbyInfo method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="LoginStruct" href="../type/LoginStruct.html">LoginStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs returned by the GetBlackList, GetGuestList, and GetIgnoreList method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ManialinkPageAnswerStruct" href="../type/ManialinkPageAnswerStruct.html">ManialinkPageAnswerStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs returned from the GetManialinkPageAnswers method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="MapInfoStruct" href="../type/MapInfoStruct.html">MapInfoStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetCurrentMapInfo, GetNextMapInfo, and GetMapInfo method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="NetworkStatsStruct" href="../type/NetworkStatsStruct.html">NetworkStatsStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetNetworkStats method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="PassedInGameInfosStruct" href="../type/PassedInGameInfosStruct.html">PassedInGameInfosStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct passed to the SetGameInfos method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="PassedInServerOptionsStruct" href="../type/PassedInServerOptionsStruct.html">PassedInServerOptionsStruct</a>
+								</td>	
+								<td class="markdown">
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="PlayerInfoStruct" href="../type/PlayerInfoStruct.html">PlayerInfoStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetPlayerList, GetPlayerInfo, and GetMainServerPlayerInfo method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="PlayerNetInfoStruct" href="../type/PlayerNetInfoStruct.html">PlayerNetInfoStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs returned from the GetNetworkStats method call in the PlayerNetInfos array.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="RankingStruct" href="../type/RankingStruct.html">RankingStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs returned by the GetCurrentRanking and GetCurrentRankingForLogin method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ReturnedGameInfosStruct" href="../type/ReturnedGameInfosStruct.html">ReturnedGameInfosStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned from the GetCurrentGameInfo and GetNextGameInfo method calls.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ReturnedServerOptionsStruct" href="../type/ReturnedServerOptionsStruct.html">ReturnedServerOptionsStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetServerOptions method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="ServerTagStruct" href="../type/ServerTagStruct.html">ServerTagStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the structs that are returned by the GetServerTags method.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="StatusStruct" href="../type/StatusStruct.html">StatusStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetStatus method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr  class="even" >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="SystemInfoStruct" href="../type/SystemInfoStruct.html">SystemInfoStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned by the GetSystemInfo method call.</p>
+
+																	</td>
+							</tr>
+
+						
+							<tr >
+								<td class="iconColumn">
+									<img alt="Class-Icon" src="../assets/images/icons/class_public.png">
+								</td>
+								<td>
+									<a title="TeamInfoStruct" href="../type/TeamInfoStruct.html">TeamInfoStruct</a>
+								</td>	
+								<td class="markdown">
+																			<p>Represents the struct returned from the GetTeamInfo method call.</p>
+
+																	</td>
+							</tr>
+
+						
+					</tbody>
+				</table>
+			</div>
+
+			
+					</div>
+	   
+    </body>
+</html>
+
