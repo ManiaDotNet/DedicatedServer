@@ -227,7 +227,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         }
 
         /// <summary>
-        /// Gets the next ladder mode. Compare to Forced and Inactive constants in <see cref="ManiaNet.DedicatedServer.XmlRpc.Structs.LadderModeStruct"/>.
+        /// Gets the next ladder mode. Compare to Forced and Inactive constants in <see cref="ManiaNet.DedicatedServer.LadderModes"/>.
         /// </summary>
         [UsedImplicitly]
         public int NextLadderMode

@@ -36,6 +36,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         /// </summary>
         public Config Configuration { get; private set; }
 
+        /// <summary>
+        /// Gets the name of the Client.
+        /// </summary>
         public string Name
         {
             get { return Configuration.Address + ":" + Configuration.Port; }
@@ -50,6 +53,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             Configuration = config;
         }
 
+        /// <summary>
+        /// Frees the unmanaged resources used by this class.
+        /// </summary>
         public void Dispose()
         {
             //writer disposes stream too.

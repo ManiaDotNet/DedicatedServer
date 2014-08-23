@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>ManiaNet.DedicatedServer</id>
+        <version>1.0.0</version>
+        <title>ManiaNet Dedicated Server</title>
+        <authors>Banane9</authors>
+        <owners>Banane9</owners>
+        <licenseUrl>https://github.com/ManiaDotNet/DedicatedServer/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/ManiaDotNet/DedicatedServer</projectUrl>
+        <iconUrl>http://maniadotnet.github.io/DedicatedServer/favicon.ico</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This library contains all the required MethodCalls and Structs for interfacing with ManiaPlanet Dedicated Servers using the XmlRpc library.</description>
+        <summary>Library to interface with the ManiaPlanet Dedicated Server.</summary>
+        <releaseNotes>First release. Check the project page for how to use.</releaseNotes>
+        <copyright>Banane9</copyright>
+        <language>en</language>
+        <tags>trackmania, maniaplanet, xmlrpc, dedicated server, manianet, maniadotnet</tags>
+        <dependencies>
+            <group targetFramework=".NETFramework4.5">
+                <dependency id="XmlRpc" version="2.0" />
+            </group>
+        </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Xml" targetFramework="" />
+            <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="" />
+        </frameworkAssemblies>
+    </metadata>
+    <files>
+        <file src="ManiaNet.DedicatedServer\bin\Release\ManiaNet.DedicatedServer.dll" target="lib\net45\ManiaNet.DedicatedServer.dll" />
+        <file src="ManiaNet.DedicatedServer\bin\Release\ManiaNet.DedicatedServer.xml" target="lib\net45\ManiaNet.DedicatedServer.xml" />
+    </files>
+</package>

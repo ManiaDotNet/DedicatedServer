@@ -21,7 +21,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetList"/> class with the given limit and starting index.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetList&lt;TStruct&gt;"/> class with the given limit and starting index.
         /// </summary>
         /// <param name="limit">The maximum number of results that will be returned.</param>
         /// <param name="startingIndex">The starting index from which results will be returned.</param>

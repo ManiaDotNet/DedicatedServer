@@ -40,7 +40,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
     <Reference Include="XmlRpc, Version=2.0.5343.36861, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -377,13 +376,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo "Copying .dll and .xml to Plugins and Server Controller"
-for %25%25p in ( "ServerController", "CurrentMap", "ChallengeAdvisor" ) do (
-	if exist "$(SolutionDir)..\%25%25p" (
-		copy /Y "$(TargetPath)" "$(SolutionDir)..\%25%25p"
-		copy /Y  "$(TargetDir)$(TargetName).xml" "$(SolutionDir)..\%25%25p"
-	)
-)</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

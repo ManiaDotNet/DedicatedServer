@@ -9,6 +9,9 @@ using XmlRpc.Types.Structs;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.Structs
 {
+    /// <summary>
+    /// Represents the struct passed to the SetServerOptions method call.
+    /// </summary>
     public sealed class PassedInServerOptionsStruct : BaseStruct
     {
         /// <summary>
