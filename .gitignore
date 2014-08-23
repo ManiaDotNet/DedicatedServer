@@ -1,0 +1,4 @@
+*.nupkg
+packages/*
+ManiaNet.DedicatedServer/*
+ManiaNet.DedicatedServer.Tests/*
