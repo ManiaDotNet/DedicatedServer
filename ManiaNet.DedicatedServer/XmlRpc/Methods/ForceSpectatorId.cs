@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the ForceSpectatorId method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ForceSpectatorId : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Id of the player that will be made a spectator.
         /// </summary>
+        [UsedImplicitly]
         public int Id
         {
             get { return param1.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the spectator mode the player will be forced into. Use values from <see cref="ManiaNet.DedicatedServer.SpectatorModes"/>.
         /// </summary>
+        [UsedImplicitly]
         public int SpectatorMode
         {
             get { return param2.Value; }

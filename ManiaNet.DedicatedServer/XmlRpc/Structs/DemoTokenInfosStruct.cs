@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -26,6 +27,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the player can pay for the token or not.
         /// </summary>
+        [UsedImplicitly]
         public bool CanPayToken
         {
             get { return canPayToken.Value; }
@@ -34,6 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the token cost.
         /// </summary>
+        [UsedImplicitly]
         public int TokenCost
         {
             get { return tokenCost.Value; }
@@ -57,7 +60,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

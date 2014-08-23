@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,14 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetForcedMods method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetForcedMods
         : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcArray<XmlRpcStruct<ForcedModStruct>, ForcedModStruct>, XmlRpcStruct<ForcedModStruct>[], XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the forced mods.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<ForcedModStruct> ForcedMods
         {
             get { return param2.Value.Select(strct => strct.Value); }
@@ -33,6 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets whether existing mods on maps will be overridden or not.
         /// </summary>
+        [UsedImplicitly]
         public bool Override
         {
             get { return param1.Value; }
@@ -44,7 +48,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="override">Whether existing mods on maps will be overridden or not.</param>
         /// <param name="forcedMods">The forced mods.</param>
-        public SetForcedMods(bool @override, params ForcedModStruct[] forcedMods)
+        public SetForcedMods(bool @override, [NotNull] params ForcedModStruct[] forcedMods)
             : base(@override, forcedMods.Select(forcedModStruct => new XmlRpcStruct<ForcedModStruct>(forcedModStruct)).ToArray())
         { }
     }

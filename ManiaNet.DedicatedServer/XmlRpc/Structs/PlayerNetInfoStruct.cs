@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -46,6 +47,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's IP address, including the port.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string IPAddress
         {
             get { return ipAddress.Value; }
@@ -54,6 +56,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the time in milliseconds since the player's last network activity.
         /// </summary>
+        [UsedImplicitly]
         public int LatestNetworkActivity
         {
             get { return latestNetworkActivity.Value; }
@@ -62,6 +65,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's login.
         /// </summary>
+        [UsedImplicitly]
         public string Login
         {
             get { return login.Value; }
@@ -70,6 +74,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the rate at which the player's packets get lost.
         /// </summary>
+        [UsedImplicitly]
         public double NetworkLossRate
         {
             get { return networkLossRate.Value; }
@@ -78,6 +83,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's state update latency in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int StateUpdateLatency
         {
             get { return stateUpdateLatency.Value; }
@@ -86,6 +92,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's state update period in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int StateUpdatePeriod
         {
             get { return stateUpdateLatency.Value; }
@@ -113,7 +120,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

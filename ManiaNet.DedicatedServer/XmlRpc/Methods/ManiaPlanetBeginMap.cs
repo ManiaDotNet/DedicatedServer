@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.BeginMap method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ManiaPlanetBeginMap : XmlRpcMethodCall<XmlRpcStruct<MapInfoStruct>, MapInfoStruct, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets informations about the map.
         /// </summary>
+        [UsedImplicitly]
         public MapInfoStruct Map
         {
             get { return param1.Value; }

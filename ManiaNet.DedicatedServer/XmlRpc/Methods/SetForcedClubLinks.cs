@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetForcedClubLinks method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetForcedClubLinks : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new club link for clan 1.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ClubLink1
         {
             get { return param1.Value; }
@@ -23,6 +26,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the new club link for clan 2.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ClubLink2
         {
             get { return param2.Value; }
@@ -42,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="clubLink1">The new club link for clan 1.</param>
         /// <param name="clubLink2">The new club link for clan 2.</param>
-        public SetForcedClubLinks(string clubLink1, string clubLink2)
+        public SetForcedClubLinks([NotNull] string clubLink1, [NotNull] string clubLink2)
             : base(clubLink1, clubLink2)
         { }
     }

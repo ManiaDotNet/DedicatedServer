@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the ForceSpectatorTarget method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ForceSpectatorTarget : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the camera type that the spectator(s) will have. Use values from <see cref="ManiaNet.DedicatedServer.SpectatorCameraTypes"/>.
         /// </summary>
+        [UsedImplicitly]
         public int CameraType
         {
             get { return param3.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the login of the player who will be the target. Empty string for automatic.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string PlayerLogin
         {
             get { return param2.Value; }
@@ -40,6 +44,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the login of the spectator whose target will be forced. Empty string for all spectators.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string SpectatorLogin
         {
             get { return param1.Value; }
@@ -52,7 +57,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <param name="spectatorLogin">The login of the spectator whose target will be forced. Empty string for all spectators.</param>
         /// <param name="playerLogin">The login of the player who will be the target. Empty string for automatic.</param>
         /// <param name="cameraType">The camera type that the spectator(s) will have. Use values from <see cref="ManiaNet.DedicatedServer.SpectatorCameraTypes"/>.</param>
-        public ForceSpectatorTarget(string spectatorLogin, string playerLogin, int cameraType)
+        public ForceSpectatorTarget([NotNull] string spectatorLogin, [NotNull] string playerLogin, int cameraType)
             : base(spectatorLogin, playerLogin, cameraType)
         { }
     }

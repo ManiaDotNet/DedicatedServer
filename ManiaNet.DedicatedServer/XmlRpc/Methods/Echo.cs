@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the Echo method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class Echo : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the first parameter. Seems to be the second parameter in the callback.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ParameterOne
         {
             get { return param1.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the second parameter. Seems to be the first parameter in the callback.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ParameterTwo
         {
             get { return param2.Value; }
@@ -42,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="parameterOne">The first parameter. Seems to be the second parameter in the callback.</param>
         /// <param name="parameterTwo">The second parameter. Seems to be the first parameter in the callback.</param>
-        public Echo(string parameterOne, string parameterTwo)
+        public Echo([NotNull] string parameterOne, [NotNull] string parameterTwo)
             : base(parameterOne, parameterTwo)
         { }
     }

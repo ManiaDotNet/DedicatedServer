@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetModeScriptText method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetModeScriptText : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the mode script text.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ModeScript
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetModeScriptText"/> class for the given mode script text.
         /// </summary>
         /// <param name="modeScript">The mode script text.</param>
-        public SetModeScriptText(string modeScript)
+        public SetModeScriptText([NotNull] string modeScript)
             : base(modeScript)
         { }
     }

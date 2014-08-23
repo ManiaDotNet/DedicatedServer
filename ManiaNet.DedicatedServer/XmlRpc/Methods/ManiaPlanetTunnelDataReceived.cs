@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.TunnelDataReceived method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ManiaPlanetTunnelDataReceived : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcBase64, byte[], XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the received data.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public byte[] Data
         {
             get { return param3.Value; }
@@ -30,6 +33,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the Id of the player that drove through the checkpoint.
         /// </summary>
+        [UsedImplicitly]
         public int PlayerId
         {
             get { return param1.Value; }
@@ -38,6 +42,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the login of the player that drove through the checkpoint.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string PlayerLogin
         {
             get { return param2.Value; }

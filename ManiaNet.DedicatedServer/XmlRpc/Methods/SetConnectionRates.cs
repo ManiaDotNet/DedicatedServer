@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetConnectionRates method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetConnectionRates : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new download rate in kilobits per second.
         /// </summary>
+        [UsedImplicitly]
         public int DownloadRate
         {
             get { return param1.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the new upload rate in kilobits per second.
         /// </summary>
+        [UsedImplicitly]
         public int UploadRate
         {
             get { return param2.Value; }

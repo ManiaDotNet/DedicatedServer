@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -96,6 +97,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the login of the map's author.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Author
         {
             get { return author.Value; }
@@ -104,6 +106,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's author's time in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int AuthorTime
         {
             get { return authorTime.Value; }
@@ -112,6 +115,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's Bronze medal time in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int BronzeTime
         {
             get { return bronzeTime.Value; }
@@ -120,6 +124,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's cost in coppers.
         /// </summary>
+        [UsedImplicitly]
         public int CopperPrice
         {
             get { return copperPrice.Value; }
@@ -128,6 +133,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's environment.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Environment
         {
             get { return environment.Value; }
@@ -136,6 +142,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the path to the map's file, relative to UserData/Maps/
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string FileName
         {
             get { return filename.Value; }
@@ -144,6 +151,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's Gold medal time in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int GoldTime
         {
             get { return goldTime.Value; }
@@ -152,6 +160,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the map is a lap race or not.
         /// </summary>
+        [UsedImplicitly]
         public bool LapRace
         {
             get { return lapRace.Value; }
@@ -160,6 +169,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's style.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string MapStyle
         {
             get { return mapStyle.Value; }
@@ -168,6 +178,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the type of the map.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string MapType
         {
             get { return mapType.Value; }
@@ -176,6 +187,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's mood (time of day).
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Mood
         {
             get { return mood.Value; }
@@ -184,6 +196,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's display name.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Name
         {
             get { return name.Value; }
@@ -192,6 +205,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the number of checkpoints on the map. -1 when gotten from the GetNextMapInfo or GetMapInfo method calls.
         /// </summary>
+        [UsedImplicitly]
         public int NbCheckpoints
         {
             get { return nbCheckpoints.Value; }
@@ -200,6 +214,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the number of laps players would have to drive on the map. 0 if it's not in laps mode. -1 when gotten from the GetNextMapInfo or GetMapInfo method calls.
         /// </summary>
+        [UsedImplicitly]
         public int NbLaps
         {
             get { return nbLaps.Value; }
@@ -208,6 +223,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the maps Silver medal time in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int SilverTime
         {
             get { return silverTime.Value; }
@@ -216,6 +232,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's unique identifier.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string UId
         {
             get { return uId.Value; }
@@ -253,7 +270,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

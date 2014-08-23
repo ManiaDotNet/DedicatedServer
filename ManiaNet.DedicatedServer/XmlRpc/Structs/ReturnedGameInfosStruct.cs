@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -86,6 +87,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the chat time at the end of the map in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int ChatTime
         {
             get { return chatTime.Value; }
@@ -94,6 +96,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the finish timeout in seconds.
         /// </summary>
+        [UsedImplicitly]
         public int FinishTimeout
         {
             get { return finishTimeout.Value; }
@@ -102,6 +105,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the game mode. Compare to <see cref="ManiaNet.DedicatedServer.GameModes"/> values.
         /// </summary>
+        [UsedImplicitly]
         public int GameMode
         {
             get { return gameMode.Value; }
@@ -110,6 +114,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the number of laps players have to drive in laps mode.
         /// </summary>
+        [UsedImplicitly]
         public int LapsNbLaps
         {
             get { return lapsNbLaps.Value; }
@@ -118,6 +123,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the time limit in seconds in laps mode.
         /// </summary>
+        [UsedImplicitly]
         public int LapsTimeLimit
         {
             get { return lapsTimeLimit.Value; }
@@ -126,6 +132,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the number of challenges on the server.
         /// </summary>
+        [UsedImplicitly]
         public int NbChallenge
         {
             get { return nbChallenge.Value; }
@@ -134,6 +141,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the number of laps players have to drive in rounds mode.
         /// </summary>
+        [UsedImplicitly]
         public int RoundsForcedLaps
         {
             get { return roundsForcedLaps.Value; }
@@ -142,6 +150,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the point limit in rounds mode.
         /// </summary>
+        [UsedImplicitly]
         public int RoundsPointsLimit
         {
             get { return roundsPointsLimit.Value; }
@@ -150,6 +159,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether to use the new rules in rounds mode or not.
         /// </summary>
+        [UsedImplicitly]
         public bool RoundsUseNewRules
         {
             get { return roundsUseNewRules.Value; }
@@ -158,6 +168,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the maximum number of points in team mode.
         /// </summary>
+        [UsedImplicitly]
         public int TeamMaxPoints
         {
             get { return teamMaxPoints.Value; }
@@ -166,6 +177,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the points limit in team mode.
         /// </summary>
+        [UsedImplicitly]
         public int TeamPointsLimit
         {
             get { return teamPointsLimit.Value; }
@@ -174,6 +186,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether to use the new rules in team mode or not.
         /// </summary>
+        [UsedImplicitly]
         public bool TeamUseNewRules
         {
             get { return teamUseNewRules.Value; }
@@ -182,6 +195,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the time limit in seconds in time attack mode.
         /// </summary>
+        [UsedImplicitly]
         public int TimeAttackLimit
         {
             get { return timeAttackLimit.Value; }
@@ -225,7 +239,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

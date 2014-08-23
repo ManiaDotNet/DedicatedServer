@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetCupNbWinners method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetCupNbWinners : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the new number of players that have to finish the map before the round is considered over.
         /// </summary>
+        [UsedImplicitly]
         public int Winners
         {
             get { return param1.Value; }

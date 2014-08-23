@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -31,6 +32,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the Login of the player who started the call-vote.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string CallerLogin
         {
             get { return callerLogin.Value; }
@@ -39,6 +41,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the Name of the command that the call-vote is for.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string CmdName
         {
             get { return cmdName.Value; }
@@ -47,6 +50,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the parameter of the command that the call-vote is for.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string CmdParam
         {
             get { return cmdParam.Value; }
@@ -71,7 +75,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

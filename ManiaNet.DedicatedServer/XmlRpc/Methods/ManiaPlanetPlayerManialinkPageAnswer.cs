@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.PlayerManialinkPageAnswer method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ManiaPlanetPlayerManialinkPageAnswer
         : XmlRpcMethodCall
               <XmlRpcI4, int, XmlRpcString, string, XmlRpcString, string, XmlRpcArray<XmlRpcStruct<EntryValueStruct>, EntryValueStruct>, XmlRpcStruct<EntryValueStruct>[],
@@ -18,6 +20,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the client's answer.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Answer
         {
             get { return param3.Value; }
@@ -26,6 +29,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the Id of the client that answered the page.
         /// </summary>
+        [UsedImplicitly]
         public int ClientId
         {
             get { return param1.Value; }
@@ -34,6 +38,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the login of the client that answered the page.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ClientLogin
         {
             get { return param2.Value; }
@@ -42,6 +47,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the entries.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<EntryValueStruct> Entries
         {
             get { return param4.Value.Select(strct => strct.Value); }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetCallVoteRatio method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetCallVoteRatio : XmlRpcMethodCall<XmlRpcDouble, double, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the new default ratio for call votes. Has to be between 0 and 1.
         /// </summary>
+        [UsedImplicitly]
         public double Ratio
         {
             get { return param1.Value; }

@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the GetManialinkPageAnswers method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class GetManialinkPageAnswers
         : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<ManialinkPageAnswerStruct>, ManialinkPageAnswerStruct>, XmlRpcStruct<ManialinkPageAnswerStruct>[]>
     {

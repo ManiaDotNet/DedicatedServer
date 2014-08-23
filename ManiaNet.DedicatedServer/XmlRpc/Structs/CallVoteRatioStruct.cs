@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -16,6 +17,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// The ratio for disabled votes.
         /// </summary>
+        [UsedImplicitly]
         public const int Disabled = -1;
 
         /// <summary>
@@ -31,6 +33,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the name of the call-vote command that this ratio is for. * for all.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Command
         {
             get { return command.Value; }
@@ -38,13 +41,16 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         }
 
         /// <summary>
-        /// Gets or sets the Ratio for call-votes for this command. Range from 0-1, or Disabled.
+        /// Gets or sets the Ratio for call-votes for this command. Range from [0-1], or Disabled.
         /// </summary>
+        [UsedImplicitly]
         public double Ratio
         {
             get { return ratio.Value; }
             set
             {
+                // Has to be exactly -1
+                // ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (value != Disabled && (value < 0 || value > 1))
                     throw new ArgumentOutOfRangeException("value", "Ratio has to be between 0 and 1, or Disabled.");
 
@@ -57,7 +63,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// </summary>
         /// <param name="command">The name of the call-vote command that this ratio is for. * for all.</param>
         /// <param name="ratio">The ratio for call-votes for this command. Range from 0-1, or -1 for disabled.</param>
-        public CallVoteRatioStruct(string command, double ratio)
+        public CallVoteRatioStruct([NotNull] string command, double ratio)
         {
             Command = command;
             Ratio = ratio;
@@ -87,7 +93,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetRoundCustomPoints method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetRoundCustomPoints : XmlRpcMethodCall<XmlRpcArray<XmlRpcInt, int>, XmlRpcInt[], XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the points for the players. Order corresponds to the players from first to last.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<int> Points
         {
             get { return param1.Value.Select(xmlRpcInt => xmlRpcInt.Value); }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets whether the constraint checking on the points will be relaxed or not.
         /// </summary>
+        [UsedImplicitly]
         public bool RelaxConstraintChecks
         {
             get { return param2.Value; }
@@ -42,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="points">The points for the players. Order corresponds to the players from first to last.</param>
         /// <param name="relaxConstraintChecks">Whether the constraint checking on the points will be relaxed or not.</param>
-        public SetRoundCustomPoints(IEnumerable<int> points, bool relaxConstraintChecks = false)
+        public SetRoundCustomPoints([NotNull] IEnumerable<int> points, bool relaxConstraintChecks = false)
             : base(points.Select(@int => new XmlRpcInt(@int)).ToArray(), relaxConstraintChecks)
         { }
     }

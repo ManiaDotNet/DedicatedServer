@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the RemoveMap method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class RemoveMap : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filename of the map to remove.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Filename
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.RemoveMap"/> class for the given filename.
         /// </summary>
         /// <param name="filename">The filename of the map to remove.</param>
-        public RemoveMap(string filename)
+        public RemoveMap([NotNull] string filename)
             : base(filename)
         { }
     }

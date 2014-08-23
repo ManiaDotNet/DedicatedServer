@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.MapListModified method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ManiaPlanetMapListModified : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcI4, int, XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the current map's index in the list.
         /// </summary>
+        [UsedImplicitly]
         public int CurrentMapIndex
         {
             get { return param1.Value; }
@@ -22,6 +25,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets whether the list was modifed or not.
         /// </summary>
+        [UsedImplicitly]
         public bool IsListModified
         {
             get { return param3.Value; }
@@ -38,6 +42,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the next map's index in the list.
         /// </summary>
+        [UsedImplicitly]
         public int NextMapIndex
         {
             get { return param2.Value; }

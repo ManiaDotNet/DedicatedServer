@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -36,6 +37,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether this server is a lobby or not.
         /// </summary>
+        [UsedImplicitly]
         public bool IsLobby
         {
             get { return isLobby.Value; }
@@ -44,6 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the maximum number of players in the lobby.
         /// </summary>
+        [UsedImplicitly]
         public int LobbyMaxPlayers
         {
             get { return lobbyMaxPlayers.Value; }
@@ -52,6 +55,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the current number of players in the lobby.
         /// </summary>
+        [UsedImplicitly]
         public int LobbyPlayers
         {
             get { return lobbyPlayers.Value; }
@@ -60,6 +64,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the level of the players in the lobby.
         /// </summary>
+        [UsedImplicitly]
         public double LobbyPlayersLevel
         {
             get { return lobbyPlayersLevel.Value; }
@@ -85,7 +90,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

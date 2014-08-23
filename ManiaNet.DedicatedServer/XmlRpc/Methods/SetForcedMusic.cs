@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetForcedMusic method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetForcedMusic : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets whether existing music on maps will be overridden or not.
         /// </summary>
+        [UsedImplicitly]
         public bool Override
         {
             get { return param1.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the filename or url of the music file that is going to be played.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Uri
         {
             get { return param2.Value; }
@@ -42,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="override">Whether existing music on maps will be overridden or not.</param>
         /// <param name="uri">The filename or url of the music file that is going to be played.</param>
-        public SetForcedMusic(bool @override, string uri)
+        public SetForcedMusic(bool @override, [NotNull] string uri)
             : base(@override, uri)
         { }
     }

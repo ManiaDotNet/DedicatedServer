@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the GetTeamInfo method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class GetTeamInfo : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcStruct<TeamInfoStruct>, TeamInfoStruct>
     {
         /// <summary>
         /// Gets or sets the Id of the team whose information will be returned. 0, 1, or 2.
         /// </summary>
+        [UsedImplicitly]
         public int Id
         {
             get { return param1.Value; }

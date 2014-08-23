@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the Authenticate method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class Authenticate : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login used for authentication.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param1.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the password used for authentication.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Password
         {
             get { return param2.Value; }
@@ -42,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="login">The login used for authentication.</param>
         /// <param name="password">The password used for authentication.</param>
-        public Authenticate(string login, string password)
+        public Authenticate([NotNull] string login, [NotNull] string password)
             : base(login, password)
         { }
     }

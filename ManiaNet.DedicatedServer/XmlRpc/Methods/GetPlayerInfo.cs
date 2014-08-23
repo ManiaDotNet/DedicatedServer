@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the GetPlayerInfo method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class GetPlayerInfo : XmlRpcMethodCall<XmlRpcString, string, XmlRpcStruct<PlayerInfoStruct>, PlayerInfoStruct>
     {
         /// <summary>
         /// Gets or sets the login of the player to get the info for.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param1.Value; }
@@ -33,7 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetPlayerInfo"/> class for the given login.
         /// </summary>
         /// <param name="login">The login of the player to get the info for.</param>
-        public GetPlayerInfo(string login)
+        public GetPlayerInfo([NotNull] string login)
             : base(login)
         { }
     }

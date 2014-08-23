@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetScriptName method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetScriptName : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the name of the new script in script mode.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ScriptName
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetScriptName"/> class for the given script name.
         /// </summary>
         /// <param name="scriptName">The name of the new script in script mode.</param>
-        public SetScriptName(string scriptName)
+        public SetScriptName([NotNull] string scriptName)
             : base(scriptName)
         { }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetNextMapIndex method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetNextMapIndex : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new index of the next map.
         /// </summary>
+        [UsedImplicitly]
         public int Index
         {
             get { return param1.Value; }

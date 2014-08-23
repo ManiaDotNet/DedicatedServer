@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the LoadBlackList method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class LoadBlackList : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filepath to load the blacklist from.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Filepath
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.LoadBlackList"/> class for the given filepath.
         /// </summary>
         /// <param name="filepath">The filepath to load the blacklist from.</param>
-        public LoadBlackList(string filepath)
+        public LoadBlackList([NotNull] string filepath)
             : base(filepath)
         { }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the AreHornsDisabled method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class AreHornsDisabled : XmlRpcMethodCall<XmlRpcBoolean, bool>
     {
         /// <summary>

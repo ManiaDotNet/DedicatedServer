@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the DisableServiceAnnounces [sic] method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class DisableServiceAnnouncements : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets whether joins/quits will be announced automatically.
         /// </summary>
+        [UsedImplicitly]
         public bool Disable
         {
             get { return param1.Value; }

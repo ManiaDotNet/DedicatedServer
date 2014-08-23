@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -56,6 +57,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the name of the City that the team is from.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string City
         {
             get { return city.Value; }
@@ -64,6 +66,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the club link url of the team.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ClubLinkUrl
         {
             get { return clubLinkUrl.Value; }
@@ -72,6 +75,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the URL of the Emblem of the team.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string EmblemUrl
         {
             get { return emblemUrl.Value; }
@@ -80,6 +84,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the primary hue of the team.
         /// </summary>
+        [UsedImplicitly]
         public double HuePrimary
         {
             get { return huePrimary.Value; }
@@ -88,6 +93,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the secondary hue of the team.
         /// </summary>
+        [UsedImplicitly]
         public double HueSecondary
         {
             get { return hueSecondary.Value; }
@@ -96,6 +102,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the name of the team.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Name
         {
             get { return name.Value; }
@@ -104,6 +111,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the three letter RGB of the team's color.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Rgb
         {
             get { return rgb.Value; }
@@ -112,6 +120,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the ZonePath of the team.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ZonePath
         {
             get { return zonePath.Value; }
@@ -141,7 +150,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

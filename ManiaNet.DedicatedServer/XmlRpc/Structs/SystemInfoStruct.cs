@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -36,6 +37,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Backing field for the P2PPort property.
         /// </summary>
+        // ReSharper disable once InconsistentNaming
         private readonly XmlRpcI4 p2pPort = new XmlRpcI4();
 
         /// <summary>
@@ -66,6 +68,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the maximum download rate of the server. In kBits per second.
         /// </summary>
+        [UsedImplicitly]
         public int ConnectionDownloadRate
         {
             get { return connectionDownloadRate.Value; }
@@ -74,6 +77,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the maximum upload rate of the server. In kbits per second.
         /// </summary>
+        [UsedImplicitly]
         public int ConnectionUploadRate
         {
             get { return connectionUploadRate.Value; }
@@ -82,6 +86,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the server is dedicated or not.
         /// </summary>
+        [UsedImplicitly]
         public bool IsDedicated
         {
             get { return isDedicated.Value; }
@@ -90,6 +95,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the server is a server or not.
         /// </summary>
+        [UsedImplicitly]
         public bool IsServer
         {
             get { return isServer.Value; }
@@ -98,6 +104,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the port number that the server uses for p2p connections.
         /// </summary>
+        [UsedImplicitly]
         public int P2PPort
         {
             get { return p2pPort.Value; }
@@ -106,6 +113,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the port number that the server uses for connecting players.
         /// </summary>
+        [UsedImplicitly]
         public int Port
         {
             get { return port.Value; }
@@ -114,6 +122,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the IP-address that the server published to the master server.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string PublishedIp
         {
             get { return publishedIp.Value; }
@@ -122,6 +131,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the login of the server account.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ServerLogin
         {
             get { return serverLogin.Value; }
@@ -130,6 +140,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player Id of the server.
         /// </summary>
+        [UsedImplicitly]
         public int ServerPlayerId
         {
             get { return serverPlayerId.Value; }
@@ -138,6 +149,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the ID of the Title that's currently being played (TMCanyon, TMValley, etc.) on the server.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string TitleId
         {
             get { return titleId.Value; }
@@ -169,7 +181,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

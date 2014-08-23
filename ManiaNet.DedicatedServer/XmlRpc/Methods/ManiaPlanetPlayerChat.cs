@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -14,6 +15,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the Id of the client that sent the message.
         /// </summary>
+        [UsedImplicitly]
         public int ClientId
         {
             get { return param1.Value; }
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the login of the client that sent the message.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ClientLogin
         {
             get { return param2.Value; }
@@ -30,6 +33,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets whether the message was a registered command.
         /// </summary>
+        [UsedImplicitly]
         public bool IsRegisteredCmd
         {
             get { return param4.Value; }
@@ -46,6 +50,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the text of the message.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Text
         {
             get { return param3.Value; }

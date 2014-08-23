@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -31,6 +32,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the login of the player that this page answer is for.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return login.Value; }
@@ -39,6 +41,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the id of the player that this page answer is for.
         /// </summary>
+        [UsedImplicitly]
         public int PlayerId
         {
             get { return playerId.Value; }
@@ -47,6 +50,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the answer of the page. 0 means no answer.
         /// </summary>
+        [UsedImplicitly]
         public int Result
         {
             get { return result.Value; }
@@ -71,7 +75,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

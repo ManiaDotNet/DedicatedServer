@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the Pay method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class Pay : XmlRpcMethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcString, string, XmlRpcI4, int>
     {
         /// <summary>
         /// Gets or sets the label that will be send with the payment.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Label
         {
             get { return param3.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the login that will receive the planets.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Payee
         {
             get { return param1.Value; }
@@ -40,6 +44,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the amount of planets that the payee will receive.
         /// </summary>
+        [UsedImplicitly]
         public int Planets
         {
             get { return param2.Value; }
@@ -52,7 +57,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <param name="payee">The login that will receive the planets.</param>
         /// <param name="planets">The amount of planets the the payee will receive.</param>
         /// <param name="label">The label that will be send with the payment.</param>
-        public Pay(string payee, int planets, string label)
+        public Pay([NotNull] string payee, int planets, [NotNull] string label)
             : base(payee, planets, label)
         { }
     }

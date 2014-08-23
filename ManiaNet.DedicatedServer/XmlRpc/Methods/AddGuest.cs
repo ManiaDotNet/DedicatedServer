@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the AddGuest method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class AddGuest : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login that will be added to the guestlist.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.AddGuest"/> class for the given login.
         /// </summary>
         /// <param name="login">The login that will be added to the guestlist.</param>
-        public AddGuest(string login)
+        public AddGuest([NotNull] string login)
             : base(login)
         { }
     }

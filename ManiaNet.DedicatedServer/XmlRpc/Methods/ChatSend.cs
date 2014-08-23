@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the ChatSend method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ChatSend : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the message that will be send to all clients.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Message
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.ChatSend"/> class with the given message.
         /// </summary>
         /// <param name="message">The message that will be send to all clients.</param>
-        public ChatSend(string message)
+        public ChatSend([NotNull] string message)
             : base(message)
         { }
     }

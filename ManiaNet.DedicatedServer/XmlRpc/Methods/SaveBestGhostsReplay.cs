@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SaveBestGhostsReplay method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SaveBestGhostsReplay : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filename that the replay will be saved to. Empty string for automatic name.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Filename
         {
             get { return param2.Value; }
@@ -23,6 +26,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the login of the player to save the best ghost of. Empty string for all players.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param1.Value; }
@@ -38,11 +42,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SaveBestGhostReplay"/> class with the given login and filename.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SaveBestGhostsReplay"/> class with the given login and filename.
         /// </summary>
         /// <param name="login">The login of the player to save the best ghost of. Empty string for all players.</param>
         /// <param name="filename">The filename that the replay will be saved to. Empty string for automatic name.</param>
-        public SaveBestGhostsReplay(string login, string filename)
+        public SaveBestGhostsReplay([NotNull] string login, [NotNull] string filename)
             : base(login, filename)
         { }
     }

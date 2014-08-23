@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -62,6 +63,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the mean connection time of players in seconds.
         /// </summary>
+        [UsedImplicitly]
         public int MeanConnectionTime
         {
             get { return meanConnectionTime.Value; }
@@ -70,6 +72,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the mean number of players on the server.
         /// </summary>
+        [UsedImplicitly]
         public int MeanNbrPlayer
         {
             get { return meanNbrPlayer.Value; }
@@ -78,6 +81,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the total number of connections.
         /// </summary>
+        [UsedImplicitly]
         public int NbrConnection
         {
             get { return nbrConnection.Value; }
@@ -86,6 +90,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player network infos.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<PlayerNetInfoStruct> PlayerNetInfos
         {
             get { return playerNetInfos.Value.Select(xmlRpcStruct => xmlRpcStruct.Value); }
@@ -94,6 +99,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the receive rate of the server in kbit per second.
         /// </summary>
+        [UsedImplicitly]
         public int RecvNetRate
         {
             get { return recvNetRate.Value; }
@@ -102,6 +108,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the send rate of the server in kbits per second.
         /// </summary>
+        [UsedImplicitly]
         public int SendNetRate
         {
             get { return sendNetRate.Value; }
@@ -110,6 +117,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the total number of kbytes received by the server.
         /// </summary>
+        [UsedImplicitly]
         public int TotalReceivingSize
         {
             get { return totalReceivingSize.Value; }
@@ -118,6 +126,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the total number of kbytes sent by the server.
         /// </summary>
+        [UsedImplicitly]
         public int TotalSendingSize
         {
             get { return totalSendingSize.Value; }
@@ -126,6 +135,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the number of seconds the server has been running.
         /// </summary>
+        [UsedImplicitly]
         public int Uptime
         {
             get { return uptime.Value; }
@@ -155,7 +165,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

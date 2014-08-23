@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -8,6 +9,9 @@ using XmlRpc.Types.Structs;
 
 namespace ManiaNet.DedicatedServer.XmlRpc.Structs
 {
+    /// <summary>
+    /// Represents the structs that are passed to the ForceScores method call.
+    /// </summary>
     public sealed class ForceScoreStruct : BaseStruct
     {
         /// <summary>
@@ -23,6 +27,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the id of the player who's score is going to be forced.
         /// </summary>
+        [UsedImplicitly]
         public int PlayerId
         {
             get { return playerId.Value; }
@@ -32,6 +37,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the number that the player's score is going to be set to.
         /// </summary>
+        [UsedImplicitly]
         public int Score
         {
             get { return score.Value; }
@@ -73,7 +79,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -10,11 +11,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the Kick method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class Kick : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the login of the player that will be kicked.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param1.Value; }
@@ -24,6 +27,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the kick message. May be null.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Message
         {
             get { return param2.Value; }
@@ -43,7 +47,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="login">The login that will be kicked.</param>
         /// <param name="message">The optional kick message.</param>
-        public Kick(string login, string message = null)
+        public Kick([NotNull] string login, [CanBeNull] string message = null)
             : base(login, message)
         { }
 
@@ -53,7 +57,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <returns>An XElement containing the parameter data.</returns>
         protected override XElement generateCallParamsXml()
         {
-            XElement paramsElement = base.generateCallParamsXml();
+            var paramsElement = base.generateCallParamsXml();
 
             if (string.IsNullOrWhiteSpace(Message))
                 paramsElement.LastNode.Remove();

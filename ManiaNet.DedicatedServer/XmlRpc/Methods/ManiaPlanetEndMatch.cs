@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.EndMatch method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ManiaPlanetEndMatch
         : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<RankingStruct>, RankingStruct>, XmlRpcStruct<RankingStruct>[], XmlRpcI4, int, XmlRpcBoolean, bool>
     {
@@ -24,6 +26,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the rankings of the players.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<RankingStruct> Rankings
         {
             get { return param1.Value.Select(strct => strct.Value); }
@@ -32,6 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the Id of the team that one.
         /// </summary>
+        [UsedImplicitly]
         public int WinnerTeam
         {
             get { return param2.Value; }

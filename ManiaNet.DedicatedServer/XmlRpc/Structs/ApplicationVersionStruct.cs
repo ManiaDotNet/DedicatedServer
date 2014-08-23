@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -41,6 +42,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the Version of the API used for callbacks.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ApiVersion
         {
             get { return apiVersion.Value; }
@@ -49,6 +51,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the Build of the server application.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Build
         {
             get { return build.Value; }
@@ -57,6 +60,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the Name of the server application.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Name
         {
             get { return name.Value; }
@@ -65,6 +69,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the ID of the Title that's currently being played (TMCanyon, TMValley, etc.) on the server application.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string TitleId
         {
             get { return titleId.Value; }
@@ -73,6 +78,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the Version of the server application.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Version
         {
             get { return version.Value; }
@@ -99,7 +105,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

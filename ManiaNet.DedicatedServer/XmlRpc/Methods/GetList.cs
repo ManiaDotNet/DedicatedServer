@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -17,6 +18,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the maximum number of results that will be returned.
         /// </summary>
+        [UsedImplicitly]
         public int Limit
         {
             get { return param1.Value; }
@@ -26,6 +28,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the starting index from which results will be returned.
         /// </summary>
+        [UsedImplicitly]
         public int StartingIndex
         {
             get { return param2.Value; }
@@ -33,7 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetList"/> class with the given limit and starting index.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetList&lt;TStruct&gt;"/> class with the given limit and starting index.
         /// </summary>
         /// <param name="limit">The maximum number of results that will be returned.</param>
         /// <param name="startingIndex">The starting index from which results will be returned.</param>

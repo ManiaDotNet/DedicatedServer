@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -111,6 +112,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether clients are allowed to download the challenges from the server.
         /// </summary>
+        [UsedImplicitly]
         public bool AllowChallengeDownload
         {
             get { return allowChallengeDownload.Value; }
@@ -119,6 +121,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the server automatically saves replays of the players.
         /// </summary>
+        [UsedImplicitly]
         public bool AutoSaveReplays
         {
             get { return autoSaveReplays.Value; }
@@ -127,6 +130,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the Ratio for call-votes for this command. Range from 0-1, or -1 for disabled.
         /// </summary>
+        [UsedImplicitly]
         public double CallVoteRatio
         {
             get { return callVoteRatio.Value; }
@@ -135,6 +139,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the server comment.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Comment
         {
             get { return comment.Value; }
@@ -143,6 +148,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the current call-vote timeout in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int CurrentCallVoteTimeOut
         {
             get { return currentCallVoteTimeOut.Value; }
@@ -151,6 +157,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the current ladder mode.. Compare to <see cref="ManiaNet.DedicatedServer.LadderModes"/> values.
         /// </summary>
+        [UsedImplicitly]
         public int CurrentLadderMode
         {
             get { return currentLadderMode.Value; }
@@ -159,6 +166,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the current maximum number of players.
         /// </summary>
+        [UsedImplicitly]
         public int CurrentMaxPlayers
         {
             get { return currentMaxPlayers.Value; }
@@ -167,6 +175,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the current maximum number of spectators.
         /// </summary>
+        [UsedImplicitly]
         public int CurrentMaxSpectators
         {
             get { return currentMaxSpectators.Value; }
@@ -175,6 +184,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the current vehicle quality. Compare to values from <see cref="ManiaNet.DedicatedServer.VehicleNetQualities"/>.
         /// </summary>
+        [UsedImplicitly]
         public int CurrentVehicleNetQuality
         {
             get { return currentVehicleNetQuality.Value; }
@@ -183,6 +193,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether p2p download is active or not.
         /// </summary>
+        [UsedImplicitly]
         public bool IsP2PDownload
         {
             get { return isP2PDownload.Value; }
@@ -191,6 +202,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether p2p upload is active or not.
         /// </summary>
+        [UsedImplicitly]
         public bool IsP2PUpload
         {
             get { return isP2PUpload.Value; }
@@ -199,6 +211,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the server name.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Name
         {
             get { return name.Value; }
@@ -207,6 +220,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the next call-vote timeout in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int NextCallVoteTimeOut
         {
             get { return nextCallVoteTimeOut.Value; }
@@ -215,6 +229,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the next ladder mode. Compare to Forced and Inactive constants in <see cref="ManiaNet.DedicatedServer.XmlRpc.Structs.LadderModeStruct"/>.
         /// </summary>
+        [UsedImplicitly]
         public int NextLadderMode
         {
             get { return nextLadderMode.Value; }
@@ -223,6 +238,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the next maximum number of players.
         /// </summary>
+        [UsedImplicitly]
         public int NextMaxPlayers
         {
             get { return nextMaxPlayers.Value; }
@@ -231,6 +247,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the next maximum number of spectators.
         /// </summary>
+        [UsedImplicitly]
         public int NextMaxSpectators
         {
             get { return nextMaxSpectators.Value; }
@@ -239,6 +256,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the next vehicle quality. Compare to values from <see cref="ManiaNet.DedicatedServer.VehicleNetQualities"/>.
         /// </summary>
+        [UsedImplicitly]
         public int NextVehicleNetQuality
         {
             get { return nextVehicleNetQuality.Value; }
@@ -247,6 +265,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the server password.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Password
         {
             get { return password.Value; }
@@ -255,6 +274,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the spectator password.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string PasswordForSpectator
         {
             get { return passwordForSpectator.Value; }
@@ -295,7 +315,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

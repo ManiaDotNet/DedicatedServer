@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SpectatorReleasePlayerSlotId method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SpectatorReleasePlayerSlotId : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Id of the spectator whose player spot will be freed.
         /// </summary>
+        [UsedImplicitly]
         public int Id
         {
             get { return param1.Value; }
@@ -31,9 +34,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SpectatorReleasePlayerSlotId"/> class for the given Id.
         /// </summary>
-        /// <param name="Id">The Id of the spectator whose player spot will be freed.</param>
-        public SpectatorReleasePlayerSlotId(int Id)
-            : base(Id)
+        /// <param name="id">The Id of the spectator whose player spot will be freed.</param>
+        public SpectatorReleasePlayerSlotId(int id)
+            : base(id)
         { }
     }
 }

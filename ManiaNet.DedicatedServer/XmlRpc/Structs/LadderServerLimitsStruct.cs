@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -26,6 +27,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the maximum number of ladder points a player can reach on the server.
         /// </summary>
+        [UsedImplicitly]
         public double LadderServerLimitMax
         {
             get { return ladderServerLimitMax.Value; }
@@ -34,6 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the minimumm number of ladder points a player has to have to join the server.
         /// </summary>
+        [UsedImplicitly]
         public double LadderServerLimitMin
         {
             get { return ladderServerLimitMin.Value; }
@@ -57,7 +60,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

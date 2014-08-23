@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetTimeAttackSynchStartPeriod method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetTimeAttackSynchStartPeriod : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the new synch start period for timeattack mode in seconds.
         /// </summary>
+        [UsedImplicitly]
         public int SynchStartPeriod
         {
             get { return param1.Value; }

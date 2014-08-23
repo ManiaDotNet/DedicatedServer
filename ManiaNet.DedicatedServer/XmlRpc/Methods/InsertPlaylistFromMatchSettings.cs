@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the InsertPlaylistFromMatchSettings method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class InsertPlaylistFromMatchSettings : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filename of the matchsettings file to insert the tracks of after the current track.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Filename
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.InsertPlaylistFromMatchSettings"/> class for the given filename.
         /// </summary>
         /// <param name="filename">The filename of the matchsettings to insert the tracks of after the current track.</param>
-        public InsertPlaylistFromMatchSettings(string filename)
+        public InsertPlaylistFromMatchSettings([NotNull] string filename)
             : base(filename)
         { }
     }

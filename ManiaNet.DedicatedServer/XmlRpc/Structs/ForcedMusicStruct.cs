@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -31,6 +32,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the path to the music file.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string File
         {
             get { return file.Value; }
@@ -39,6 +41,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the music overrides those in challenges that already have one.
         /// </summary>
+        [UsedImplicitly]
         public bool Override
         {
             get { return @override.Value; }
@@ -47,6 +50,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the url of the music file.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Url
         {
             get { return url.Value; }
@@ -71,7 +75,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

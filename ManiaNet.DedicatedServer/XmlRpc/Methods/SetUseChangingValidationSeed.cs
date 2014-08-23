@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetUseChangingValidationSeed method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetUseChangingValidationSeed : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets whether the server should use a changing validation seed.
         /// </summary>
+        [UsedImplicitly]
         public bool UseChangingValidationSeed
         {
             get { return param1.Value; }

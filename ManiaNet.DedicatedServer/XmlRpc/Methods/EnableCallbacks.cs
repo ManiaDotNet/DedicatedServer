@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the EnableCallbacks method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class EnableCallbacks : XmlRpcMethodCall<XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets whether to enable the callbacks or not.
         /// </summary>
+        [UsedImplicitly]
         public bool Enable
         {
             get { return param1.Value; }

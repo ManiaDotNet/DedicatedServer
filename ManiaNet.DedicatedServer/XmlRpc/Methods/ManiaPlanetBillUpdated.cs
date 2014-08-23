@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.BillUpdated method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ManiaPlanetBillUpdated : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcI4, int, XmlRpcString, string, XmlRpcI4, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the Id of the bill.
         /// </summary>
+        [UsedImplicitly]
         public int BillId
         {
             get { return param1.Value; }
@@ -30,6 +33,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the Id of the bill's state.
         /// </summary>
+        [UsedImplicitly]
         public int State
         {
             get { return param2.Value; }
@@ -38,6 +42,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the name of the bill's state.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string StateName
         {
             get { return param3.Value; }
@@ -46,6 +51,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the Id of the transaction.
         /// </summary>
+        [UsedImplicitly]
         public int TransactionId
         {
             get { return param4.Value; }

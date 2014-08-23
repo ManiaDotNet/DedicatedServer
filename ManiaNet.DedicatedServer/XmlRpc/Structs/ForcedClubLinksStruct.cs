@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -26,6 +27,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the forced club link for team 1.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ClubLink1
         {
             get { return clubLink1.Value; }
@@ -34,6 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the forced club link for team 2.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ClubLink2
         {
             get { return clubLink2.Value; }
@@ -57,7 +60,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

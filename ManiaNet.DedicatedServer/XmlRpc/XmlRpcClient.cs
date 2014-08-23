@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
     /// <summary>
     /// Represents an XmlRpc Client. Implements the <see cref="IXmlRpcClient"/> interface.
     /// </summary>
+    [UsedImplicitly]
     public sealed class XmlRpcClient : IXmlRpcClient, IDisposable
     {
         /// <summary>

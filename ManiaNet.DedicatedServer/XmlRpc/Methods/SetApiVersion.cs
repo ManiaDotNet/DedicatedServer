@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetApiVersion method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetApiVersion : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Api Version used for callbacks. Use values from <see cref="ManiaNet.DedicatedServer.ApiVersions"/>.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ApiVersion
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetApiVersion"/> class with the given Api version.
         /// </summary>
         /// <param name="apiVersion">The Api Version used for callbacks. Use those in <see cref="ManiaNet.DedicatedServer.ApiVersions"/>.</param>
-        public SetApiVersion(string apiVersion)
+        public SetApiVersion([NotNull] string apiVersion)
             : base(apiVersion)
         { }
     }

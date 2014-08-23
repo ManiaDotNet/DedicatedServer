@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the CustomizeQuitDialog method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class CustomizeQuitDialog : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the delay in milliseconds until the Quit button becomes active.
         /// </summary>
+        [UsedImplicitly]
         public int Delay
         {
             get { return param4.Value; }
@@ -23,6 +26,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the Xml representing the displayed manialink.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ManialinkPage
         {
             get { return param1.Value; }
@@ -40,6 +44,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets whether the quit dialog will propose adding the server to the player's favorites or not.
         /// </summary>
+        [UsedImplicitly]
         public bool ProposeAddFavorite
         {
             get { return param3.Value; }
@@ -49,6 +54,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets a maniaplanet qjoin url that the client will be send to. Format: #qjoin=serverlogin@title
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string SendToServer
         {
             get { return param2.Value; }
@@ -62,7 +68,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <param name="sendToServer">A maniaplanet qjoin url that the client will be send to. Format: #qjoin=serverlogin@title</param>
         /// <param name="proposeAddFavorite">Whether the quit dialog will propose adding the server to the player's favorites or not.</param>
         /// <param name="delay">The delay in milliseconds until the Quit button becomes available.</param>
-        public CustomizeQuitDialog(string manialinkPage, string sendToServer, bool proposeAddFavorite, int delay)
+        public CustomizeQuitDialog([NotNull] string manialinkPage, [NotNull] string sendToServer, bool proposeAddFavorite, int delay)
             : base(manialinkPage, sendToServer, proposeAddFavorite, delay)
         { }
     }

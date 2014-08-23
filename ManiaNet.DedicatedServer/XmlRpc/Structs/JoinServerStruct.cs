@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -26,6 +27,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the IP address of the server to connect to.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Server
         {
             get { return server.Value; }
@@ -35,6 +37,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the password used to connect to the server.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string ServerPassword
         {
             get { return serverPassword.Value; }
@@ -52,7 +55,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// </summary>
         /// <param name="server">The IP address of the tserver to connect to.</param>
         /// <param name="serverPassword">The password used to connect to the server.</param>
-        public JoinServerStruct(string server, string serverPassword)
+        public JoinServerStruct([NotNull] string server, [NotNull] string serverPassword)
         {
             Server = server;
             ServerPassword = serverPassword;

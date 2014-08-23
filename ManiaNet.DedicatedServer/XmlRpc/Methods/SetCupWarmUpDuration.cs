@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetCupWarmUpDuration method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetCupWarmUpDuration : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new warm up duration in number of rounds. 0 means no warm up.
         /// </summary>
+        [UsedImplicitly]
         public int Duration
         {
             get { return param1.Value; }

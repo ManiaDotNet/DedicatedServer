@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -51,6 +52,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the player is in official mode or not.
         /// </summary>
+        [UsedImplicitly]
         public bool IsInOfficialMode
         {
             get { return isInOfficialMode.Value; }
@@ -59,6 +61,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the player is in spectator mode or not.
         /// </summary>
+        [UsedImplicitly]
         public bool IsSpectator
         {
             get { return isSpectator.Value; }
@@ -67,6 +70,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's ladder ranking on the continent (Europe, America, etc.).
         /// </summary>
+        [UsedImplicitly]
         public int LadderRanking
         {
             get { return ladderRanking.Value; }
@@ -75,6 +79,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's login.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return login.Value; }
@@ -83,6 +88,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's nickname.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string NickName
         {
             get { return nickName.Value; }
@@ -91,6 +97,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's id for the current session.
         /// </summary>
+        [UsedImplicitly]
         public int PlayerId
         {
             get { return playerId.Value; }
@@ -99,6 +106,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the id of the player's team. -1 if the player is not in a team.
         /// </summary>
+        [UsedImplicitly]
         public int TeamId
         {
             get { return teamId.Value; }
@@ -127,7 +135,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

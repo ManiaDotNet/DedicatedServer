@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the ForcePlayerTeamId method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ForcePlayerTeamId : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Id of the player that will be moved.
         /// </summary>
+        [UsedImplicitly]
         public int Id
         {
             get { return param1.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the Id of the team that the player will be moved into. 0 or 1.
         /// </summary>
+        [UsedImplicitly]
         public int TeamIdId
         {
             get { return param2.Value; }

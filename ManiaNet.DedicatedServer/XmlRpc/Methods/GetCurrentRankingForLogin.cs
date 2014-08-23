@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the GetCurrentRankingForLogin method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class GetCurrentRankingForLogin : XmlRpcMethodCall<XmlRpcString, string, XmlRpcStruct<RankingStruct>, RankingStruct>
     {
         /// <summary>
         /// Gets or sets the login of the player to get the ranking for.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param1.Value; }
@@ -33,7 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.GetCurrentRankingForLogin"/> class for the given login.
         /// </summary>
         /// <param name="login">The login of the player to get the ranking for.</param>
-        public GetCurrentRankingForLogin(string login)
+        public GetCurrentRankingForLogin([NotNull] string login)
             : base(login)
         { }
     }

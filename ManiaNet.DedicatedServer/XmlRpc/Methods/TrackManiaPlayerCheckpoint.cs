@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the TrackMania.PlayerCheckpoint method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class TrackManiaPlayerCheckpoint : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcI4, int, XmlRpcI4, int, XmlRpcI4, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the index of the checkpoint that the player drove through. I.e. how many checkpoints the player drove through.
         /// </summary>
+        [UsedImplicitly]
         public int CheckpointIndex
         {
             get { return param5.Value; }
@@ -22,6 +25,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the lap that the player that drove through the checkpoint is on.
         /// </summary>
+        [UsedImplicitly]
         public int CurrentLap
         {
             get { return param4.Value; }
@@ -38,6 +42,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the Id of the player that drove through the checkpoint.
         /// </summary>
+        [UsedImplicitly]
         public int PlayerId
         {
             get { return param1.Value; }
@@ -46,6 +51,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the login of the player that drove through the checkpoint.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string PlayerLogin
         {
             get { return param2.Value; }
@@ -54,6 +60,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the time in milliseconds or score of the player that drove through the checkpoint.
         /// </summary>
+        [UsedImplicitly]
         public int TimeOrScore
         {
             get { return param3.Value; }

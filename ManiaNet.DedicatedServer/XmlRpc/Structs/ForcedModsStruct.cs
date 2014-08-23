@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -26,6 +27,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the forced mods.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<ForcedModStruct> Mods
         {
             get { return mods.Value.Select(xmlRpcStruct => xmlRpcStruct.Value); }
@@ -34,6 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets whether the mods override those in challenges that already have one or not.
         /// </summary>
+        [UsedImplicitly]
         public bool Override
         {
             get { return @override.Value; }
@@ -57,7 +60,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

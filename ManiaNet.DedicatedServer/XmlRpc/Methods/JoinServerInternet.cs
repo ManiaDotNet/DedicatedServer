@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the JoinServerInternet method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class JoinServerInternet : XmlRpcMethodCall<XmlRpcStruct<JoinServerStruct>, JoinServerStruct, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the information that will be used to join a server.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public JoinServerStruct JoinServer
         {
             get { return param1.Value; }
@@ -33,7 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.JoinServerInternet"/> class with the given join information.
         /// </summary>
         /// <param name="joinServer">The informations that will be used to join a server.</param>
-        public JoinServerInternet(JoinServerStruct joinServer)
+        public JoinServerInternet([NotNull] JoinServerStruct joinServer)
             : base(joinServer)
         { }
     }

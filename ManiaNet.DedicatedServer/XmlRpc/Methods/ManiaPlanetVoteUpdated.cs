@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.VoteUpdated method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ManiaPlanetVoteUpdated : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets the name of the command to be executed if the vote is successful.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string CmdName
         {
             get { return param3.Value; }
@@ -22,6 +25,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the parameter for the command to be executed if the vote is successful.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string CmdParam
         {
             get { return param4.Value; }
@@ -30,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the login of the client that started the vote.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param2.Value; }
@@ -46,6 +51,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the name of the vote's state. Compare to values from <see cref="ManiaNet.DedicatedServer.VoteStates"/>.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string StateName
         {
             get { return param1.Value; }

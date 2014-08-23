@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetHideServer method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetHideServer : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the new visability mode. Use values from <see cref="ManiaNet.DedicatedServer.VisibilityModes"/>.
         /// </summary>
+        [UsedImplicitly]
         public int Visability
         {
             get { return param1.Value; }

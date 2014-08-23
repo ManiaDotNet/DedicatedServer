@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SendChatTime method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetChatTime : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the chat time at the end of the map in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int ChatTime
         {
             get { return param1.Value; }

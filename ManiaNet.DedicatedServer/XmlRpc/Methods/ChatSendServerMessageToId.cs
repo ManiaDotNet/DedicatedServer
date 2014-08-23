@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the ChatSendServerMessageToId method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ChatSendServerMessageToId : XmlRpcMethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the Id that the message will be send to.
         /// </summary>
+        [UsedImplicitly]
         public int Id
         {
             get { return param2.Value; }
@@ -23,6 +26,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the message that will be send to the Id (without the server login as source).
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Message
         {
             get { return param1.Value; }
@@ -42,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="message">The message that will be send to the Id (without the serverlogin as source).</param>
         /// <param name="id">The Id that the message will be send to.</param>
-        public ChatSendServerMessageToId(string message, int id)
+        public ChatSendServerMessageToId([NotNull] string message, int id)
             : base(message, id)
         { }
     }

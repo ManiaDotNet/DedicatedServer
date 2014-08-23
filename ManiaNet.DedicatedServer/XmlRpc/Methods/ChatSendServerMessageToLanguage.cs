@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the ChatSendServerMessageToLanguage method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ChatSendServerMessageToLanguage
         : XmlRpcMethodCall
               <XmlRpcArray<XmlRpcStruct<LanguageMessageStruct>, LanguageMessageStruct>, XmlRpcStruct<LanguageMessageStruct>[], XmlRpcString, string, XmlRpcBoolean, bool>
@@ -18,6 +20,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the login that the message is send to. If it's null, the message is send to all clients.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param2.Value; }
@@ -27,6 +30,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Gets or sets the different messages that will be send to different languages (without the server login as source).
         /// The last message in the list is ued if there's no matching one.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<LanguageMessageStruct> Messages
         {
             get { return param1.Value.Select(strct => strct.Value); }
@@ -48,7 +52,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="login">The login that the message is send to.</param>
         /// <param name="messages">The different messages for different languages.</param>
-        public ChatSendServerMessageToLanguage(string login, params LanguageMessageStruct[] messages)
+        public ChatSendServerMessageToLanguage([NotNull] string login, [NotNull] params LanguageMessageStruct[] messages)
             : base(messages.Select(message => new XmlRpcStruct<LanguageMessageStruct>(message)).ToArray(), login)
         { }
 
@@ -60,7 +64,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// The last message in the list is used if there's no matching one.
         /// </summary>
         /// <param name="messages">The different messages for different languages.</param>
-        public ChatSendServerMessageToLanguage(params LanguageMessageStruct[] messages)
+        public ChatSendServerMessageToLanguage([NotNull] params LanguageMessageStruct[] messages)
             : base(messages.Select(message => new XmlRpcStruct<LanguageMessageStruct>(message)).ToArray(), null)
         { }
 
@@ -70,7 +74,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <returns>An XElement containing the parameter data.</returns>
         protected override XElement generateCallParamsXml()
         {
-            XElement paramsElement = base.generateCallParamsXml();
+            var paramsElement = base.generateCallParamsXml();
 
             if (string.IsNullOrWhiteSpace(Login))
                 paramsElement.LastNode.Remove();

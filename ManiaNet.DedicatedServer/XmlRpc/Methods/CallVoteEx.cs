@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the CallVoteEx method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class CallVoteEx : XmlRpcMethodCall<XmlRpcString, string, XmlRpcDouble, double, XmlRpcInt, int, XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -16,6 +18,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <para/>
         /// Has to correspond to an Xml Rpc method call.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Command
         {
             get { return param1.Value; }
@@ -33,6 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the required vote ratio between 0 and 1 for the vote to be successful.
         /// </summary>
+        [UsedImplicitly]
         public double Ratio
         {
             get { return param2.Value; }
@@ -42,6 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the timeout the call vote in seconds. -1 and 0 mean the default value, 1 means indefinite.
         /// </summary>
+        [UsedImplicitly]
         public int TimeOut
         {
             get { return param3.Value; }
@@ -51,6 +56,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets who will be allowed to vote on the call vote. 0 means only active players, 1 means only players, 2 means everyone (including spectators).
         /// </summary>
+        [UsedImplicitly]
         public int Voters
         {
             get { return param4.Value; }
@@ -64,7 +70,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <param name="ratio">The required vote ratio between 0 and 1 for the vote to be successful.</param>
         /// <param name="timeOut">Timeout for the call vote in seconds. -1 and 0 mean the default value, 1 means indefinite.</param>
         /// <param name="voters">Who will be allowed to vote on the call vote. 0 means only active players, 1 means only players, 2 means everyone (including spectators).</param>
-        public CallVoteEx(string command, double ratio, int timeOut, int voters)
+        public CallVoteEx([NotNull] string command, double ratio, int timeOut, int voters)
             : base(command, ratio, timeOut, voters)
         { }
     }

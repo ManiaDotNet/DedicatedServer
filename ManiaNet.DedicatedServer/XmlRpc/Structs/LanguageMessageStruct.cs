@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -26,6 +27,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the two letter language code for this message.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Lang
         {
             get { return lang.Value; }
@@ -41,6 +43,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the Text for this message.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Text
         {
             get { return text.Value; }
@@ -58,7 +61,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// </summary>
         /// <param name="lang">The two letter language code that this message is for.</param>
         /// <param name="text">The content of this message.</param>
-        public LanguageMessageStruct(string lang, string text)
+        public LanguageMessageStruct([NotNull] string lang, [NotNull] string text)
         {
             Lang = lang;
             Text = text;
@@ -82,7 +85,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

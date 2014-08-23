@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SendDisplayManialinkPage method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SendDisplayManialinkPage : XmlRpcMethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets whether the page automatically disappears after the client selects an option.
         /// </summary>
+        [UsedImplicitly]
         public bool DisappearOnSelect
         {
             get { return param3.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the Xml representing the page.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Page
         {
             get { return param1.Value; }
@@ -40,6 +44,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the timeout in seconds after which the page is automatically hidden. 0 for permanent display.
         /// </summary>
+        [UsedImplicitly]
         public int Timeout
         {
             get { return param2.Value; }
@@ -52,7 +57,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <param name="page">The Xml representing the page.</param>
         /// <param name="timeout">The timeout in seconds after which the page is automatically hidden. 0 for permanent display.</param>
         /// <param name="disapperOnSelect">Whether the page automatically disappears after the client selects an option.</param>
-        public SendDisplayManialinkPage(string page, int timeout, bool disapperOnSelect)
+        public SendDisplayManialinkPage([NotNull] string page, int timeout, bool disapperOnSelect)
             : base(page, timeout, disapperOnSelect)
         { }
     }

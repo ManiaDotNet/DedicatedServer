@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetBuddyNotification method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetBuddyNotification : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets whether to display buddy notifications in chat for the login.
         /// </summary>
+        [UsedImplicitly]
         public bool DisplayBuddyNotifications
         {
             get { return param2.Value; }
@@ -23,6 +26,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the login to set it for. Empty string for global value.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return param1.Value; }
@@ -42,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="displayBuddyNotifications">Whether to display buddy notifications in chat for the login.</param>
         /// <param name="login">The login to set it for. Default empty string for global value.</param>
-        public SetBuddyNotification(bool displayBuddyNotifications, string login = "")
+        public SetBuddyNotification(bool displayBuddyNotifications, [NotNull] string login = "")
             : base(login, displayBuddyNotifications)
         { }
     }

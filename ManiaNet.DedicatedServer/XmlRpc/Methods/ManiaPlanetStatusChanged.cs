@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the ManiaPlanet.StatusChanged method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ManiaPlanetStatusChanged : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the new status code.
         /// </summary>
+        [UsedImplicitly]
         public int StatusCode
         {
             get { return param1.Value; }
@@ -30,6 +33,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the new status name.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string StatusName
         {
             get { return param2.Value; }

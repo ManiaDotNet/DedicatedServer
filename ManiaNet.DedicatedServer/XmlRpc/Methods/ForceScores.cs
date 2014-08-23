@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,14 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the ForceScores method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class ForceScores
         : XmlRpcMethodCall<XmlRpcArray<XmlRpcStruct<ForceScoreStruct>, ForceScoreStruct>, XmlRpcStruct<ForceScoreStruct>[], XmlRpcBoolean, bool, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the scores that will be forced.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<ForceScoreStruct> ForcedScores
         {
             get { return param1.Value.Select(strct => strct.Value); }
@@ -33,6 +36,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets whether the scores will be updated silently or not.
         /// </summary>
+        [UsedImplicitly]
         public bool Silent
         {
             get { return param2.Value; }
@@ -44,7 +48,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="silent">Whether the scores will be updated silently or not.</param>
         /// <param name="forcedScores">The scores that will be forced.</param>
-        public ForceScores(bool silent, params ForceScoreStruct[] forcedScores)
+        public ForceScores(bool silent, [NotNull] params ForceScoreStruct[] forcedScores)
             : base(forcedScores.Select(forceScoreStruct => new XmlRpcStruct<ForceScoreStruct>(forceScoreStruct)).ToArray(), silent)
         { }
     }

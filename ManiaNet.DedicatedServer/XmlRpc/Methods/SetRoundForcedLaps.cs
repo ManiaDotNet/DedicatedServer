@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetRoundForcedLaps method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetRoundForcedLaps : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the new number of laps in rounds mode. 0 means the number set by the map is used.
         /// </summary>
+        [UsedImplicitly]
         public int Laps
         {
             get { return param1.Value; }

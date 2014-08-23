@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -81,6 +82,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the chat time at the end of the map in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int ChatTime
         {
             get { return chatTime.Value; }
@@ -90,6 +92,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the finish timeout in seconds.
         /// </summary>
+        [UsedImplicitly]
         public int FinishTimeout
         {
             get { return finishTimeout.Value; }
@@ -99,6 +102,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the gamemode. Compare to <see cref="ManiaNet.DedicatedServer.GameModes"/> values.
         /// </summary>
+        [UsedImplicitly]
         public int GameMode
         {
             get { return gameMode.Value; }
@@ -120,6 +124,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the number of laps players have to drive in laps mode.
         /// </summary>
+        [UsedImplicitly]
         public int LapsNbLaps
         {
             get { return lapsNbLaps.Value; }
@@ -129,6 +134,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the time limit in seconds in laps mode.
         /// </summary>
+        [UsedImplicitly]
         public int LapsTimeLimit
         {
             get { return lapsTimeLimit.Value; }
@@ -138,6 +144,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the number of laps players have to drive in rounds mode.
         /// </summary>
+        [UsedImplicitly]
         public int RoundsForcedLaps
         {
             get { return roundsForcedLaps.Value; }
@@ -147,6 +154,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the point limit in rounds mode.
         /// </summary>
+        [UsedImplicitly]
         public int RoundsPointsLimit
         {
             get { return roundsPointsLimit.Value; }
@@ -156,6 +164,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets whether to use the new rules in rounds mode or not.
         /// </summary>
+        [UsedImplicitly]
         public bool RoundsUseNewRules
         {
             get { return roundsUseNewRules.Value; }
@@ -165,6 +174,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the maximum number of points in team mode.
         /// </summary>
+        [UsedImplicitly]
         public int TeamMaxPoints
         {
             get { return teamMaxPoints.Value; }
@@ -174,6 +184,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the points limit in team mode.
         /// </summary>
+        [UsedImplicitly]
         public int TeamPointsLimit
         {
             get { return teamPointsLimit.Value; }
@@ -183,6 +194,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets whether to use the new rules in team mode or not.
         /// </summary>
+        [UsedImplicitly]
         public bool TeamUseNewRules
         {
             get { return teamUseNewRules.Value; }
@@ -192,6 +204,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the time limit in seconds in time attack mode.
         /// </summary>
+        [UsedImplicitly]
         public int TimeAttackLimit
         {
             get { return timeAttackLimit.Value; }
@@ -201,6 +214,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the syncronization time before start in time attack mode.
         /// </summary>
+        [UsedImplicitly]
         public int TimeAttackSynchStartPeriod
         {
             get { return timeAttackSynchStartPeriod.Value; }
@@ -208,15 +222,15 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Structs.PassedInGameInfoStruct"/> without content (for parsing from Xml).
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Structs.PassedInGameInfosStruct"/> without content (for parsing from Xml).
         /// </summary>
         public PassedInGameInfosStruct()
         { }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Structs.PassedInGameInfoStruct"/> from the given game infos.
+        /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Structs.PassedInGameInfosStruct"/> from the given game infos.
         /// </summary>
-        /// <param name="gameInfo">The game infos to use for the creation.</param>
+        /// <param name="gameInfos">The game infos to use for the creation.</param>
         public PassedInGameInfosStruct(ReturnedGameInfosStruct gameInfos)
         {
             ChatTime = gameInfos.ChatTime;
@@ -263,7 +277,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

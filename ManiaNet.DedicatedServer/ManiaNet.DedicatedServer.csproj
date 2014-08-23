@@ -54,6 +54,7 @@
     <Compile Include="LadderModes.cs" />
     <Compile Include="ManualFlowControlModes.cs" />
     <Compile Include="MatchConditions.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RefereeModes.cs" />
     <Compile Include="SpectatorCameraTypes.cs" />
     <Compile Include="SpectatorModes.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetServerTag method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetServerTag : XmlRpcMethodCall<XmlRpcString, string, XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the name of the new tag.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Name
         {
             get { return param1.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the value associated with the new tag.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Value
         {
             get { return param2.Value; }
@@ -42,7 +46,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// </summary>
         /// <param name="name">The name of the new tag.</param>
         /// <param name="value">The value associated with the new tag.</param>
-        public SetServerTag(string name, string value)
+        public SetServerTag([NotNull] string name, [NotNull] string value)
             : base(name, value)
         { }
     }

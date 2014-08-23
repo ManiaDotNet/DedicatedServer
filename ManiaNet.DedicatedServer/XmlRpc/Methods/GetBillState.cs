@@ -1,4 +1,5 @@
-﻿using ManiaNet.DedicatedServer.XmlRpc.Structs;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using ManiaNet.DedicatedServer.XmlRpc.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the GetBillState method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class GetBillState : XmlRpcMethodCall<XmlRpcInt, int, XmlRpcStruct<BillStateStruct>, BillStateStruct>
     {
         /// <summary>
         /// Gets or sets the Id of the bill that the state will be returned of.
         /// </summary>
+        [UsedImplicitly]
         public int Id
         {
             get { return param1.Value; }

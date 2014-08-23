@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -61,6 +62,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the login of the map's author.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Author
         {
             get { return author.Value; }
@@ -69,6 +71,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's cost in coppers.
         /// </summary>
+        [UsedImplicitly]
         public int CopperPrice
         {
             get { return copperPrice.Value; }
@@ -77,6 +80,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's environment.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Environment
         {
             get { return environment.Value; }
@@ -85,6 +89,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the path to the map's file, relative to UserData/Maps/
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Filename
         {
             get { return filename.Value; }
@@ -93,6 +98,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's Gold medal time in milliseconds.
         /// </summary>
+        [UsedImplicitly]
         public int GoldTime
         {
             get { return goldTime.Value; }
@@ -101,6 +107,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's style.
         /// </summary>
+        [UsedImplicitly]
         public string MapStyle
         {
             get { return mapStyle.Value; }
@@ -109,6 +116,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's display name.
         /// </summary>
+        [UsedImplicitly]
         public string Name
         {
             get { return name.Value; }
@@ -117,6 +125,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the map's unique identifier.
         /// </summary>
+        [UsedImplicitly]
         public string UId
         {
             get { return uId.Value; }
@@ -147,7 +156,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

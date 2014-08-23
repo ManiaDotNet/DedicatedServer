@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -36,6 +37,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the checksum of the skin.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Checksum
         {
             get { return checksum.Value; }
@@ -45,6 +47,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the name of the skin.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Name
         {
             get { return name.Value; }
@@ -54,6 +57,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the name of the original skin. * for all.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Orig
         {
             get { return orig.Value; }
@@ -69,6 +73,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets or sets the url of the skin.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Url
         {
             get { return url.Value; }
@@ -92,7 +97,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <param name="name">The name of the replacement skin.</param>
         /// <param name="checksum">The checksum of the replacement skin.</param>
         /// <param name="url">The url of the replacement skin.</param>
-        public ForcedSkinStruct(string orig, string name = "", string checksum = "", string url = "")
+        public ForcedSkinStruct([NotNull] string orig, [NotNull] string name = "", [NotNull] string checksum = "", [NotNull] string url = "")
         {
             Orig = orig;
             Name = name;
@@ -120,7 +125,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

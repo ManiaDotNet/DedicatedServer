@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
@@ -62,6 +63,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// Gets the checkpoint times of the player's best time in milliseconds.
         /// Only in legacy modes.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public IEnumerable<int> BestCheckpoints
         {
             get { return bestCheckpoints.Value.Select(xmlRpcI4 => xmlRpcI4.Value); }
@@ -71,6 +73,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// Gets the player's best time in milliseconds.
         /// Only in legacy modes.
         /// </summary>
+        [UsedImplicitly]
         public int BestTime
         {
             get { return bestTime.Value; }
@@ -80,6 +83,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// Gets the player's ladder score for the race.
         /// Only in legacy modes.
         /// </summary>
+        [UsedImplicitly]
         public double LadderScore
         {
             get { return ladderScore.Value; }
@@ -88,6 +92,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's login.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Login
         {
             get { return login.Value; }
@@ -97,6 +102,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// Gets the number of laps that the player finished.
         /// Only in legacy modes.
         /// </summary>
+        [UsedImplicitly]
         public int NbrLapsFinished
         {
             get { return nbrLapsFinished.Value; }
@@ -105,6 +111,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's nickname.
         /// </summary>
+        [UsedImplicitly]
         public string NickName
         {
             get { return nickName.Value; }
@@ -113,6 +120,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's id for the current session.
         /// </summary>
+        [UsedImplicitly]
         public int PlayerId
         {
             get { return playerId.Value; }
@@ -121,6 +129,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <summary>
         /// Gets the player's rank.
         /// </summary>
+        [UsedImplicitly]
         public int Rank
         {
             get { return rank.Value; }
@@ -130,6 +139,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// Gets the players score.
         /// Only in legacy modes.
         /// </summary>
+        [UsedImplicitly]
         public int Score
         {
             get { return score.Value; }
@@ -160,7 +170,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// <returns>Whether it was successful or not.</returns>
         protected override bool parseXml(XElement member)
         {
-            XElement value = getMemberValueElement(member);
+            var value = getMemberValueElement(member);
 
             switch (getMemberName(member))
             {

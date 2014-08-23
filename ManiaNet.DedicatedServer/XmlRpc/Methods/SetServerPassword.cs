@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SetServerPassword method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SetServerPassword : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the new password for the server.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Password
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SetServerPassword"/> class with the given password.
         /// </summary>
         /// <param name="password">The new password for the server.</param>
-        public SetServerPassword(string password)
+        public SetServerPassword([NotNull] string password)
             : base(password)
         { }
     }

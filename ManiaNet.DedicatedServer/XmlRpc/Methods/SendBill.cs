@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SendBill method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SendBill : XmlRpcMethodCall<XmlRpcString, string, XmlRpcInt, int, XmlRpcString, string, XmlRpcString, string, XmlRpcI4, int>
     {
         /// <summary>
         /// Gets or sets the label that will be send with the payment.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Label
         {
             get { return param3.Value; }
@@ -31,6 +34,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the login that will receive the planets. Empty string means the server account.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Payee
         {
             get { return param4.Value; }
@@ -40,6 +44,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the login that the bill will be send to.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Payer
         {
             get { return param1.Value; }
@@ -49,6 +54,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets or sets the amount of planets that the payee will receive.
         /// </summary>
+        [UsedImplicitly]
         public int Planets
         {
             get { return param2.Value; }
@@ -62,7 +68,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <param name="planets">The amount of planets that the payee will receive.</param>
         /// <param name="label">The label that will be send with the bill.</param>
         /// <param name="payee">The login that will receive the planets. Defaults to empty string for the server account.</param>
-        public SendBill(string payer, int planets, string label, string payee = "")
+        public SendBill([NotNull] string payer, int planets, [NotNull] string label, [NotNull] string payee = "")
             : base(payee, planets, label, payer)
         { }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,6 +10,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a callback for the TrackMania.PlayerFinish method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class TrackManiaPlayerFinish : XmlRpcMethodCall<XmlRpcI4, int, XmlRpcString, string, XmlRpcI4, int, XmlRpcBoolean, bool>
     {
         /// <summary>
@@ -22,6 +24,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the Id of the player that drove through the checkpoint.
         /// </summary>
+        [UsedImplicitly]
         public int PlayerId
         {
             get { return param1.Value; }
@@ -30,6 +33,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the login of the player that drove through the checkpoint.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string PlayerLogin
         {
             get { return param2.Value; }
@@ -38,6 +42,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// <summary>
         /// Gets the time in milliseconds or score of the player that drove through the checkpoint.
         /// </summary>
+        [UsedImplicitly]
         public int TimeOrScore
         {
             get { return param3.Value; }

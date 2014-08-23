@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManiaNet.DedicatedServer.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XmlRpc.Methods;
@@ -9,11 +10,13 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
     /// <summary>
     /// Represents a call to the SaveGuestList method.
     /// </summary>
+    [UsedImplicitly]
     public sealed class SaveGuestList : XmlRpcMethodCall<XmlRpcString, string, XmlRpcBoolean, bool>
     {
         /// <summary>
         /// Gets or sets the filepath to save the Guestlist to.
         /// </summary>
+        [NotNull, UsedImplicitly]
         public string Filepath
         {
             get { return param1.Value; }
@@ -32,7 +35,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Methods
         /// Creates a new instance of the <see cref="ManiaNet.DedicatedServer.XmlRpc.Methods.SaveGuestList"/> class for the given filepath.
         /// </summary>
         /// <param name="filepath">The filepath to save the Guestlist to.</param>
-        public SaveGuestList(string filepath)
+        public SaveGuestList([NotNull] string filepath)
             : base(filepath)
         { }
     }
