@@ -7,8 +7,14 @@
 !assets/*
 !namespace/*
 !type/*
+
 !favicon.ico
+!favicon.html
+
 !ManiaNet.png
 !index.html
+
 !README.md
 !LICENSE.md
+
+!FilePatcher.exe
