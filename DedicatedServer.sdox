@@ -9,8 +9,8 @@
   </section>
   <section guid="feacbce2-8290-4d90-bb05-373b9d7dbbfc">
     <item key="ConfigFileName" value="DedicatedServer" />
-    <item key="PathToConfig" value="./DedicatedServer.sdox" />
-    <item key="LastBuild" value="24.8.2014 - 17:18" />
+    <item key="PathToConfig" value="D:\Programming\ManiaDotNet\DedicatedServer\DedicatedServer.sdox" />
+    <item key="LastBuild" value="24.8.2014 - 19:46" />
     <item key="ProjectName" value="ManiaNet Dedicated Server" />
     <item key="ProjectUrl" value="http://github.com/ManiaDotNet/DedicatedServer" />
     <item key="Author" value="ManiaNet" />
