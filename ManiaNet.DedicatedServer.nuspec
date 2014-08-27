@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>ManiaNet.DedicatedServer</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <title>ManiaNet Dedicated Server</title>
         <authors>Banane9</authors>
         <owners>Banane9</owners>
