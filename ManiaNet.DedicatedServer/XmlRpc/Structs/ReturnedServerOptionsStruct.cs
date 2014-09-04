@@ -25,9 +25,19 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         private readonly XmlRpcBoolean autoSaveReplays = new XmlRpcBoolean();
 
         /// <summary>
+        /// Backing field for the AutoSaveValidationReplays property.
+        /// </summary>
+        private readonly XmlRpcBoolean autoSaveValidationReplays = new XmlRpcBoolean();
+
+        /// <summary>
         /// Backing field for the CallVoteRatio property.
         /// </summary>
         private readonly XmlRpcDouble callVoteRatio = new XmlRpcDouble();
+
+        /// <summary>
+        /// Backing field for the ClientInputsMaxLatency property.
+        /// </summary>
+        private readonly XmlRpcI4 clientInputsMaxLatency = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the Comment property.
@@ -55,9 +65,29 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         private readonly XmlRpcI4 currentMaxSpectators = new XmlRpcI4();
 
         /// <summary>
+        /// Backing field for the CurrentUseChangingValidationSeed property.
+        /// </summary>
+        private readonly XmlRpcBoolean currentUseChangingValidationSeed = new XmlRpcBoolean();
+
+        /// <summary>
         /// Backing field for the CurrentVehicleNetQuality property.
         /// </summary>
         private readonly XmlRpcI4 currentVehicleNetQuality = new XmlRpcI4();
+
+        /// <summary>
+        /// Backing field for the DisableHorns property.
+        /// </summary>
+        private readonly XmlRpcBoolean disableHorns = new XmlRpcBoolean();
+
+        /// <summary>
+        /// Backing field for the DisableServiceAnnouncements property.
+        /// </summary>
+        private readonly XmlRpcBoolean disableServiceAnnouncements = new XmlRpcBoolean();
+
+        /// <summary>
+        /// Backing field for the HideServer Property.
+        /// </summary>
+        private readonly XmlRpcI4 hideServer = new XmlRpcI4();
 
         /// <summary>
         /// Backing field for the IsP2PDownload property.
@@ -68,6 +98,21 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// Backing field for the IsP2PUpload property.
         /// </summary>
         private readonly XmlRpcBoolean isP2PUpload = new XmlRpcBoolean();
+
+        /// <summary>
+        /// Backing field for the KeepPlayerSlots property.
+        /// </summary>
+        private readonly XmlRpcBoolean keepPlayerSlots = new XmlRpcBoolean();
+
+        /// <summary>
+        /// Backing field for the LadderServerLimitMax property.
+        /// </summary>
+        private readonly XmlRpcDouble ladderServerLimitMax = new XmlRpcDouble();
+
+        /// <summary>
+        /// Backing field for the LadderServerLimitMin property.
+        /// </summary>
+        private readonly XmlRpcDouble ladderServerLimitMin = new XmlRpcDouble();
 
         /// <summary>
         /// Backing field for the Name property.
@@ -95,6 +140,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         private readonly XmlRpcI4 nextMaxSpectators = new XmlRpcI4();
 
         /// <summary>
+        /// Backing field for the NextUseChangingValidationSeed property.
+        /// </summary>
+        private readonly XmlRpcBoolean nextUseChangingValidationSeed = new XmlRpcBoolean();
+
+        /// <summary>
         /// Backing field for the NextVehicleNetQuality property.
         /// </summary>
         private readonly XmlRpcI4 nextVehicleNetQuality = new XmlRpcI4();
@@ -108,6 +158,16 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         /// Backing field for the PasswordForSpectator property.
         /// </summary>
         private readonly XmlRpcString passwordForSpectator = new XmlRpcString();
+
+        /// <summary>
+        /// Backing field for the RefereeMode property.
+        /// </summary>
+        private readonly XmlRpcI4 refereeMode = new XmlRpcI4();
+
+        /// <summary>
+        /// Backing field for the RefereePassword property.
+        /// </summary>
+        private readonly XmlRpcString refereePassword = new XmlRpcString();
 
         /// <summary>
         /// Gets whether clients are allowed to download the challenges from the server.
@@ -128,12 +188,30 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         }
 
         /// <summary>
+        /// Gets whether validation replays will be saved automatically or not.
+        /// </summary>
+        [UsedImplicitly]
+        public bool AutoSaveValidationReplays
+        {
+            get { return autoSaveValidationReplays.Value; }
+        }
+
+        /// <summary>
         /// Gets the Ratio for call-votes for this command. Range from 0-1, or -1 for disabled.
         /// </summary>
         [UsedImplicitly]
         public double CallVoteRatio
         {
             get { return callVoteRatio.Value; }
+        }
+
+        /// <summary>
+        /// Gets the max latency for client inputs. 0 means it adapts.
+        /// </summary>
+        [UsedImplicitly]
+        public int ClientInputsMaxLatency
+        {
+            get { return clientInputsMaxLatency.Value; }
         }
 
         /// <summary>
@@ -182,12 +260,48 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         }
 
         /// <summary>
+        /// Gets whether a changing validation seed is used currently.
+        /// </summary>
+        [UsedImplicitly]
+        public bool CurrentUseChangingValidationSeed
+        {
+            get { return currentUseChangingValidationSeed.Value; }
+        }
+
+        /// <summary>
         /// Gets the current vehicle quality. Compare to values from <see cref="ManiaNet.DedicatedServer.VehicleNetQualities"/>.
         /// </summary>
         [UsedImplicitly]
         public int CurrentVehicleNetQuality
         {
             get { return currentVehicleNetQuality.Value; }
+        }
+
+        /// <summary>
+        /// Gets whether horns are disabled or not.
+        /// </summary>
+        [UsedImplicitly]
+        public bool DisableHorns
+        {
+            get { return disableHorns.Value; }
+        }
+
+        /// <summary>
+        /// Gets whether service announcements are disabled or not.
+        /// </summary>
+        [UsedImplicitly]
+        public bool DisableServiceAnnouncements
+        {
+            get { return disableServiceAnnouncements.Value; }
+        }
+
+        /// <summary>
+        /// Gets the hide-server value.
+        /// </summary>
+        [UsedImplicitly]
+        public int HideServer
+        {
+            get { return hideServer.Value; }
         }
 
         /// <summary>
@@ -206,6 +320,33 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         public bool IsP2PUpload
         {
             get { return isP2PUpload.Value; }
+        }
+
+        /// <summary>
+        /// Gets whether the Player slots of Players turned Spectator are counted.
+        /// </summary>
+        [UsedImplicitly]
+        public bool KeepPlayerSlots
+        {
+            get { return keepPlayerSlots.Value; }
+        }
+
+        /// <summary>
+        /// Gets the maximum ladder points able to be achieved on the server.
+        /// </summary>
+        [UsedImplicitly]
+        public double LadderServerLimitMax
+        {
+            get { return ladderServerLimitMax.Value; }
+        }
+
+        /// <summary>
+        /// Gets the minimum ladder points required to join the server.
+        /// </summary>
+        [UsedImplicitly]
+        public double LadderServerLimitMin
+        {
+            get { return ladderServerLimitMin.Value; }
         }
 
         /// <summary>
@@ -254,6 +395,15 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         }
 
         /// <summary>
+        /// Gets whether a changing validation seed will be used next.
+        /// </summary>
+        [UsedImplicitly]
+        public bool NextUseChangingValidationSeed
+        {
+            get { return nextUseChangingValidationSeed.Value; }
+        }
+
+        /// <summary>
         /// Gets the next vehicle quality. Compare to values from <see cref="ManiaNet.DedicatedServer.VehicleNetQualities"/>.
         /// </summary>
         [UsedImplicitly]
@@ -281,6 +431,24 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
         }
 
         /// <summary>
+        /// Gets the referee mode.
+        /// </summary>
+        [UsedImplicitly]
+        public int RefereeMode
+        {
+            get { return refereeMode.Value; }
+        }
+
+        /// <summary>
+        /// Gets the referee password.
+        /// </summary>
+        [NotNull, UsedImplicitly]
+        public string RefereePassword
+        {
+            get { return refereePassword.Value; }
+        }
+
+        /// <summary>
         /// Generates an XElement storing the information in this struct.
         /// </summary>
         /// <returns>The generated XElement.</returns>
@@ -291,21 +459,33 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
                 makeMemberElement("Comment", comment),
                 makeMemberElement("Password", password),
                 makeMemberElement("PasswordForSpectator", passwordForSpectator),
+                makeMemberElement("HideServer", hideServer),
                 makeMemberElement("CurrentMaxPlayers", currentMaxPlayers),
                 makeMemberElement("NextMaxPlayers", nextMaxPlayers),
                 makeMemberElement("CurrentMaxSpectators", currentMaxSpectators),
                 makeMemberElement("NextMaxSpectators", nextMaxSpectators),
+                makeMemberElement("KeepPlayerSlots", keepPlayerSlots),
                 makeMemberElement("IsP2PUpload", isP2PUpload),
                 makeMemberElement("IsP2PDownload", isP2PDownload),
                 makeMemberElement("CurrentLadderMode", currentLadderMode),
                 makeMemberElement("NextLadderMode", nextLadderMode),
+                makeMemberElement("LadderServerLimitMax", ladderServerLimitMax),
+                makeMemberElement("LadderServerLimitMin", ladderServerLimitMin),
                 makeMemberElement("CurrentVehicleNetQuality", nextLadderMode),
                 makeMemberElement("NextVehicleNetQuality", nextVehicleNetQuality),
                 makeMemberElement("CurrentCallVoteTimeOut", currentCallVoteTimeOut),
                 makeMemberElement("NextCallVoteTimeOut", nextCallVoteTimeOut),
                 makeMemberElement("CallVoteRatio", callVoteRatio),
-                makeMemberElement("AllowChallengeDownload", allowChallengeDownload),
-                makeMemberElement("AutoSaveReplays", autoSaveReplays));
+                makeMemberElement("AllowMapDownload", allowChallengeDownload),
+                makeMemberElement("AutoSaveReplays", autoSaveReplays),
+                makeMemberElement("AutoSaveValidationReplays", autoSaveValidationReplays),
+                makeMemberElement("RefereePassword", refereePassword),
+                makeMemberElement("RefereeMode", refereeMode),
+                makeMemberElement("CurrentUseChangingValidationSeed", currentUseChangingValidationSeed),
+                makeMemberElement("NextUseChangingValidationSeed", nextUseChangingValidationSeed),
+                makeMemberElement("ClientInputsMaxLatency", clientInputsMaxLatency),
+                makeMemberElement("DisableHorns", disableHorns),
+                makeMemberElement("DisableServiceAnnounces", disableServiceAnnouncements)); // sic
         }
 
         /// <summary>
@@ -339,6 +519,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
                         return false;
                     break;
 
+                case "HideServer":
+                    if (!hideServer.ParseXml(value))
+                        return false;
+                    break;
+
                 case "CurrentMaxPlayers":
                     if (!currentMaxPlayers.ParseXml(value))
                         return false;
@@ -359,6 +544,11 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
                         return false;
                     break;
 
+                case "KeepPlayerSlots":
+                    if (!keepPlayerSlots.ParseXml(value))
+                        return false;
+                    break;
+
                 case "IsP2PUpload":
                     if (!isP2PUpload.ParseXml(value))
                         return false;
@@ -376,6 +566,16 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
 
                 case "NextLadderMode":
                     if (!nextLadderMode.ParseXml(value))
+                        return false;
+                    break;
+
+                case "LadderServerLimitMax":
+                    if (!ladderServerLimitMax.ParseXml(value))
+                        return false;
+                    break;
+
+                case "LadderServerLimitMin":
+                    if (!ladderServerLimitMin.ParseXml(value))
                         return false;
                     break;
 
@@ -404,13 +604,53 @@ namespace ManiaNet.DedicatedServer.XmlRpc.Structs
                         return false;
                     break;
 
-                case "AllowChallengeDownload":
+                case "AllowMapDownload":
                     if (!allowChallengeDownload.ParseXml(value))
                         return false;
                     break;
 
                 case "AutoSaveReplays":
                     if (!autoSaveReplays.ParseXml(value))
+                        return false;
+                    break;
+
+                case "AutoSaveValidationReplays":
+                    if (!autoSaveValidationReplays.ParseXml(value))
+                        return false;
+                    break;
+
+                case "RefereePassword":
+                    if (!refereePassword.ParseXml(value))
+                        return false;
+                    break;
+
+                case "RefereeMode":
+                    if (!refereeMode.ParseXml(value))
+                        return false;
+                    break;
+
+                case "CurrentUseChangingValidationSeed":
+                    if (!currentUseChangingValidationSeed.ParseXml(value))
+                        return false;
+                    break;
+
+                case "NextUseChangingValidationSeed":
+                    if (!nextUseChangingValidationSeed.ParseXml(value))
+                        return false;
+                    break;
+
+                case "ClientInputsMaxLatency":
+                    if (!clientInputsMaxLatency.ParseXml(value))
+                        return false;
+                    break;
+
+                case "DisableHorns":
+                    if (!disableHorns.ParseXml(value))
+                        return false;
+                    break;
+
+                case "DisableServiceAnnounces": // sic
+                    if (!disableServiceAnnouncements.ParseXml(value))
                         return false;
                     break;
 
