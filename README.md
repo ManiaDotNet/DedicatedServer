@@ -44,4 +44,4 @@ if (success)
 
 ##License##
 
-#####[GPL V2](https://github.com/ManiaDotNet/DedicatedServer/blob/master/LICENSE.md)#####
+#####[LGPL V2.1](https://github.com/ManiaDotNet/DedicatedServer/blob/master/LICENSE.md)#####
