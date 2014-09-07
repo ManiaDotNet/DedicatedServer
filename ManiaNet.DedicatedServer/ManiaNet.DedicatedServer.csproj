@@ -81,6 +81,8 @@
     <Compile Include="XmlRpc\Methods\CallVoteEx.cs" />
     <Compile Include="XmlRpc\Methods\CancelVote.cs" />
     <Compile Include="XmlRpc\Methods\ChangeAuthPassword.cs" />
+    <Compile Include="XmlRpc\Methods\ChatEnableManualRouting.cs" />
+    <Compile Include="XmlRpc\Methods\ChatForwardToLogin.cs" />
     <Compile Include="XmlRpc\Methods\ChatSend.cs" />
     <Compile Include="XmlRpc\Methods\ChatSendServerMessage.cs" />
     <Compile Include="XmlRpc\Methods\ChatSendServerMessageToId.cs" />

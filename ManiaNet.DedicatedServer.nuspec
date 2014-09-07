@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>ManiaNet.DedicatedServer</id>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <title>ManiaNet Dedicated Server</title>
         <authors>Banane9</authors>
         <owners>Banane9</owners>
@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>This library contains all the required MethodCalls and Structs for interfacing with ManiaPlanet Dedicated Servers using the XmlRpc library.</description>
         <summary>Library to interface with the ManiaPlanet Dedicated Server.</summary>
-        <releaseNotes>Fix ReturnedServerOptionsStruct.</releaseNotes>
+        <releaseNotes>Add ChatEnableManualRouting and ChatForwardToLogin method calls.</releaseNotes>
         <copyright>Banane9</copyright>
         <language>en</language>
         <tags>trackmania, maniaplanet, xmlrpc, dedicated server, manianet, maniadotnet</tags>
