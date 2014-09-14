@@ -23,6 +23,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         /// </summary>
         private const uint serverCallbackMask = 0x80000000;
 
+        private static readonly Decoder utf8Decoder = Encoding.UTF8.GetDecoder();
         private readonly ConcurrentQueue<Message> messageQueue = new ConcurrentQueue<Message>();
         private readonly object writerLock = new object();
         private Thread eventDispatcherThread;
@@ -86,6 +87,8 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             {
                 requestHandle++;
 
+                request = asciify(request);
+
                 var bytes = new List<byte>();
                 bytes.AddRange(BitConverter.GetBytes((uint)request.Length));
                 bytes.AddRange(BitConverter.GetBytes(requestHandle));
@@ -123,6 +126,21 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             eventDispatcherThread.Start();
         }
 
+        private string asciify(string input)
+        {
+            var asciiBuilder = new StringBuilder(input.Length);
+            foreach (var c in input.ToCharArray())
+            {
+                // ASCII uses 7 bits; Range: 0-127
+                if (c < 128)
+                    asciiBuilder.Append(c);
+                else
+                    asciiBuilder.Append("&#" + (int)c + ";");
+            }
+
+            return asciiBuilder.ToString();
+        }
+
         /// <summary>
         /// Opens a connection to the Address and Port specified in the Config.
         /// </summary>
@@ -145,7 +163,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
         }
 
         /// <summary>
-        /// Takes a byte array and decodes it into a string, based on ASCII character values.
+        /// Takes a byte array and decodes it into a string, based on UTF8 character values.
         /// </summary>
         /// <param name="bytes">The string as byte array.</param>
         /// <returns>The decoded string.</returns>
@@ -155,9 +173,9 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             int usedBytes;
             int usedChars;
             bool complete;
-            Encoding.ASCII.GetDecoder().Convert(bytes, 0, bytes.Length, chars, 0, bytes.Length, true, out usedBytes, out usedChars, out complete);
+            utf8Decoder.Convert(bytes, 0, bytes.Length, chars, 0, bytes.Length, true, out usedBytes, out usedChars, out complete);
 
-            return new string(chars);
+            return new string(chars.Take(usedChars).ToArray());
         }
 
         private void eventDispatcher()
@@ -239,7 +257,7 @@ namespace ManiaNet.DedicatedServer.XmlRpc
             {
                 try
                 {
-                    stream.Read(messageHeaderBytes, 0, 8);
+                    messageHeaderBytes = read(8);
                     uint messageLength = BitConverter.ToUInt32(messageHeaderBytes, 0);
                     uint messageHandle = BitConverter.ToUInt32(messageHeaderBytes, 4);
 
